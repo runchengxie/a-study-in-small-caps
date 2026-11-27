@@ -928,15 +928,19 @@
     "zh": "样本内去重证券数"
   },
   "brand": {
-    "en": "Study in the Small",
+    "en": "a study in small caps",
     "zh": "小微盘研究"
   },
+  "coverSmallGlyph": {
+    "en": "",
+    "zh": "微"
+  },
   "coverLine1": {
-    "en": "Study in",
+    "en": "a study in",
     "zh": "小微盘"
   },
   "coverLine2": {
-    "en": "the Small",
+    "en": "small caps",
     "zh": "研究"
   },
   "coverNote": {

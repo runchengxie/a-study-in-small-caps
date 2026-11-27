@@ -48,14 +48,22 @@ test('author wave responds to pointer and scroll, pauses, and recovers context',
 test('cover occupies the first screen and switches the publication identity', async ({page}) => {
   await page.setViewportSize({width:1440,height:1000});
   await page.goto('./');
-  await expect(page).toHaveTitle('Study in the Small');
-  await expect(page.getByRole('heading', {level:1})).toHaveAccessibleName('Study in the Small');
+  await expect(page).toHaveTitle('a study in small caps');
+  await expect(page.getByRole('heading', {level:1})).toHaveAccessibleName('a study in small caps');
   const bounds = await page.locator('#research').boundingBox();
   expect(bounds.y).toBeGreaterThanOrEqual(999);
   expect(bounds.y).toBeLessThanOrEqual(1001);
   await page.locator('#locale-toggle').click();
   await expect(page).toHaveTitle('小微盘研究');
   await expect(page.getByRole('heading', {level:1})).toHaveAccessibleName('小微盘研究');
+  const sizes=await page.locator('.cover-micro').evaluate(n=>({glyph:parseFloat(getComputedStyle(n).fontSize),line:parseFloat(getComputedStyle(n.closest('.ef-pwave__line')).fontSize)}));
+  expect(sizes.glyph/sizes.line).toBeCloseTo(.82,2);
+  await page.locator('#theme-select').selectOption('dark');
+  await expect(page.locator('.cover-micro')).toHaveText('微');
+  await page.locator('#locale-toggle').click();
+  await expect(page.locator('.ef-pwave__t1')).toHaveText(/a study in/);
+  await expect(page.locator('.cover-micro')).toBeHidden();
+  await page.locator('#locale-toggle').click();
   await page.setViewportSize({width:390,height:844});
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
   await page.locator('.cover-enter').click();
@@ -106,9 +114,9 @@ test('wave follows explicit and system themes without replacing its paused WebGL
   await expect.poll(async()=> (await state()).blend).toBe(1);
   await page.emulateMedia({colorScheme:'light',reducedMotion:'reduce'});
   await expect.poll(async()=> (await state()).background[0]).toBeCloseTo(245/255,4);
-  await canvas.evaluate(c=>{window.ext=c.getContext('webgl').getExtension('WEBGL_lose_context');window.ext.loseContext();});
+  await canvas.evaluate(c=>{window.waveContextExtension=c.getContext('webgl').getExtension('WEBGL_lose_context');window.waveContextExtension.loseContext();});
   await expect(canvas).toBeHidden();await expect(page.locator('.ef-pwave')).toHaveCSS('background-color','rgb(245, 242, 234)');
-  await page.evaluate(()=>window.ext.restoreContext());await expect(canvas).toBeVisible();
+  await page.evaluate(()=>window.waveContextExtension.restoreContext());await expect(canvas).toBeVisible();
   await expect.poll(async()=> (await state()).blend).toBe(771);
  }finally{await browser.close();}
 });

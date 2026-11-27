@@ -218,7 +218,8 @@ export function mount(root, o) {
     opts.speed = Math.max(0, num(opts.speed, DEF.speed));
     if (opts.labels) LABELS = [[0, opts.labels[0]], [0.3, opts.labels[1]], [0.68, opts.labels[2]], [0.94, opts.labels[3]]];
     if (reduce && opts.labels) LABELS = [[0, opts.labels[3]]];
-    t1.textContent = opts.title1; t2.textContent = opts.title2; cap.textContent = opts.caption; next.textContent = opts.next;
+    if (!opts.preserveTitleMarkup) { t1.textContent = opts.title1; t2.textContent = opts.title2; }
+    cap.textContent = opts.caption; next.textContent = opts.next;
     cap.style.display = opts.caption ? "" : "none";
     wrap.style.setProperty("--ef-pw-bg", opts.background);
     wrap.style.setProperty("--ef-pw-acc", opts.accent);
