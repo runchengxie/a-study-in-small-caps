@@ -567,13 +567,25 @@
         "MC-C01",
         "MC-C03"
       ],
-      "literatureIds": [],
+      "literatureIds": [
+        "LIT-006",
+        "LIT-007",
+        "LIT-008",
+        "LIT-009",
+        "LIT-010"
+      ],
       "sourceIds": [
         "SRC-NAV",
         "SRC-NAV-DIAG",
         "SRC-CSRC-20240128",
         "SRC-CSRC-20240206-LENDING",
-        "SRC-CSRC-20240206-ETF"
+        "SRC-CSRC-20240206-ETF",
+        "SRC-PAPER-006",
+        "SRC-PAPER-007",
+        "SRC-PAPER-008",
+        "SRC-PAPER-009",
+        "SRC-PAPER-010",
+        "SRC-CSRC-20240228-DMA"
       ],
       "sections": [
         {
@@ -680,6 +692,27 @@
             {
               "en": "In a retrospective diagnostic with a running peak starting on 29 December 2023, the first 20% drawdown crossing occurred on 29 January 2024. Five retained observation steps later, on 5 February, the NAV was another 16.53% lower. This is a labelled change in the reconstructed path; it supplies no executable exit price.",
               "zh": "在从2023年12月29日起累计高点的回顾诊断中，净值于2024年1月29日首次触及20%回撤门槛。五个保留观测间隔后，即2月5日，净值又下降16.53%。这项结果描述重建路径的后续变化，实际可成交的退出价格仍需另行取得。"
+            }
+          ]
+        },
+        {
+          "id": "evidence-comparison",
+          "title": {
+            "en": "What the new sources can establish",
+            "zh": "新增材料能说明什么"
+          },
+          "paragraphs": [
+            {
+              "en": "The literature notes below separate contemporaneous crowding analysis from order-classification estimates and studies of other periods. Their investor definitions and outcome measures must be reconciled before treating them as a shared explanation.",
+              "zh": "下方文献记录区分同期拥挤分析、订单分类估计和其他时期研究。把它们用于同一解释前，需要对齐投资者定义和结果指标。"
+            },
+            {
+              "en": "The CSRC’s February 28 statement describes deleveraging and reports roughly 3% daily market turnover from DMA after the holiday reopening. That period does not measure pre-holiday liquidation pressure.",
+              "zh": "证监会2月28日说明提到降杠杆，并报告春节后开市以来 DMA 日均成交占全市场约3%。这段时期无法衡量节前平仓压力。"
+            },
+            {
+              "en": "A testable next step compares pre-event size/activity groups around January 17–23 and January 29–February 7, with matched ordinary periods. These historical windows are retrospective; freeze new thresholds before testing another episode.",
+              "zh": "下一步可比较事件前形成的市值与活跃程度分组，观察1月17至23日和1月29日至2月7日，并加入匹配的普通时期。这些窗口按历史事件回顾选取，新阈值应在检验另一段时期前固定。"
             }
           ]
         }
@@ -860,6 +893,147 @@
         {
           "en": "Connect adjusted prices, corporate actions and filing-time fundamentals before estimating strategy returns.",
           "zh": "接入复权价格、公司行动和按披露时间匹配的基本面，再估计策略收益。"
+        }
+      ]
+    },
+    {
+      "id": "INV-008",
+      "slug": "next-research-tests",
+      "title": {
+        "en": "The next research tests",
+        "zh": "下一轮研究检验"
+      },
+      "summary": {
+        "en": "Historical identity checks come first. Exit conditions and accounting determine which larger tests are ready.",
+        "zh": "先核对历史身份。退出条件与组合记账决定后续检验能走到哪一步。"
+      },
+      "question": {
+        "en": "Which next experiment can materially change our conclusions?",
+        "zh": "下一项实验能改变哪些现有判断？"
+      },
+      "conclusion": {
+        "en": "Prioritise a reproducible historical cohort and stress-liquidity comparison before a broad return claim.",
+        "zh": "优先完成可复现的历史名单和压力流动性对照，再扩大收益结论。"
+      },
+      "markets": [
+        "US",
+        "A-share",
+        "HK"
+      ],
+      "topics": [
+        "liquidity",
+        "size",
+        "trading_costs"
+      ],
+      "stage": "methods",
+      "updated": "2026-11-27",
+      "claimIds": [
+        "MC-C03",
+        "MC-C05"
+      ],
+      "literatureIds": [
+        "LIT-005",
+        "LIT-006",
+        "LIT-007",
+        "LIT-008",
+        "LIT-009",
+        "LIT-010"
+      ],
+      "sourceIds": [
+        "SRC-BMLL-FOLLOWUP",
+        "SRC-SEC-API",
+        "SRC-PAPER-006",
+        "SRC-PAPER-007",
+        "SRC-PAPER-008",
+        "SRC-PAPER-009",
+        "SRC-PAPER-010",
+        "SRC-BMLL-COVERAGE"
+      ],
+      "sections": [
+        {
+          "id": "identity",
+          "title": {
+            "en": "First, retain the stocks that disappear",
+            "zh": "先保留后来消失的股票"
+          },
+          "paragraphs": [
+            {
+              "en": "Historical eligibility is the first gate for the US study. The bounded private audit retains missing, inactive and ambiguous matches across explicit dates. Quote availability can change within a fixed candidate cohort.",
+              "zh": "美股研究先核对历史资格。有限范围的私有审计按日期保留未匹配、失效与歧义记录。固定候选名单中，报价可用性也会变化。"
+            },
+            {
+              "en": "Next, reconcile listing identifiers, corporate actions and delisting treatment. Publish exclusions and the denominator before interpreting spread differences. The cohort is retrospective and is not certified as a historical common-stock universe.",
+              "zh": "接下来核对上市标识、公司行动和退市处理。在解释价差差异前，公开排除规则与分母。现有名单属于回顾性候选，尚未认证为历史普通股股票池。"
+            }
+          ]
+        },
+        {
+          "id": "exit",
+          "title": {
+            "en": "Then test the deterioration of exit conditions",
+            "zh": "再检验卖出条件怎样恶化"
+          },
+          "paragraphs": [
+            {
+              "en": "Form size/activity cells before each episode. Compare fresh-quote spreads and displayed bid dollars on common time windows, report missing time, and retain exits from the cohort. Use stock-level and date-level dependence when estimating uncertainty.",
+              "zh": "每个事件前按市值与活跃程度分组，在相同窗口比较新鲜报价价差和买盘金额，报告缺失时间，并保留退出名单的证券。估计不确定性时考虑同一股票及同一天观测的相关性。"
+            },
+            {
+              "en": "A rise in spread accompanied by falling bid dollars is a diagnostic of worse displayed conditions. Forced-selling attribution also needs independent financing or redemption observations. NBBO supports the diagnostic but cannot reconstruct a full order book or guaranteed fills.",
+              "zh": "价差上升且买盘金额下降，可以诊断可见交易条件变差。归因于被动卖出还需要独立的融资或赎回观测。NBBO 支持这项诊断，无法还原完整订单簿或保证成交。"
+            }
+          ]
+        },
+        {
+          "id": "quality",
+          "title": {
+            "en": "Distinguish small operating businesses",
+            "zh": "区分小公司的经营状况"
+          },
+          "paragraphs": [
+            {
+              "en": "Within matched size/activity groups, compare cash-generating firms with loss-making or heavily diluting firms. Preserve filing publication times and historical shares. A current financial snapshot cannot supply point-in-time classifications.",
+              "zh": "在匹配市值与活跃程度后，比较有经营现金流的公司与亏损或频繁摊薄股本的公司。保存财报公布时间和历史股数，当前财务快照无法直接提供当时可见的分类。"
+            }
+          ]
+        },
+        {
+          "id": "turnover",
+          "title": {
+            "en": "Measure what a holding buffer actually changes",
+            "zh": "测量持仓缓冲实际改变了什么"
+          },
+          "paragraphs": [
+            {
+              "en": "Connect the rank-buffer prototype to a cash/share ledger. Compare realised turnover, delayed sales and net returns under the same cost assumptions. The existing membership-replacement result alone cannot establish a better strategy.",
+              "zh": "把排名缓冲原型接入现金与股数账户，在相同成本假设下比较实际换手、延迟卖出和净收益。已有名单替换结果尚不足以判断策略更好。"
+            }
+          ]
+        },
+        {
+          "id": "comparison",
+          "title": {
+            "en": "Make cross-market comparisons after local validation",
+            "zh": "各市场验证后再做跨市场比较"
+          },
+          "paragraphs": [
+            {
+              "en": "Use within-market ranks, common trading-activity definitions and explicitly dated samples. Report China A-share price-limit and settlement constraints separately from US quote diagnostics. Prioritise reproducible episode comparisons before pooling returns across markets.",
+              "zh": "使用市场内排名和相同交易活跃度定义，明确样本日期。中国 A 股涨跌停及交收约束与美股报价诊断分别记录。先完成可复现的事件比较，再考虑跨市场汇总收益。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "en": "This is an executable research agenda, not a completed causal study or a new strategy backtest. Provider-derived security observations remain private.",
+          "zh": "本章列出研究步骤，尚未完成因果研究或新策略回测。供应商逐证券观测继续保留在私有数据目录。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Finish historical identity reconciliation and register a fresh-quote stress comparison on a separate episode.",
+          "zh": "完成历史身份核对，在另一段事件上预先确定新鲜报价压力对照。"
         }
       ]
     }
@@ -1156,6 +1330,218 @@
         ],
         "reviewedOn": "2026-11-27"
       }
+    },
+    {
+      "id": "LIT-006",
+      "title": "Micro-Cap Crowding and Liquidity Crunch in China Quant Funds",
+      "authors": [
+        "Zhen Wei",
+        "Cheng Lyu"
+      ],
+      "year": 2024,
+      "url": "https://www.msci.com/research-and-insights/quick-take/micro-cap-crowding-and-liquidity-crunch-in-china-quant-funds",
+      "version": "MSCI Quick Take, March 6, 2024; complete web article reviewed.",
+      "stage": "author_summary",
+      "summary": {
+        "en": "MSCI examines crowding and size exposure using lagged holdings and a worst-performing fund sample. Selection by realised losses limits generalisation.",
+        "zh": "MSCI 用滞后持仓分析拥挤和规模暴露。按事后亏损选择的基金样本限制了结论适用范围。"
+      },
+      "question": {
+        "en": "Would a sample fixed before the decline show the same exposure?",
+        "zh": "下跌前固定基金样本，还会看到相同暴露吗？"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "liquidity",
+        "drawdown"
+      ],
+      "investigationIds": [
+        "INV-006",
+        "INV-008"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-006"
+      ]
+    },
+    {
+      "id": "LIT-007",
+      "title": "本轮小微盘股回撤期间，各类投资者的持仓如何变化？",
+      "authors": [
+        "冯佳睿",
+        "黄雨薇"
+      ],
+      "year": 2024,
+      "url": "https://www.htsec.com/jfimg/colimg/upload/20240301/1709279682731080303.pdf",
+      "version": "Haitong Securities, February 27, 2024; 17 PDF pages.",
+      "stage": "fulltext",
+      "summary": {
+        "en": "The report revises transaction-based investor classification to account for algorithmic order splitting. Its estimated flows depend on that classification.",
+        "zh": "报告考虑算法拆单，修订逐笔成交中的投资者分类。估计资金流依赖这套分类假设。"
+      },
+      "question": {
+        "en": "How sensitive is inferred institutional selling to order classification?",
+        "zh": "推断出的机构卖出对订单分类有多敏感？"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "liquidity",
+        "drawdown"
+      ],
+      "investigationIds": [
+        "INV-006",
+        "INV-008"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-007"
+      ],
+      "fulltext": {
+        "edition": "Haitong Securities, February 27, 2024; 17 PDF pages.",
+        "pdfUrl": "https://www.htsec.com/jfimg/colimg/upload/20240301/1709279682731080303.pdf",
+        "sha256": "dea756375eae230cf14d23cbbbd56d51bd59e2e2e6296b4e0531194ac63c3dff",
+        "reviewedOn": "2026-11-27",
+        "sections": [
+          {
+            "title": {
+              "en": "Classification and scope · pp. 6–9",
+              "zh": "分类与样本 · 第6至9页"
+            },
+            "paragraphs": [
+              {
+                "en": "The report compares three different small-stock universes. It combines order size with round-lot tendencies to infer investor type, without account identities.",
+                "zh": "报告比较三种小盘股票池，以订单金额和股数整齐程度推断投资者类别，缺少账户身份。"
+              }
+            ]
+          },
+          {
+            "title": {
+              "en": "Flows and capacity · pp. 10–13",
+              "zh": "资金流与容量 · 第10至13页"
+            },
+            "paragraphs": [
+              {
+                "en": "Its holdings-change measure is estimated inflow minus outflow. Capacity is a participation/turnover scenario. Both require further validation before use in an executable portfolio.",
+                "zh": "持仓金额变化按估计流入减流出计算，容量来自成交参与率与换手假设。用于可执行组合前，两者都需进一步验证。"
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          {
+            "en": "No independent replication. Algorithmic splitting can affect classification; estimated net flow does not identify redemptions or financing constraints.",
+            "zh": "尚未独立复现。算法拆单可能影响分类，估计净流量无法识别赎回或融资约束。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "LIT-008",
+      "title": "Quantitative Trading and Stock Price Crash Risk: Evidence from China",
+      "authors": [
+        "Yuxin Kang",
+        "Xingyi Li",
+        "Zhongfei Li"
+      ],
+      "year": 2025,
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5475346",
+      "version": "SSRN posting September 12, 2025, 11 pages; abstract only.",
+      "stage": "abstract",
+      "summary": {
+        "en": "The abstract reports a positive association between quantitative-trading exposure and future crash risk in 2009–2023 A-share data. The estimation and identification remain unread.",
+        "zh": "摘要报告2009至2023年 A 股量化交易暴露与未来崩盘风险正相关。估计方法和识别设计仍待全文核对。"
+      },
+      "question": {
+        "en": "How does its trading exposure differ from holdings-based measures?",
+        "zh": "交易暴露与持仓口径有什么差别？"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "liquidity",
+        "drawdown"
+      ],
+      "investigationIds": [
+        "INV-006",
+        "INV-008"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-008"
+      ]
+    },
+    {
+      "id": "LIT-009",
+      "title": "Quantitative Investment and Stock Price Crash Risk in China: Perspective of Quantitative Mutual Funds Holdings",
+      "authors": [
+        "Hongyin Li",
+        "Tiancheng Li",
+        "Zhichao Zhang"
+      ],
+      "year": 2023,
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4649062",
+      "version": "SSRN November 30, 2023, 32-page version; abstract reviewed, not the 45-page July 2024 revision.",
+      "stage": "abstract",
+      "summary": {
+        "en": "The abstract associates quantitative mutual-fund holdings with lower crash risk. This provides a competing hypothesis for the broader research agenda.",
+        "zh": "摘要报告量化公募持仓与较低崩盘风险相关，可作为后续研究的另一种假说。"
+      },
+      "question": {
+        "en": "Do different samples and exposure definitions explain the opposite association?",
+        "zh": "样本与暴露定义差异能否解释相反的关联方向？"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "liquidity",
+        "drawdown"
+      ],
+      "investigationIds": [
+        "INV-006",
+        "INV-008"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-009"
+      ]
+    },
+    {
+      "id": "LIT-010",
+      "title": "Leverage-Induced Fire Sales and Stock Market Crashes",
+      "authors": [
+        "Jiangze Bian",
+        "Zhiguo He",
+        "Kelly Shue",
+        "Hao Zhou"
+      ],
+      "year": 2018,
+      "url": "https://bfi.uchicago.edu/wp-content/uploads/BFI-WP-2019-28-1.pdf",
+      "version": "Manuscript dated September 6, 2018; BFI Working Paper 2019-28, 72 PDF pages; abstract reviewed.",
+      "stage": "abstract",
+      "summary": {
+        "en": "The abstract uses account-level evidence from the 2015 China crash to study selling near leverage limits. It suggests a financing mechanism to test with suitable data.",
+        "zh": "摘要用2015年中国股灾的账户数据研究接近杠杆上限时的卖出，为后续融资机制检验提供参考。"
+      },
+      "question": {
+        "en": "Can financing constraints be observed independently of price declines?",
+        "zh": "能否在价格下跌之外独立观察融资约束？"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "liquidity",
+        "drawdown"
+      ],
+      "investigationIds": [
+        "INV-006",
+        "INV-008"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-010"
+      ]
     }
   ],
   "claims": [
@@ -1664,6 +2050,104 @@
         "zh": "已核对 API 能力，尚未构成完整的历史基本面面板。"
       },
       "kind": "official"
+    },
+    {
+      "id": "SRC-PAPER-006",
+      "title": {
+        "en": "Micro-Cap Crowding and Liquidity Crunch in China Quant Funds",
+        "zh": "Micro-Cap Crowding and Liquidity Crunch in China Quant Funds"
+      },
+      "url": "https://www.msci.com/research-and-insights/quick-take/micro-cap-crowding-and-liquidity-crunch-in-china-quant-funds",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "MSCI Quick Take, March 6, 2024; complete web article reviewed.",
+        "zh": "阅读范围见文献版本和阅读阶段。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-007",
+      "title": {
+        "en": "本轮小微盘股回撤期间，各类投资者的持仓如何变化？",
+        "zh": "本轮小微盘股回撤期间，各类投资者的持仓如何变化？"
+      },
+      "url": "https://www.htsec.com/jfimg/colimg/upload/20240301/1709279682731080303.pdf",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Haitong Securities, February 27, 2024; 17 PDF pages.",
+        "zh": "阅读范围见文献版本和阅读阶段。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-008",
+      "title": {
+        "en": "Quantitative Trading and Stock Price Crash Risk: Evidence from China",
+        "zh": "Quantitative Trading and Stock Price Crash Risk: Evidence from China"
+      },
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5475346",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "SSRN posting September 12, 2025, 11 pages; abstract only.",
+        "zh": "阅读范围见文献版本和阅读阶段。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-009",
+      "title": {
+        "en": "Quantitative Investment and Stock Price Crash Risk in China: Perspective of Quantitative Mutual Funds Holdings",
+        "zh": "Quantitative Investment and Stock Price Crash Risk in China: Perspective of Quantitative Mutual Funds Holdings"
+      },
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4649062",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "SSRN November 30, 2023, 32-page version; abstract reviewed, not the 45-page July 2024 revision.",
+        "zh": "阅读范围见文献版本和阅读阶段。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-010",
+      "title": {
+        "en": "Leverage-Induced Fire Sales and Stock Market Crashes",
+        "zh": "Leverage-Induced Fire Sales and Stock Market Crashes"
+      },
+      "url": "https://bfi.uchicago.edu/wp-content/uploads/BFI-WP-2019-28-1.pdf",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Manuscript dated September 6, 2018; BFI Working Paper 2019-28, 72 PDF pages; abstract reviewed.",
+        "zh": "阅读范围见文献版本和阅读阶段。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-CSRC-20240228-DMA",
+      "title": {
+        "en": "CSRC response on DMA business, February 28, 2024",
+        "zh": "证监会就 DMA 业务答记者问，2024年2月28日"
+      },
+      "url": "https://www.csrc.gov.cn/csrc/c100028/c7465086/content.shtml",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Historical regulatory statement; the quoted turnover share concerns the period after the Lunar New Year reopening.",
+        "zh": "历史监管说明，所列成交占比针对春节后开市以来。"
+      },
+      "kind": "official"
+    },
+    {
+      "id": "SRC-BMLL-COVERAGE",
+      "title": {
+        "en": "Historical BMLL cohort coverage audit",
+        "zh": "BMLL 历史候选覆盖审计"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/47c7faf8712235a7dc11687569a9c7da5abf3ae5/docs/research/bmll-coverage-audit.md",
+      "reviewedOn": "2026-11-27",
+      "kind": "methods",
+      "scope": {
+        "en": "Public method and code only. Complete-cohort private observations remain outside this publication.",
+        "zh": "公开方法与代码。完整候选名单的私有观测不在本网站发布。"
+      }
     }
   ],
   "history": [
@@ -1838,6 +2322,26 @@
       "sourceIds": [
         "SRC-BMLL-FOLLOWUP"
       ]
+    },
+    {
+      "id": "H-COVERAGE-LITERATURE-20261127",
+      "date": "2026-11-27",
+      "title": {
+        "en": "Crash literature and historical coverage audit",
+        "zh": "补充崩盘文献与历史覆盖审计"
+      },
+      "description": {
+        "en": "Added five reading records, including a full-text report and opposing abstract-level findings. Added a prioritised research chapter; no replication or provider observations are published.",
+        "zh": "新增五条阅读记录，含一份全文报告和方向不同的摘要结论。新增按优先级安排的研究章节，尚未完成文献复现，也未公开供应商观测。"
+      },
+      "type": "research",
+      "relatedIds": [
+        "INV-006",
+        "INV-008"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-007"
+      ]
     }
   ],
   "crosschecks": [
@@ -1943,6 +2447,116 @@
       "reason": {
         "en": "The membership prototype tests a rank buffer. It has no realised returns or execution costs and does not replicate the paper’s anomaly portfolio tests.",
         "zh": "名单原型检查排名缓冲规则。尚未接入实际收益与执行成本，论文中的异象组合检验仍待复现。"
+      }
+    },
+    {
+      "id": "X-006-006",
+      "literatureId": "LIT-006",
+      "investigationId": "INV-006",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
+        "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
+      }
+    },
+    {
+      "id": "X-006-008",
+      "literatureId": "LIT-006",
+      "investigationId": "INV-008",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
+        "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
+      }
+    },
+    {
+      "id": "X-007-006",
+      "literatureId": "LIT-007",
+      "investigationId": "INV-006",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
+        "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
+      }
+    },
+    {
+      "id": "X-007-008",
+      "literatureId": "LIT-007",
+      "investigationId": "INV-008",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
+        "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
+      }
+    },
+    {
+      "id": "X-008-006",
+      "literatureId": "LIT-008",
+      "investigationId": "INV-006",
+      "claimIds": [],
+      "status": "not_comparable",
+      "reason": {
+        "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
+        "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
+      }
+    },
+    {
+      "id": "X-008-008",
+      "literatureId": "LIT-008",
+      "investigationId": "INV-008",
+      "claimIds": [],
+      "status": "not_comparable",
+      "reason": {
+        "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
+        "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
+      }
+    },
+    {
+      "id": "X-009-006",
+      "literatureId": "LIT-009",
+      "investigationId": "INV-006",
+      "claimIds": [],
+      "status": "not_comparable",
+      "reason": {
+        "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
+        "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
+      }
+    },
+    {
+      "id": "X-009-008",
+      "literatureId": "LIT-009",
+      "investigationId": "INV-008",
+      "claimIds": [],
+      "status": "not_comparable",
+      "reason": {
+        "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
+        "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
+      }
+    },
+    {
+      "id": "X-010-006",
+      "literatureId": "LIT-010",
+      "investigationId": "INV-006",
+      "claimIds": [],
+      "status": "not_comparable",
+      "reason": {
+        "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
+        "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
+      }
+    },
+    {
+      "id": "X-010-008",
+      "literatureId": "LIT-010",
+      "investigationId": "INV-008",
+      "claimIds": [],
+      "status": "not_comparable",
+      "reason": {
+        "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
+        "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
       }
     }
   ]

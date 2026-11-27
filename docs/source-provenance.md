@@ -14,7 +14,7 @@ Four previously public aggregate JSON files are vendored byte for byte under `pu
 
 Liquidity measures median lagged ADV20 mean in USD, not spread or executable capacity. Historical values pool security-days. The 2026 common window excludes the US and ends in April. Japanese historical share coverage is incomplete and exploratory; mainland coverage is Shanghai/Shenzhen. Common dates do not certify equal universes or point-in-time eligibility. The source snapshots keep additional market-specific dates and audit receipts available for inspection.
 
-The MC-C01–MC-C06 identities retain historical downside, low-turnover association, capacity, support-policy diagnosis, provider-query evidence and unrecovered runtime as separate claims. Mapping source stages into the smaller site vocabulary does not upgrade evidence: provider-query evidence maps to diagnostic; unrecovered runtime maps to unestablished. Three literature entries are now full-text reviewed at the exact identified edition; two retain their earlier reading stages. None is replicated. Full-text method comparisons for the three readings are marked not comparable to current aggregate evidence, not empirical support or conflict. No paper full text, raw vendor records, holdings or BMLL per-security observations are included.
+The MC-C01–MC-C06 identities retain historical downside, low-turnover association, capacity, support-policy diagnosis, provider-query evidence and unrecovered runtime as separate claims. Mapping source stages into the smaller site vocabulary does not upgrade evidence: provider-query evidence maps to diagnostic; unrecovered runtime maps to unestablished. Four literature entries are now full-text reviewed at the exact identified edition; six are abstract or author-summary readings. None is replicated. Full-text method comparisons for the three readings are marked not comparable to current aggregate evidence, not empirical support or conflict. No paper full text, raw vendor records, holdings or BMLL per-security observations are included.
 
 ## 来源说明
 
@@ -26,7 +26,7 @@ The MC-C01–MC-C06 identities retain historical downside, low-turnover associat
 
 流动性投影按请求起止日期配对绝对与相对分组，保留共同日期、所含市场、原中位数、观测数及分组股票数。历史分组的股票数不能相加当作总股票池，因为同一股票可能跨期进入不同分组。成交额、价差与可执行容量分别解释。日股、A股及2026年共同区间的限制在正文和图表保留。
 
-六个旧结论编号继续区分风险、关联、容量、诊断、查询与运行身份。三篇文献已全文阅读，两篇保留原阅读阶段，均未复现。三篇全文的方法对照记为当前汇总无法比较，不记为实证支持或冲突。不发布论文全文、供应商原始记录、持仓或BMLL逐证券数据。
+六个旧结论编号继续区分风险、关联、容量、诊断、查询与运行身份。四篇文献已全文阅读，六篇为摘要或作者概要阶段，均未复现。三篇全文的方法对照记为当前汇总无法比较，不记为实证支持或冲突。不发布论文全文、供应商原始记录、持仓或BMLL逐证券数据。
 
 
 ## Research expansion, 2026-11-27
@@ -56,3 +56,7 @@ Exit scenarios pool stock–formation observations, with repeated monthly stock 
 研究档案登记两个原项目中的44份相关公开资料，每份保留固定版本、来源路径与SHA-256；八组互动图表投影584行聚合数据。每次构建校验投影指纹；指定原仓库路径后还可逐一核对来源文件与每个投影值。Observatory的历史风险面板与合成演示分开，演示仅用于体验界面。审阅日期只取明确的审阅字段，不以生成日期代替。
 
 退出情景按股票—形成期汇总，同一股票可按月重复出现；未覆盖比例指剩余预算或名义金额，不能解释成未覆盖证券数量的比例。图表同时保留原美元市值分组。档案方便查阅既有相关研究，不构成对原组合运行的重新认证。
+
+## Crash literature expansion
+
+The November 27 coverage/literature expansion adds five records (LIT-006 through LIT-010), a privately retained Haitong PDF identity and a research-agenda chapter. The BMLL audit checks fixed-cohort availability; no new vendor observations are republished. The historical initial-edition counts above describe that earlier release.
