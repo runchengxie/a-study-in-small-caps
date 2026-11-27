@@ -43,7 +43,7 @@ export function mount(root, o) {
   var VS = [
     "attribute vec2 aXZ;attribute float aRnd;attribute float aSeed;",
     "uniform float uHover;uniform vec2 uPointer;uniform float uAspect;uniform float uTime;uniform vec3 uMouse;uniform float uPx;uniform mat4 uView;uniform mat4 uProj;",
-    "varying float vH;varying float vR;varying float vFade;varying float vColumn;varying float vDotRatio;varying float vBarRatio;",
+    "varying float vH;varying float vR;varying float vFade;varying float vColumn;varying float vDotRatio;varying float vBarRatio;varying float vDirection;",
     "float ss(float a,float b,float x){float t=clamp((x-a)/(b-a),0.0,1.0);return t*t*(3.0-2.0*t);}",
     // A slow rightward phase shift reuses the existing four wave terms.
     "float terra(vec2 p){p.x-=uTime*1.2;float h=0.0;",
@@ -61,22 +61,25 @@ export function mount(root, o) {
     "vH=p.y;vR=aRnd;vec4 mv=uView*vec4(p,1.0);",
     "vFade=ss(-6.0,-30.0,mv.z);",
     "gl_Position=uProj*mv;",
-    "float size=(1.1+aRnd*2.2+push*2.0)*uPx*(140.0/-mv.z);",
+    "float size=min((1.1+aRnd*2.2+push*2.0)*uPx*(140.0/-mv.z)*1.3,6.0*uPx);",
     // A sparse screen-space patch morphs existing point sprites, with no extra draw call.
     "vec2 delta=(gl_Position.xy/gl_Position.w-uPointer)*vec2(uAspect,1.0);",
     "vColumn=uHover*ss(0.35,0.0,length(delta))*step(0.86,aRnd);",
-    "float lift=vColumn*min(18.0*uPx,size*6.0);gl_PointSize=size+lift;vDotRatio=size/gl_PointSize;vBarRatio=min(size,2.5*uPx)/gl_PointSize;",
+    "float lift=vColumn*min(18.0*uPx,size*6.0);gl_PointSize=size+lift;vDotRatio=min(size*0.32,1.0*uPx)/gl_PointSize;vBarRatio=min(3.0*uPx,gl_PointSize*0.24)/gl_PointSize;vDirection=step(0.0,p.y+10.0-valley*22.0);",
     // fully faded points add nothing; move them off screen so they cost no fill
     "if(vFade<=0.0)gl_Position=vec4(2.0,2.0,2.0,1.0);}"
   ].join("\n");
   var FS = [
-    "precision mediump float;uniform vec3 uDeep;uniform vec3 uMid;uniform vec3 uCrest;",
-    "varying float vH;varying float vR;varying float vFade;varying float vColumn;varying float vDotRatio;varying float vBarRatio;",
+    "precision mediump float;uniform vec3 uDeep;uniform vec3 uMid;uniform vec3 uCrest;uniform vec3 uUp;uniform vec3 uDown;",
+    "varying float vH;varying float vR;varying float vFade;varying float vColumn;varying float vDotRatio;varying float vBarRatio;varying float vDirection;",
     "float ss(float a,float b,float x){float t=clamp((x-a)/(b-a),0.0,1.0);return t*t*(3.0-2.0*t);}",
-    "void main(){vec2 uv=gl_PointCoord-0.5;float dotAlpha=ss(0.5,0.05,length(uv)/vDotRatio);float barAlpha=(1.0-smoothstep(0.35*vBarRatio,0.5*vBarRatio,abs(uv.x)))*(1.0-smoothstep(0.44,0.5,abs(uv.y)));float a=mix(dotAlpha,barAlpha,vColumn);",
+    // The baseline is a hairline; local bodies and wicks share the same point sprite.
+    "void main(){vec2 uv=gl_PointCoord-0.5;float wick=(1.0-smoothstep(0.35*vDotRatio,0.5*vDotRatio,abs(uv.x)))*(1.0-smoothstep(0.44,0.5,abs(uv.y)));",
+    "float body=(1.0-smoothstep(0.35*vBarRatio,0.5*vBarRatio,abs(uv.x)))*(1.0-smoothstep(0.20,0.25,abs(uv.y-(vDirection-0.5)*0.12)));float a=max(wick,body*vColumn);",
     "float t=clamp((vH+14.0)/30.0,0.0,1.0);",
     "vec3 col=mix(uDeep,uMid,smoothstep(0.0,0.6,t));",
     "col=mix(col,uCrest,smoothstep(0.55,1.0,t)*step(0.55,vR));",
+    "col=mix(col,mix(uDown,uUp,vDirection),vColumn*0.8);",
     "gl_FragColor=vec4(col,a*(0.4+0.6*vR)*vFade);}"
   ].join("\n");
 
@@ -108,7 +111,7 @@ export function mount(root, o) {
     gl.enableVertexAttribArray(a1); gl.vertexAttribPointer(a1, 2, gl.FLOAT, false, 16, 0);
     gl.enableVertexAttribArray(a2); gl.vertexAttribPointer(a2, 1, gl.FLOAT, false, 16, 8);
     gl.enableVertexAttribArray(a3); gl.vertexAttribPointer(a3, 1, gl.FLOAT, false, 16, 12);
-    ["uHover", "uPointer", "uAspect", "uTime", "uMouse", "uPx", "uView", "uProj", "uDeep", "uMid", "uCrest"].forEach(function (k) { u[k] = gl.getUniformLocation(prog, k); });
+    ["uHover", "uPointer", "uAspect", "uTime", "uMouse", "uPx", "uView", "uProj", "uDeep", "uMid", "uCrest", "uUp", "uDown"].forEach(function (k) { u[k] = gl.getUniformLocation(prog, k); });
     gl.disable(gl.DEPTH_TEST);
     gl.enable(gl.BLEND); gl.blendEquation(gl.FUNC_ADD); gl.blendFunc(gl.SRC_ALPHA, gl.ONE); // three.js AdditiveBlending
     return true;
@@ -159,6 +162,8 @@ export function mount(root, o) {
     gl.uniform3fv(u.uDeep, rgb(opts.deep, "003d28"));
     gl.uniform3fv(u.uMid, rgb(opts.mid, "1a7a4c"));
     gl.uniform3fv(u.uCrest, rgb(opts.crest, "e6ff55"));
+    gl.uniform3fv(u.uUp, rgb(opts.up, "758c70"));
+    gl.uniform3fv(u.uDown, rgb(opts.down, "a76c5c"));
     gl.blendFunc(gl.SRC_ALPHA, opts.blend === "alpha" ? gl.ONE_MINUS_SRC_ALPHA : gl.ONE);
     gl.drawArrays(gl.POINTS, 0, count);
   }
