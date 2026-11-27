@@ -44,7 +44,8 @@ export function mount(root, o) {
     "uniform float uTime;uniform vec3 uMouse;uniform float uPx;uniform mat4 uView;uniform mat4 uProj;",
     "varying float vH;varying float vR;varying float vFade;",
     "float ss(float a,float b,float x){float t=clamp((x-a)/(b-a),0.0,1.0);return t*t*(3.0-2.0*t);}",
-    "float terra(vec2 p){float h=0.0;",
+    // A slow rightward phase shift reuses the existing four wave terms.
+    "float terra(vec2 p){p.x-=uTime*1.2;float h=0.0;",
     "h+=sin(p.x*0.045+sin(p.y*0.03)*1.7)*4.0;",
     "h+=sin(p.y*0.05+sin(p.x*0.021)*2.3)*3.2;",
     "h+=sin((p.x+p.y)*0.09+uTime*0.35)*1.1;",
@@ -150,6 +151,7 @@ export function mount(root, o) {
     gl.uniform3fv(u.uDeep, rgb(opts.deep, "003d28"));
     gl.uniform3fv(u.uMid, rgb(opts.mid, "1a7a4c"));
     gl.uniform3fv(u.uCrest, rgb(opts.crest, "e6ff55"));
+    gl.blendFunc(gl.SRC_ALPHA, opts.blend === "alpha" ? gl.ONE_MINUS_SRC_ALPHA : gl.ONE);
     gl.drawArrays(gl.POINTS, 0, count);
   }
 

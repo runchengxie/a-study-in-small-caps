@@ -1,4 +1,5 @@
 export interface WaveOptions {
+ background: string; deep: string; mid: string; crest: string; accent: string; blend: 'additive' | 'alpha';
  title1: string; title2: string; caption: string; next: string;
  labels: [string, string, string, string];
 }
