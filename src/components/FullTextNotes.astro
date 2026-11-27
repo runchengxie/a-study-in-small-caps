@@ -1,0 +1,8 @@
+---
+import Text from './Text.astro';
+import research from '../data/research.json';
+type Local = { en: string; zh?: string };
+type Reading = { reviewedOn: string; edition: string; pdfUrl: string; sha256: string; sections: { title: Local; paragraphs: Local[] }[]; limitations: Local[] };
+const papers = research.literature as (typeof research.literature[number] & { fulltext?: Reading })[];
+---
+<section class="section" id="reading-notes"><h2><Text k="readingNotes"/></h2>{papers.filter(paper => paper.fulltext).map(paper => { const reading = paper.fulltext!; return <article class="prose reading-note" id={`reading-${paper.id}`}><p class="eyebrow">{paper.id} · <Text k={paper.stage}/></p><h3>{paper.title}</h3><p><Text k="reviewedEdition"/>: {reading.edition}<br/><Text k="reviewedOn"/>: <time datetime={reading.reviewedOn}>{reading.reviewedOn}</time></p>{reading.sections.map(section => <section><h4><Text value={section.title}/></h4>{section.paragraphs.map(paragraph => <p><Text value={paragraph}/></p>)}</section>)}<h4><Text k="readingLimits"/></h4><ul>{reading.limitations.map(limitation => <li><Text value={limitation}/></li>)}</ul><details><summary><Text k="sourceDetails"/></summary><p><a href={reading.pdfUrl}><Text k="openReviewedText"/> ↗</a></p><p class="small">SHA-256: <code style="overflow-wrap:anywhere">{reading.sha256}</code></p></details></article>; })}</section>

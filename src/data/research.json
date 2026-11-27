@@ -296,8 +296,8 @@
           },
           "paragraphs": [
             {
-              "en": "The available common periods include a shared 2025 snapshot and historical windows. The 2026 common period includes Hong Kong, mainland A-shares and Japan, ending in April; it does not contain US observations. The source retains different latest snapshots by market, which we do not combine into a same-day comparison.",
-              "zh": "可用共同区间包括2025年的同日快照及若干历史窗口。2026年共同区间包括港股、内地A股与日股，止于四月，不含美股观测。来源还保留各市场日期不同的最新快照，本页未把它们拼成同日比较。"
+              "en": "The available common periods include a shared 2025 snapshot and historical windows. The 2026 common period includes Hong Kong, China equities, China A-shares and Japan, ending in April; it does not contain US observations. The source retains different latest snapshots by market, which we do not combine into a same-day comparison.",
+              "zh": "可用共同区间包括2025年的同日快照及若干历史窗口。2026年共同区间包括中国香港港股、中国 A 股与日股，止于四月，不含美股观测。来源还保留各市场日期不同的最新快照，本页未把它们拼成同日比较。"
             },
             {
               "en": "Mainland coverage is Shanghai and Shenzhen, not every Chinese exchange. Japanese historical shares are incomplete and have not been certified against historical revisions. Even on common dates, listing coverage and valuation definitions differ. Use the chart to frame questions, not rank whole national markets as permanently liquid or illiquid.",
@@ -317,8 +317,8 @@
               "zh": "参与率预算假定投资者使用市场成交的一部分，不能证明可接受价格上存在对手方，也不能证明排队订单成交。价差、展示深度、排队位置、订单规则和结算都会加上约束。静态深度成本与美股NBBO价差也是不同指标。"
             },
             {
-              "en": "Literature on illiquidity and trading costs offers testable ideas, not portable cost constants. This first release has not reviewed those papers in full or replicated their methods. A later public microstructure chapter needs its own reviewed aggregate release; no BMLL security-level observations are included here.",
-              "zh": "非流动性与交易成本文献提供可检验的思路，不提供可以直接搬用的成本常数。首版尚未全文审阅这些论文，也未复现其方法。后续公共微观结构章节需要独立审查的聚合发布；本站不包含BMLL逐证券观测。"
+              "en": "The full-text readings of Amihud and Novy-Marx–Velikov now distinguish a return/volume proxy, fitted effective spreads and holding buffers. Their US results do not supply local cost constants. The quality-control paper remains an author-summary lead. No BMLL security-level observations are published.",
+              "zh": "本次全文阅读区分了Amihud的收益成交额代理、Novy-Marx与Velikov的有效价差估计及持有缓冲。美股结果不能提供本地成本常数。质量控制论文仍停留在作者摘要层面。本站不发布BMLL逐证券观测。"
             }
           ]
         }
@@ -333,6 +333,202 @@
         {
           "en": "Specify capital, order rules and account treatment, then compare calibrated fills on matched dates.",
           "zh": "固定资金、订单规则与账户处理，再在对齐日期比较经过校准的成交。"
+        }
+      ]
+    },
+    {
+      "id": "INV-004",
+      "slug": "what-the-papers-actually-test",
+      "title": {
+        "en": "What do the full papers actually test?",
+        "zh": "全文究竟检验了什么？"
+      },
+      "summary": {
+        "en": "Three full readings sharpen the comparison and expose missing inputs.",
+        "zh": "三篇全文让比较更具体，也指出缺少哪些输入。"
+      },
+      "question": {
+        "en": "Which literature mechanisms can our retained evidence test?",
+        "zh": "保留的证据能检验哪些文献机制？"
+      },
+      "conclusion": {
+        "en": "Shell exclusions, illiquidity proxies and trading buffers require different data. Our present aggregates cannot identify these mechanisms.",
+        "zh": "排除壳股、非流动性代理与持有缓冲各需不同数据。现有汇总无法识别这些机制。"
+      },
+      "markets": [
+        "A-share",
+        "US"
+      ],
+      "topics": [
+        "literature",
+        "shell_value",
+        "measurement",
+        "implementation"
+      ],
+      "stage": "methods",
+      "updated": "2026-11-27",
+      "claimIds": [
+        "MC-C01",
+        "MC-C02",
+        "MC-C03"
+      ],
+      "literatureIds": [
+        "LIT-003",
+        "LIT-004",
+        "LIT-005"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-003",
+        "SRC-PAPER-004",
+        "SRC-PAPER-005"
+      ],
+      "sections": [
+        {
+          "title": {
+            "en": "Read the actual edition",
+            "zh": "先辨认实际版本"
+          },
+          "paragraphs": [
+            {
+              "en": "Three papers have now been read in full. The literature records retain PDF hashes and page references. The China paper is the December 11, 2018 Wharton forthcoming manuscript; the cost study is the December 2014 NBER working paper. Results are attributed to those editions. Banz and the quality-control paper remain leads.",
+              "zh": "本次已完整阅读三篇论文，文献记录保留PDF哈希与页码。中国研究采用2018年12月11日Wharton待刊稿，成本研究采用2014年12月NBER工作论文。结论均对应实际阅读版本。Banz与质量控制论文仍是待深入阅读的线索。"
+            }
+          ],
+          "id": "section-1"
+        },
+        {
+          "title": {
+            "en": "Turn a comparison into a test",
+            "zh": "让对照变成检验"
+          },
+          "paragraphs": [
+            {
+              "en": "Our next tests must freeze input contracts first: historical eligibility and total shares for a tail exclusion; daily security returns and traded values for ILLIQ; holdings transitions and an order-cost policy for buffers. These are independent research plans, not completed replications. The literature cards give concise method and result notes.",
+              "zh": "后续检验先固定输入口径。尾部排除需要历史资格和总股数，ILLIQ需要逐证券日收益与成交额，持有缓冲需要持仓变动和订单成本规则。这些是独立研究计划，尚未完成复现。文献卡片提供简要方法与结果笔记。"
+            }
+          ],
+          "id": "section-2"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "A full reading upgrades reading status, not the stage of an empirical claim.",
+          "zh": "全文阅读提升阅读状态，不提升实证结论阶段。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Run matched protocols only after their required historical inputs are available.",
+          "zh": "取得所需历史输入后，再运行匹配方案。"
+        }
+      ]
+    },
+    {
+      "id": "INV-005",
+      "slug": "holding-period-and-hidden-losses",
+      "title": {
+        "en": "Which losses disappear in a yearly return?",
+        "zh": "年度收益掩盖了哪些损失？"
+      },
+      "summary": {
+        "en": "An independent calculation exposes holding-window losses, recovery waits and endpoint censoring.",
+        "zh": "独立计算展示持有窗口损失、恢复等待和期末删失。"
+      },
+      "question": {
+        "en": "How does changing the holding window change the historical risk description?",
+        "zh": "持有窗口改变后，历史风险如何变化？"
+      },
+      "conclusion": {
+        "en": "The frozen NAV spent 84.7% of observations below its running peak. A positive calendar year can contain a large, long-lived loss.",
+        "zh": "冻结净值有84.7%的观测低于此前峰值。盈利的自然年也可能包含深且持久的损失。"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "drawdown",
+        "recovery",
+        "holding_period",
+        "robustness"
+      ],
+      "stage": "diagnostic",
+      "updated": "2026-11-27",
+      "claimIds": [
+        "MC-C01",
+        "MC-C03"
+      ],
+      "literatureIds": [
+        "LIT-003",
+        "LIT-005"
+      ],
+      "sourceIds": [
+        "SRC-NAV",
+        "SRC-NAV-DIAG"
+      ],
+      "sections": [
+        {
+          "title": {
+            "en": "One frozen series, a new calculation",
+            "zh": "同一冻结序列，新增计算"
+          },
+          "paragraphs": [
+            {
+              "en": "We independently derive 2,837 consecutive ratios from 2,838 NAV levels dated January 5, 2015 to September 4, 2026. No first-day return is invented. The script checks positive finite levels and strictly increasing dates. Observation steps are not calendar days; a dated NAV does not certify a filled trade.",
+              "zh": "我们从2015年1月5日至2026年9月4日的2838个净值，独立计算2837个相邻比值，不补造首日收益。脚本检查净值为有限正数、日期严格递增。观测间隔不等于自然日，带日期的净值也不能证明真实成交。"
+            }
+          ],
+          "id": "section-1"
+        },
+        {
+          "title": {
+            "en": "A profitable year can contain a crisis",
+            "zh": "年度盈利也可能经历危机"
+          },
+          "paragraphs": [
+            {
+              "en": "The 2024 last-observation return is +31.71%, but the January 3 peak fell 37.94% by February 6 and recovered only on September 30, 179 observation steps later. In 2015 the largest peak-to-trough loss was 51.27%, from June 11 to July 7; recovery occurred on November 19, 107 steps after the peak.",
+              "zh": "2024年末相对上年末增长31.71%，但1月3日高点至2月6日下跌37.94%，直到9月30日才恢复，距高点179个观测间隔。2015年最大峰谷损失为51.27%，发生在6月11日至7月7日，11月19日恢复，距高点107个间隔。"
+            }
+          ],
+          "id": "section-2"
+        },
+        {
+          "title": {
+            "en": "Holding windows are overlapping historical observations",
+            "zh": "持有窗口是重叠的历史观察"
+          },
+          "paragraphs": [
+            {
+              "en": "Among 2,817 overlapping 21-step windows, 36.17% lost money and the worst lost 45.40%. Among 2,586 overlapping 252-step windows, 7.54% lost money and the worst lost 29.96%. These are empirical frequencies along one reconstructed path, not independent trials or probabilities for a new investor.",
+              "zh": "2817个重叠的21间隔窗口中，36.17%亏损，最差亏45.40%。2586个252间隔窗口中，7.54%亏损，最差亏29.96%。这些是单条重建路径上的历史频率，既非独立试验，也非新投资者的未来亏损概率。"
+            }
+          ],
+          "id": "section-3"
+        },
+        {
+          "title": {
+            "en": "Keep unfinished recoveries visible",
+            "zh": "保留尚未完成的恢复"
+          },
+          "paragraphs": [
+            {
+              "en": "At the final observation, the February 24, 2026 peak remained unrecovered after 133 steps; its trough on July 23 was 29.33% below the peak. The eventual recovery time is unknown. Implied daily extremes of −14.82% and +15.68% are properties of the supplied NAV, requiring account and universe reconciliation before any implementation claim.",
+              "zh": "期末时，2026年2月24日高点已过133个间隔仍未恢复，7月23日谷底较高点低29.33%。最终恢复时间未知。净值隐含的单日极值为−14.82%与15.68%，属于来源路径的特征；讨论实施前仍需核对账户与股票池。"
+            }
+          ],
+          "id": "section-4"
+        }
+      ],
+      "limitations": [
+        {
+          "en": "No transaction costs, risk-free series, benchmark, holdings or security-level accounting were added. Diagnostic return frequencies inherit all source reconstruction limitations.",
+          "zh": "本次未补充交易成本、无风险利率、基准、持仓或逐证券核算。诊断频率继承来源重建的全部限制。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Reconcile the dated extremes to raw-share and cash ledgers, then rerun the same diagnostics on a certified account path.",
+          "zh": "把极端日期与真实股份和现金账本对齐，再在通过核查的账户路径上重算。"
         }
       ]
     }
@@ -421,7 +617,7 @@
       "year": 2019,
       "doi": "10.1016/j.jfineco.2019.03.008",
       "url": "https://doi.org/10.1016/j.jfineco.2019.03.008",
-      "version": "Journal article metadata; full text not reviewed",
+      "version": "Wharton forthcoming manuscript, December 11, 2018; 56 PDF pages; printed pp. 1–55. Distinct from the 2019 JFE edition.",
       "markets": [
         "A-share"
       ],
@@ -430,10 +626,10 @@
         "shell_value",
         "institution"
       ],
-      "stage": "abstract",
+      "stage": "fulltext",
       "summary": {
-        "en": "Paper discusses shell-value contamination and excludes the smallest 30 percent for its factor construction in its historical sample.",
-        "zh": "已定位的出版方摘录讨论壳价值干扰，其历史因子构建排除最小30%。这不能自动解释改革后的机制。"
+        "en": "Full text read, with edition, page references, method and limitations recorded below. No replication has been completed.",
+        "zh": "已阅读所列版本全文，下列笔记记录页码、方法及限制。尚未完成复现。"
       },
       "question": {
         "en": "What changes when we exclude the smallest tail under matched accounting? Historical shell-value results do not establish current post-reform mechanisms or explain all microcap returns.",
@@ -445,7 +641,45 @@
       ],
       "sourceIds": [
         "SRC-PAPER-003"
-      ]
+      ],
+      "fulltext": {
+        "edition": "Wharton forthcoming manuscript, December 11, 2018; 56 PDF pages; printed pp. 1–55. Distinct from the 2019 JFE edition.",
+        "pdfUrl": "https://rodneywhitecenter.wharton.upenn.edu/wp-content/uploads/2019/04/01-18-Stambaugh.Published.BlumePrize.pdf",
+        "sha256": "5ac4c324b2d7e2fcc737471f661ea2ee2fd392452b2167078ad9ebf3d7ccb9e4",
+        "sections": [
+          {
+            "title": {
+              "en": "Universe and construction · pp. 4–5, 12, 25–28",
+              "zh": "样本与构建 · 第4至5、12、25至28页"
+            },
+            "paragraphs": [
+              {
+                "en": "The 2000–2016 WIND sample excludes the bottom 30% by lagged size, recent listings and sparse trading histories. CH-3 uses monthly size/earnings-price sorts and total-A-share value weights.",
+                "zh": "WIND样本覆盖2000至2016年，按滞后市值排除最小30%，另排除新股与交易记录不足的股票。CH-3每月按规模和盈利市值比分组，以全部A股市值加权。"
+              }
+            ]
+          },
+          {
+            "title": {
+              "en": "Reported results · pp. 8–9, 12, 30, 37",
+              "zh": "论文结果 · 第8至9、12、30、37页"
+            },
+            "paragraphs": [
+              {
+                "en": "Table 3 reports monthly SMB 1.03% and VMG 1.14%. Shell estimates use 133 reverse mergers and a perpetual-payoff approximation. The IPO-count coefficient has t = −1.53; its direction alone is weak evidence.",
+                "zh": "表3报告SMB与VMG月均收益1.03%和1.14%。壳价值估计依据133次借壳及永续收益近似。IPO数量系数的t值为−1.53，仅凭方向不足以确立关联。"
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          {
+            "en": "Historical factor-model tests do not identify current shell values or prove a tradable smallest-400 return. Failure to reject alpha is not proof of explanation.",
+            "zh": "历史因子检验不能确定当前壳价值，也不能证明最小400只组合可以交易。未拒绝零alpha不等于证实解释成立。"
+          }
+        ],
+        "reviewedOn": "2026-11-27"
+      }
     },
     {
       "id": "LIT-004",
@@ -456,7 +690,7 @@
       "year": 2002,
       "doi": "10.1016/S1386-4181(01)00024-6",
       "url": "https://www.sciencedirect.com/science/article/pii/S1386418101000246",
-      "version": "Journal article metadata; full text not reviewed",
+      "version": "Journal of Financial Markets 5 (2002), pp. 31–56; 26 PDF pages, UPenn-hosted journal copy.",
       "markets": [
         "US"
       ],
@@ -464,10 +698,10 @@
         "liquidity",
         "measurement"
       ],
-      "stage": "abstract",
+      "stage": "fulltext",
       "summary": {
-        "en": "Paper examines relationships between illiquidity and returns using low-frequency measures.",
-        "zh": "出版方摘要研究低频非流动性指标与收益的关系；它与盘口价差、报价年龄不是同一数量。"
+        "en": "Full text read, with edition, page references, method and limitations recorded below. No replication has been completed.",
+        "zh": "已阅读所列版本全文，下列笔记记录页码、方法及限制。尚未完成复现。"
       },
       "question": {
         "en": "How do low-frequency price-impact proxies relate to observed NBBO spread and quote age? They are distinct quantities and not causal impact estimates.",
@@ -478,7 +712,45 @@
       ],
       "sourceIds": [
         "SRC-PAPER-004"
-      ]
+      ],
+      "fulltext": {
+        "edition": "Journal of Financial Markets 5 (2002), pp. 31–56; 26 PDF pages, UPenn-hosted journal copy.",
+        "pdfUrl": "https://www.cis.upenn.edu/~mkearns/finread/amihud.pdf",
+        "sha256": "349823bba5baad06f420a31b49ae4cf0f3e2fe31c803ec87ca4eb309d5f7118b",
+        "sections": [
+          {
+            "title": {
+              "en": "Measurement and tests · pp. 34–41",
+              "zh": "指标与检验 · 第34至41页"
+            },
+            "paragraphs": [
+              {
+                "en": "ILLIQ averages daily absolute return divided by dollar volume. NYSE monthly cross-sections cover 1964–1997 using lagged characteristics, delisting adjustments, >200 prior-year observations, price >$5 and tail trimming.",
+                "zh": "ILLIQ将日绝对收益除以当日美元成交额，再取平均。NYSE月度截面覆盖1964至1997年，使用滞后特征并调整退市收益，要求前一年超过200个观测、股价高于5美元，另剔除极端值。"
+              }
+            ]
+          },
+          {
+            "title": {
+              "en": "Reported results · pp. 41, 43–51",
+              "zh": "论文结果 · 第41、43至51页"
+            },
+            "paragraphs": [
+              {
+                "en": "Table 2 retains a positive ILLIQ coefficient with size controls (0.112, t = 5.39). Autoregressive annual and monthly tests distinguish anticipated illiquidity from shocks; the former has a positive return association, the latter a negative contemporaneous association.",
+                "zh": "表2控制规模后，ILLIQ系数仍为正，数值0.112，t值5.39。年度与月度自回归检验区分预期非流动性与意外变化，前者与收益正相关，后者与同期收益负相关。"
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          {
+            "en": "This coarse proxy is neither an executable spread nor causal order impact; NYSE filters omit important parts of a modern microcap universe.",
+            "zh": "这一粗略代理既不等于可成交价差，也不等于订单的因果冲击。NYSE筛选排除了当代微盘研究的重要样本。"
+          }
+        ],
+        "reviewedOn": "2026-11-27"
+      }
     },
     {
       "id": "LIT-005",
@@ -490,7 +762,7 @@
       "year": 2014,
       "doi": "10.3386/w20721",
       "url": "https://www.nber.org/papers/w20721",
-      "version": "NBER Working Paper 20721; not conflated with a later journal edition",
+      "version": "NBER Working Paper 20721, December 2014; 61 PDF pages, printed pp. 1–59; not the later journal edition.",
       "markets": [
         "US"
       ],
@@ -499,10 +771,10 @@
         "turnover",
         "implementation"
       ],
-      "stage": "abstract",
+      "stage": "fulltext",
       "summary": {
-        "en": "Working-paper abstract studies after-cost anomalies and buy/hold spreads as cost mitigation.",
-        "zh": "2014年NBER工作论文摘要讨论扣费后的异象，以及用买入与持有区间降低成本的办法。"
+        "en": "Full text read, with edition, page references, method and limitations recorded below. No replication has been completed.",
+        "zh": "已阅读所列版本全文，下列笔记记录页码、方法及限制。尚未完成复现。"
       },
       "question": {
         "en": "Separate holding buffers, signal turnover and actual trade turnover; US costs are not current A-share cost constants.",
@@ -513,7 +785,45 @@
       ],
       "sourceIds": [
         "SRC-PAPER-005"
-      ]
+      ],
+      "fulltext": {
+        "edition": "NBER Working Paper 20721, December 2014; 61 PDF pages, printed pp. 1–59; not the later journal edition.",
+        "pdfUrl": "https://www.nber.org/system/files/working_papers/w20721/w20721.pdf",
+        "sha256": "694db41db44968d1b23892b04774610a7c1a8762bc35eefa8076cb304b5d5b5f",
+        "sections": [
+          {
+            "title": {
+              "en": "Costs and evaluation · pp. 4–16",
+              "zh": "成本与评价 · 第4至16页"
+            },
+            "paragraphs": [
+              {
+                "en": "The paper tests 23 US anomalies with NYSE breakpoints and value weights. Costs use Bayesian effective-spread estimates and matching for missing estimates. Its generalized alpha evaluates incremental investment opportunity after costs.",
+                "zh": "论文用NYSE断点和市值权重检验23个美股异象。成本依据贝叶斯有效价差估计，缺失值通过匹配补足。广义alpha评价扣费后新增的投资机会。"
+              }
+            ]
+          },
+          {
+            "title": {
+              "en": "Holding buffers · pp. 29–36, 42–44",
+              "zh": "持有缓冲 · 第29至36、42至44页"
+            },
+            "paragraphs": [
+              {
+                "en": "Separate entry/exit ranks reduce unnecessary trading. Reported mean turnover and cost reductions are 41% and 42%. Table 13 shows the microcap high-frequency combination changing from +1.77% gross to −0.66% net monthly.",
+                "zh": "买入与退出采用不同排名门槛，减少无须发生的交易。论文报告平均换手和成本分别下降41%和42%。表13的微盘高频组合月均收益从扣费前1.77%降至扣费后−0.66%。"
+              }
+            ]
+          }
+        ],
+        "limitations": [
+          {
+            "en": "Effective spreads omit large-order price impact. Results and fitted costs are historical US estimates, not present China A-share capacity estimates.",
+            "zh": "有效价差未计大额订单冲击。结果和拟合成本属于历史美股估计，不能当作当前中国 A 股容量。"
+          }
+        ],
+        "reviewedOn": "2026-11-27"
+      }
     }
   ],
   "claims": [
@@ -881,14 +1191,14 @@
         "en": "Size and value in China",
         "zh": "Size and value in China"
       },
-      "url": "https://doi.org/10.1016/j.jfineco.2019.03.008",
-      "revision": null,
-      "sha256": null,
+      "url": "https://rodneywhitecenter.wharton.upenn.edu/wp-content/uploads/2019/04/01-18-Stambaugh.Published.BlumePrize.pdf",
+      "revision": "Wharton forthcoming manuscript, December 11, 2018; 56 PDF pages; printed pp. 1–55. Distinct from the 2019 JFE edition.",
+      "sha256": "5ac4c324b2d7e2fcc737471f661ea2ee2fd392452b2167078ad9ebf3d7ccb9e4",
       "dataCutoff": null,
       "reviewedOn": "2026-11-27",
       "scope": {
-        "en": "publisher_indexed_extract_and_metadata_located; direct_open_403; not_fulltext_reviewed",
-        "zh": "仅核对元数据、摘要或作者机构介绍；尚未全文审阅。"
+        "en": "Full text read; edition-specific original notes; no independent replication.",
+        "zh": "已阅读此版本全文，笔记为独立转述；尚未独立复现。"
       },
       "kind": "paper"
     },
@@ -898,14 +1208,14 @@
         "en": "Illiquidity and stock returns: cross-section and time-series effects",
         "zh": "Illiquidity and stock returns: cross-section and time-series effects"
       },
-      "url": "https://www.sciencedirect.com/science/article/pii/S1386418101000246",
-      "revision": null,
-      "sha256": null,
+      "url": "https://www.cis.upenn.edu/~mkearns/finread/amihud.pdf",
+      "revision": "Journal of Financial Markets 5 (2002), pp. 31–56; 26 PDF pages, UPenn-hosted journal copy.",
+      "sha256": "349823bba5baad06f420a31b49ae4cf0f3e2fe31c803ec87ca4eb309d5f7118b",
       "dataCutoff": null,
       "reviewedOn": "2026-11-27",
       "scope": {
-        "en": "publisher_abstract_and_metadata_located; direct_open_403; not_fulltext_reviewed",
-        "zh": "仅核对元数据、摘要或作者机构介绍；尚未全文审阅。"
+        "en": "Full text read; edition-specific original notes; no independent replication.",
+        "zh": "已阅读此版本全文，笔记为独立转述；尚未独立复现。"
       },
       "kind": "paper"
     },
@@ -915,16 +1225,33 @@
         "en": "A Taxonomy of Anomalies and their Trading Costs",
         "zh": "A Taxonomy of Anomalies and their Trading Costs"
       },
-      "url": "https://www.nber.org/papers/w20721",
-      "revision": null,
-      "sha256": null,
+      "url": "https://www.nber.org/system/files/working_papers/w20721/w20721.pdf",
+      "revision": "NBER Working Paper 20721, December 2014; 61 PDF pages, printed pp. 1–59; not the later journal edition.",
+      "sha256": "694db41db44968d1b23892b04774610a7c1a8762bc35eefa8076cb304b5d5b5f",
       "dataCutoff": null,
       "reviewedOn": "2026-11-27",
       "scope": {
-        "en": "NBER_abstract_and_metadata_located; direct_open_403; not_fulltext_reviewed",
-        "zh": "仅核对元数据、摘要或作者机构介绍；尚未全文审阅。"
+        "en": "Full text read; edition-specific original notes; no independent replication.",
+        "zh": "已阅读此版本全文，笔记为独立转述；尚未独立复现。"
       },
       "kind": "paper"
+    },
+    {
+      "id": "SRC-NAV-DIAG",
+      "title": {
+        "en": "Independent diagnostics of the frozen NAV",
+        "zh": "冻结净值的独立诊断"
+      },
+      "url": "https://github.com/runchengxie/a-study-in-small-caps/blob/main/public/evidence/nav-diagnostics.json",
+      "revision": "research-expansion-20261127; input revision 6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "1f6e6cb68793b562c10a9b7ca88116a4bc9950f1edc0b8dc2d6beef0dec4dd38",
+      "dataCutoff": "2026-09-04",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "New deterministic computations on 2,838 existing public NAV levels; no new securities data or portfolio rerun.",
+        "zh": "对已有2838个公开净值观测作确定性新计算；没有新增证券数据或重跑组合。"
+      },
+      "kind": "snapshot"
     }
   ],
   "history": [
@@ -1033,6 +1360,29 @@
         "SRC-LIQ",
         "SRC-NAV"
       ]
+    },
+    {
+      "id": "H-006",
+      "date": "2026-11-27",
+      "title": {
+        "en": "Full-text reading and independent NAV diagnostics",
+        "zh": "全文阅读与独立净值诊断"
+      },
+      "description": {
+        "en": "Three identified paper editions were read in full and a deterministic script recomputed holding-window and recovery diagnostics from the frozen public NAV. This adds computations, not a new portfolio reconstruction.",
+        "zh": "完整阅读三个明确版本，并以确定性脚本对冻结公开净值重算持有窗口和恢复诊断。新增了计算，没有新建组合重建。"
+      },
+      "type": "research",
+      "relatedIds": [
+        "INV-004",
+        "INV-005"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-003",
+        "SRC-PAPER-004",
+        "SRC-PAPER-005",
+        "SRC-NAV-DIAG"
+      ]
     }
   ],
   "crosschecks": [
@@ -1082,10 +1432,10 @@
       "claimIds": [
         "MC-C01"
       ],
-      "status": "untested",
+      "status": "not_comparable",
       "reason": {
-        "en": "What changes when we exclude the smallest tail under matched accounting? Historical shell-value results do not establish current post-reform mechanisms or explain all microcap returns.",
-        "zh": "在相同核算下排除最小一端，结果如何改变？不能据历史壳价值推断当前制度。"
+        "en": "Full-text method comparison: the paper removes the bottom 30%; our smallest-400 NAV deliberately targets the tail. Neither supports nor conflicts with the other without aligned universes and accounting. A matched exclusion experiment is still unrun.",
+        "zh": "全文方法对照显示，论文排除最小30%，本站最小400只净值则研究尾部。股票池和核算未对齐，无法判断结果支持或冲突。匹配后的排除实验尚未运行。"
       }
     },
     {
@@ -1095,10 +1445,10 @@
       "claimIds": [
         "MC-C01"
       ],
-      "status": "untested",
+      "status": "not_comparable",
       "reason": {
-        "en": "What changes when we exclude the smallest tail under matched accounting? Historical shell-value results do not establish current post-reform mechanisms or explain all microcap returns.",
-        "zh": "在相同核算下排除最小一端，结果如何改变？不能据历史壳价值推断当前制度。"
+        "en": "Full-text method comparison: the paper removes the bottom 30%; our smallest-400 NAV deliberately targets the tail. Neither supports nor conflicts with the other without aligned universes and accounting. A matched exclusion experiment is still unrun.",
+        "zh": "全文方法对照显示，论文排除最小30%，本站最小400只净值则研究尾部。股票池和核算未对齐，无法判断结果支持或冲突。匹配后的排除实验尚未运行。"
       }
     },
     {
@@ -1108,10 +1458,10 @@
       "claimIds": [
         "MC-C03"
       ],
-      "status": "untested",
+      "status": "not_comparable",
       "reason": {
-        "en": "How do low-frequency price-impact proxies relate to observed NBBO spread and quote age? They are distinct quantities and not causal impact estimates.",
-        "zh": "低频价格冲击代理与NBBO价差、报价年龄如何关联？它们不能当作因果冲击估计。"
+        "en": "Full-text method comparison: lagged traded value has no absolute-return numerator and cannot reproduce ILLIQ. The NAV alone supplies neither stock-level volume nor NYSE cross-sections. A common-universe proxy comparison remains unrun.",
+        "zh": "全文方法对照显示，滞后成交额没有绝对收益分子，无法复现ILLIQ。单条净值既不提供逐股成交额，也不提供NYSE截面。共同股票池上的代理比较尚未运行。"
       }
     },
     {
@@ -1121,10 +1471,10 @@
       "claimIds": [
         "MC-C03"
       ],
-      "status": "untested",
+      "status": "not_comparable",
       "reason": {
-        "en": "Separate holding buffers, signal turnover and actual trade turnover; US costs are not current A-share cost constants.",
-        "zh": "怎样区分持有缓冲、信号换手和真实交易换手？美股成本不能当作当下A股常数。"
+        "en": "Full-text method comparison: the existing low-share-turnover association is a stock characteristic; portfolio trading turnover requires holdings transitions. NAV levels cannot test a buy/hold buffer. The necessary paired replay is unrun.",
+        "zh": "全文方法对照显示，已有低换手关联描述股票特征，组合交易换手需要持仓变动。净值无法检验持有缓冲，需要的配对重放尚未运行。"
       }
     }
   ]

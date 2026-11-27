@@ -1,5 +1,7 @@
 ---
 import ui from '../data/ui.json';
-const {k,text,value,selected=false}=Astro.props;const label=text??ui[k]??{en:k??String(value),zh:k??String(value)};
+const catalog: Record<string, {en: string; zh?: string}> = ui;
+interface Props { k?: string; text?: {en: string; zh?: string}; value: string | number; selected?: boolean; }
+const {k,text,value,selected=false}=Astro.props;const label=text??catalog[k??'']??{en:k??String(value),zh:k??String(value)};
 ---
 <option value={value} selected={selected} data-en={label.en} data-zh={label.zh??label.en}>{label.en}</option>
