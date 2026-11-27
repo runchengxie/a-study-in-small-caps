@@ -18,7 +18,8 @@ test('theme preference persists across routes and system follows device preferen
 });
 test('homepage keeps static artwork when WebGL is unavailable',async({page})=>{
  await page.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return type==='webgl'?null:original.call(this,type,...args);};});
- await page.goto('./');await expect(page.locator('.terrain-fallback')).toBeVisible();
+ await page.goto('./');await expect(page.locator('#particle-terrain')).toBeHidden();
+ await expect(page.locator('.ef-pwave')).toHaveCSS('background-color','rgb(12, 30, 24)');
  await expect(page.locator('#motion-toggle')).toBeHidden();
  await expect(page.locator('h1')).toBeVisible();
 });

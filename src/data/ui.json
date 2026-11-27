@@ -941,10 +941,38 @@
   },
   "coverNote": {
     "en": "A Study in Small Caps",
-    "zh": "A Study in Small Caps"
+    "zh": "小微盘研究"
   },
   "enterResearch": {
     "en": "Follow the evidence",
     "zh": "沿着证据，开始阅读"
+  },
+  "exploreResearch": {
+    "en": "Explore research",
+    "zh": "探索研究"
+  },
+  "effectsBy": {
+    "en": "Effects by",
+    "zh": "视觉效果来自"
+  },
+  "waveDive": {
+    "en": "Scroll to dive in",
+    "zh": "向下滚动，进入研究"
+  },
+  "waveGoing": {
+    "en": "Keep going",
+    "zh": "继续向下"
+  },
+  "waveAlmost": {
+    "en": "Almost there",
+    "zh": "即将抵达"
+  },
+  "waveWelcome": {
+    "en": "Welcome",
+    "zh": "欢迎"
+  },
+  "waveScroll": {
+    "en": "scroll",
+    "zh": "向下滚动"
   }
 }
