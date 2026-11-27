@@ -12,6 +12,14 @@ test('author wave responds to pointer and scroll, pauses, and recovers context',
    const gl=c.getContext('webgl'), program=gl.getParameter(gl.CURRENT_PROGRAM);
    return Array.from(gl.getUniform(program,gl.getUniformLocation(program,key)));
   },name);
+  const hover=()=>canvas.evaluate(c=>{const gl=c.getContext('webgl'),p=gl.getParameter(gl.CURRENT_PROGRAM);return gl.getUniform(p,gl.getUniformLocation(p,'uHover'));});
+  expect(await hover()).toBe(0);
+  await page.mouse.move(950,600);
+  await expect.poll(hover).toBeGreaterThan(.8);
+  await page.mouse.move(0,0);
+  await expect.poll(hover).toBeLessThan(.01);
+  await page.locator('.ef-pwave').dispatchEvent('pointermove',{pointerType:'touch',clientX:950,clientY:600});
+  await page.waitForTimeout(150); expect(await hover()).toBeLessThan(.01);
   await page.mouse.move(200,500); const before=await uniform('uMouse');
   await page.mouse.move(950,600);
   await expect.poll(()=>uniform('uMouse')).not.toEqual(before);
@@ -30,6 +38,7 @@ test('author wave responds to pointer and scroll, pauses, and recovers context',
   expect(await page.evaluate(()=>window.waveDraws)).toBe(0);
   await page.emulateMedia({reducedMotion:'reduce'});
   await expect(page.locator('#motion-toggle')).toBeHidden(); await expect(canvas).toBeVisible();
+  expect(await hover()).toBe(0);
   const still=await section.getAttribute('style');
   await page.evaluate(()=>scrollTo(0,100)); await page.waitForTimeout(150);
   expect(await section.getAttribute('style')).toBe(still);
