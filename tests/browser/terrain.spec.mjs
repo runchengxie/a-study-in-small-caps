@@ -1,49 +1,48 @@
 import { test, expect, chromium } from '@playwright/test';
-test('software WebGL draws, pauses and falls back after context loss', async () => {
-  const browser = await chromium.launch({
-    executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH,
-    args: ['--disable-gpu', '--disable-dev-shm-usage', '--use-angle=swiftshader', '--enable-unsafe-swiftshader']
-  });
-  try {
-    const page = await browser.newPage({ reducedMotion: 'no-preference' });
-    await page.goto('http://127.0.0.1:4381/a-study-in-small-caps/');
-    await expect(page.locator('.hero')).toHaveClass(/terrain-ready/);
-    await page.emulateMedia({reducedMotion:'reduce'});
-    await expect(page.locator('.hero')).not.toHaveClass(/terrain-ready/);
-    await expect(page.locator('.terrain-fallback')).toBeVisible();
-    await page.emulateMedia({reducedMotion:'no-preference'});
-    await expect(page.locator('.hero')).toHaveClass(/terrain-ready/);
-    const uniform = name => page.locator('#particle-terrain').evaluate((canvas, key) => {
-      const gl = canvas.getContext('webgl');
-      const program = gl.getParameter(gl.CURRENT_PROGRAM);
-      const value = gl.getUniform(program, gl.getUniformLocation(program, key));
-      return typeof value === 'number' ? value : Array.from(value);
-    }, name);
-    await page.mouse.move(600, 440);
-    await expect.poll(()=>uniform('pointerStrength')).toBeGreaterThan(.5);
-    await page.mouse.move(900, 520);
-    await expect.poll(async()=>(await uniform('pointer'))[0]).toBeGreaterThan(.2);
-    await page.evaluate(()=>scrollTo(0,350));
-    await expect.poll(()=>uniform('travel')).toBeGreaterThan(.15);
-    await expect.poll(()=>page.locator('.cover-copy').evaluate(node=>Number(getComputedStyle(node).opacity))).toBeLessThan(.95);
-    await page.evaluate(()=>scrollTo(0,0));
-    await expect.poll(()=>uniform('travel')).toBeLessThan(.03);
-    await page.locator('#motion-toggle').click();
-    const pausedPhase=await uniform('phase');
-    const pausedTravel=await uniform('travel');
-    await page.mouse.move(300,400);
-    await page.evaluate(()=>scrollTo(0,200));
-    await page.waitForTimeout(150);
-    expect(await uniform('phase')).toBe(pausedPhase);
-    expect(await uniform('travel')).toBe(pausedTravel);
-    await expect(page.locator('#motion-toggle')).toHaveAttribute('aria-pressed', 'true');
-    await page.locator('#particle-terrain').evaluate(canvas => {
-      canvas.dispatchEvent(new Event('webglcontextlost'));
-    });
-    await expect(page.locator('.hero')).not.toHaveClass(/terrain-ready/);
-    await expect(page.locator('.terrain-fallback')).toBeVisible();
-    await expect(page.locator('#motion-toggle')).toBeHidden();
-  } finally { await browser.close(); }
+test('author wave responds to pointer and scroll, pauses, and recovers context', async () => {
+ const browser = await chromium.launch({executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH,args:['--disable-gpu','--disable-dev-shm-usage','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+ try {
+  const page = await browser.newPage({reducedMotion:'no-preference'});
+  await page.goto('http://127.0.0.1:4381/a-study-in-small-caps/');
+  const canvas=page.locator('#particle-terrain'), section=page.locator('.ef-pwave__sec').first();
+  await expect(canvas).toBeVisible();
+  await expect(page.locator('#motion-toggle')).toBeVisible();
+  // Read the active WebGL camera and pointer input, independently of changing wave time.
+  const uniform=name=>canvas.evaluate((c,key)=>{
+   const gl=c.getContext('webgl'), program=gl.getParameter(gl.CURRENT_PROGRAM);
+   return Array.from(gl.getUniform(program,gl.getUniformLocation(program,key)));
+  },name);
+  await page.mouse.move(200,500); const before=await uniform('uMouse');
+  await page.mouse.move(950,600);
+  await expect.poll(()=>uniform('uMouse')).not.toEqual(before);
+  const camera=await uniform('uView');
+  await expect.poll(()=>uniform('uView')).not.toEqual(camera);
+  await page.evaluate(()=>scrollTo(0,350));
+  await expect.poll(()=>section.evaluate(n=>Number(n.style.opacity))).toBeLessThan(.8);
+  await page.evaluate(()=>scrollTo(0,0));
+  await expect.poll(()=>section.evaluate(n=>Number(n.style.opacity))).toBeGreaterThan(.99);
+  await page.locator('#motion-toggle').click();
+  await expect(page.locator('#motion-toggle')).toHaveAttribute('aria-pressed','true');
+  const transform=await section.getAttribute('style');
+  await page.evaluate(()=>{window.waveDraws=0;const draw=WebGLRenderingContext.prototype.drawArrays;WebGLRenderingContext.prototype.drawArrays=function(...args){window.waveDraws++;return draw.apply(this,args);};});
+  await page.mouse.move(300,400); await page.evaluate(()=>scrollTo(0,200));
+  await page.waitForTimeout(150); expect(await section.getAttribute('style')).toBe(transform);
+  expect(await page.evaluate(()=>window.waveDraws)).toBe(0);
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await expect(page.locator('#motion-toggle')).toBeHidden(); await expect(canvas).toBeVisible();
+  const still=await section.getAttribute('style');
+  await page.evaluate(()=>scrollTo(0,100)); await page.waitForTimeout(150);
+  expect(await section.getAttribute('style')).toBe(still);
+  await page.emulateMedia({reducedMotion:'no-preference'});
+  await expect(page.locator('#motion-toggle')).toBeVisible();
+  await canvas.evaluate(c=>{window.waveContextExtension=c.getContext('webgl').getExtension('WEBGL_lose_context');window.waveContextExtension.loseContext();});
+  await expect(canvas).toBeHidden();
+  await expect(page.locator('h1')).toBeVisible();
+  await expect(page.locator('#motion-toggle')).toBeHidden();
+  await page.evaluate(()=>window.waveContextExtension.restoreContext());
+  await expect(canvas).toBeVisible();
+  await expect(page.locator('#motion-toggle')).toBeVisible();
+ } finally {await browser.close();}
 });
 
 test('cover occupies the first screen and switches the publication identity', async ({page}) => {

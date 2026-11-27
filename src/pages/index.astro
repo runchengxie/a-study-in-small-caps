@@ -1,23 +1,19 @@
 ---
 import HomeResearchChart from '../components/HomeResearchChart.astro';import Site from '../layouts/Site.astro';import Text from '../components/Text.astro';import ChapterCard from '../components/ChapterCard.astro';import research from '../data/research.json';
-// Static terrain uses the same designed surface as the shader; it is not market data.
-const terrain = Array.from({length: 84 * 52}, (_, i) => {
- const x = (i % 84 / 83 - .5) * 36, z = Math.floor(i / 84) / 51 * 34;
- const bank = x - Math.sin(z * .16) * 3.4;
- const height = 2.6 * (1 - Math.exp(-bank * bank * .075)) + Math.sin(x * .43 + z * .23) * .6 + Math.sin(z * .32 - x * .15) * .45;
- const depth = 5 / (z + 5);
- return {x: 720 + x * depth * .19 * 720, y: 300 - (.72 + (height - 4.1) * depth) * 300, r: .6 + depth * 1.5, opacity: .3 + depth * .6};
-});
+import '../vendor/enrichr/particle-wave.css';
 const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
 ---
 <Site cover>
-<section class="hero" aria-labelledby="cover-title">
-  <div class="cover-copy"><div class="eyebrow"><span class="dot"></span><Text k="project"/></div>
-  <h1 id="cover-title"><span class="sr-only"><Text k="brand"/></span><span aria-hidden="true" class="cover-title-line"><Text k="coverLine1"/></span><span aria-hidden="true" class="cover-title-line"><Text k="coverLine2"/></span></h1>
-  <p class="cover-note"><Text k="coverNote"/></p></div>
-  <div class="terrain" aria-hidden="true"><svg class="terrain-fallback" viewBox="0 0 1440 600" preserveAspectRatio="none">{terrain.map(point=><circle cx={point.x} cy={point.y} r={point.r} opacity={point.opacity}/>)}</svg><canvas id="particle-terrain"></canvas></div>
-  <div class="cover-bottom"><a class="cover-enter" href="#research"><span class="scroll-arrow" aria-hidden="true">↓</span><Text k="enterResearch"/></a><span class="cover-markets">A · US · HK · JP</span><button id="motion-toggle" hidden class="motion-toggle" type="button" aria-pressed="false"><span class="motion-pause"><Text k="pauseMotion"/></span><span class="motion-resume"><Text k="resumeMotion"/></span></button></div>
+<div id="particle-wave-root">
+<section class="hero ef-pwave" aria-labelledby="cover-title">
+  <canvas id="particle-terrain" class="ef-pwave__c" aria-hidden="true"></canvas>
+  <div class="ef-pwave__stage">
+    <div class="ef-pwave__sec"><h1 id="cover-title" class="ef-pwave__title"><span class="sr-only"><Text k="brand"/></span><span aria-hidden="true" class="ef-pwave__line ef-pwave__t1"><Text k="coverLine1"/></span><span aria-hidden="true" class="ef-pwave__line ef-pwave__line--accent ef-pwave__t2"><Text k="coverLine2"/></span></h1><p class="ef-pwave__cap"><Text k="coverNote"/></p></div>
+    <div class="ef-pwave__sec ef-pwave__sec--next" aria-hidden="true"><p class="ef-pwave__next"><Text k="exploreResearch"/></p></div>
+  </div>
+  <div class="ef-pwave__hud"><span class="ef-pwave__tl" aria-hidden="true"><Text k="waveDive"/></span><a class="ef-pwave__tc" href="https://enrichr.dev/elements/particle-wave-hero.html"><Text k="effectsBy"/> Enrichr</a><span class="ef-pwave__tr" aria-hidden="true">A · US · HK · JP</span><a class="ef-pwave__bl cover-enter" href="#research"><Text k="enterResearch"/> ↓</a><button id="motion-toggle" hidden class="ef-pwave__br motion-toggle" type="button" aria-pressed="false"><Text k="pauseMotion"/></button><span class="ef-pwave__bar" aria-hidden="true"><i class="ef-pwave__fill"></i></span><span class="ef-pwave__hint" aria-hidden="true">▼ <Text k="waveScroll"/> ▼</span></div>
 </section>
+</div>
 <section id="research" class="section"><div class="section-heading"><span class="eyebrow">01 / <Text k="current"/></span><h2><Text k="current"/></h2></div><div class="claim-grid">{research.claims.slice(0,3).map(claim=><article class="claim-card"><div class="eyebrow"><a href={`${base}history/#${claim.id}`}>{claim.id}</a><span class="status"><Text k={claim.stage}/></span></div><h3><Text value={claim.title}/></h3><p><Text value={claim.statement}/></p></article>)}</div></section>
 <section class="section"><div class="section-heading"><span class="eyebrow">02 / <Text k="investigations"/></span><h2><Text k="latest"/></h2></div><div class="chapter-grid">{research.investigations.map(chapter=><ChapterCard chapter={chapter}/>)}</div></section>
 <HomeResearchChart/>
