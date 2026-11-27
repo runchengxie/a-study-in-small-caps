@@ -1,8 +1,9 @@
 ---
 import Text from './Text.astro';
+import story from '../data/home-story-ui.json';
 import ui from '../data/cost-ui.json';
-interface Props { showHeading?: boolean; }
-const {showHeading=true}=Astro.props;
+interface Props { showHeading?: boolean; compact?: boolean; }
+const {showHeading=true,compact=false}=Astro.props;
 ---
 <section class="evidence-section" id="cost-scenario">
  {showHeading && <h2><Text value={ui.title}/></h2>}
@@ -11,10 +12,12 @@ const {showHeading=true}=Astro.props;
  <label><Text value={ui.spread}/><input id="cost-spread" type="range" min="0" max="300" step="5" value="50"/><output id="spread-value" for="cost-spread">50</output></label>
  <label><Text value={ui.replacement}/><input id="cost-replacement" type="range" min="0" max="100" step="5" value="100"/><output id="replacement-value" for="cost-replacement">100%</output></label>
  </div>
- <p><Text value={ui.formula}/></p>
+ {!compact && <p><Text value={ui.formula}/></p>}
+ {compact && <p class="small muted"><Text value={ui.holding}/> · <Text value={ui.hurdle}/></p>}
  <div id="cost-chart" class="chart"></div>
- <div class="table-scroll"><table><thead><tr><th><Text value={ui.holding}/></th><th><Text value={ui.hurdle}/></th></tr></thead><tbody id="cost-rows">{[5,21,63].map(days=><tr><td>{days}</td><td>{(50/10000*252/days*100).toFixed(2)}%</td></tr>)}</tbody></table></div>
- <p><Text value={ui.limits}/></p>
+ {compact ? <details><summary><Text value={story.costTable}/></summary><div class="table-scroll"><table><thead><tr><th><Text value={ui.holding}/></th><th><Text value={ui.hurdle}/></th></tr></thead><tbody id="cost-rows">{[5,21,63].map(days=><tr><td>{days}</td><td>{(50/10000*252/days*100).toFixed(2)}%</td></tr>)}</tbody></table></div></details> : <div class="table-scroll"><table><thead><tr><th><Text value={ui.holding}/></th><th><Text value={ui.hurdle}/></th></tr></thead><tbody id="cost-rows">{[5,21,63].map(days=><tr><td>{days}</td><td>{(50/10000*252/days*100).toFixed(2)}%</td></tr>)}</tbody></table></div>}
+
+ {compact ? <details><summary><Text value={story.costDetails}/></summary><p><Text value={ui.formula}/></p><p><Text value={ui.limits}/></p></details> : <p><Text value={ui.limits}/></p>}
  <noscript><p><Text value={ui.static}/></p></noscript>
 </section>
 <style>.scenario-controls{display:flex;flex-wrap:wrap;gap:1.5rem 3rem}.scenario-controls label{display:grid;gap:.5rem;min-width:min(100%,16rem)}input{accent-color:var(--accent)}output{font-variant-numeric:tabular-nums}</style>
@@ -42,5 +45,5 @@ const render=()=>{
  document.querySelector('#cost-chart')!.replaceChildren(svg);
  document.querySelectorAll<HTMLTableRowElement>('#cost-rows tr').forEach((row,i)=>row.cells[1].textContent=percent(values[i]));
 };
-spread.addEventListener('input',render);replacement.addEventListener('input',render);document.addEventListener('research:locale',render);render();
+document.addEventListener('research:story-step',event=>{const detail=(event as CustomEvent).detail;if(detail.chapter!=='cost')return;spread.value=detail.value==='base'?'50':'100';replacement.value=detail.value==='half'?'50':'100';render();});spread.addEventListener('input',render);replacement.addEventListener('input',render);document.addEventListener('research:locale',render);render();
 </script>

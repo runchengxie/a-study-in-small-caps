@@ -78,5 +78,105 @@
   "costStep": {
     "en": "Costs",
     "zh": "成本"
+  },
+  "follow": {
+    "en": "Follow scrolling",
+    "zh": "跟随滚动"
+  },
+  "free": {
+    "en": "Explore freely",
+    "zh": "自由查看"
+  },
+  "followHint": {
+    "en": "Scroll to advance the chart. Adjusting a chart pauses the guide.",
+    "zh": "向下滚动推进图表，直接操作图表可暂停跟随。"
+  },
+  "freeHint": {
+    "en": "Charts are independent. Turn on scroll following to resume the guide.",
+    "zh": "现在可以独立查看图表，开启跟随滚动可继续导览。"
+  },
+  "earlyTitle": {
+    "en": "Start with the first year",
+    "zh": "先看第一个年份"
+  },
+  "earlyBody": {
+    "en": "The curve begins in January 2015. Its initial published value is rebased to 1 here. Scrolling reveals the observations already in the source; the axes stay fixed.",
+    "zh": "曲线从2015年1月开始，首个已发布净值在图中归一为1。随着滚动，图中逐步显示已有观测，坐标范围保持不变。"
+  },
+  "middleTitle": {
+    "en": "Continue through 2020",
+    "zh": "接着走到2020年"
+  },
+  "middleBody": {
+    "en": "The path extends through 2020. A logarithmic scale gives the same height to the same proportional gain, so early movements remain visible.",
+    "zh": "曲线延伸到2020年。对数刻度让相同涨跌比例占据相同高度，早期波动仍然看得清。"
+  },
+  "wholeTitle": {
+    "en": "Read the complete period",
+    "zh": "看完整段历史"
+  },
+  "wholeBody": {
+    "en": "The full period ends on September 4, 2026. The figure below annualizes the endpoint change across that entire period. Trading costs and executable portfolio accounting remain unverified.",
+    "zh": "完整样本截至2026年9月4日。下方数字按整段样本的首尾变化计算年化收益率，交易成本和可成交组合账目仍待核验。"
+  },
+  "riskWholeTitle": {
+    "en": "Measure the distance from a previous peak",
+    "zh": "看看离此前高点有多远"
+  },
+  "riskWholeBody": {
+    "en": "Each point shows the loss from the highest NAV observed up to that date. Zero means the series is at its running high. The largest full-sample loss is shown below.",
+    "zh": "每个点表示当日净值相对此前最高净值的跌幅。回到零，表示净值到达历史高点。下方是完整样本的最大回撤。"
+  },
+  "risk2024Title": {
+    "en": "Pause in 2024",
+    "zh": "停在2024年看一看"
+  },
+  "risk2024Body": {
+    "en": "This window selects 2024 while retaining earlier peaks and the same vertical scale. The early-year plunge and later movements belong to one continuous series.",
+    "zh": "这里选出2024年的观测，保留此前高点和相同的纵轴刻度。年初下跌与后续走势仍属于同一条连续序列。"
+  },
+  "riskContextTitle": {
+    "en": "Return to the longer view",
+    "zh": "再把时间拉长"
+  },
+  "riskContextBody": {
+    "en": "The full sample returns to view. Compare the 2024 episode with earlier drawdowns. Reaching a new high in this reconstruction does not establish that every holding could be sold on the way.",
+    "zh": "图表重新展示完整样本，可以把2024年与此前的回撤放在一起看。重建净值后来创出新高，也不能证明当时每只持仓都能卖出。"
+  },
+  "costBaseTitle": {
+    "en": "Begin with a hypothetical spread",
+    "zh": "先设一个假想价差"
+  },
+  "costBaseBody": {
+    "en": "At a 50-basis-point spread and 100% replacement, trading every 21 sessions implies a 6% annual arithmetic cost hurdle. The bars also show 5- and 63-session intervals.",
+    "zh": "假设完整价差为50基点，每轮替换全部持仓，每21个交易日买卖一轮，年度算术成本门槛为6%。图中也列出5天和63天的间隔。"
+  },
+  "costWideTitle": {
+    "en": "Double that spread",
+    "zh": "把价差扩大一倍"
+  },
+  "costWideBody": {
+    "en": "The spread rises to 100 basis points. With the same replacement fraction and interval, the 21-session hurdle rises to 12%. These are assumptions, not observed execution costs.",
+    "zh": "价差扩大到100基点。替换比例与间隔不变，21天情景的成本门槛升至12%。这些是假设输入，尚未对应实测成交成本。"
+  },
+  "costHalfTitle": {
+    "en": "Replace half the holdings",
+    "zh": "每轮只替换一半持仓"
+  },
+  "costHalfBody": {
+    "en": "Keep the 100-basis-point spread and replace 50% each round trip. The 21-session hurdle returns to 6%. Changing turnover can also change strategy returns; this calculator does not model that effect.",
+    "zh": "价差维持100基点，每轮替换比例降为50%，21天情景的成本门槛回到6%。换手变化也可能改变策略收益，这个计算器没有模拟那部分影响。"
+  },
+  "costDetails": {
+    "en": "Calculation and limits",
+    "zh": "计算方式与限制"
+  },
+  "costTable": {
+    "en": "View the scenario table",
+    "zh": "查看情景表格"
+  },
+  "staticHint": {
+    "en": "This viewport uses normal reading flow. The chart remains available for exploration.",
+    "zh": "当前窗口采用普通排版，仍可直接操作图表查看数据。"
   }
 }

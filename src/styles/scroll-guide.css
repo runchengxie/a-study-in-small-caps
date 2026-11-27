@@ -1,0 +1,35 @@
+.scroll-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.scroll-figure{grid-column:2;grid-row:1;min-width:0;background:var(--paper);padding:1rem 0;align-self:start}
+.scroll-steps{grid-column:1;grid-row:1;min-width:0}
+.scroll-step{padding:2rem 0;border-top:1px solid var(--line)}
+.scroll-step h3{font-size:clamp(1.5rem,2.4vw,2rem);margin:.8rem 0 1rem}
+.scroll-step p{line-height:1.85;max-width:40ch}
+.scroll-chapter[data-scroll-enhanced=true] .scroll-step{min-height:75svh;padding:15svh 0 8svh}
+.scroll-chapter[data-sticky=true] .scroll-figure{position:sticky;top:1rem}
+.scroll-step[aria-current=step]{border-color:var(--accent)}
+.scroll-controls:not([hidden]){display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.5rem;font-size:12px;color:var(--muted)}
+.scroll-controls button{border:1px solid var(--line);background:var(--panel);padding:.5rem .8rem;border-radius:2px;font-size:12px;cursor:pointer}
+.scroll-controls button[aria-pressed=true]{border-color:var(--accent)}
+.scroll-hint{min-height:3.2em;font-size:12px;margin:.5rem 0 1rem;line-height:1.6}
+.scroll-figure .boundary-note{font-size:12px;line-height:1.65;margin:1rem 0;padding:.8rem 1rem}
+.scroll-figure .small{font-size:12px;line-height:1.65}
+.scroll-figure .chart{margin:.5rem 0}
+.scroll-figure .chart svg{max-height:23svh}
+.scroll-chapter .scroll-figure .scenario-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;font-size:12px}
+.scroll-chapter .scroll-figure .scenario-controls label{min-width:0}
+.scroll-figure .evidence-section{margin:0;padding-bottom:0}
+.scroll-figure details{font-size:13px;margin-top:1rem}
+.scroll-figure #home-return-readout,.scroll-figure #home-chart-readout{font-size:13px;min-height:2.8em}
+.scroll-figure #home-drawdown-chart{margin-top:1rem}
+.scroll-figure .chart-key{margin:.7rem 0;font-size:12px}
+@media(max-width:800px){
+ .scroll-layout{display:block}.scroll-chapter[data-sticky=true] .scroll-figure{top:0;z-index:2;border-bottom:1px solid var(--line);box-shadow:0 12px 16px -16px var(--ink)}
+ .scroll-chapter[data-scroll-enhanced=true] .scroll-step{min-height:65svh;padding:8svh 0}
+ .scroll-figure #home-return-chart,.scroll-figure #home-drawdown-chart svg{max-height:24svh}
+ .scroll-figure .chart svg{max-height:17svh}
+ .scroll-step p{max-width:unset}
+}
+@media(prefers-reduced-motion:reduce){.scroll-chapter .scroll-figure{position:static!important}.scroll-chapter .scroll-step{min-height:0!important;padding:2rem 0!important}}
+@media print{.scroll-chapter .scroll-figure{position:static!important}.scroll-chapter .scroll-step{min-height:0!important;padding:1rem 0!important}.scroll-controls,.scroll-hint{display:none!important}}
+
+.scroll-controls button:disabled{opacity:.6;cursor:default}

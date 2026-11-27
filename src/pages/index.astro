@@ -1,4 +1,6 @@
 ---
+import ScrollGuideControls from '../components/ScrollGuideControls.astro';
+import '../styles/scroll-guide.css';
 import HomeReturnsChart from '../components/HomeReturnsChart.astro';
 import CostScenario from '../components/CostScenario.astro';
 import story from '../data/home-story-ui.json';
@@ -20,12 +22,17 @@ const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
 </div>
 <HomeReturnsChart/>
 <HomeResearchChart/>
-<section id="home-cost" class="section story-panel" aria-labelledby="cost-heading"><span class="eyebrow">03 / <Text value={story.costStep}/></span><h2 id="cost-heading"><Text value={story.costTitle}/></h2><p class="story-intro"><Text value={story.costIntro}/></p><CostScenario showHeading={false}/><a class="story-continue" href="#explore"><Text value={story.continue}/> ↓</a></section>
+<section id="home-cost" class="section story-panel scroll-chapter" data-scroll-chapter="cost" aria-labelledby="cost-heading"><span class="eyebrow">03 / <Text value={story.costStep}/></span><h2 id="cost-heading"><Text value={story.costTitle}/></h2>
+<div class="scroll-layout"><div class="scroll-figure"><ScrollGuideControls/><CostScenario showHeading={false} compact/></div><div class="scroll-steps">
+<article class="scroll-step" data-scroll-step="base"><span class="eyebrow">01 / 03</span><h3><Text value={story.costBaseTitle}/></h3><p><Text value={story.costBaseBody}/></p></article>
+<article class="scroll-step" data-scroll-step="wide"><span class="eyebrow">02 / 03</span><h3><Text value={story.costWideTitle}/></h3><p><Text value={story.costWideBody}/></p></article>
+<article class="scroll-step" data-scroll-step="half"><span class="eyebrow">03 / 03</span><h3><Text value={story.costHalfTitle}/></h3><p><Text value={story.costHalfBody}/></p></article>
+</div></div><p class="story-intro"><Text value={story.costIntro}/></p><a class="story-continue" href="#explore"><Text value={story.continue}/> ↓</a></section>
 <section id="explore" class="section"><div class="explore-intro"><h2><Text value={story.continue}/></h2><p><Text value={story.continueIntro}/></p></div><div class="section-heading"><span class="eyebrow"><Text k="current"/></span><h2><Text k="current"/></h2></div><div class="claim-grid">{research.claims.slice(0,3).map(claim=><article class="claim-card"><div class="eyebrow"><a href={`${base}history/#${claim.id}`}>{claim.id}</a><span class="status"><Text k={claim.stage}/></span></div><h3><Text value={claim.title}/></h3><p><Text value={claim.statement}/></p></article>)}</div></section>
 <section class="section"><div class="section-heading"><span class="eyebrow"><Text k="investigations"/></span><h2><Text k="latest"/></h2></div><div class="chapter-list">{research.investigations.map(chapter=><ChapterCard chapter={chapter} listing/>)}</div></section>
 <section class="reading-note"><span class="eyebrow"><Text k="readingRecord"/></span><h2><Text k="crosscheck"/></h2><p><Text k="crosscheckIntro"/></p><a class="text-link" href={`${base}literature/`}><Text k="literature"/> →</a></section></Site>
 
-<script>import {initializeTerrain} from "../lib/terrain.ts";initializeTerrain();</script>
+<script>import {initializeTerrain} from "../lib/terrain.ts";initializeTerrain();import {initializeScrollGuide} from '../lib/scroll-guide';initializeScrollGuide();</script>
 
 <style is:global>
 .story-panel{padding-top:4rem;padding-bottom:4rem;border-top:1px solid var(--line)}

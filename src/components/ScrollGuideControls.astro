@@ -1,0 +1,6 @@
+---
+import Text from './Text.astro';
+import ui from '../data/home-story-ui.json';
+---
+<div class="scroll-controls" hidden><button type="button" data-scroll-toggle aria-pressed="false"><Text value={ui.follow}/></button><span data-scroll-position aria-hidden="true">01 / 03</span></div>
+<p class="scroll-hint small muted" data-scroll-hint hidden></p>
