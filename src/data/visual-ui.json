@@ -1,0 +1,122 @@
+{
+  "title": {
+    "en": "Follow the gains and the losses",
+    "zh": "沿着收益看回撤"
+  },
+  "intro": {
+    "en": "Explore 2,838 published NAV observations. Select a month to inspect its path, or move through the full history with the shared cursor.",
+    "zh": "探索2838个已发布净值观测。选择月份查看对应路径，也可以用联动游标逐点查看完整历史。"
+  },
+  "start": {
+    "en": "First observation",
+    "zh": "起始观测"
+  },
+  "end": {
+    "en": "Last observation",
+    "zh": "结束观测"
+  },
+  "reset": {
+    "en": "Full history",
+    "zh": "完整历史"
+  },
+  "play": {
+    "en": "Play observations",
+    "zh": "播放观测"
+  },
+  "pause": {
+    "en": "Pause",
+    "zh": "暂停"
+  },
+  "timeline": {
+    "en": "NAV and drawdown share one date cursor",
+    "zh": "净值与回撤共用日期游标"
+  },
+  "nav": {
+    "en": "Published NAV",
+    "zh": "已发布净值"
+  },
+  "drawdown": {
+    "en": "Drawdown from full-history peak",
+    "zh": "相对完整历史峰值的回撤"
+  },
+  "cursor": {
+    "en": "Observation cursor",
+    "zh": "观测游标"
+  },
+  "help": {
+    "en": "Use the arrow keys on the chart or the observation slider. Observations are equally spaced, so gaps in calendar time are compressed. Drawdown retains peaks before the selected range.",
+    "zh": "在图中使用方向键，或拖动观测滑块。观测点等距排列，日历时间中的空缺会被压缩。回撤保留所选区间之前的历史峰值。"
+  },
+  "calendar": {
+    "en": "Months reveal the path",
+    "zh": "按月查看收益路径"
+  },
+  "calendarHelp": {
+    "en": "Each cell compares its final observation with the preceding month’s final observation. * marks an endpoint month with partial source coverage. The first month starts at the first available NAV. Blank cells have no observations.",
+    "zh": "每格比较本月末次观测与上月末次观测。星号标记数据边界处未覆盖完整月份的月份。首月以首个可用净值为起点。空格表示没有观测。"
+  },
+  "distribution": {
+    "en": "Holding periods change the range of outcomes",
+    "zh": "持有期限改变收益分布"
+  },
+  "distributionHelp": {
+    "en": "All overlapping windows use the full frozen series. Their dependence prevents interpreting loss frequency as an independent-trial probability. Returns exclude execution costs.",
+    "zh": "全部重叠窗口均取自完整冻结序列。窗口之间存在依赖关系，亏损频率不能解读为独立试验概率。收益未计入执行成本。"
+  },
+  "steps": {
+    "en": "Observation steps",
+    "zh": "观测步数"
+  },
+  "windows": {
+    "en": "Overlapping windows",
+    "zh": "重叠窗口"
+  },
+  "loss": {
+    "en": "Windows with a loss",
+    "zh": "亏损窗口占比"
+  },
+  "worst": {
+    "en": "Worst window",
+    "zh": "最差窗口"
+  },
+  "best": {
+    "en": "Best window",
+    "zh": "最佳窗口"
+  },
+  "range": {
+    "en": "Return interval",
+    "zh": "收益区间"
+  },
+  "count": {
+    "en": "Window count",
+    "zh": "窗口数量"
+  },
+  "exact": {
+    "en": "Exact observations and histogram counts",
+    "zh": "精确观测与直方图计数"
+  },
+  "date": {
+    "en": "Date",
+    "zh": "日期"
+  },
+  "month": {
+    "en": "Month",
+    "zh": "月份"
+  },
+  "return": {
+    "en": "Return",
+    "zh": "收益"
+  },
+  "reduced": {
+    "en": "Playback is disabled while reduced motion is preferred. The slider remains available.",
+    "zh": "减少动态效果偏好开启时停止播放，仍可使用滑块。"
+  },
+  "scope": {
+    "en": "Frozen NAV series from 2015-01-05 to 2026-09-04. This historical path does not establish executable returns.",
+    "zh": "冻结净值序列覆盖2015年1月5日至2026年9月4日。该历史路径不代表可实现收益。"
+  },
+  "crash2024": {
+    "en": "2024 drawdown",
+    "zh": "2024年初回撤"
+  }
+}

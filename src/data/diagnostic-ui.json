@@ -5,7 +5,7 @@
   },
   "scope": {
     "en": "Recomputed from 2,838 frozen NAV observations, 2015–2026. Overlapping windows are dependent; these are descriptive historical paths, not executable returns or independent trials.",
-    "zh": "重算2015—2026年的2838个冻结净值观测。滚动窗口彼此重叠；这里描述历史路径，不代表可实现收益，也不是相互独立的试验。"
+    "zh": "我们重算了2015至2026年的2838个冻结净值观测，用于描述历史路径。滚动窗口彼此重叠，观测相互依赖，收益能否实际实现仍待验证。"
   },
   "metric": {
     "en": "Compare holding-period outcomes",

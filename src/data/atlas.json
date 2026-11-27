@@ -22,7 +22,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Exploratory execution measurement or modeled replay. BMLL security-level observations are not migrated; public source records retain permission and calibration limits.",
-        "zh": "探索性执行度量或模型重放。本站不迁移 BMLL 证券级观测；原公开记录保留许可与校准边界。"
+        "zh": "探索性执行度量或模型重放。本站不迁移 BMLL 证券级观测。原公开记录保留许可与校准边界。"
       },
       "conclusion": {
         "en": "More days and size groups expand description, while permission and selection limits remain.",
@@ -51,7 +51,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Exploratory execution measurement or modeled replay. BMLL security-level observations are not migrated; public source records retain permission and calibration limits.",
-        "zh": "探索性执行度量或模型重放。本站不迁移 BMLL 证券级观测；原公开记录保留许可与校准边界。"
+        "zh": "探索性执行度量或模型重放。本站不迁移 BMLL 证券级观测。原公开记录保留许可与校准边界。"
       },
       "conclusion": {
         "en": "Input selection, event clocks and path scope need separate fitness checks before calibration.",
@@ -80,7 +80,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Exploratory execution measurement or modeled replay. BMLL security-level observations are not migrated; public source records retain permission and calibration limits.",
-        "zh": "探索性执行度量或模型重放。本站不迁移 BMLL 证券级观测；原公开记录保留许可与校准边界。"
+        "zh": "探索性执行度量或模型重放。本站不迁移 BMLL 证券级观测。原公开记录保留许可与校准边界。"
       },
       "conclusion": {
         "en": "A pilot measures selected observations; it does not establish population-wide trading costs.",
@@ -109,7 +109,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Exploratory execution measurement or modeled replay. BMLL security-level observations are not migrated; public source records retain permission and calibration limits.",
-        "zh": "探索性执行度量或模型重放。本站不迁移 BMLL 证券级观测；原公开记录保留许可与校准边界。"
+        "zh": "探索性执行度量或模型重放。本站不迁移 BMLL 证券级观测。原公开记录保留许可与校准边界。"
       },
       "conclusion": {
         "en": "Observed diagnostics and simulated execution remain separate evidence layers.",
@@ -138,11 +138,11 @@
       "reviewedOn": "",
       "limits": {
         "en": "Exploratory execution measurement or modeled replay. BMLL security-level observations are not migrated; public source records retain permission and calibration limits.",
-        "zh": "探索性执行度量或模型重放。本站不迁移 BMLL 证券级观测；原公开记录保留许可与校准边界。"
+        "zh": "探索性执行度量或模型重放。本站不迁移 BMLL 证券级观测。原公开记录保留许可与校准边界。"
       },
       "conclusion": {
         "en": "Capital and stress overlays are conditional simulations, not a validated strategy account.",
-        "zh": "资金规模与压力叠加属于条件模拟，不是已验证的策略账户。"
+        "zh": "资金规模与压力叠加结果来自条件模拟。策略账户仍待验证。"
       }
     },
     {
@@ -167,7 +167,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "The four markets do not have equivalent observation depth or source periods.",
@@ -196,7 +196,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Parser rules and file-format checks are part of defining an eligible sample.",
@@ -225,11 +225,11 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "2024–2025 cohorts show path-dependent coverage over 1, 5 and 20 observed sessions.",
-        "zh": "2024—2025固定样本展示了1、5、20个观测交易日内的路径相关覆盖情况。"
+        "zh": "2024至2025固定样本展示了1、5、20个观测交易日内的路径相关覆盖情况。"
       }
     },
     {
@@ -254,7 +254,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Aggregate cells and sampled raw paths were checked; actual fills remain uncalibrated.",
@@ -283,7 +283,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Observed rows need a denominator before absence can be interpreted.",
@@ -312,7 +312,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Reconciled cells and prior FX checks do not amount to an audit of the full raw warehouse.",
@@ -341,7 +341,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "The earlier snapshot remains identifiable rather than silently becoming the new sample.",
@@ -370,7 +370,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Recorded-clock window differences remain sensitive to unverified native interval semantics.",
@@ -399,7 +399,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Sampled day audits expose gaps rather than filling absent bars with assumptions.",
@@ -428,7 +428,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Aggregate reconciliation preserves the distinction between the two grouping methods.",
@@ -457,7 +457,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Within-market quintiles answer a different question from fixed dollar buckets.",
@@ -486,7 +486,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "The baseline records changes without claiming longitudinal vendor stability.",
@@ -498,7 +498,7 @@
       "group": "liquidity",
       "title": {
         "en": "A liquidity budget is an assumption, not capacity",
-        "zh": "流动性预算是假设，不是容量"
+        "zh": "参与率假设下的流动性预算"
       },
       "family": {
         "en": "Liquidity, stress and exit paths",
@@ -515,7 +515,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Scenario limits depend on the selected grouping and participation assumptions.",
@@ -544,7 +544,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Shared dates improve comparability but do not certify historical eligibility.",
@@ -573,7 +573,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Descriptive monthly-to-annual aggregates were reconciled independently.",
@@ -602,11 +602,11 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Monthly interquartile bands describe observed time variation, not statistical confidence.",
-        "zh": "月度四分位区间描述观测随时间的变化，不是统计置信区间。"
+        "zh": "月度四分位区间描述观测随时间的分布，未估计统计置信区间。"
       }
     },
     {
@@ -631,7 +631,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Completed-month stress comparisons and frozen cohorts preserve future missingness.",
@@ -660,7 +660,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Reviewed cells and formation clocks support descriptive consistency, not execution calibration.",
@@ -689,7 +689,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Eligible security-day observations differ by source, date and traded-value definition.",
@@ -718,7 +718,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Independent lifecycle sensitivity checks remain retrospective.",
@@ -747,11 +747,11 @@
       "reviewedOn": "",
       "limits": {
         "en": "Observed eligible rows and retrospective source vintages. Coverage differs by market; liquidity proxies and scenario budgets are not calibrated execution capacity.",
-        "zh": "合资格观测与回溯数据版本；各市场覆盖不同。流动性代理和情景预算不是经校准的可成交容量。"
+        "zh": "研究使用符合筛选条件的观测和回溯数据版本，各市场覆盖范围不同。流动性代理和情景预算用于描述样本，实际可成交容量仍待校准。"
       },
       "conclusion": {
         "en": "Current listing and delisting intervals are a sensitivity check, not historical PIT certification.",
-        "zh": "当前上市和退市区间用于敏感性检查，不是历史时点认证。"
+        "zh": "当前上市和退市区间用于敏感性检查，历史时点资格仍待核实。"
       }
     },
     {
@@ -776,7 +776,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Exploratory retained output. Compare only matching clocks, universes, fees and units; no untouched holdout or investment recommendation.",
-        "zh": "探索性的保留输出。仅在时钟、样本、费用与单位一致时比较；没有未经触碰的留出样本，也不是投资建议。"
+        "zh": "保留输出用于探索性研究。比较时需对齐时钟、样本、费用与单位。研究没有未经使用的留出样本，内容仅供研究参考。"
       },
       "conclusion": {
         "en": "Residual controls, blocked days and rebalancing change the candidate comparison.",
@@ -805,7 +805,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Exploratory retained output. Compare only matching clocks, universes, fees and units; no untouched holdout or investment recommendation.",
-        "zh": "探索性的保留输出。仅在时钟、样本、费用与单位一致时比较；没有未经触碰的留出样本，也不是投资建议。"
+        "zh": "保留输出用于探索性研究。比较时需对齐时钟、样本、费用与单位。研究没有未经使用的留出样本，内容仅供研究参考。"
       },
       "conclusion": {
         "en": "Formation dates and return endpoints must match before coefficients can be compared.",
@@ -834,7 +834,7 @@
       "reviewedOn": "2026-10-17",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "Independent event completeness and raw-share readiness remain unestablished.",
@@ -863,7 +863,7 @@
       "reviewedOn": "2026-10-18",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "Retained traces do not establish a complete raw-share strategy account.",
@@ -892,7 +892,7 @@
       "reviewedOn": "2026-10-17",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "Claim and failure records retain unresolved questions instead of promoting readiness.",
@@ -921,11 +921,11 @@
       "reviewedOn": "2026-10-16",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "Buffer and weighting comparisons are retained outputs; historical fee and code identity are unresolved.",
-        "zh": "缓冲与权重比较来自保留输出；历史费用和代码身份仍待确认。"
+        "zh": "缓冲与权重比较来自保留输出。历史费用和代码身份仍待确认。"
       }
     },
     {
@@ -950,7 +950,7 @@
       "reviewedOn": "2026-10-17",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "The follow-up separates signal checks from execution and accounting support.",
@@ -962,7 +962,7 @@
       "group": "microcap",
       "title": {
         "en": "Early microcap history: 2008–2014",
-        "zh": "早期微盘历史：2008—2014"
+        "zh": "2008至2014年的早期微盘历史"
       },
       "family": {
         "en": "Rule reconstruction, exclusions and accounting",
@@ -979,7 +979,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "Early risk summaries have a different period from the 2015-onward NAV.",
@@ -1008,7 +1008,7 @@
       "reviewedOn": "2026-10-18",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "Conditional materiality cannot identify account impact without a complete raw-share ledger.",
@@ -1037,7 +1037,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "A rule reconstruction without calibrated costs, limits or executable capacity.",
@@ -1066,7 +1066,7 @@
       "reviewedOn": "2026-10-18",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "Readiness records distinguish calendar, event and case checks from a recovered original runtime.",
@@ -1078,7 +1078,7 @@
       "group": "microcap",
       "title": {
         "en": "Selling raw shares: a remaining accounting gap",
-        "zh": "原始股数卖出：尚存的核算缺口"
+        "zh": "原始股数卖出的核算缺口"
       },
       "family": {
         "en": "Rule reconstruction, exclusions and accounting",
@@ -1095,7 +1095,7 @@
       "reviewedOn": "2026-10-19",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "Prospective checks and sell policy do not certify raw-share strategy readiness.",
@@ -1119,12 +1119,12 @@
       "sha256": "04a4209c3e915162935e920d917eeebb0a9deddf88389e9495d7012888a42036",
       "stage": {
         "en": "Repair diagnostic; excluded from primary NAV",
-        "zh": "修复诊断；不作为主净值"
+        "zh": "修复诊断。不作为主净值"
       },
       "reviewedOn": "",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "The retained repair is explicitly not the primary NAV and preserves missing-holding limits.",
@@ -1153,11 +1153,11 @@
       "reviewedOn": "",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "Conditional common-support results weaken a simple size interpretation; this remains retrospective, not causal.",
-        "zh": "共同样本条件结果削弱了简单的规模解释；这仍是回溯关联，不是因果结论。"
+        "zh": "共同样本的条件检验结果对单纯的规模解释提出了疑问。结果仅支持回溯关联，因果关系仍待验证。"
       }
     },
     {
@@ -1182,7 +1182,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
-        "zh": "保留的历史诊断；复核输出不等于已重跑、原始股数账户完整、历史时点可得或收益可实现。"
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "conclusion": {
         "en": "Historical drawdowns and underwater spells describe the rule, not an investable account.",
@@ -1211,7 +1211,7 @@
       "reviewedOn": "",
       "limits": {
         "en": "Exploratory retained output. Compare only matching clocks, universes, fees and units; no untouched holdout or investment recommendation.",
-        "zh": "探索性的保留输出。仅在时钟、样本、费用与单位一致时比较；没有未经触碰的留出样本，也不是投资建议。"
+        "zh": "保留输出用于探索性研究。比较时需对齐时钟、样本、费用与单位。研究没有未经使用的留出样本，内容仅供研究参考。"
       },
       "conclusion": {
         "en": "Daily size ranks and annual traded-value medians preserve the CNY unit and observed coverage.",
@@ -1235,7 +1235,7 @@
       "sha256": "27d9d569e0d823bb005dfb6236d10181eb2025bc85724f12f5e414deebd19893",
       "stage": {
         "en": "Synthetic demo, not empirical evidence",
-        "zh": "合成演示，不是实证证据"
+        "zh": "合成数据演示，仅用于展示功能"
       },
       "reviewedOn": "",
       "limits": {
@@ -1260,16 +1260,16 @@
       "sha256": "37c88df1b8ea38e38ee2d9f1951951fa78b81af800ad1952337984c3a0a2991c",
       "stage": {
         "en": "Archived descriptive panel; no PIT qualification",
-        "zh": "归档描述面板；未取得历史时点资格"
+        "zh": "归档描述面板。未取得历史时点资格"
       },
       "reviewedOn": "",
       "conclusion": {
         "en": "Pooled jump-related variance share varies across the retained years. This provides risk context without testing a small-cap premium.",
-        "zh": "保留年份中的汇总跳跃相关方差占比发生变化。这提供风险背景，不检验小盘溢价。"
+        "zh": "保留年份中的汇总跳跃相关方差占比发生变化。这些结果用于描述风险背景，小盘溢价仍待另行检验。"
       },
       "limits": {
         "en": "Archived China A-share risk panel, 2021–24 April 2026: 1,285 observed dates and 6,931,290 aligned stock-days; 2026 is partial. Not current-market data or point-in-time qualified. Positive RJV prevalence is not a calibrated jump-event frequency; pooled variance shares are not event counts. No size stratification, portfolio validation, incremental prediction or execution evidence.",
-        "zh": "中国 A 股归档风险面板，2021年—2026年4月24日：1,285个观测日期、6,931,290个对齐证券日；2026年为不完整区间。不是当前市场数据，未取得历史时点资格。RJV为正的比例不是经校准的跳跃事件频率；汇总方差占比不是事件数。没有规模分组、组合验证、增量预测或执行证据。"
+        "zh": "归档风险面板覆盖中国 A 股2021年至2026年4月24日的1,285个观测日期和6,931,290个对齐证券日，2026年仅覆盖部分区间。数据用于描述历史风险，历史时点资格尚未核实。RJV为正的比例只描述指标分布，跳跃事件频率尚未经校准。汇总方差占比衡量方差构成，未统计事件数量。研究没有按规模分组，也未验证组合表现、增量预测或实际执行。"
       }
     }
   ],
@@ -1283,7 +1283,7 @@
       },
       "limits": {
         "en": "China A-shares; clean 2015–2026 observed daily ranks. Traded value is CNY, not a turnover rate or portfolio turnover.",
-        "zh": "中国 A 股；2015—2026 清洁样本的每日市值排名。成交额单位为人民币，不是换手率或组合换手。"
+        "zh": "研究按中国 A 股2015至2026年清洁样本的每日市值排名分组。指标为以人民币计价的成交额，股票换手率和组合换手需另行计算。"
       },
       "dimensions": [
         "rank_count",
@@ -1907,7 +1907,7 @@
       },
       "limits": {
         "en": "2015–July 2026 retained outputs, not a fresh rerun. Historical fee and code revision are unknown; 10 bps is protocol default, not recovered historical cost.",
-        "zh": "2015—2026年7月保留输出，未重新回测。历史费用和代码版本未知；10基点为协议默认值，并非找回的历史成本。"
+        "zh": "结果来自2015至2026年7月的保留输出，未重新回测。历史费用和代码版本未知。10基点为协议默认值，原历史成本仍待确认。"
       },
       "dimensions": [
         "candidate",
@@ -2479,7 +2479,7 @@
       },
       "limits": {
         "en": "137 retrospective formations, February 2015–June 2026; returns through July 2026. Common support, HAC(3). Confidence bounds are statistical summaries, not causal identification; no costs or untouched holdout.",
-        "zh": "2015年2月—2026年6月，137个回溯形成期；收益至2026年7月。共同样本、HAC(3)。置信区间不构成因果识别；未计成本，没有未经触碰的留出样本。"
+        "zh": "检验覆盖2015年2月至2026年6月的137个回溯形成期，收益截至2026年7月。检验使用共同样本和HAC（3）标准误。置信区间描述估计的不确定性，因果关系尚未识别。结果未计成本，也没有未经使用的留出样本。"
       },
       "dimensions": [
         "universe",
@@ -2761,7 +2761,7 @@
       },
       "limits": {
         "en": "2015–July 2026 exploratory comparisons. Residualization and constraints can reverse a headline result. Low stock turnover does not imply low portfolio turnover.",
-        "zh": "2015—2026年7月探索比较。残差化与交易约束可能改变表面结论。股票低换手不意味着组合低换手。"
+        "zh": "这是2015至2026年7月的探索性比较。残差化与交易约束可能改变比较结果。股票自身的换手率与组合调仓换手需要分别测量。"
       },
       "dimensions": [
         "candidate"
@@ -2882,7 +2882,7 @@
       },
       "limits": {
         "en": "Daily cross-sectional medians → monthly medians → annual distribution. P25–P75 describes temporal spread, not a confidence interval. Current source vintage; no historical PIT certification or cross-market ranking.",
-        "zh": "每日横截面中位数→月中位数→年度分布。P25—P75为时间分布，不是置信区间。使用当前数据版本，未获历史时点认证，不做跨市场排名。"
+        "zh": "先计算每日横截面中位数，再取月中位数，最后汇总年度分布。P25至P75描述指标随时间的分布，未估计置信区间。研究使用当前数据版本，历史时点资格尚未核实，结果仅作描述性比较。"
       },
       "dimensions": [
         "market",
@@ -4686,7 +4686,7 @@
       },
       "limits": {
         "en": "2024–2025 formation cohorts; 1/5/20 observed-session horizons. Participation is an assumed budget, not fills; guarded paths keep missingness visible. No calibrated actual execution or historical PIT eligibility. Counts pool stock–formation observations, not unique securities. Uncredited fraction uses remaining budget/notional balances, not the count of uncovered names.",
-        "zh": "2024—2025形成样本；1／5／20个观测交易日期限。参与率是预算假设，不是实际成交；保守路径保留缺失情况。未校准实际执行，未获历史时点资格认证。 数量按股票与形成期的组合观测汇总，不是去重证券数。未计入比例的分母是预算／持仓名义金额，不是未覆盖股票数量。"
+        "zh": "样本形成于2024至2025年，分别观察1／5／20个交易日的期限。参与率用于设定预算，实际成交仍待校准，保守路径保留缺失情况。历史时点资格尚未核实。数量按股票与形成期的组合观测汇总，同一证券可重复计数。未计入比例以预算／持仓名义金额为分母，未覆盖股票数量需单独查看。"
       },
       "dimensions": [
         "year",
@@ -4707,7 +4707,7 @@
       ],
       "units": {
         "en": "stock–formation observations / observed sessions / fraction",
-        "zh": "股票—形成期观测数／观测交易日／比例"
+        "zh": "股票与形成期组合观测数／观测交易日／比例"
       },
       "rows": [
         {
@@ -8529,7 +8529,7 @@
       "sourceId": "observatory-demo",
       "title": {
         "en": "Observatory distribution explorer — synthetic demonstration",
-        "zh": "因子观察站分布探索——合成演示"
+        "zh": "因子观察站合成数据分布演示"
       },
       "limits": {
         "en": "42 synthetic dates and three synthetic tickers. Only aggregate distribution rows are migrated. These numbers cannot support a size premium, liquidity effect, forecast or strategy return.",
@@ -8585,7 +8585,7 @@
       },
       "limits": {
         "en": "Archived China A-share risk panel, 2021–24 April 2026: 1,285 observed dates and 6,931,290 aligned stock-days; 2026 is partial. Not current-market data or point-in-time qualified. Positive RJV prevalence is not a calibrated jump-event frequency; pooled variance shares are not event counts. No size stratification, portfolio validation, incremental prediction or execution evidence.",
-        "zh": "中国 A 股归档风险面板，2021年—2026年4月24日：1,285个观测日期、6,931,290个对齐证券日；2026年为不完整区间。不是当前市场数据，未取得历史时点资格。RJV为正的比例不是经校准的跳跃事件频率；汇总方差占比不是事件数。没有规模分组、组合验证、增量预测或执行证据。"
+        "zh": "归档风险面板覆盖中国 A 股2021年至2026年4月24日的1,285个观测日期和6,931,290个对齐证券日，2026年仅覆盖部分区间。数据用于描述历史风险，历史时点资格尚未核实。RJV为正的比例只描述指标分布，跳跃事件频率尚未经校准。汇总方差占比衡量方差构成，未统计事件数量。研究没有按规模分组，也未验证组合表现、增量预测或实际执行。"
       },
       "dimensions": [
         "period"

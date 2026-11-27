@@ -9,7 +9,7 @@
       },
       "summary": {
         "en": "The definition chooses the comparison before any return is calculated.",
-        "zh": "在计算收益以前，定义已经决定了比较对象。"
+        "zh": "比较收益前，先明确哪些公司属于小盘股。"
       },
       "question": {
         "en": "Does the smallest company mean the same thing across markets?",
@@ -17,7 +17,7 @@
       },
       "conclusion": {
         "en": "Dollar capitalization and within-market ranks answer different questions. Neither is a universal small-cap definition.",
-        "zh": "美元市值与市场内排名回答不同问题，均不是通用的小盘定义。"
+        "zh": "美元市值与市场内排名适用于不同研究问题。小盘股的定义需要结合研究目的确定。"
       },
       "markets": [
         "A-share",
@@ -55,7 +55,7 @@
           "paragraphs": [
             {
               "en": "An investor looking for overlooked businesses may call a company small because analysts rarely cover it. A portfolio researcher needs a rule that another person can repeat: a dollar threshold, a percentile or the smallest fixed number of eligible listings. These rules select different businesses, even on the same day.",
-              "zh": "投资者可能因为一家公司少人研究而称它为小公司。组合研究则需要别人可以重复的规则：固定美元门槛、市值百分位，或合格股票中最小的固定数量。即使在同一天，这些规则也会选出不同企业。"
+              "zh": "投资者可能因为一家公司少人研究而称它为小公司。组合研究需要别人可以重复的筛选规则。可以设定美元市值门槛或市值百分位，也可以在合格股票中选取市值最小的固定数量。即使在同一天，这些规则也会选出不同企业。"
             },
             {
               "en": "A smallest-400 rule fixes the number of holdings but lets its share of the market change as listings expand. A bottom-quintile rule fixes a fraction but lets the number and dollar size change. The share definition, exchange universe and historical eligibility belong in the definition too.",
@@ -98,7 +98,7 @@
       "limitations": [
         {
           "en": "Japanese historical share counts are incomplete; common dates do not certify point-in-time eligibility.",
-          "zh": "日股历史股数不完整；共同日期不能认证历史时点资格。"
+          "zh": "日股历史股数不完整。即使比较日期相同，仍需核实股票在历史时点的入选资格。"
         }
       ],
       "nextSteps": [
@@ -117,7 +117,7 @@
       },
       "summary": {
         "en": "Loss depth and time below a prior peak matter independently of a final return.",
-        "zh": "损失深度与等待恢复的时间，应独立于期末收益审视。"
+        "zh": "评估历史表现时，除了期末收益，还需单独考察损失有多深、恢复需要多久。"
       },
       "question": {
         "en": "How much could a rule lose, and how long did recovery take?",
@@ -125,7 +125,7 @@
       },
       "conclusion": {
         "en": "The retained reconstructions show deep losses and material waiting times. Accounting and eligibility limits block a claim of validated investable alpha.",
-        "zh": "保留的重建显示深度损失与漫长等待；核算和资格限制阻止我们把它称为已验证的可投资超额收益。"
+        "zh": "保留的重建结果显示，组合曾大幅亏损，恢复也需要较长时间。可投资超额收益仍待验证，账户核算和历史入选资格尚未核实完整。"
       },
       "markets": [
         "A-share"
@@ -169,7 +169,7 @@
             },
             {
               "en": "The early 2008–2014 summaries report maximum drawdowns from roughly 60% to 69% across the retained 50 to 800-name rules. These are properties of the stated incomplete reconstruction, not estimates of a future loss limit. Wider portfolios did not mechanically eliminate the historical downside in this sample.",
-              "zh": "2008—2014年早期汇总中，保留的50至800只规则最大回撤约为60%至69%。这是注明存在缺项的重建结果，不能当作未来损失上限。在这个样本里，扩大持股数量并未机械消除历史下行风险。"
+              "zh": "2008至2014年早期汇总中，保留的50至800只股票规则的最大回撤约为60%至69%。这是注明存在缺项的重建结果，不能当作未来损失上限。在这个样本里，扩大持股数量并未机械消除历史下行风险。"
             }
           ]
         },
@@ -186,7 +186,7 @@
             },
             {
               "en": "In the early source, the longest underwater duration counts completed episodes only. Every count also has one episode still underwater at the sample end. That is right censoring: the eventual recovery is unknown, so the completed maximum cannot be read as a guaranteed waiting-time bound.",
-              "zh": "早期来源的最长水下期只统计已恢复区间。每组数量另有一个截至样本末仍未恢复的区间。这叫右删失：最终恢复时间未知，因此已完成区间的最大值不能理解为等待时间保证。"
+              "zh": "早期来源的最长水下期只统计已恢复区间。每组数量另有一个截至样本末仍未恢复的区间。这类情况称为右删失，最终恢复时间仍未知。因此，已恢复区间中的最长时间只能描述已完成的恢复过程，未来等待可能更久。"
             }
           ],
           "figure": "microcap"
@@ -204,7 +204,7 @@
             },
             {
               "en": "The next useful step is to reconcile raw shares and cash under fixed rules, then revisit the same historical episodes. A new calm month would add an observation; it would not erase a past loss or repair an unresolved ledger.",
-              "zh": "下一项有用工作是在固定规则下对齐真实股份与现金，再核对同一批历史案例。未来一个平静月份可以增加观察，却不会抹去过去损失，也不会修好尚未对齐的账本。"
+              "zh": "下一步要在固定规则下核对真实股份与现金，再检查同一批历史案例。即使未来新增月份的表现平稳，过去的损失和待核对的账本问题仍需单独处理。"
             }
           ]
         }
@@ -212,7 +212,7 @@
       "limitations": [
         {
           "en": "Early historical ST and suspension coverage is incomplete; the 400-name later NAV has no transaction-cost or capacity model.",
-          "zh": "早期历史ST与停牌覆盖不完整；后期400只净值没有成本或容量模型。"
+          "zh": "早期历史ST与停牌覆盖不完整。后期400只净值没有成本或容量模型。"
         }
       ],
       "nextSteps": [
@@ -239,7 +239,7 @@
       },
       "conclusion": {
         "en": "Reviewed aggregates describe activity across selected markets and periods. They do not establish spreads, fills, market impact or deployable capital.",
-        "zh": "已审查汇总描述特定市场和区间的活跃度，不能确立价差、成交、冲击或可部署资金。"
+        "zh": "已审查汇总描述了特定市场和区间的成交活跃度。价差、实际成交和市场冲击仍需另行测量，可投入的资金规模也尚待验证。"
       },
       "markets": [
         "A-share",
@@ -279,7 +279,7 @@
           "paragraphs": [
             {
               "en": "The displayed measure starts with each security’s mean daily traded value over 20 prior sessions, lagged by a session and converted into USD. The bucket median describes the middle observation. It is not the dollar amount a new investor can immediately buy or sell at the last price.",
-              "zh": "展示指标先计算每只证券此前20个交易日的日均成交额，再滞后一个交易日并换算美元。分组中位数描述中间观测，不是新增投资者能立刻按最新价买卖的金额。"
+              "zh": "展示指标先计算每只证券此前20个交易日的日均成交额，再滞后一个交易日并换算美元。分组中位数表示样本中间位置的成交额。新增投资者能按最新价立即买卖多少，仍需实际执行证据。"
             },
             {
               "en": "For a historical period, the sample pools security-days. A company observed many days can appear many times; a unique-stock count answers a different question. Empty groups remain empty, and an observed zero is not interchangeable with a missing session.",
@@ -301,7 +301,7 @@
             },
             {
               "en": "Mainland coverage is Shanghai and Shenzhen, not every Chinese exchange. Japanese historical shares are incomplete and have not been certified against historical revisions. Even on common dates, listing coverage and valuation definitions differ. Use the chart to frame questions, not rank whole national markets as permanently liquid or illiquid.",
-              "zh": "内地覆盖沪深，不是所有中国交易所。日股历史股数不完整，也未认证历史修订安全。即使日期相同，上市范围和估值定义仍有差别。图表适合帮助提出问题，不宜据此给整个国家市场贴上永久流动或不流动的标签。"
+              "zh": "内地样本仅覆盖沪深交易所。日股历史股数不完整，数据在历史修订前是否可得也尚未核实。即使日期相同，上市范围和估值定义仍有差别。图表适合帮助提出问题，不宜据此给整个国家市场贴上永久流动或不流动的标签。"
             }
           ]
         },
@@ -345,7 +345,7 @@
       },
       "summary": {
         "en": "Three full readings sharpen the comparison and expose missing inputs.",
-        "zh": "三篇全文让比较更具体，也指出缺少哪些输入。"
+        "zh": "阅读全文后，我们进一步明确了三篇论文的方法和复现所需的数据。"
       },
       "question": {
         "en": "Which literature mechanisms can our retained evidence test?",
@@ -404,7 +404,7 @@
           "paragraphs": [
             {
               "en": "Our next tests must freeze input contracts first: historical eligibility and total shares for a tail exclusion; daily security returns and traded values for ILLIQ; holdings transitions and an order-cost policy for buffers. These are independent research plans, not completed replications. The literature cards give concise method and result notes.",
-              "zh": "后续检验先固定输入口径。尾部排除需要历史资格和总股数，ILLIQ需要逐证券日收益与成交额，持有缓冲需要持仓变动和订单成本规则。这些是独立研究计划，尚未完成复现。文献卡片提供简要方法与结果笔记。"
+              "zh": "后续检验要先固定输入口径。排除最小市值股票需要历史资格和总股数，计算ILLIQ则需要逐证券日收益与成交额。持有缓冲的检验还须记录持仓变动，并确定订单成本规则。这些独立研究计划尚未完成复现。文献卡片提供简要方法与结果笔记。"
             }
           ],
           "id": "section-2"
@@ -432,7 +432,7 @@
       },
       "summary": {
         "en": "An independent calculation exposes holding-window losses, recovery waits and endpoint censoring.",
-        "zh": "独立计算展示持有窗口损失、恢复等待和期末删失。"
+        "zh": "我们独立计算了各持有窗口的损失和恢复时间，并保留样本结束时尚未恢复的区间。"
       },
       "question": {
         "en": "How does changing the holding window change the historical risk description?",
@@ -500,7 +500,7 @@
           "paragraphs": [
             {
               "en": "Among 2,817 overlapping 21-step windows, 36.17% lost money and the worst lost 45.40%. Among 2,586 overlapping 252-step windows, 7.54% lost money and the worst lost 29.96%. These are empirical frequencies along one reconstructed path, not independent trials or probabilities for a new investor.",
-              "zh": "2817个重叠的21间隔窗口中，36.17%亏损，最差亏45.40%。2586个252间隔窗口中，7.54%亏损，最差亏29.96%。这些是单条重建路径上的历史频率，既非独立试验，也非新投资者的未来亏损概率。"
+              "zh": "2817个重叠的21间隔窗口中，36.17%亏损，最差亏45.40%。2586个252间隔窗口中，7.54%亏损，最差亏29.96%。这些频率仅描述一条重建净值路径。窗口彼此重叠，观测相互依赖，无法据此估计新投资者未来的亏损概率。"
             }
           ],
           "id": "section-3"
@@ -513,7 +513,7 @@
           "paragraphs": [
             {
               "en": "At the final observation, the February 24, 2026 peak remained unrecovered after 133 steps; its trough on July 23 was 29.33% below the peak. The eventual recovery time is unknown. Implied daily extremes of −14.82% and +15.68% are properties of the supplied NAV, requiring account and universe reconciliation before any implementation claim.",
-              "zh": "期末时，2026年2月24日高点已过133个间隔仍未恢复，7月23日谷底较高点低29.33%。最终恢复时间未知。净值隐含的单日极值为−14.82%与15.68%，属于来源路径的特征；讨论实施前仍需核对账户与股票池。"
+              "zh": "期末时，2026年2月24日高点已过133个间隔仍未恢复，7月23日谷底较高点低29.33%。最终恢复时间未知。净值隐含的单日极值为−14.82%与15.68%，属于来源路径的特征。讨论实施前仍需核对账户与股票池。"
             }
           ],
           "id": "section-4"
@@ -529,6 +529,158 @@
         {
           "en": "Reconcile the dated extremes to raw-share and cash ledgers, then rerun the same diagnostics on a certified account path.",
           "zh": "把极端日期与真实股份和现金账本对齐，再在通过核查的账户路径上重算。"
+        }
+      ]
+    },
+    {
+      "id": "INV-006",
+      "slug": "2024-microcap-drawdown",
+      "title": {
+        "en": "The 2024 microcap drawdown and recovery",
+        "zh": "2024年微盘急跌与恢复"
+      },
+      "summary": {
+        "en": "The retained 400-stock reconstruction lost 37.94% from its January peak and first regained it in September. Policy dates provide context; the mechanism remains untested.",
+        "zh": "保留的400只股票重建净值从1月高点下跌37.94%，直到9月才重回前高。同期政策提供事件背景，急跌机制仍待检验。"
+      },
+      "question": {
+        "en": "How did the early-2024 loss unfold, and what can the available evidence establish about its causes?",
+        "zh": "2024年初的损失如何形成，现有证据能解释哪些原因？"
+      },
+      "conclusion": {
+        "en": "A positive full-year return coexisted with a 37.94% peak-to-trough loss and 179 observation steps to recovery. The single reconstructed path cannot identify forced deleveraging, redemptions or ETF transmission.",
+        "zh": "全年收益为正的同时，年内曾从高点下跌37.94%，经历179个观测间隔才恢复。单条重建净值无法识别被动去杠杆、赎回或ETF交易的影响。"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "size",
+        "drawdown",
+        "recovery",
+        "liquidity",
+        "2024"
+      ],
+      "stage": "historical",
+      "updated": "2026-11-27",
+      "claimIds": [
+        "MC-C01",
+        "MC-C03"
+      ],
+      "literatureIds": [],
+      "sourceIds": [
+        "SRC-NAV",
+        "SRC-NAV-DIAG",
+        "SRC-CSRC-20240128",
+        "SRC-CSRC-20240206-LENDING",
+        "SRC-CSRC-20240206-ETF"
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "title": {
+            "en": "Define the sample before interpreting the crash",
+            "zh": "先明确这次急跌对应的样本"
+          },
+          "paragraphs": [
+            {
+              "en": "The 400-stock reconstruction shows a sharp loss early in 2024. We recomputed its dated NAV ratios and checked the original CSRC announcements alongside the path. The 242 observations in 2024 describe this retained rule reconstruction, rather than an exchange-published microcap index or an investor account. Its constituents and daily_return fields are empty, so adjacent NAV ratios are the available return measure.",
+              "zh": "400只股票重建净值在2024年初出现急跌。我们重新计算了带日期净值的比值，并核对同期证监会原始公告。2024年的242个观测只描述这项保留规则的重建结果。交易所发布的微盘指数和投资者账户各有自己的口径，需要另行核对。原文件的constituents与daily_return字段为空，因此这里用相邻净值比值计算收益。"
+            },
+            {
+              "en": "This sample establishes the depth and duration of the recorded loss. It contains no stock-level orders, holdings transitions, margin positions or fund subscriptions and redemptions. Historical eligibility, corporate-action accounting and execution costs remain limitations of the source reconstruction.",
+              "zh": "这个样本可以量出记录中的损失深度和持续时间。文件没有逐股订单、持仓变动及融资仓位，也没有基金申购赎回数据。历史入选资格、公司行动核算和交易成本仍受原重建的限制。"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": {
+            "en": "A fast decline and a much longer recovery",
+            "zh": "急跌之后，恢复用了更长时间"
+          },
+          "paragraphs": [
+            {
+              "en": "The NAV peaked on 3 January 2024 and reached its episode trough on 6 February, falling 37.9416% across 24 observation steps. It first regained the January peak on 30 September, 179 steps after the peak. Steps count adjacent retained observations, not calendar days. The trough-to-recovery return is measured from a different denominator than the preceding loss.",
+              "zh": "净值在2024年1月3日达到高点，到2月6日跌至这一轮回撤的谷底，24个观测间隔内下跌37.9416%。9月30日才首次重回1月高点，距高点179个观测间隔。间隔按保留观测之间的步数计算，自然日需另行统计。谷底之后的涨幅以谷底净值为分母，与此前跌幅的分母不同。"
+            },
+            {
+              "en": "The next two recorded returns were +6.07% on 7 February and +5.31% on 8 February. Those rebounds left the earlier peak unrecovered. The interactive path lets readers inspect the daily series and change the interval; the February trough is selected retrospectively after observing the full episode.",
+              "zh": "随后两个观测日出现反弹，2月7日上涨6.07%，2月8日上涨5.31%，净值仍低于此前高点。互动图可以逐日查看这一过程，也可以改变观察区间。2月谷底是在看完整段历史后确定的日期，事前能否识别仍待检验。"
+            }
+          ],
+          "figure": "research-lab"
+        },
+        {
+          "id": "section-3",
+          "title": {
+            "en": "Monthly endpoints describe different parts of the loss",
+            "zh": "月末收益与区间损失需要一起看"
+          },
+          "paragraphs": [
+            {
+              "en": "January returned −25.15%, measured from 29 December 2023 to 31 January 2024. February returned +7.60% from 31 January to 29 February, even though the episode trough occurred within that month. March added +2.25%. A positive February endpoint therefore leaves the early-February drawdown and the continued wait for recovery visible only in the daily path.",
+              "zh": "1月收益为−25.15%，计算起点是2023年12月29日，终点是2024年1月31日。2月收益为+7.60%，对应1月31日至2月29日，月内仍经历了这一轮回撤的谷底。3月再上涨2.25%。只看2月月末收益，会漏掉月初下跌的深度，以及此后仍需等待恢复的时间。"
+            },
+            {
+              "en": "September returned +49.58% from 30 August to 30 September. The full year returned +31.71% from 29 December 2023 to 31 December 2024. These month-end and year-end ratios use the same frozen NAV; no missing daily values, intraday extremes or executable trades have been inferred. Reaching the earlier NAV peak also excludes financing costs and the opportunity cost of waiting.",
+              "zh": "9月收益为+49.58%，对应8月30日至9月30日。全年从2023年12月29日至2024年12月31日上涨31.71%。这些月末和年末比值均来自同一份冻结净值，计算未补入缺失日值，也未推断盘中极值或实际成交。净值恢复至前高的计算也没有扣除融资成本和等待期间的机会成本。"
+            }
+          ]
+        },
+        {
+          "id": "section-4",
+          "title": {
+            "en": "Dated policy records around the trough",
+            "zh": "谷底附近可以核实的政策日期"
+          },
+          "paragraphs": [
+            {
+              "en": "On 28 January, the CSRC announced a suspension of restricted-share lending effective 29 January. The same release set 18 March as the start date for making securities under market-based agreed securities refinancing available the following day instead of immediately. The announcement and the two implementation dates need to stay separate when constructing an event window.",
+              "zh": "证监会在1月28日公告，限售股出借自1月29日起全面暂停。同一公告还规定，转融券市场化约定申报由实时可用调整为次日可用，这项措施自3月18日起实施。研究事件窗口时，要分别记录公告日和两项措施的实施日。"
+            },
+            {
+              "en": "On 6 February, the CSRC announced a cap on new securities-refinancing scale at the existing balance, with outstanding positions to be gradually closed. In a separate same-day response, it supported Central Huijin increasing ETF purchases and stated that it would facilitate those operations. These are documented regulatory statements. The ETF response supplies no stock-level purchase allocation or executed order trail for this 400-stock sample.",
+              "zh": "证监会在2月6日宣布，以现有转融券余额为上限暂停新增证券公司转融券规模，存量逐步了结。同日另一份答记者问支持中央汇金扩大ETF增持，并表示将为其入市操作提供便利。这些公告可以核实监管表态及其日期。ETF公告没有披露本研究400只股票样本对应的逐股买入分配或实际订单记录。"
+            },
+            {
+              "en": "The reconstruction trough falls on 6 February, the same date as these two statements. Daily NAV and publication dates do not reveal within-day sequencing or a counterfactual price path. The chronology therefore cannot quantify a policy effect or establish that the policy caused the subsequent rebound.",
+              "zh": "重建净值的谷底恰好落在2月6日，与这两份公告同日。日度净值和发布日期无法确定日内先后顺序，也无法给出没有政策时的价格路径。因此，这份时间线尚不能量化政策效果，反弹成因仍待检验。"
+            }
+          ]
+        },
+        {
+          "id": "section-5",
+          "title": {
+            "en": "The mechanisms require different observations",
+            "zh": "解释急跌还缺哪些观测"
+          },
+          "paragraphs": [
+            {
+              "en": "Forced deleveraging is a hypothesis to test with financing exposures, margin thresholds and dated forced-sale records. Redemption pressure requires fund flows and the holdings actually sold. ETF transmission requires creations and redemptions, basket composition and stock-level trading around the relevant timestamps. None of those mechanisms can be separated using this NAV path alone.",
+              "zh": "被动去杠杆仍是一项待检验假设，需要融资敞口、保证金门槛和带时间的强制卖出记录。赎回压力则要结合资金流出与实际卖出的持仓检查。若研究ETF交易如何影响股票价格，还须核对申赎、篮子成分和相关时点的逐股交易。现有净值缺少这些输入，无法分开估计各机制的影响。"
+            },
+            {
+              "en": "A useful next design would freeze historical stock eligibility and compare microcap groups with larger stocks on matched dates, while controlling for liquidity and the timing of interventions. It would reconcile shares and cash before estimating executable losses. Until those inputs are available, this investigation supports a descriptive stress episode with a verified policy chronology; causal attribution and tradable capacity remain open.",
+              "zh": "下一步可以先固定历史股票资格，在相同日期比较微盘组与较大市值股票，并控制流动性及政策发生时点。估计实际可实现的损失前，还需核对股份与现金账户。目前能够确认的是这条重建路径上的压力过程，以及已经核实的政策日期。因果归属与可交易容量仍待研究。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "en": "One retrospective 400-stock rule reconstruction; no independent market index, security-level holdings, leverage, flows or execution validation.",
+          "zh": "样本为单条回溯的400只股票规则重建，未引入独立市场指数、逐股持仓、杠杆和资金流，也未验证实际执行。"
+        },
+        {
+          "en": "Official announcement dates establish chronology, not causal effects. Public web pages were read on 27 November 2026; no immutable webpage bytes are claimed.",
+          "zh": "官方公告日期用于核对事件顺序，政策的因果效果仍待检验。网页于2026年11月27日阅读，未声称保留了不可变的网页文件。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Acquire matched historical holdings, financing and flow evidence before testing competing mechanisms; reconcile the source account first.",
+          "zh": "先核对来源账户，再取得同日期的历史持仓、融资和资金流证据，检验不同机制。"
         }
       ]
     }
@@ -558,7 +710,7 @@
       },
       "question": {
         "en": "Do we study the same universe, weighting, dates and risk adjustment? An A-share smallest-N portfolio is not a direct replication.",
-        "zh": "股票池、日期、权重与风险调整是否一致？A股最小N只组合并非直接复现。"
+        "zh": "股票池、日期、权重与风险调整是否一致？A股最小N只组合与论文的设定仍需逐项核对，直接复现尚未完成。"
       },
       "investigationIds": [
         "INV-001",
@@ -597,7 +749,7 @@
       },
       "question": {
         "en": "Does a size association survive historical quality controls on a common sample? Do not imply our current low-turnover tests replicate this paper.",
-        "zh": "在共同历史样本加入质量控制后，规模关联是否仍存在？现有低换手检验并非本文复现。"
+        "zh": "在共同历史样本加入质量控制后，规模关联是否仍存在？现有低换手检验研究了另一种关联，本文的复现仍待完成。"
       },
       "investigationIds": [
         "INV-001"
@@ -835,7 +987,7 @@
       },
       "statement": {
         "en": "Retained reconstructions show substantial losses and waiting times; historical risk survives uncertainty about investability.",
-        "zh": "保留的重建显示较大损失与等待时间；可投资性未明，不会抹去历史风险。"
+        "zh": "保留的重建结果显示较大损失与较长恢复时间。可投资性仍未确定，历史风险需要单独评估。"
       },
       "stage": "historical",
       "investigationIds": [
@@ -848,7 +1000,7 @@
       "limitations": [
         {
           "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
-          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+          "zh": "沿用原结论身份。本版重组证据，没有新增实验。"
         }
       ]
     },
@@ -860,7 +1012,7 @@
       },
       "statement": {
         "en": "A retained conditional association is exploratory; genuinely new frozen observations are needed for stronger inference.",
-        "zh": "保留的条件关联属于探索；更强推断需要真正新冻结的观察。"
+        "zh": "保留的条件关联仍属于探索结果。更强的推断需要新增并事先冻结的观测。"
       },
       "stage": "exploratory",
       "investigationIds": [
@@ -873,7 +1025,7 @@
       "limitations": [
         {
           "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
-          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+          "zh": "沿用原结论身份。本版重组证据，没有新增实验。"
         }
       ]
     },
@@ -885,7 +1037,7 @@
       },
       "statement": {
         "en": "Full-history raw-share capacity remains unestablished; synthetic accounting and assumed costs do not certify it.",
-        "zh": "完整历史真实股份容量尚未确立；合成核算与假设成本不能认证容量。"
+        "zh": "完整历史真实股份容量尚未确立。合成核算与假设成本不能认证容量。"
       },
       "stage": "unestablished",
       "investigationIds": [
@@ -899,7 +1051,7 @@
       "limitations": [
         {
           "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
-          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+          "zh": "沿用原结论身份。本版重组证据，没有新增实验。"
         }
       ]
     },
@@ -911,7 +1063,7 @@
       },
       "statement": {
         "en": "Same-input support interventions are controlled diagnostics, not attribution of an unrecovered historical run.",
-        "zh": "同输入下的观测门槛干预属于受控诊断，不是对未找回历史运行的归因。"
+        "zh": "我们在相同输入下调整观测门槛，进行了受控诊断。原历史运行仍未找回，其结果的成因仍待确认。"
       },
       "stage": "diagnostic",
       "investigationIds": [
@@ -924,7 +1076,7 @@
       "limitations": [
         {
           "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
-          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+          "zh": "沿用原结论身份。本版重组证据，没有新增实验。"
         }
       ]
     },
@@ -950,7 +1102,7 @@
       "limitations": [
         {
           "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
-          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+          "zh": "沿用原结论身份。本版重组证据，没有新增实验。"
         }
       ]
     },
@@ -962,7 +1114,7 @@
       },
       "statement": {
         "en": "The original runtime remains unrecovered; a similar aggregate return cannot identify original code, inputs and targets.",
-        "zh": "原始运行仍未找回；相似的汇总收益不能确认原代码、输入和目标。"
+        "zh": "原始运行仍未找回。即使汇总收益相似，原代码、输入和目标仍需核实。"
       },
       "stage": "unestablished",
       "investigationIds": [
@@ -975,7 +1127,7 @@
       "limitations": [
         {
           "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
-          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+          "zh": "沿用原结论身份。本版重组证据，没有新增实验。"
         }
       ]
     }
@@ -994,7 +1146,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Previously public aggregate snapshot; publication review is not a rerun.",
-        "zh": "此前已公开的聚合快照；本次发布核查没有重新运行研究。"
+        "zh": "此前已公开的聚合快照。本次发布核查没有重新运行研究。"
       },
       "kind": "snapshot"
     },
@@ -1011,7 +1163,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Previously public aggregate snapshot; publication review is not a rerun.",
-        "zh": "此前已公开的聚合快照；本次发布核查没有重新运行研究。"
+        "zh": "此前已公开的聚合快照。本次发布核查没有重新运行研究。"
       },
       "kind": "snapshot"
     },
@@ -1028,7 +1180,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Previously public aggregate snapshot; publication review is not a rerun.",
-        "zh": "此前已公开的聚合快照；本次发布核查没有重新运行研究。"
+        "zh": "此前已公开的聚合快照。本次发布核查没有重新运行研究。"
       },
       "kind": "snapshot"
     },
@@ -1045,7 +1197,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Previously public aggregate snapshot; publication review is not a rerun.",
-        "zh": "此前已公开的聚合快照；本次发布核查没有重新运行研究。"
+        "zh": "此前已公开的聚合快照。本次发布核查没有重新运行研究。"
       },
       "kind": "snapshot"
     },
@@ -1062,7 +1214,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Immutable wording edition dated 2026-11-01; evidence dates vary. Linked online assets are not a frozen site.",
-        "zh": "2026-11-01固定文字版；各项证据日期不同。链接的在线资产不构成冻结网站。"
+        "zh": "2026-11-01固定文字版。各项证据日期不同。链接的在线资产不构成冻结网站。"
       },
       "kind": "archive"
     },
@@ -1079,7 +1231,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Method or research record; original scope and unresolved checks retained.",
-        "zh": "方法或研究记录；保留原有范围与未完成核查。"
+        "zh": "方法或研究记录。保留原有范围与未完成核查。"
       },
       "kind": "method"
     },
@@ -1096,7 +1248,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Method or research record; original scope and unresolved checks retained.",
-        "zh": "方法或研究记录；保留原有范围与未完成核查。"
+        "zh": "方法或研究记录。保留原有范围与未完成核查。"
       },
       "kind": "method"
     },
@@ -1113,7 +1265,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Method or research record; original scope and unresolved checks retained.",
-        "zh": "方法或研究记录；保留原有范围与未完成核查。"
+        "zh": "方法或研究记录。保留原有范围与未完成核查。"
       },
       "kind": "method"
     },
@@ -1130,7 +1282,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Method or research record; original scope and unresolved checks retained.",
-        "zh": "方法或研究记录；保留原有范围与未完成核查。"
+        "zh": "方法或研究记录。保留原有范围与未完成核查。"
       },
       "kind": "method"
     },
@@ -1147,7 +1299,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Method or research record; original scope and unresolved checks retained.",
-        "zh": "方法或研究记录；保留原有范围与未完成核查。"
+        "zh": "方法或研究记录。保留原有范围与未完成核查。"
       },
       "kind": "method"
     },
@@ -1164,7 +1316,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "publisher_abstract_and_metadata_located; direct_page_open_403; not_fulltext_reviewed",
-        "zh": "仅核对元数据、摘要或作者机构介绍；尚未全文审阅。"
+        "zh": "仅核对元数据、摘要或作者机构介绍。尚未全文审阅。"
       },
       "kind": "paper"
     },
@@ -1181,7 +1333,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "author_institution_summary_read; metadata_checked; not_fulltext_reviewed",
-        "zh": "仅核对元数据、摘要或作者机构介绍；尚未全文审阅。"
+        "zh": "仅核对元数据、摘要或作者机构介绍。尚未全文审阅。"
       },
       "kind": "paper"
     },
@@ -1198,7 +1350,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Full text read; edition-specific original notes; no independent replication.",
-        "zh": "已阅读此版本全文，笔记为独立转述；尚未独立复现。"
+        "zh": "已阅读此版本全文，笔记为独立转述。尚未独立复现。"
       },
       "kind": "paper"
     },
@@ -1215,7 +1367,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Full text read; edition-specific original notes; no independent replication.",
-        "zh": "已阅读此版本全文，笔记为独立转述；尚未独立复现。"
+        "zh": "已阅读此版本全文，笔记为独立转述。尚未独立复现。"
       },
       "kind": "paper"
     },
@@ -1232,7 +1384,7 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "Full text read; edition-specific original notes; no independent replication.",
-        "zh": "已阅读此版本全文，笔记为独立转述；尚未独立复现。"
+        "zh": "已阅读此版本全文，笔记为独立转述。尚未独立复现。"
       },
       "kind": "paper"
     },
@@ -1249,9 +1401,60 @@
       "reviewedOn": "2026-11-27",
       "scope": {
         "en": "New deterministic computations on 2,838 existing public NAV levels; no new securities data or portfolio rerun.",
-        "zh": "对已有2838个公开净值观测作确定性新计算；没有新增证券数据或重跑组合。"
+        "zh": "对已有2838个公开净值观测作确定性新计算。没有新增证券数据或重跑组合。"
       },
       "kind": "snapshot"
+    },
+    {
+      "id": "SRC-CSRC-20240128",
+      "title": {
+        "en": "CSRC restricted-share lending announcement",
+        "zh": "证监会暂停限售股出借公告"
+      },
+      "url": "https://www.csrc.gov.cn/csrc/c100028/c7459730/content.shtml",
+      "revision": "Official CSRC release dated 2024-01-28; live webpage read 2026-11-27, no immutable snapshot.",
+      "sha256": null,
+      "dataCutoff": "2024-01-28",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Read the dated official release and its 29 January and 18 March implementation dates; policy chronology only.",
+        "zh": "核对官方公告及1月29日、3月18日实施日期，仅用于政策时间线。"
+      },
+      "kind": "record"
+    },
+    {
+      "id": "SRC-CSRC-20240206-LENDING",
+      "title": {
+        "en": "CSRC securities-lending measures on 6 February",
+        "zh": "证监会2月6日融券业务措施"
+      },
+      "url": "https://www.csrc.gov.cn/csrc/c100028/c7462169/content.shtml",
+      "revision": "Official CSRC release dated 2024-02-06; live webpage read 2026-11-27, no immutable snapshot.",
+      "sha256": null,
+      "dataCutoff": "2024-02-06",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Read the official response on the securities-refinancing cap; no security-level trading or causal estimate.",
+        "zh": "阅读有关转融券规模上限的官方答复，未取得逐股交易或因果估计。"
+      },
+      "kind": "record"
+    },
+    {
+      "id": "SRC-CSRC-20240206-ETF",
+      "title": {
+        "en": "CSRC response to Central Huijin ETF purchases",
+        "zh": "证监会回应中央汇金增持ETF"
+      },
+      "url": "https://www.csrc.gov.cn/csrc/c100028/c7462111/content.shtml",
+      "revision": "Official CSRC release dated 2024-02-06; live webpage read 2026-11-27, no immutable snapshot.",
+      "sha256": null,
+      "dataCutoff": "2024-02-06",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Read the CSRC response to the Huijin announcement; no independently verified purchase amount, basket or order trail.",
+        "zh": "阅读证监会对汇金公告的答复，未独立核实买入金额、篮子或订单记录。"
+      },
+      "kind": "record"
     }
   ],
   "history": [
@@ -1264,7 +1467,7 @@
       },
       "description": {
         "en": "Future-quote and current-membership filters were removed in the original audit; rebuilt targets alone did not supply a complete account NAV.",
-        "zh": "原审计移除未来报价和当前成分筛选；目标重建本身未补出完整账户净值。"
+        "zh": "原审计移除未来报价和当前成分筛选。目标重建本身未补出完整账户净值。"
       },
       "type": "correction",
       "relatedIds": [
@@ -1284,7 +1487,7 @@
       },
       "description": {
         "en": "Query coverage was backfilled for frozen plans. Original event blockers and original-runtime gaps were retained as separate problems.",
-        "zh": "冻结方案查询覆盖完成补采；原事件阻塞与原始运行缺口仍作为独立问题保留。"
+        "zh": "冻结方案查询覆盖完成补采。原事件阻塞与原始运行缺口仍作为独立问题保留。"
       },
       "type": "research",
       "relatedIds": [
@@ -1304,7 +1507,7 @@
       },
       "description": {
         "en": "A 21-session replay reconciled 79 independently checked fills under an explicit sell policy; full-history accounting was not certified.",
-        "zh": "21个交易日区间在显式卖出规则下对齐79笔独立核查成交；未认证完整历史核算。"
+        "zh": "21个交易日区间在显式卖出规则下对齐79笔独立核查成交。未认证完整历史核算。"
       },
       "type": "research",
       "relatedIds": [
@@ -1347,7 +1550,7 @@
       },
       "description": {
         "en": "Three bilingual chapters reorganize reviewed public evidence and five metadata-level literature leads. This is an editorial foundation, not a new experiment.",
-        "zh": "三个双语章节重组已审核公开证据，并登记五条元数据层面的文献线索。本次是编辑基础建设，不是新实验。"
+        "zh": "三个双语章节重组已审核公开证据，并登记五条元数据层面的文献线索。本次整理了专题内容，未开展新实验。"
       },
       "type": "project",
       "relatedIds": [
@@ -1383,6 +1586,29 @@
         "SRC-PAPER-005",
         "SRC-NAV-DIAG"
       ]
+    },
+    {
+      "id": "H-007",
+      "date": "2026-11-27",
+      "title": {
+        "en": "A dedicated investigation of the 2024 drawdown",
+        "zh": "新增2024年急跌专题"
+      },
+      "description": {
+        "en": "Recomputed monthly ratios from the existing frozen NAV and checked three dated CSRC releases. The chapter separates the reconstructed path, official chronology and untested mechanisms; no portfolio rerun or causal estimate.",
+        "zh": "根据已有冻结净值重算月度比值，并核对三份带日期的证监会公告。专题分别说明重建路径、官方事件时间线与待检验机制，未重跑组合或作出因果估计。"
+      },
+      "type": "research",
+      "relatedIds": [
+        "INV-006"
+      ],
+      "sourceIds": [
+        "SRC-NAV",
+        "SRC-NAV-DIAG",
+        "SRC-CSRC-20240128",
+        "SRC-CSRC-20240206-LENDING",
+        "SRC-CSRC-20240206-ETF"
+      ]
     }
   ],
   "crosschecks": [
@@ -1396,7 +1622,7 @@
       "status": "untested",
       "reason": {
         "en": "Do we study the same universe, weighting, dates and risk adjustment? An A-share smallest-N portfolio is not a direct replication.",
-        "zh": "股票池、日期、权重与风险调整是否一致？A股最小N只组合并非直接复现。"
+        "zh": "股票池、日期、权重与风险调整是否一致？A股最小N只组合与论文的设定仍需逐项核对，直接复现尚未完成。"
       }
     },
     {
@@ -1409,7 +1635,7 @@
       "status": "untested",
       "reason": {
         "en": "Do we study the same universe, weighting, dates and risk adjustment? An A-share smallest-N portfolio is not a direct replication.",
-        "zh": "股票池、日期、权重与风险调整是否一致？A股最小N只组合并非直接复现。"
+        "zh": "股票池、日期、权重与风险调整是否一致？A股最小N只组合与论文的设定仍需逐项核对，直接复现尚未完成。"
       }
     },
     {
@@ -1422,7 +1648,7 @@
       "status": "untested",
       "reason": {
         "en": "Does a size association survive historical quality controls on a common sample? Do not imply our current low-turnover tests replicate this paper.",
-        "zh": "在共同历史样本加入质量控制后，规模关联是否仍存在？现有低换手检验并非本文复现。"
+        "zh": "在共同历史样本加入质量控制后，规模关联是否仍存在？现有低换手检验研究了另一种关联，本文的复现仍待完成。"
       }
     },
     {

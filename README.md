@@ -4,6 +4,8 @@
 
 An ongoing cross-market investigation of small-cap returns, risks, liquidity and implementation. Each investigation connects a question to evidence, literature, limitations and the next test. Failed checks and revised conclusions remain part of the record.
 
+The publication includes a linked NAV/drawdown explorer, clickable monthly returns and holding-period distributions. The 2024 drawdown investigation combines the frozen 400-name series with a dated official policy chronology.
+
 The publication brings together investigations, a searchable atlas of earlier research, interactive historical and cross-market evidence, full-text reading notes, and a dated claim history. Reading stages distinguish source leads from texts actually reviewed; diagnostic recomputation remains distinct from independent replication. Historical illustrations do not certify executable returns.
 
 The TypeScript application supports English and Chinese, persistent light/dark/system themes, and an illustrative WebGL homepage with pause controls, reduced-motion support and a static fallback.
