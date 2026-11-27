@@ -534,5 +534,17 @@
   "chapterSections": {
     "en": "Chapter sections",
     "zh": "章节目录"
+  },
+  "marketNotIncluded": {
+    "en": "Market not included in this comparison period.",
+    "zh": "该市场未纳入本比较区间。"
+  },
+  "missingGroupValue": {
+    "en": "No published value for this group.",
+    "zh": "该分组没有已发布数值。"
+  },
+  "emptyBucketShort": {
+    "en": "No eligible observations in this group.",
+    "zh": "该分组没有合资格观测。"
   }
 }

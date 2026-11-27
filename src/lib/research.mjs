@@ -1,3 +1,4 @@
+import ui from '../data/ui.json' with {type:'json'};
 /** Language-neutral content contracts and evidence selectors. No data-source access. */
 export function validateResearch(data) {
   const groups=['investigations','literature','claims','sources','history','crosschecks'];
@@ -39,7 +40,7 @@ export function searchRecords(data,filters={}) {
     &&(!filters.stage||filters.stage==='all'||row.stage===filters.stage)
     &&(!filters.topic||filters.topic==='all'||row.topics?.includes(filters.topic))
     &&(!filters.year||filters.year==='all'||String(row.year)===String(filters.year))
-    &&terms.every(term=>normalize(JSON.stringify(row)).includes(term)));
+    &&terms.every(term=>normalize(JSON.stringify([row,...[...(row.markets??[]),...(row.topics??[]),row.stage].map(key=>ui[key]).filter(Boolean)])).includes(term)));
 }
 export function selectMicrocap(data,{count=400,granularity='monthly'}={}) {
   const evidence=data.microcap;
@@ -54,5 +55,13 @@ export function selectMicrocap(data,{count=400,granularity='monthly'}={}) {
 export function selectLiquidity(data,{period,basis='absolute',bucket=0,market='all'}={}) {
   const evidence=data.liquidity;
   const selected=evidence.periods.find(row=>row.id===period)??null;
-  return {sourceId:evidence.sourceId,period:selected,rows:(selected?.[basis]??[]).filter(row=>row.bucket===Number(bucket)&&(market==='all'||row.market===market))};
+  return {sourceId:basis==='relative'?(evidence.relativeSourceId??evidence.sourceId):evidence.sourceId,period:selected,rows:(selected?.[basis]??[]).filter(row=>row.bucket===Number(bucket)&&(market==='all'||row.market===market))};
+}
+
+export function recordLink(data,id){
+ const chapter=data.investigations.find(r=>r.id===id);if(chapter)return {href:`investigations/${chapter.slug}/`,title:chapter.title};
+ const claim=data.claims.find(r=>r.id===id);if(claim)return {href:`history/#${id}`,title:claim.title??id};
+ const paper=data.literature.find(r=>r.id===id);if(paper)return {href:`literature/#${id}`,title:paper.title};
+ const source=data.sources.find(r=>r.id===id);if(source)return {href:`methods/#${id}`,title:source.title??id};
+ const history=data.history.find(r=>r.id===id);return history?{href:`history/#${id}`,title:history.title}:null;
 }
