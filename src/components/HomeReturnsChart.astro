@@ -1,4 +1,5 @@
 ---
+import ScrollGuideControls from './ScrollGuideControls.astro';
 import Text from './Text.astro';
 import ui from '../data/home-story-ui.json';
 import evidence from '../data/evidence.json';
@@ -12,16 +13,21 @@ const low=Math.min(-.05,Math.min(...logs)-.08),high=Math.max(...logs)+.12;
 const y=(log:number)=>270-(log-low)/(high-low)*240;
 const path=rows.map((r,i)=>`${i?'L':'M'}${x(r.date).toFixed(2)} ${y(logs[i]).toFixed(2)}`).join(' ');
 ---
-<section id="research" class="section story-panel" aria-labelledby="returns-heading">
+<section id="research" class="section story-panel scroll-chapter" data-scroll-chapter="returns" aria-labelledby="returns-heading">
  <nav class="story-nav" aria-labelledby="returns-heading"><a href="#research">01 <Text value={ui.returnStep}/></a><a href="#home-risk">02 <Text value={ui.drawdownStep}/></a><a href="#home-cost">03 <Text value={ui.costStep}/></a><a href="#explore"><Text value={ui.jump}/> ↓</a></nav>
- <div class="story-layout"><div><span class="eyebrow">01 / <Text value={ui.returnStep}/></span><h2 id="returns-heading"><Text value={ui.returnTitle}/></h2><p><Text value={ui.returnIntro}/></p><p class="story-number">{(summary.cagr*100).toFixed(1)}%<span><Text value={ui.cagr}/></span></p></div>
- <div><p class="small muted"><Text value={ui.period}/></p>
+ <h2 id="returns-heading"><Text value={ui.returnTitle}/></h2>
+ <div class="scroll-layout"><div class="scroll-figure"><ScrollGuideControls/><p class="small muted"><Text value={ui.period}/></p>
  <svg id="home-return-chart" viewBox="0 0 1000 320" role="img" tabindex="0" aria-labelledby="return-chart-title" aria-describedby="return-chart-desc"><title id="return-chart-title">{ui.nav.en}</title><desc id="return-chart-desc">{ui.scale.en}</desc>
  {Array.from({length:Math.floor(high)-Math.ceil(low)+1},(_,i)=>Math.ceil(low)+i).map(log=><g><line x1="70" x2="950" y1={y(log)} y2={y(log)} stroke="var(--line)"/><text x="8" y={y(log)+5}>{10**log}×</text></g>)}
- <path d={path} fill="none" stroke="var(--plot-series)" stroke-width="2.5"/><line id="return-cursor" x1="950" x2="950" y1="30" y2="270" stroke="var(--accent)" stroke-dasharray="4 4"/>
+ <defs><clipPath id="return-reveal"><rect id="return-reveal-width" x="70" y="0" width="880" height="320"/></clipPath></defs><path clip-path="url(#return-reveal)" d={path} fill="none" stroke="var(--plot-series)" stroke-width="2.5"/><line id="return-cursor" x1="950" x2="950" y1="30" y2="270" stroke="var(--accent)" stroke-dasharray="4 4"/>
  <text x="70" y="310">{rows[0].date}</text><text x="950" y="310" text-anchor="end">{rows.at(-1)!.date}</text></svg>
- <p id="home-return-readout" aria-live="polite">{rows.at(-1)!.date} · {summary.multiple.toFixed(2)}×</p><p class="small muted"><Text value={ui.scale}/></p></div></div>
- <p class="boundary-note"><Text value={ui.scope}/></p><details><summary><Text value={ui.method}/></summary><p><Text value={ui.calculation}/></p><a href={`${base}methods/#SRC-NAV`}>SRC-NAV</a></details>
+ <p id="home-return-readout" aria-live="polite">{rows.at(-1)!.date} · {summary.multiple.toFixed(2)}×</p><p class="small muted"><Text value={ui.scale}/></p>
+ <p class="boundary-note"><Text value={ui.scope}/></p><a class="record-ref" href={`${base}methods/#SRC-NAV`}>SRC-NAV</a></div>
+ <div class="scroll-steps">
+ <article class="scroll-step" data-scroll-step="2015"><span class="eyebrow">01 / 03</span><h3><Text value={ui.earlyTitle}/></h3><p><Text value={ui.earlyBody}/></p></article>
+ <article class="scroll-step" data-scroll-step="2020"><span class="eyebrow">02 / 03</span><h3><Text value={ui.middleTitle}/></h3><p><Text value={ui.middleBody}/></p></article>
+ <article class="scroll-step" data-scroll-step="all"><span class="eyebrow">03 / 03</span><h3><Text value={ui.wholeTitle}/></h3><p><Text value={ui.wholeBody}/></p><p class="story-number">{(summary.cagr*100).toFixed(1)}%<span><Text value={ui.cagr}/></span></p><details><summary><Text value={ui.method}/></summary><p><Text value={ui.calculation}/></p></details></article>
+ </div></div>
 </section>
 <script>
 import evidence from '../data/evidence.json';
@@ -31,9 +37,12 @@ const rows=evidence.microcap.series[0].rows;
 const svg=document.querySelector<SVGSVGElement>('#home-return-chart')!;
 const first=Date.parse(rows[0].date),last=Date.parse(rows.at(-1)!.date);
 let index=rows.length-1;
+const reveal=document.querySelector('#return-reveal-width')!;
 function show(){const row=rows[index];document.querySelector('#home-return-readout')!.textContent=`${row.date} · ${local(ui.nav)} ${format(row.nav/rows[0].nav,{maximumFractionDigits:2})}×`;const x=70+(Date.parse(row.date)-first)/(last-first)*880;const cursor=document.querySelector('#return-cursor')!;cursor.setAttribute('x1',String(x));cursor.setAttribute('x2',String(x));document.querySelector('#return-chart-title')!.textContent=local(ui.nav);document.querySelector('#return-chart-desc')!.textContent=local(ui.scale);}
-svg.addEventListener('pointermove',event=>{const rect=svg.getBoundingClientRect();const time=first+Math.max(0,Math.min(1,((event.clientX-rect.left)/rect.width*1000-70)/880))*(last-first);index=rows.reduce((best,row,i)=>Math.abs(Date.parse(row.date)-time)<Math.abs(Date.parse(rows[best].date)-time)?i:best,0);show();});
+svg.addEventListener('pointermove',event=>{if(event.pointerType==='touch')return;const rect=svg.getBoundingClientRect();const time=first+Math.max(0,Math.min(1,((event.clientX-rect.left)/rect.width*1000-70)/880))*(last-first);index=rows.reduce((best,row,i)=>Math.abs(Date.parse(row.date)-time)<Math.abs(Date.parse(rows[best].date)-time)?i:best,0);show();});
 svg.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();index=Math.max(0,Math.min(rows.length-1,index+(event.key==='ArrowRight'?1:-1)));show();}});
+document.addEventListener('research:story-step',event=>{const detail=(event as CustomEvent).detail;if(detail.chapter!=='returns')return;index=detail.value==='all'?rows.length-1:rows.findLastIndex(row=>row.date<=`${detail.value}-12-31`);index=Math.max(0,index);reveal.setAttribute('width',String((Date.parse(rows[index].date)-first)/(last-first)*880));show();});
+document.addEventListener('research:story-mode',event=>{if(!(event as CustomEvent).detail.follow)reveal.setAttribute('width','880');});
 document.addEventListener('research:locale',show);show();
 </script>
 <style>svg{display:block;width:100%;color:var(--muted)}svg text{fill:currentColor;font:14px system-ui}#home-return-readout{min-height:1.6em;font-variant-numeric:tabular-nums}</style>
