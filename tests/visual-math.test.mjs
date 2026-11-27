@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {drawdowns,monthlyReturns,rollingReturns,histogram} from '../src/lib/visual-math.ts';
+const rows=[{date:'2020-01-07',nav:10},{date:'2020-01-31',nav:20},{date:'2020-02-28',nav:15},{date:'2020-04-03',nav:30}];
+test('monthly calculation preserves partial endpoints and observed boundaries across missing months',()=>{const result=monthlyReturns(rows);assert.deepEqual(result,[{month:'2020-01',start:0,end:1,value:1,partial:true},{month:'2020-02',start:1,end:2,value:-.25,partial:false},{month:'2020-04',start:2,end:3,value:1,partial:true}]);assert.deepEqual(monthlyReturns([]),[]);});
+test('drawdown uses cumulative historical peak including before a selected interval',()=>{assert.deepEqual(drawdowns(rows),[0,0,-.25,0]);assert.equal(drawdowns(rows).slice(2)[0],-.25);});
+test('rolling windows count observation steps, not calendar days',()=>{assert.deepEqual(rollingReturns(rows,2),[{start:0,end:2,value:.5},{start:1,end:3,value:.5}]);assert.deepEqual(rollingReturns(rows,4),[]);assert.throws(()=>rollingReturns(rows,0));});
+test('histogram includes both extremes once and handles a constant series',()=>{assert.deepEqual(histogram([-1,0,1],2).map(b=>b.count),[1,2]);assert.equal(histogram([.2,.2,.2]).reduce((n,b)=>n+b.count,0),3);assert.deepEqual(histogram([]),[]);});
+test('published full-series windows match frozen diagnostics independently',()=>{const nav=JSON.parse(readFileSync('public/evidence/microcap_nav.json'));const diagnostic=JSON.parse(readFileSync('public/evidence/nav-diagnostics.json'));assert.equal(nav.length,2838);for(const row of diagnostic.rolling){const values=rollingReturns(nav,row.sessions).map(r=>r.value);assert.equal(values.length,row.observations);assert(Math.abs(Math.min(...values)-row.minimum)<1e-12);assert(Math.abs(Math.max(...values)-row.maximum)<1e-12);assert.equal(histogram(values).reduce((sum,b)=>sum+b.count,0),nav.length-row.sessions);}});

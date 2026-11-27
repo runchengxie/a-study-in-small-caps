@@ -1,0 +1,10 @@
+{
+ "title":{"en":"Explore the path beneath the return","zh":"看看收益背后的回撤"},
+ "intro":{"en":"Select a year to inspect the frozen 400-name NAV. Drawdown uses the highest earlier level in the full source series.","zh":"选择年份，查看400只股票历史净值的回撤。回撤按整段来源序列此前的最高净值计算。"},
+ "year":{"en":"Year","zh":"年份"},
+ "all":{"en":"Full sample","zh":"完整样本"},
+ "open":{"en":"Open the linked charts","zh":"打开联动图表"},
+ "scope":{"en":"2015–2026 historical illustration. The final year is partial. Portfolio accounting and executable returns remain unverified.","zh":"图中展示2015年至2026年的历史序列，末年样本尚未完整。组合账目与实际成交收益仍待核验。"},
+ "drawdown":{"en":"Drawdown","zh":"回撤"},
+ "date":{"en":"Date","zh":"日期"}
+}

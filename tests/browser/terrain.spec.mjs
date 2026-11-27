@@ -13,7 +13,29 @@ test('software WebGL draws, pauses and falls back after context loss', async () 
     await expect(page.locator('.terrain-fallback')).toBeVisible();
     await page.emulateMedia({reducedMotion:'no-preference'});
     await expect(page.locator('.hero')).toHaveClass(/terrain-ready/);
+    const uniform = name => page.locator('#particle-terrain').evaluate((canvas, key) => {
+      const gl = canvas.getContext('webgl');
+      const program = gl.getParameter(gl.CURRENT_PROGRAM);
+      const value = gl.getUniform(program, gl.getUniformLocation(program, key));
+      return typeof value === 'number' ? value : Array.from(value);
+    }, name);
+    await page.mouse.move(600, 440);
+    await expect.poll(()=>uniform('pointerStrength')).toBeGreaterThan(.5);
+    await page.mouse.move(900, 520);
+    await expect.poll(async()=>(await uniform('pointer'))[0]).toBeGreaterThan(.2);
+    await page.evaluate(()=>scrollTo(0,350));
+    await expect.poll(()=>uniform('travel')).toBeGreaterThan(.15);
+    await expect.poll(()=>page.locator('.cover-copy').evaluate(node=>Number(getComputedStyle(node).opacity))).toBeLessThan(.95);
+    await page.evaluate(()=>scrollTo(0,0));
+    await expect.poll(()=>uniform('travel')).toBeLessThan(.03);
     await page.locator('#motion-toggle').click();
+    const pausedPhase=await uniform('phase');
+    const pausedTravel=await uniform('travel');
+    await page.mouse.move(300,400);
+    await page.evaluate(()=>scrollTo(0,200));
+    await page.waitForTimeout(150);
+    expect(await uniform('phase')).toBe(pausedPhase);
+    expect(await uniform('travel')).toBe(pausedTravel);
     await expect(page.locator('#motion-toggle')).toHaveAttribute('aria-pressed', 'true');
     await page.locator('#particle-terrain').evaluate(canvas => {
       canvas.dispatchEvent(new Event('webglcontextlost'));

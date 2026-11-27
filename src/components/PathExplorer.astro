@@ -1,0 +1,27 @@
+---
+import Text from './Text.astro';
+import SourceInfo from './SourceInfo.astro';
+import ui from '../data/visual-ui.json';
+import evidence from '../data/evidence.json';
+import nav from '../../public/evidence/microcap_nav.json';
+import {monthlyReturns} from '../lib/visual-math';
+const monthRows=monthlyReturns(nav);
+const {preset=''}=Astro.props;
+---
+<section class="path-lab evidence-section" id="research-lab" data-preset={preset}>
+ <p class="eyebrow">NAV / 2015–2026</p><h2><Text value={ui.title}/></h2><p><Text value={ui.intro}/></p><p class="boundary-note"><Text value={ui.scope}/></p>
+ <div class="path-controls"><label><Text value={ui.start}/><input type="date" id="path-start"/></label><label><Text value={ui.end}/><input type="date" id="path-end"/></label><button id="path-2024"><Text value={ui.crash2024}/></button><button id="path-reset"><Text value={ui.reset}/></button><button id="path-play"></button></div>
+ <h3><Text value={ui.timeline}/></h3><div id="path-timeline" class="path-chart"></div><label class="cursor-label"><Text value={ui.cursor}/><input id="path-cursor" type="range" min="0" value="0"/></label><output id="path-readout" aria-live="polite"></output><p class="small muted"><Text value={ui.help}/></p><p id="path-reduced" hidden class="small muted"><Text value={ui.reduced}/></p>
+ <h3><Text value={ui.calendar}/></h3><p class="small muted"><Text value={ui.calendarHelp}/></p><div class="calendar-scroll"><div id="path-calendar"></div></div>
+ <h3><Text value={ui.distribution}/></h3><p class="boundary-note"><Text value={ui.distributionHelp}/></p><label class="cursor-label"><Text value={ui.steps}/><output id="holding-steps">21</output><input id="holding-period" type="range" min="0" max="3" step="1" value="0" list="holding-options"/><datalist id="holding-options"><option value="0" label="21"/><option value="1" label="63"/><option value="2" label="126"/><option value="3" label="252"/></datalist></label><div id="holding-summary" class="holding-summary"></div><div id="holding-chart" class="path-chart"></div>
+ <details><summary><Text value={ui.exact}/></summary><div class="table-scroll"><table><thead><tr><th><Text value={ui.date}/></th><th>NAV</th><th><Text value={ui.drawdown}/></th></tr></thead><tbody id="path-exact"></tbody></table></div><div class="table-scroll"><table><thead><tr><th><Text value={ui.range}/></th><th><Text value={ui.count}/></th></tr></thead><tbody id="holding-exact"></tbody></table></div></details>
+ <noscript><div class="table-scroll"><table><thead><tr><th><Text value={ui.month}/></th><th><Text value={ui.return}/></th><th><Text value={ui.start}/></th><th><Text value={ui.end}/></th></tr></thead><tbody>{monthRows.map(row=><tr><td>{row.month}{row.partial?'*':''}</td><td>{(row.value*100).toFixed(2)}%</td><td>{nav[row.start].date}</td><td>{nav[row.end].date}</td></tr>)}</tbody></table></div></noscript>
+ <SourceInfo ids={[evidence.microcap.sourceId,'SRC-NAV-DIAG']}/>
+</section>
+<script>
+if(document.getElementById('research-lab')) import('../lib/path-explorer');
+</script>
+<style>
+.path-lab{--gain:var(--plot-positive);--loss:var(--plot-negative);--frame:color-mix(in srgb,currentColor 18%,transparent)}
+.path-controls{display:flex;flex-wrap:wrap;align-items:end;gap:1rem;margin:1.5rem 0}.path-controls label{display:grid;gap:.4rem}.path-controls button,.path-controls input{font:inherit;color:inherit;background:var(--paper,transparent);border:1px solid var(--frame);padding:.65rem;border-radius:5px}.path-controls button{cursor:pointer}.path-chart :global(svg){width:100%;display:block;color:inherit}.path-chart{border:1px solid var(--frame);border-radius:8px;padding:.65rem;background:color-mix(in srgb,var(--gain) 3%,transparent)}.cursor-label{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin:1rem 0}.cursor-label input{flex:1;min-width:140px;accent-color:var(--gain)}#path-readout{display:block;min-height:2.4em;font-variant-numeric:tabular-nums;font-weight:600}.calendar-scroll{overflow-x:auto;margin:1.4rem 0 2.5rem}#path-calendar{display:grid;grid-template-columns:55px repeat(12,minmax(42px,1fr));gap:5px;min-width:650px;font-variant-numeric:tabular-nums}#path-calendar :global(button){min-height:47px;border:1px solid var(--frame);border-radius:4px;cursor:pointer;font-size:.7rem;color:inherit}#path-calendar :global(button[aria-pressed=true]){outline:3px solid currentColor;outline-offset:1px}#path-calendar :global(.calendar-year),#path-calendar :global(.calendar-month){align-self:center;font-size:.75rem;text-align:center}.holding-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:1.5rem 0}.holding-summary :global(strong){display:block;font-size:1.5rem;font-variant-numeric:tabular-nums}.holding-summary :global(span){font-size:.8rem}.path-lab details{margin:1.5rem 0}.path-lab :global(svg text){fill:currentColor;font-size:12px}.path-lab :global(button:focus-visible),.path-lab :global(svg:focus-visible){outline:3px solid currentColor;outline-offset:3px}@media(max-width:600px){.holding-summary{grid-template-columns:1fr 1fr}.path-controls input{max-width:155px}}
+</style>

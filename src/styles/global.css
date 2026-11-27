@@ -48,3 +48,18 @@ html[data-lang=zh] .cover-title-line:last-child{margin-left:18vw}
 @media(max-height:720px){.cover-copy{padding-top:24px}.hero h1{font-size:clamp(60px,9vw,104px);margin-top:20px}.cover-note{margin-top:16px}.terrain{height:62%}html[data-lang=zh] .hero h1{font-size:clamp(68px,10vw,104px)}}
 @media(max-height:500px){.cover-page .site-header{height:105px;padding-top:10px}.cover-page .masthead{padding-bottom:8px}.hero{height:calc(100svh - 105px)}.cover-copy{padding-top:12px}.hero h1,html[data-lang=zh] .hero h1{font-size:48px;margin:12px 0}.cover-title-line{display:inline}.cover-title-line:last-child,html[data-lang=zh] .cover-title-line:last-child{margin-left:.2em}.cover-note{margin:12px 0}.cover-bottom{bottom:12px}.terrain{height:65%}}
 @media(max-width:560px){body:not(.cover-page) .header-controls{gap:5px;align-items:flex-end;flex-direction:column}body:not(.cover-page) .theme-control select{font-size:10px;padding:5px 20px 5px 7px}}
+/* A deep, continuous particle valley frames the publication title. */
+.cover-copy{text-align:center;padding-top:clamp(28px,4vh,52px)}
+.cover-copy .eyebrow{justify-content:center}
+.hero h1{font-weight:500;font-size:clamp(72px,9.3vw,148px);line-height:.98;letter-spacing:-.065em;margin-top:25px}
+.cover-title-line:last-child,html[data-lang=zh] .cover-title-line:last-child{margin-left:0}
+.cover-note{margin:25px 0 0;font-size:12px;letter-spacing:.12em}
+.terrain{height:83%;bottom:-3%;mask-image:linear-gradient(to bottom,transparent,black 12%,black 91%,transparent)}
+:root[data-theme=dark] .hero{background:radial-gradient(ellipse 75% 52% at 50% 83%,#1d4d302e,transparent)}
+:root[data-theme=dark] .cover-title-line:last-child{color:#d9ed9d}
+@media(max-width:700px){.cover-copy{padding-top:38px}.hero h1{font-size:clamp(62px,13.5vw,90px)}.cover-note{margin:20px 0 0;font-size:10px}.terrain{height:78%;width:180%;left:-40%;bottom:1%}html[data-lang=zh] .hero h1{font-size:clamp(66px,16vw,104px)}.cover-title-line:last-child,html[data-lang=zh] .cover-title-line:last-child{margin-left:0}}
+@media(max-height:720px){.cover-copy{padding-top:18px}.hero h1{font-size:clamp(60px,8vw,100px);margin-top:16px}.cover-note{margin-top:15px}.terrain{height:78%}html[data-lang=zh] .hero h1{font-size:clamp(64px,9vw,100px)}}
+@media(max-height:500px){.cover-copy{padding-top:10px}.hero h1,html[data-lang=zh] .hero h1{font-size:46px}.cover-title-line:last-child,html[data-lang=zh] .cover-title-line:last-child{margin-left:.2em}.terrain{height:78%}.cover-note{margin-top:10px}}
+
+.cover-copy{transform:translateY(calc(var(--cover-travel,0) * -24px));opacity:calc(1 - var(--cover-travel,0) * .55)}
+@media(prefers-reduced-motion:reduce){.cover-copy{transform:none;opacity:1}}
