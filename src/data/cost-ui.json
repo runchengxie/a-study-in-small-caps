@@ -1,0 +1,38 @@
+{
+  "title": {
+    "en": "How much return would cover this cost?",
+    "zh": "需要多少收益才能覆盖这项成本？"
+  },
+  "scope": {
+    "en": "Illustrative arithmetic scenario. Controls use hypothetical inputs, not BMLL observations or measured portfolio costs.",
+    "zh": "算术情景演示。滑块使用假设输入，未引用 BMLL 观测或实测组合成本。"
+  },
+  "spread": {
+    "en": "Full quoted spread (basis points)",
+    "zh": "完整报价价差（基点）"
+  },
+  "replacement": {
+    "en": "Fraction replaced each round trip",
+    "zh": "每轮买卖替换的比例"
+  },
+  "formula": {
+    "en": "Annual hurdle = full spread ÷ 10,000 × 252 ÷ holding days × replacement fraction. One basis point is 0.01%.",
+    "zh": "年度成本门槛＝完整价差÷10,000×252÷持有天数×替换比例。1个基点为0.01%。"
+  },
+  "holding": {
+    "en": "Holding interval (trading days)",
+    "zh": "持有间隔（交易日）"
+  },
+  "hurdle": {
+    "en": "Annual arithmetic cost hurdle",
+    "zh": "年度算术成本门槛"
+  },
+  "limits": {
+    "en": "Assumes one full spread per complete buy-and-sell cycle. Impact, fees, signal returns and price drift are absent. Values above 100% describe an expensive scenario, not a loss probability. Actual trades may occur inside the quote or cost more.",
+    "zh": "假设每轮完整买卖承担一个完整价差。未计入冲击、费用、信号收益和价格漂移。超过100%的值表示该情景成本很高，不能解释为损失概率。实际成交可能发生在价差内，也可能付出更高成本。"
+  },
+  "static": {
+    "en": "The static table uses a 50-basis-point spread and 100% replacement. Enable JavaScript to change the inputs.",
+    "zh": "静态表格采用50基点价差和100%替换比例。启用 JavaScript 后可以调整输入。"
+  }
+}

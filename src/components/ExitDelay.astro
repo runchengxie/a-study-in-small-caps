@@ -1,0 +1,24 @@
+---
+import Text from './Text.astro';
+import ui from '../data/exit-ui.json';
+import SourceInfo from './SourceInfo.astro';
+---
+<section class="evidence-section" id="exit-delay"><h2><Text value={ui.title}/></h2><p class="boundary-note"><Text value={ui.scope}/></p>
+<label><Text value={ui.delay}/><select id="exit-delay-select">{[1,3,5].map(d=><option value={d}>{d}</option>)}</select></label>
+<div class="table-scroll"><table><thead><tr>{['threshold','date','observed','end','change'].map(k=><th><Text value={ui[k as keyof typeof ui]}/></th>)}</tr></thead><tbody id="exit-delay-rows"></tbody></table></div>
+<p><Text value={ui.limit}/></p><noscript><p><Text value={ui.nojs}/></p></noscript><SourceInfo ids={['SRC-NAV']}/></section>
+<script>
+import nav from '../../public/evidence/microcap_nav.json';
+import ui from '../data/exit-ui.json';
+import {format,local} from '../lib/i18n';
+import {exitDelay} from '../lib/exit-delay';
+const rows=nav.filter(r=>r.date>='2023-12-29'&&r.date<='2024-03-29');
+const input=document.querySelector<HTMLSelectElement>('#exit-delay-select')!;
+function render(){
+ const body=document.querySelector('#exit-delay-rows')!;body.replaceChildren();
+ for(const t of [.05,.1,.2]){const r=exitDelay(rows,t,Number(input.value));const tr=document.createElement('tr');const pct=(v:number|null|undefined)=>v==null?local(ui.missing):format(v,{style:'percent',maximumFractionDigits:2,signDisplay:'exceptZero'});
+ const cells=[format(t,{style:'percent'}),r?.date??local(ui.missing),pct(r?.drawdown),r?.end??local(ui.missing),pct(r?.value)];
+ cells.forEach((content,i)=>{const td=document.createElement('td');td.textContent=content;if(i===4&&r?.value!=null)td.style.color=r.value<0?'var(--plot-negative)':r.value>0?'var(--plot-positive)':'var(--plot-neutral)';tr.append(td);});body.append(tr);}
+}
+input.addEventListener('change',render);document.addEventListener('research:locale',render);render();
+</script>

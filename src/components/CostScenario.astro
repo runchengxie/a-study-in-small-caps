@@ -1,0 +1,44 @@
+---
+import Text from './Text.astro';
+import ui from '../data/cost-ui.json';
+---
+<section class="evidence-section" id="cost-scenario">
+ <h2><Text value={ui.title}/></h2>
+ <p class="boundary-note"><Text value={ui.scope}/></p>
+ <div class="scenario-controls">
+ <label><Text value={ui.spread}/><input id="cost-spread" type="range" min="0" max="300" step="5" value="50"/><output id="spread-value" for="cost-spread">50</output></label>
+ <label><Text value={ui.replacement}/><input id="cost-replacement" type="range" min="0" max="100" step="5" value="100"/><output id="replacement-value" for="cost-replacement">100%</output></label>
+ </div>
+ <p><Text value={ui.formula}/></p>
+ <div id="cost-chart" class="chart"></div>
+ <div class="table-scroll"><table><thead><tr><th><Text value={ui.holding}/></th><th><Text value={ui.hurdle}/></th></tr></thead><tbody id="cost-rows">{[5,21,63].map(days=><tr><td>{days}</td><td>{(50/10000*252/days*100).toFixed(2)}%</td></tr>)}</tbody></table></div>
+ <p><Text value={ui.limits}/></p>
+ <noscript><p><Text value={ui.static}/></p></noscript>
+</section>
+<style>.scenario-controls{display:flex;flex-wrap:wrap;gap:1.5rem 3rem}.scenario-controls label{display:grid;gap:.5rem;min-width:min(100%,16rem)}input{accent-color:var(--accent)}output{font-variant-numeric:tabular-nums}</style>
+<script>
+import ui from '../data/cost-ui.json';
+import {local,format} from '../lib/i18n';
+import {costScenario} from '../lib/cost-scenario';
+const spread=document.querySelector<HTMLInputElement>('#cost-spread')!;
+const replacement=document.querySelector<HTMLInputElement>('#cost-replacement')!;
+const days=[5,21,63];
+const render=()=>{
+ const s=Number(spread.value),r=Number(replacement.value)/100;
+ document.querySelector('#spread-value')!.textContent=format(s);
+ document.querySelector('#replacement-value')!.textContent=format(r,{style:'percent'});
+ const values=days.map(d=>costScenario(s,d,r));
+ const percent=(v:number)=>format(v,{style:'percent',maximumFractionDigits:2});
+ const ns='http://www.w3.org/2000/svg';
+ const svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 720 240');svg.setAttribute('role','img');svg.setAttribute('aria-label',local(ui.hurdle));
+ const max=costScenario(300,5,1); // Fixed axis prevents a changed scale from hiding a smaller cost.
+ days.forEach((d,i)=>{
+ const y=25+i*65;
+ const bar=document.createElementNS(ns,'rect');bar.setAttribute('x','100');bar.setAttribute('y',String(y));bar.setAttribute('width',String(values[i]/max*430));bar.setAttribute('height','25');bar.setAttribute('fill','var(--plot-series)');svg.append(bar);
+ for(const [x,content] of [[15,String(d)],[550,percent(values[i])]] as const){const label=document.createElementNS(ns,'text');label.setAttribute('x',String(x));label.setAttribute('y',String(y+19));label.setAttribute('fill','currentColor');label.setAttribute('font-size','16');label.textContent=content;svg.append(label);}
+ });
+ document.querySelector('#cost-chart')!.replaceChildren(svg);
+ document.querySelectorAll<HTMLTableRowElement>('#cost-rows tr').forEach((row,i)=>row.cells[1].textContent=percent(values[i]));
+};
+spread.addEventListener('input',render);replacement.addEventListener('input',render);document.addEventListener('research:locale',render);render();
+</script>
