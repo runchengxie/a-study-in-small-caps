@@ -10,8 +10,8 @@ export function initializeTerrain(): void {
  const media = matchMedia('(prefers-reduced-motion: reduce)');
  let paused = false;
  const palette = () => document.documentElement.dataset.theme === 'dark'
-  ? {background:'#0c1e18',deep:'#003d28',mid:'#1a7a4c',crest:'#e6ff55',accent:'#e6ff55',blend:'additive' as const}
-  : {background:'#f5f2ea',deep:'#aab7a6',mid:'#537d68',crest:'#24523b',accent:'#346742',blend:'alpha' as const};
+  ? {background:'#211b18',deep:'#492b22',mid:'#995c38',crest:'#edc88a',accent:'#edc88a',blend:'additive' as const}
+  : {background:'#f5f2ea',deep:'#c9bba6',mid:'#a77a59',crest:'#805135',accent:'#955c39',blend:'alpha' as const};
  const options = (): WaveOptions => ({...palette(),preserveTitleMarkup:true,title1:text('coverLine1'),title2:text('coverLine2'),caption:text('coverNote'),next:text('exploreResearch'),labels:[text('waveDive'),text('waveGoing'),text('waveAlmost'),text('waveWelcome')]});
  const effect = mount(root, options());
  const controls = (): void => {

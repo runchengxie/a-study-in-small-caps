@@ -15,7 +15,7 @@ export function initializeTheme(): void {
  const apply = () => {
   const theme = resolvedTheme(preference, media.matches);
   document.documentElement.dataset.theme = theme;
-  document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#17221e' : '#f5f2ea');
+  document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#211b18' : '#f5f2ea');
  };
  selector.addEventListener('change', () => {
   if (!isTheme(selector.value)) return;
