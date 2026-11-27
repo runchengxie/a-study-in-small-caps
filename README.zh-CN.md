@@ -1,34 +1,24 @@
 # 小微盘研究
 
-[English](README.md) · [阅读研究专题](https://runchengxie.github.io/a-study-in-small-caps/)
+[English](README.md) · [打开研究网站](https://runchengxie.github.io/a-study-in-small-caps/)
 
-本项目持续研究不同市场的小微盘股票，考察收益、风险、流动性与可交易性。每次调查围绕一个问题展开，结合已有证据和文献说明当前结论，再交代限制与下一步核查。未通过的核查和结论修订均保留记录。
+小股票为什么有时涨得很快，下跌时又可能很难卖出？这个项目研究不同市场的小微盘投资，从能够核实的证据开始。
 
-专题汇集独立调查、可搜索的既有研究档案、历史与跨市场互动图表、全文精读笔记，以及带日期的结论修订记录。文献记录分别标注检索线索和已阅读全文的版本。对已有数据的诊断重算与独立复现也分别记录。历史图表用于描述样本表现，收益能否实际实现仍待验证。
+你可以阅读专题调查，操作图表，也可以对照论文看结论适用于什么条件。网站还保留早期研究和结论修改记录。初次访问可以先看首页概览，或者阅读 2024 年小微盘回撤调查。
 
-网站使用 TypeScript，支持中英文和可保留选择的浅色、深色及系统主题。首页采用示意性的 WebGL 动态画面，提供暂停、减少动态效果和静态后备显示。
+研究仍在继续，每章都会说明样本和局限。图表里的历史收益不保证投资者当时能按那些价格成交。
 
-网站新增净值与回撤联动图，点击月份可以切换观察区间，调整持有期限可以查看收益分布。2024年回撤调查把400只股票重建序列与已核对的政策日期放在同一章节。
+## 在自己的电脑上打开
 
-## 本地运行
-
-需要 Node.js 24 或更新版本。
+安装 Node.js 24 或更新版本，然后在项目文件夹里执行以下命令。
 
 ```sh
 npm ci
 npm run dev
 ```
 
-```sh
-npm run check
-npm test
-npm run build
-npx playwright install chromium
-npm run test:e2e
-```
+打开终端显示的本地地址即可。按 `Ctrl+C` 停止服务。本地运行网站不需要 Databricks 账户或数据供应商密钥。
 
-构建校验内容引用、来源文件精确哈希、公开数据边界和项目路径。GitHub Actions 完成检查后，将 `main` 部署到 GitHub Pages。
+## 想修改内容
 
-详见[架构和写作流程](docs/architecture.md)、[来源说明](docs/source-provenance.md#来源说明)和[发布边界](docs/publication.md)。
-
-研究输入、供应商原始数据和凭据保留在仓库外。共享数据治理归 `quant-market-data-platform`，通用执行归 `quant-platform`，私有策略归 `quant-research`。原固定报告继续保存在 [`quant-market-research`](https://github.com/runchengxie/quant-market-research)。本项目维护持续更新的调查和文献对照，因子观察站仅链接审核后的数据投影。
+[开发与配置说明](docs/development.zh-CN.md)介绍检查命令、配置文件和发布方式。[写作指南](docs/architecture.md)说明章节与图表放在哪里。[来源记录](docs/source-provenance.md#来源说明)和[发布规则](docs/publication.md)说明哪些材料可以公开，后两份技术文档以英文为主。
