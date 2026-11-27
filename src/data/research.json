@@ -665,6 +665,23 @@
               "zh": "下一步可以先固定历史股票资格，在相同日期比较微盘组与较大市值股票，并控制流动性及政策发生时点。估计实际可实现的损失前，还需核对股份与现金账户。目前能够确认的是这条重建路径上的压力过程，以及已经核实的政策日期。因果归属与可交易容量仍待研究。"
             }
           ]
+        },
+        {
+          "id": "exit-comparison",
+          "title": {
+            "en": "Connect the exit investigation",
+            "zh": "接入退出困难调查"
+          },
+          "paragraphs": [
+            {
+              "en": "The exit study develops a shared measurement checklist for this episode and the US quote pilot. Historical constituent lists, financing and flows remain missing here. The NAV path supports loss chronology; execution and causal mechanisms require additional inputs.",
+              "zh": "退出调查为本次事件与美股报价试验整理了共同的测量问题。本章仍缺历史成分名单、融资与资金流。净值路径支持损失时间线，执行和因果机制还需要更多输入。"
+            },
+            {
+              "en": "In a retrospective diagnostic with a running peak starting on 29 December 2023, the first 20% drawdown crossing occurred on 29 January 2024. Five retained observation steps later, on 5 February, the NAV was another 16.53% lower. This is a labelled change in the reconstructed path; it supplies no executable exit price.",
+              "zh": "在从2023年12月29日起累计高点的回顾诊断中，净值于2024年1月29日首次触及20%回撤门槛。五个保留观测间隔后，即2月5日，净值又下降16.53%。这项结果描述重建路径的后续变化，实际可成交的退出价格仍需另行取得。"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -681,6 +698,168 @@
         {
           "en": "Acquire matched historical holdings, financing and flow evidence before testing competing mechanisms; reconcile the source account first.",
           "zh": "先核对来源账户，再取得同日期的历史持仓、融资和资金流证据，检验不同机制。"
+        }
+      ]
+    },
+    {
+      "id": "INV-007",
+      "slug": "exit-liquidity-and-turnover",
+      "title": {
+        "en": "When can a small stock be sold?",
+        "zh": "小股票在下跌时有多难卖出？"
+      },
+      "summary": {
+        "en": "Exit research needs quote prices and displayed quantities together. A reproducible pilot and a turnover scenario identify what the next experiment must measure.",
+        "zh": "退出研究需要一起检查报价与展示数量。已有试验和换手情景明确了下一轮需要测量什么。"
+      },
+      "question": {
+        "en": "How do spreads, available bids and the decision to rebalance affect an attempted exit?",
+        "zh": "价差、可见买盘和调仓规则会怎样影响卖出？"
+      },
+      "conclusion": {
+        "en": "Top-of-book quotes can diagnose trading conditions. Realised exit costs still require an order policy, time-aligned observations and a reconciled holdings record.",
+        "zh": "最优买卖报价可以诊断交易条件。实际卖出成本仍需结合订单规则、对齐时间的观测和可核对的持仓记录。"
+      },
+      "markets": [
+        "US",
+        "A-share"
+      ],
+      "topics": [
+        "liquidity",
+        "trading_costs",
+        "size"
+      ],
+      "stage": "methods",
+      "updated": "2026-11-27",
+      "claimIds": [
+        "MC-C03"
+      ],
+      "literatureIds": [
+        "LIT-005"
+      ],
+      "sourceIds": [
+        "SRC-BMLL-FOLLOWUP",
+        "SRC-SEC-API",
+        "SRC-NAV"
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "title": {
+            "en": "Observe both sides of an exit",
+            "zh": "一起看卖出的价格和数量"
+          },
+          "paragraphs": [
+            {
+              "en": "A narrow spread says little about how much can be sold at the bid. Track valid-time spread, displayed bid dollars and quote age separately. Changes in price and share quantity can both change the displayed amount.",
+              "zh": "价差较窄时，买一档仍可能只有很少金额。需要分别跟踪有效时间价差、买盘金额和报价年龄。价格和股数的变化都会改变展示金额。"
+            },
+            {
+              "en": "The retained US inputs support NBBO and enhanced trades. A quote is an offer at a point in time. Hidden liquidity, queue position, cancellation and replenishment remain outside this diagnostic.",
+              "zh": "现有美股输入支持 NBBO 和增强逐笔成交。报价描述一个时点的挂单情况，隐藏流动性、排队位置、撤单和补单仍超出这项诊断。"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": {
+            "en": "Check the observation before explaining the event",
+            "zh": "先检查观测，再解释事件"
+          },
+          "paragraphs": [
+            {
+              "en": "The follow-up compares spreads over all valid time with spreads for quotes aged below 60 seconds. It records invalid time and reports unknown trade direction by security. This avoids pooling active ETF trades into an apparently representative small-stock statistic.",
+              "zh": "后续检查同时计算全部有效时间和报价年龄低于60秒的价差，保留无效时间，并逐证券报告未知成交方向。高活跃 ETF 的成交数量可能主导合并统计，需要单独检查。"
+            },
+            {
+              "en": "Company announcements between the two periods are possible confounders. A few half-hour windows and a selected security do not identify a market-wide pressure effect.",
+              "zh": "两个时期之间的公司公告可能影响比较。几段半小时窗口和一只挑选出的证券，无法识别全市场压力的影响。"
+            }
+          ]
+        },
+        {
+          "id": "section-3",
+          "title": {
+            "en": "Expand with a fixed selection rule",
+            "zh": "用固定规则扩样"
+          },
+          "paragraphs": [
+            {
+              "en": "The next candidate list uses a fixed historical feature date and crosses capitalization with trading activity. Selection is deterministic within each cell. Reference matching comes first, including missing and duplicate identities. A modern snapshot can still contain later revisions.",
+              "zh": "下一份候选名单固定历史特征日，按市值与交易活跃程度交叉分组，组内使用可重复的选取规则。先核对参考映射，记录缺失和重复身份。现存快照仍可能包含后来的修订。"
+            }
+          ]
+        },
+        {
+          "id": "section-4",
+          "title": {
+            "en": "Let holding rules change before claiming better returns",
+            "zh": "先观察持仓规则怎样改变名单"
+          },
+          "paragraphs": [
+            {
+              "en": "A buffer retains an existing holding while its size rank remains within a wider exit boundary. The private prototype compares target membership changes with and without that buffer. Initial funding is excluded. Price drift, unavailable sales and return differences need a separate portfolio ledger.",
+              "zh": "缓冲规则允许旧持仓在更宽的退出排名内继续保留。私有原型已经比较有无缓冲时的目标名单变化，并排除首次建仓。价格漂移、无法卖出的持仓及收益差异，需要另接组合账户。"
+            },
+            {
+              "en": "The calculator above changes spread and replacement assumptions independently. Its fixed chart scale makes a lower arithmetic hurdle visible. It does not calibrate those assumptions to a particular stock or strategy.",
+              "zh": "上方计算器可以分别调整价差和替换比例。图表采用固定刻度，便于观察算术成本门槛的变化。这些假设尚未按某只股票或策略校准。"
+            }
+          ]
+        },
+        {
+          "id": "section-5",
+          "title": {
+            "en": "Compare China A-shares with explicit limits",
+            "zh": "跨市场比较先对齐口径"
+          },
+          "paragraphs": [
+            {
+              "en": "The 2024 China A-share chapter supplies a dated reconstructed NAV and policy chronology. The US pilot supplies top-of-book diagnostics for selected securities. Compare questions and denominators first; neither dataset fills the other market’s missing holdings or order records.",
+              "zh": "2024年中国 A 股章节提供重建净值和政策时间线，美股试验提供选定证券的最优报价诊断。先比较研究问题与分母，两份数据各自缺少的持仓和订单记录仍需补齐。"
+            },
+            {
+              "en": "A useful matched design forms size and activity groups before each episode, compares them on common dates and retains securities that subsequently leave the sample. Forced sales require financing or redemption evidence in addition to prices.",
+              "zh": "后续对照可以在事件前形成市值与活跃程度分组，比较相同日期，并保留随后退出样本的证券。被动卖出的解释还需要价格之外的融资或赎回证据。"
+            }
+          ]
+        },
+        {
+          "id": "section-6",
+          "title": {
+            "en": "Date financial information by its release",
+            "zh": "按披露时间使用财务信息"
+          },
+          "paragraphs": [
+            {
+              "en": "SEC APIs expose filings and XBRL facts. Preserve the filing identity, units and reporting period, then verify when the information became available. Restated values retrieved today may differ from those known at formation.",
+              "zh": "SEC API 提供申报记录和 XBRL 财务事实。保存申报身份、单位和报告期，再核对信息何时可用。今天取得的重述值可能与形成组合时可见的数字不同。"
+            },
+            {
+              "en": "Profitability, operating cash flow, debt and dilution are useful candidate classifications. Original statements, concept mapping and historical shares must be checked before assigning those labels.",
+              "zh": "盈利、经营现金流、负债与股本摊薄可以作为候选分类。贴上标签前，需要核对原报表、会计字段和历史股本。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "en": "The private pilot uses a retrospective candidate list. Historical equity eligibility and original release-time availability remain unverified.",
+          "zh": "私有试验采用回顾性候选名单。历史股票资格和原始信息发布时间仍未认证。"
+        },
+        {
+          "en": "No provider-derived security observations are republished here. The interactive calculator is a hypothetical scenario.",
+          "zh": "本页没有重新发布供应商逐证券观测。互动计算器使用假设情景。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Acquire finer time windows after historical identity checks, retain nonmatches, and test independent periods.",
+          "zh": "核对历史身份后采集更细时间窗口，保留未匹配记录，再检验独立时期。"
+        },
+        {
+          "en": "Connect adjusted prices, corporate actions and filing-time fundamentals before estimating strategy returns.",
+          "zh": "接入复权价格、公司行动和按披露时间匹配的基本面，再估计策略收益。"
         }
       ]
     }
@@ -933,7 +1112,8 @@
         "zh": "怎样区分持有缓冲、信号换手和真实交易换手？美股成本不能当作当下A股常数。"
       },
       "investigationIds": [
-        "INV-003"
+        "INV-003",
+        "INV-007"
       ],
       "sourceIds": [
         "SRC-PAPER-005"
@@ -1455,6 +1635,35 @@
         "zh": "阅读证监会对汇金公告的答复，未独立核实买入金额、篮子或订单记录。"
       },
       "kind": "record"
+    },
+    {
+      "id": "SRC-BMLL-FOLLOWUP",
+      "title": {
+        "en": "Reproducible exit and membership protocol",
+        "zh": "退出与名单更替实验方法"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/94b921a577d1514183e01100e4b51b1f72946060/docs/research/bmll/followup.md",
+      "revision": "94b921a577d1514183e01100e4b51b1f72946060",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Public methods only. Numerical security results remain private.",
+        "zh": "公开方法，逐证券数值结果保留在私有记录中。"
+      },
+      "kind": "method"
+    },
+    {
+      "id": "SRC-SEC-API",
+      "title": {
+        "en": "SEC EDGAR API documentation",
+        "zh": "SEC EDGAR API 文档"
+      },
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "API capability reviewed; no complete historical fundamentals panel is claimed.",
+        "zh": "已核对 API 能力，尚未构成完整的历史基本面面板。"
+      },
+      "kind": "official"
     }
   ],
   "history": [
@@ -1609,6 +1818,26 @@
         "SRC-CSRC-20240206-LENDING",
         "SRC-CSRC-20240206-ETF"
       ]
+    },
+    {
+      "id": "H-EXIT-20261127",
+      "date": "2026-11-27",
+      "title": {
+        "en": "Exit research and turnover scenarios",
+        "zh": "推进退出研究与换手情景"
+      },
+      "description": {
+        "en": "Added a methods chapter and an explicitly hypothetical cost calculator. The private follow-up checks quote freshness, provisional identities and target membership changes; strategy returns remain untested.",
+        "zh": "新增方法章节和明确标注为假设的成本计算器。私有后续实验检查报价新鲜程度、候选身份与目标名单更替，策略收益仍待检验。"
+      },
+      "type": "research",
+      "relatedIds": [
+        "INV-007",
+        "INV-006"
+      ],
+      "sourceIds": [
+        "SRC-BMLL-FOLLOWUP"
+      ]
     }
   ],
   "crosschecks": [
@@ -1701,6 +1930,19 @@
       "reason": {
         "en": "Full-text method comparison: the existing low-share-turnover association is a stock characteristic; portfolio trading turnover requires holdings transitions. NAV levels cannot test a buy/hold buffer. The necessary paired replay is unrun.",
         "zh": "全文方法对照显示，已有低换手关联描述股票特征，组合交易换手需要持仓变动。净值无法检验持有缓冲，需要的配对重放尚未运行。"
+      }
+    },
+    {
+      "id": "X-005-EXIT",
+      "literatureId": "LIT-005",
+      "investigationId": "INV-007",
+      "claimIds": [
+        "MC-C03"
+      ],
+      "status": "untested",
+      "reason": {
+        "en": "The membership prototype tests a rank buffer. It has no realised returns or execution costs and does not replicate the paper’s anomaly portfolio tests.",
+        "zh": "名单原型检查排名缓冲规则。尚未接入实际收益与执行成本，论文中的异象组合检验仍待复现。"
       }
     }
   ]

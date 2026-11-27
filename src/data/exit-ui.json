@@ -1,0 +1,46 @@
+{
+  "title": {
+    "en": "What happened after the first drawdown threshold?",
+    "zh": "首次触及回撤门槛后发生了什么？"
+  },
+  "scope": {
+    "en": "Diagnostic of the frozen 400-stock reconstructed NAV from 29 December 2023 to 29 March 2024. The running peak starts at the first observation in this interval. Thresholds and intervals are retrospective research choices.",
+    "zh": "诊断2023年12月29日至2024年3月29日的冻结400只股票重建净值。运行高点从这一区间的首个观测开始累计，门槛和区间均为回顾性研究选择。"
+  },
+  "delay": {
+    "en": "Observation steps after the crossing",
+    "zh": "触及门槛后再过几个观测间隔"
+  },
+  "threshold": {
+    "en": "Drawdown threshold",
+    "zh": "回撤门槛"
+  },
+  "date": {
+    "en": "First crossing",
+    "zh": "首次触及日期"
+  },
+  "observed": {
+    "en": "Observed drawdown",
+    "zh": "当日回撤"
+  },
+  "end": {
+    "en": "Outcome date",
+    "zh": "后续观测日期"
+  },
+  "change": {
+    "en": "Subsequent NAV change",
+    "zh": "此后净值变化"
+  },
+  "missing": {
+    "en": "Unavailable",
+    "zh": "缺失"
+  },
+  "limit": {
+    "en": "Each crossing uses only peaks already observed. Subsequent changes are outcome labels. The NAV does not supply intraday prices, available bids or actual sale proceeds. Different thresholds refer to different dates; they do not rank stop-loss rules.",
+    "zh": "每次触及判断只使用此前已观察到的高点，此后变化属于结果标签。净值没有提供盘中价格、可用买盘或实际卖出所得。各门槛对应不同日期，无法据此排名止损规则。"
+  },
+  "nojs": {
+    "en": "Enable JavaScript to compare observation intervals. The chapter retains the dated drawdown narrative below.",
+    "zh": "启用 JavaScript 后可以比较观测间隔，下文保留带日期的回撤说明。"
+  }
+}
