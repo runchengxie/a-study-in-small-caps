@@ -1,0 +1,4 @@
+---
+import Site from '../layouts/Site.astro';import Text from '../components/Text.astro';import SearchPanel from '../components/SearchPanel.astro';import SourceInfo from '../components/SourceInfo.astro';import research from '../data/research.json';
+---
+<Site title="Research history" active="history"><header class="page-intro"><p class="eyebrow"><Text k="historyEyebrow"/></p><h1><Text k="history"/></h1><p><Text k="historyIntro"/></p></header><SearchPanel initialType="history"/><section class="section"><h2><Text k="claims"/></h2><div class="claim-register">{research.claims.map(claim=><article id={claim.id}><p class="eyebrow">{claim.id} · <Text k={claim.stage}/></p><h3><Text value={claim.title}/></h3><p><Text value={claim.statement}/></p><ul>{claim.limitations.map(limit=><li><Text value={limit}/></li>)}</ul><SourceInfo ids={claim.sourceIds}/></article>)}</div></section></Site>

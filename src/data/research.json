@@ -1,0 +1,1131 @@
+{
+  "investigations": [
+    {
+      "id": "INV-001",
+      "slug": "what-is-small",
+      "title": {
+        "en": "What is small?",
+        "zh": "什么叫小？"
+      },
+      "summary": {
+        "en": "The definition chooses the comparison before any return is calculated.",
+        "zh": "在计算收益以前，定义已经决定了比较对象。"
+      },
+      "question": {
+        "en": "Does the smallest company mean the same thing across markets?",
+        "zh": "不同市场的最小公司，是同一种研究对象吗？"
+      },
+      "conclusion": {
+        "en": "Dollar capitalization and within-market ranks answer different questions. Neither is a universal small-cap definition.",
+        "zh": "美元市值与市场内排名回答不同问题，均不是通用的小盘定义。"
+      },
+      "markets": [
+        "A-share",
+        "US",
+        "HK",
+        "JP"
+      ],
+      "topics": [
+        "size",
+        "definition",
+        "comparability"
+      ],
+      "stage": "methods",
+      "updated": "2026-11-27",
+      "claimIds": [
+        "MC-C02"
+      ],
+      "literatureIds": [
+        "LIT-001",
+        "LIT-002",
+        "LIT-003"
+      ],
+      "sourceIds": [
+        "SRC-SIZE",
+        "SRC-LIQ",
+        "SRC-REL"
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "title": {
+            "en": "Start with the economic question",
+            "zh": "先确定经济问题"
+          },
+          "paragraphs": [
+            {
+              "en": "An investor looking for overlooked businesses may call a company small because analysts rarely cover it. A portfolio researcher needs a rule that another person can repeat: a dollar threshold, a percentile or the smallest fixed number of eligible listings. These rules select different businesses, even on the same day.",
+              "zh": "投资者可能因为一家公司少人研究而称它为小公司。组合研究则需要别人可以重复的规则：固定美元门槛、市值百分位，或合格股票中最小的固定数量。即使在同一天，这些规则也会选出不同企业。"
+            },
+            {
+              "en": "A smallest-400 rule fixes the number of holdings but lets its share of the market change as listings expand. A bottom-quintile rule fixes a fraction but lets the number and dollar size change. The share definition, exchange universe and historical eligibility belong in the definition too.",
+              "zh": "最小400只固定了持股数量，却会随上市公司增加而改变覆盖比例。最小五分之一固定比例，数量和美元规模则随之变化。股数口径、交易所范围与历史资格也都是定义的一部分。"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": {
+            "en": "Two lenses on the same evidence",
+            "zh": "同一证据的两种看法"
+          },
+          "paragraphs": [
+            {
+              "en": "Use the absolute buckets to ask how much daily trading activity accompanies a given dollar size. Switch to within-market quintiles to ask how the smallest local segment differs from larger local companies. A bottom quintile in one market need not fit the same dollar bucket in another.",
+              "zh": "绝对市值分组用来观察给定美元规模对应多少日常交易活动。市场内五分组用来比较当地最小一端与较大公司。一个市场的最小五分之一，未必落在另一个市场相同的美元区间。"
+            },
+            {
+              "en": "The chart keeps one lagged traded-value measure while changing the grouping rule. That isolates a useful descriptive choice, but it does not harmonize listing rules, share classes or source histories. Common dates remove one obvious mismatch; they do not make the underlying samples identical.",
+              "zh": "图表保持滞后成交额指标不变，只切换分组方式。这有助于理解口径差别，但不能统一上市制度、股份类别与来源历史。共同日期消除了一项明显差异，不能让底层样本变成同一个股票池。"
+            }
+          ],
+          "figure": "liquidity"
+        },
+        {
+          "id": "section-3",
+          "title": {
+            "en": "Size is a starting hypothesis",
+            "zh": "规模只是研究起点"
+          },
+          "paragraphs": [
+            {
+              "en": "The literature raises quality and shell-value questions because market capitalization can travel with other characteristics. Our retained low-turnover association is a separate exploratory question. Without matched formation dates, weights and quality controls, a resemblance in direction is not a replication or an explanation.",
+              "zh": "文献提出质量和壳价值问题，因为市值常与其他特征同时变化。保留的低换手关联是另一项探索问题。若未对齐形成日、权重与质量控制，方向相似不能算复现，也不能算解释。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Japanese historical share counts are incomplete; common dates do not certify point-in-time eligibility.",
+          "zh": "日股历史股数不完整；共同日期不能认证历史时点资格。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Freeze size, share and eligibility rules before comparing returns on common support.",
+          "zh": "先冻结规模、股数与资格规则，再在共同样本比较收益。"
+        }
+      ]
+    },
+    {
+      "id": "INV-002",
+      "slug": "historical-risk-and-recovery",
+      "title": {
+        "en": "What did the smallest portfolios endure?",
+        "zh": "最小市值组合经历了什么？"
+      },
+      "summary": {
+        "en": "Loss depth and time below a prior peak matter independently of a final return.",
+        "zh": "损失深度与等待恢复的时间，应独立于期末收益审视。"
+      },
+      "question": {
+        "en": "How much could a rule lose, and how long did recovery take?",
+        "zh": "一条规则曾亏损多少，又等待多久才恢复？"
+      },
+      "conclusion": {
+        "en": "The retained reconstructions show deep losses and material waiting times. Accounting and eligibility limits block a claim of validated investable alpha.",
+        "zh": "保留的重建显示深度损失与漫长等待；核算和资格限制阻止我们把它称为已验证的可投资超额收益。"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "size",
+        "drawdown",
+        "recovery",
+        "accounting"
+      ],
+      "stage": "historical",
+      "updated": "2026-11-27",
+      "claimIds": [
+        "MC-C01",
+        "MC-C03",
+        "MC-C05",
+        "MC-C06"
+      ],
+      "literatureIds": [
+        "LIT-001",
+        "LIT-003"
+      ],
+      "sourceIds": [
+        "SRC-NAV",
+        "SRC-EARLY",
+        "SRC-RISK",
+        "SRC-ARCHIVE",
+        "SRC-CLAIMS"
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "title": {
+            "en": "Read the path before the endpoint",
+            "zh": "先看过程，再看终点"
+          },
+          "paragraphs": [
+            {
+              "en": "A high ending value does not tell an investor whether they could have held through the path. A drawdown measures the loss from a previous peak. An underwater duration measures the wait until that peak is recovered. A shallow but persistent decline can tie up capital differently from a sharp, quickly recovered fall.",
+              "zh": "较高的期末净值不能说明投资者能否熬过中途。回撤衡量相对前高的损失，水下期衡量等到重回前高所需时间。浅但持久的下跌，与猛烈但迅速恢复的下跌，会以不同方式占用资金。"
+            },
+            {
+              "en": "The early 2008–2014 summaries report maximum drawdowns from roughly 60% to 69% across the retained 50 to 800-name rules. These are properties of the stated incomplete reconstruction, not estimates of a future loss limit. Wider portfolios did not mechanically eliminate the historical downside in this sample.",
+              "zh": "2008—2014年早期汇总中，保留的50至800只规则最大回撤约为60%至69%。这是注明存在缺项的重建结果，不能当作未来损失上限。在这个样本里，扩大持股数量并未机械消除历史下行风险。"
+            }
+          ]
+        },
+        {
+          "id": "section-2",
+          "title": {
+            "en": "Keep the two samples apart",
+            "zh": "把两段样本分开"
+          },
+          "paragraphs": [
+            {
+              "en": "The count selector describes early risk summaries. The actual NAV curve comes from a separate published 400-name reconstruction beginning in 2015. We have not filled missing curves from summary statistics, joined the two periods or inferred unobserved daily returns. Changing count therefore changes the early summary, not the later curve.",
+              "zh": "数量切换展示早期风险汇总。实际净值曲线来自另一份2015年开始的400只公开重建。我们没有根据汇总补造曲线、拼接区间或推断未观察的日收益。因此切换股票数改变早期汇总，不改变后期曲线。"
+            },
+            {
+              "en": "In the early source, the longest underwater duration counts completed episodes only. Every count also has one episode still underwater at the sample end. That is right censoring: the eventual recovery is unknown, so the completed maximum cannot be read as a guaranteed waiting-time bound.",
+              "zh": "早期来源的最长水下期只统计已恢复区间。每组数量另有一个截至样本末仍未恢复的区间。这叫右删失：最终恢复时间未知，因此已完成区间的最大值不能理解为等待时间保证。"
+            }
+          ],
+          "figure": "microcap"
+        },
+        {
+          "id": "section-3",
+          "title": {
+            "en": "An audit can change the question",
+            "zh": "审计会改变问题"
+          },
+          "paragraphs": [
+            {
+              "en": "Historical eligibility, missing prices, suspensions and corporate actions can change both selected holdings and the account path. Matching a summary number does not recover the original runtime. Completed provider queries do not prove that all entitlements have been settled correctly. MC-C05 and MC-C06 retain those distinctions.",
+              "zh": "历史资格、缺失价格、停牌和公司行动可能同时改变选股与账户路径。汇总数接近不能找回原运行，供应商请求完成也不能证明所有权益已经正确结算。MC-C05与MC-C06保留了这些区别。"
+            },
+            {
+              "en": "The next useful step is to reconcile raw shares and cash under fixed rules, then revisit the same historical episodes. A new calm month would add an observation; it would not erase a past loss or repair an unresolved ledger.",
+              "zh": "下一项有用工作是在固定规则下对齐真实股份与现金，再核对同一批历史案例。未来一个平静月份可以增加观察，却不会抹去过去损失，也不会修好尚未对齐的账本。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Early historical ST and suspension coverage is incomplete; the 400-name later NAV has no transaction-cost or capacity model.",
+          "zh": "早期历史ST与停牌覆盖不完整；后期400只净值没有成本或容量模型。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Reconcile raw-share and cash accounting before using reconstructed performance for an implementation decision.",
+          "zh": "在用重建表现作实施决策前，先核对真实股份与现金账本。"
+        }
+      ]
+    },
+    {
+      "id": "INV-003",
+      "slug": "liquidity-and-implementation",
+      "title": {
+        "en": "Can small stocks be traded?",
+        "zh": "小股票是否容易交易？"
+      },
+      "summary": {
+        "en": "Trading activity is a useful first screen; a sellable portfolio requires more evidence.",
+        "zh": "成交活跃度是有用的初筛，但能卖出的组合需要更多证据。"
+      },
+      "question": {
+        "en": "What does a traded-value comparison establish about getting in and out?",
+        "zh": "成交额比较能告诉我们多少买入和退出能力？"
+      },
+      "conclusion": {
+        "en": "Reviewed aggregates describe activity across selected markets and periods. They do not establish spreads, fills, market impact or deployable capital.",
+        "zh": "已审查汇总描述特定市场和区间的活跃度，不能确立价差、成交、冲击或可部署资金。"
+      },
+      "markets": [
+        "A-share",
+        "US",
+        "HK",
+        "JP"
+      ],
+      "topics": [
+        "liquidity",
+        "implementation",
+        "trading_costs"
+      ],
+      "stage": "exploratory",
+      "updated": "2026-11-27",
+      "claimIds": [
+        "MC-C03",
+        "MC-C04",
+        "MC-C05"
+      ],
+      "literatureIds": [
+        "LIT-004",
+        "LIT-005"
+      ],
+      "sourceIds": [
+        "SRC-LIQ",
+        "SRC-REL",
+        "SRC-EXEC",
+        "SRC-CLAIMS"
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "title": {
+            "en": "Start with the right unit",
+            "zh": "先看清单位"
+          },
+          "paragraphs": [
+            {
+              "en": "The displayed measure starts with each security’s mean daily traded value over 20 prior sessions, lagged by a session and converted into USD. The bucket median describes the middle observation. It is not the dollar amount a new investor can immediately buy or sell at the last price.",
+              "zh": "展示指标先计算每只证券此前20个交易日的日均成交额，再滞后一个交易日并换算美元。分组中位数描述中间观测，不是新增投资者能立刻按最新价买卖的金额。"
+            },
+            {
+              "en": "For a historical period, the sample pools security-days. A company observed many days can appear many times; a unique-stock count answers a different question. Empty groups remain empty, and an observed zero is not interchangeable with a missing session.",
+              "zh": "历史区间汇集证券日。同一家公司在多个日期会出现多次，独立股票数回答另一问题。空分组仍为空，实际观测到的零成交也不能与缺失交易日混为一谈。"
+            }
+          ],
+          "figure": "liquidity"
+        },
+        {
+          "id": "section-2",
+          "title": {
+            "en": "Dates and market names are not coverage guarantees",
+            "zh": "日期与市场名不等于覆盖保证"
+          },
+          "paragraphs": [
+            {
+              "en": "The available common periods include a shared 2025 snapshot and historical windows. The 2026 common period includes Hong Kong, mainland A-shares and Japan, ending in April; it does not contain US observations. The source retains different latest snapshots by market, which we do not combine into a same-day comparison.",
+              "zh": "可用共同区间包括2025年的同日快照及若干历史窗口。2026年共同区间包括港股、内地A股与日股，止于四月，不含美股观测。来源还保留各市场日期不同的最新快照，本页未把它们拼成同日比较。"
+            },
+            {
+              "en": "Mainland coverage is Shanghai and Shenzhen, not every Chinese exchange. Japanese historical shares are incomplete and have not been certified against historical revisions. Even on common dates, listing coverage and valuation definitions differ. Use the chart to frame questions, not rank whole national markets as permanently liquid or illiquid.",
+              "zh": "内地覆盖沪深，不是所有中国交易所。日股历史股数不完整，也未认证历史修订安全。即使日期相同，上市范围和估值定义仍有差别。图表适合帮助提出问题，不宜据此给整个国家市场贴上永久流动或不流动的标签。"
+            }
+          ]
+        },
+        {
+          "id": "section-3",
+          "title": {
+            "en": "Move from a budget to a fill",
+            "zh": "从预算走向成交"
+          },
+          "paragraphs": [
+            {
+              "en": "A participation budget assumes an investor takes some fraction of market activity. It cannot establish that counterparties were available at an acceptable price or that a queued order filled. Spread, displayed depth, queue position, order policy and settlement each add constraints. A static depth calculation and a US NBBO spread are different measurements.",
+              "zh": "参与率预算假定投资者使用市场成交的一部分，不能证明可接受价格上存在对手方，也不能证明排队订单成交。价差、展示深度、排队位置、订单规则和结算都会加上约束。静态深度成本与美股NBBO价差也是不同指标。"
+            },
+            {
+              "en": "Literature on illiquidity and trading costs offers testable ideas, not portable cost constants. This first release has not reviewed those papers in full or replicated their methods. A later public microstructure chapter needs its own reviewed aggregate release; no BMLL security-level observations are included here.",
+              "zh": "非流动性与交易成本文献提供可检验的思路，不提供可以直接搬用的成本常数。首版尚未全文审阅这些论文，也未复现其方法。后续公共微观结构章节需要独立审查的聚合发布；本站不包含BMLL逐证券观测。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "en": "Historical point-in-time eligibility and executable capacity are not certified.",
+          "zh": "尚未认证历史时点资格与可执行容量。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Specify capital, order rules and account treatment, then compare calibrated fills on matched dates.",
+          "zh": "固定资金、订单规则与账户处理，再在对齐日期比较经过校准的成交。"
+        }
+      ]
+    }
+  ],
+  "literature": [
+    {
+      "id": "LIT-001",
+      "title": "The relationship between return and market value of common stocks",
+      "authors": [
+        "Rolf W. Banz"
+      ],
+      "year": 1981,
+      "doi": "10.1016/0304-405X(81)90018-0",
+      "url": "https://www.sciencedirect.com/science/article/pii/0304405X81900180",
+      "version": "Journal article metadata; full text not reviewed",
+      "markets": [
+        "US"
+      ],
+      "topics": [
+        "size",
+        "definition"
+      ],
+      "stage": "abstract",
+      "summary": {
+        "en": "Publisher abstract reports historical risk-adjusted size association and explicitly leaves size versus correlated characteristics unresolved.",
+        "zh": "出版方摘要讨论历史风险调整后收益与规模的关联，也保留规模是否代理其他特征的问题。"
+      },
+      "question": {
+        "en": "Do we study the same universe, weighting, dates and risk adjustment? An A-share smallest-N portfolio is not a direct replication.",
+        "zh": "股票池、日期、权重与风险调整是否一致？A股最小N只组合并非直接复现。"
+      },
+      "investigationIds": [
+        "INV-001",
+        "INV-002"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-001"
+      ]
+    },
+    {
+      "id": "LIT-002",
+      "title": "Size Matters, If You Control Your Junk",
+      "authors": [
+        "Clifford S. Asness",
+        "Andrea Frazzini",
+        "Ronen Israel",
+        "Tobias J. Moskowitz",
+        "Lasse H. Pedersen"
+      ],
+      "year": 2018,
+      "doi": "10.1016/j.jfineco.2018.05.006",
+      "url": "https://www.aqr.com/insights/research/working-paper/size-matters-if-you-control-your-junk",
+      "version": "Journal article metadata; full text not reviewed",
+      "markets": [
+        "cross-market"
+      ],
+      "topics": [
+        "size",
+        "quality",
+        "cross_market"
+      ],
+      "stage": "author_summary",
+      "summary": {
+        "en": "Authors argue that controlling for quality strengthens the size effect in their tested settings.",
+        "zh": "作者机构的介绍认为，在其检验设定中控制质量后，规模效应更强。"
+      },
+      "question": {
+        "en": "Does a size association survive historical quality controls on a common sample? Do not imply our current low-turnover tests replicate this paper.",
+        "zh": "在共同历史样本加入质量控制后，规模关联是否仍存在？现有低换手检验并非本文复现。"
+      },
+      "investigationIds": [
+        "INV-001"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-002"
+      ]
+    },
+    {
+      "id": "LIT-003",
+      "title": "Size and value in China",
+      "authors": [
+        "Jianan Liu",
+        "Robert F. Stambaugh",
+        "Yu Yuan"
+      ],
+      "year": 2019,
+      "doi": "10.1016/j.jfineco.2019.03.008",
+      "url": "https://doi.org/10.1016/j.jfineco.2019.03.008",
+      "version": "Journal article metadata; full text not reviewed",
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "size",
+        "shell_value",
+        "institution"
+      ],
+      "stage": "abstract",
+      "summary": {
+        "en": "Paper discusses shell-value contamination and excludes the smallest 30 percent for its factor construction in its historical sample.",
+        "zh": "已定位的出版方摘录讨论壳价值干扰，其历史因子构建排除最小30%。这不能自动解释改革后的机制。"
+      },
+      "question": {
+        "en": "What changes when we exclude the smallest tail under matched accounting? Historical shell-value results do not establish current post-reform mechanisms or explain all microcap returns.",
+        "zh": "在相同核算下排除最小一端，结果如何改变？不能据历史壳价值推断当前制度。"
+      },
+      "investigationIds": [
+        "INV-001",
+        "INV-002"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-003"
+      ]
+    },
+    {
+      "id": "LIT-004",
+      "title": "Illiquidity and stock returns: cross-section and time-series effects",
+      "authors": [
+        "Yakov Amihud"
+      ],
+      "year": 2002,
+      "doi": "10.1016/S1386-4181(01)00024-6",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1386418101000246",
+      "version": "Journal article metadata; full text not reviewed",
+      "markets": [
+        "US"
+      ],
+      "topics": [
+        "liquidity",
+        "measurement"
+      ],
+      "stage": "abstract",
+      "summary": {
+        "en": "Paper examines relationships between illiquidity and returns using low-frequency measures.",
+        "zh": "出版方摘要研究低频非流动性指标与收益的关系；它与盘口价差、报价年龄不是同一数量。"
+      },
+      "question": {
+        "en": "How do low-frequency price-impact proxies relate to observed NBBO spread and quote age? They are distinct quantities and not causal impact estimates.",
+        "zh": "低频价格冲击代理与NBBO价差、报价年龄如何关联？它们不能当作因果冲击估计。"
+      },
+      "investigationIds": [
+        "INV-003"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-004"
+      ]
+    },
+    {
+      "id": "LIT-005",
+      "title": "A Taxonomy of Anomalies and their Trading Costs",
+      "authors": [
+        "Robert Novy-Marx",
+        "Mihail Velikov"
+      ],
+      "year": 2014,
+      "doi": "10.3386/w20721",
+      "url": "https://www.nber.org/papers/w20721",
+      "version": "NBER Working Paper 20721; not conflated with a later journal edition",
+      "markets": [
+        "US"
+      ],
+      "topics": [
+        "trading_costs",
+        "turnover",
+        "implementation"
+      ],
+      "stage": "abstract",
+      "summary": {
+        "en": "Working-paper abstract studies after-cost anomalies and buy/hold spreads as cost mitigation.",
+        "zh": "2014年NBER工作论文摘要讨论扣费后的异象，以及用买入与持有区间降低成本的办法。"
+      },
+      "question": {
+        "en": "Separate holding buffers, signal turnover and actual trade turnover; US costs are not current A-share cost constants.",
+        "zh": "怎样区分持有缓冲、信号换手和真实交易换手？美股成本不能当作当下A股常数。"
+      },
+      "investigationIds": [
+        "INV-003"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-005"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "MC-C01",
+      "title": {
+        "en": "Historical downside and recovery",
+        "zh": "历史下行与恢复"
+      },
+      "statement": {
+        "en": "Retained reconstructions show substantial losses and waiting times; historical risk survives uncertainty about investability.",
+        "zh": "保留的重建显示较大损失与等待时间；可投资性未明，不会抹去历史风险。"
+      },
+      "stage": "historical",
+      "investigationIds": [
+        "INV-002"
+      ],
+      "sourceIds": [
+        "SRC-CLAIMS",
+        "SRC-ARCHIVE"
+      ],
+      "limitations": [
+        {
+          "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
+          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+        }
+      ]
+    },
+    {
+      "id": "MC-C02",
+      "title": {
+        "en": "Low turnover beyond size and liquidity",
+        "zh": "规模与流动性之外的低换手关联"
+      },
+      "statement": {
+        "en": "A retained conditional association is exploratory; genuinely new frozen observations are needed for stronger inference.",
+        "zh": "保留的条件关联属于探索；更强推断需要真正新冻结的观察。"
+      },
+      "stage": "exploratory",
+      "investigationIds": [
+        "INV-001"
+      ],
+      "sourceIds": [
+        "SRC-CLAIMS",
+        "SRC-ARCHIVE"
+      ],
+      "limitations": [
+        {
+          "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
+          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+        }
+      ]
+    },
+    {
+      "id": "MC-C03",
+      "title": {
+        "en": "Executable capacity",
+        "zh": "可执行容量"
+      },
+      "statement": {
+        "en": "Full-history raw-share capacity remains unestablished; synthetic accounting and assumed costs do not certify it.",
+        "zh": "完整历史真实股份容量尚未确立；合成核算与假设成本不能认证容量。"
+      },
+      "stage": "unestablished",
+      "investigationIds": [
+        "INV-002",
+        "INV-003"
+      ],
+      "sourceIds": [
+        "SRC-CLAIMS",
+        "SRC-ARCHIVE"
+      ],
+      "limitations": [
+        {
+          "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
+          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+        }
+      ]
+    },
+    {
+      "id": "MC-C04",
+      "title": {
+        "en": "Support-policy rescoring",
+        "zh": "观测门槛引发的截面重打分"
+      },
+      "statement": {
+        "en": "Same-input support interventions are controlled diagnostics, not attribution of an unrecovered historical run.",
+        "zh": "同输入下的观测门槛干预属于受控诊断，不是对未找回历史运行的归因。"
+      },
+      "stage": "diagnostic",
+      "investigationIds": [
+        "INV-003"
+      ],
+      "sourceIds": [
+        "SRC-CLAIMS",
+        "SRC-ARCHIVE"
+      ],
+      "limitations": [
+        {
+          "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
+          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+        }
+      ]
+    },
+    {
+      "id": "MC-C05",
+      "title": {
+        "en": "Query evidence for frozen targets",
+        "zh": "冻结目标的查询证据"
+      },
+      "statement": {
+        "en": "Completed provider queries close a request-coverage gap for frozen plans, not independent event or entitlement completeness.",
+        "zh": "完成供应商查询补齐了冻结方案的请求覆盖缺口，不等于事件或权益已获独立完整性认证。"
+      },
+      "stage": "diagnostic",
+      "investigationIds": [
+        "INV-002",
+        "INV-003"
+      ],
+      "sourceIds": [
+        "SRC-CLAIMS",
+        "SRC-ARCHIVE"
+      ],
+      "limitations": [
+        {
+          "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
+          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+        }
+      ]
+    },
+    {
+      "id": "MC-C06",
+      "title": {
+        "en": "Original 120-session runtime",
+        "zh": "120日原始运行身份"
+      },
+      "statement": {
+        "en": "The original runtime remains unrecovered; a similar aggregate return cannot identify original code, inputs and targets.",
+        "zh": "原始运行仍未找回；相似的汇总收益不能确认原代码、输入和目标。"
+      },
+      "stage": "unestablished",
+      "investigationIds": [
+        "INV-002"
+      ],
+      "sourceIds": [
+        "SRC-CLAIMS",
+        "SRC-ARCHIVE"
+      ],
+      "limitations": [
+        {
+          "en": "Inherited claim identity; this edition reorganizes evidence without adding a new experiment.",
+          "zh": "沿用原结论身份；本版重组证据，没有新增实验。"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-NAV",
+      "title": {
+        "en": "400-name reconstruction",
+        "zh": "400只规则重建"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/web/public/data/microcap_nav.json",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "9d8a7366a0d5fe6ea98d1f082ece15d95f586d49505b7ba117dc98779ba9bf3e",
+      "dataCutoff": "2026-09-04",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Previously public aggregate snapshot; publication review is not a rerun.",
+        "zh": "此前已公开的聚合快照；本次发布核查没有重新运行研究。"
+      },
+      "kind": "snapshot"
+    },
+    {
+      "id": "SRC-EARLY",
+      "title": {
+        "en": "Early risk summaries",
+        "zh": "早期风险汇总"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/web/public/data/microcap_history_2008_2014.json",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "5a35aaa8f84bc3ae7ea13171df9c4e3f25265fce4561d43ec7a00be0d72b30ed",
+      "dataCutoff": "2014-12-31",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Previously public aggregate snapshot; publication review is not a rerun.",
+        "zh": "此前已公开的聚合快照；本次发布核查没有重新运行研究。"
+      },
+      "kind": "snapshot"
+    },
+    {
+      "id": "SRC-LIQ",
+      "title": {
+        "en": "Absolute size liquidity aggregates",
+        "zh": "绝对市值流动性汇总"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/web/public/data/liquidity/summary.json",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "f8fbabee8ee0ab14f7db70e66a1d9c4c88026566cae3906f980a32b1db9aa683",
+      "dataCutoff": "2026-10-15",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Previously public aggregate snapshot; publication review is not a rerun.",
+        "zh": "此前已公开的聚合快照；本次发布核查没有重新运行研究。"
+      },
+      "kind": "snapshot"
+    },
+    {
+      "id": "SRC-REL",
+      "title": {
+        "en": "Within-market size aggregates",
+        "zh": "市场内规模汇总"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/web/public/data/liquidity/relative-summary.json",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "f3642d2a4b637dac5c350fc69b5a2e6960f7ee9746bc747be8e7ab3b4c13fac9",
+      "dataCutoff": "2026-10-15",
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Previously public aggregate snapshot; publication review is not a rerun.",
+        "zh": "此前已公开的聚合快照；本次发布核查没有重新运行研究。"
+      },
+      "kind": "snapshot"
+    },
+    {
+      "id": "SRC-ARCHIVE",
+      "title": {
+        "en": "Fixed report v1.0.10",
+        "zh": "固定报告v1.0.10"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/web/public/downloads/archive/microcap-research.v1.0.10.zh-CN.md",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "24b33028a5dbcd8b3f2d191204c755277e17df802463dd7c875fa75a355a71f1",
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Immutable wording edition dated 2026-11-01; evidence dates vary. Linked online assets are not a frozen site.",
+        "zh": "2026-11-01固定文字版；各项证据日期不同。链接的在线资产不构成冻结网站。"
+      },
+      "kind": "archive"
+    },
+    {
+      "id": "SRC-SIZE",
+      "title": {
+        "en": "Absolute versus relative size",
+        "zh": "绝对市值与相对规模"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/docs/research/experiments/liquidity-size-groups-20261016.zh-CN.md",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "0d6c06fffe77b8386d792ccb8da0b5f515ed37b808edd0b031be1c3e4253e6ac",
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Method or research record; original scope and unresolved checks retained.",
+        "zh": "方法或研究记录；保留原有范围与未完成核查。"
+      },
+      "kind": "method"
+    },
+    {
+      "id": "SRC-RISK",
+      "title": {
+        "en": "Historical risk and accounting audit",
+        "zh": "历史风险与核算审计"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/docs/research/factors/microcap.zh-CN.md",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "805f9887a8d1ceb3e076be4337f2837308574920ba1a8e4f9eb0ff3db1d2ab38",
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Method or research record; original scope and unresolved checks retained.",
+        "zh": "方法或研究记录；保留原有范围与未完成核查。"
+      },
+      "kind": "method"
+    },
+    {
+      "id": "SRC-CLAIMS",
+      "title": {
+        "en": "Original six claim identities",
+        "zh": "原六项结论身份"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/web/src/content/microcap-agenda.ts",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "1490e0dcd9941680925b383836ad632ec925544d3b5ca2460fc70378fefe6b1b",
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Method or research record; original scope and unresolved checks retained.",
+        "zh": "方法或研究记录；保留原有范围与未完成核查。"
+      },
+      "kind": "method"
+    },
+    {
+      "id": "SRC-HISTORY",
+      "title": {
+        "en": "Original correction timeline",
+        "zh": "原结论修正时间线"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/web/src/content/microcap-editions.ts",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "44106e9ae325e80b8dcb0bf3f76b020240c840412c52f5e25801d2bbfcf86a62",
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Method or research record; original scope and unresolved checks retained.",
+        "zh": "方法或研究记录；保留原有范围与未完成核查。"
+      },
+      "kind": "method"
+    },
+    {
+      "id": "SRC-EXEC",
+      "title": {
+        "en": "A-share execution study",
+        "zh": "A股执行研究"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/studies/ashare_execution_costs/README.md",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "bb56c2915893c24dbfb03a2b69e1966a918adbe3728fcfbfae1340aff7ea1cf5",
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "Method or research record; original scope and unresolved checks retained.",
+        "zh": "方法或研究记录；保留原有范围与未完成核查。"
+      },
+      "kind": "method"
+    },
+    {
+      "id": "SRC-PAPER-001",
+      "title": {
+        "en": "The relationship between return and market value of common stocks",
+        "zh": "The relationship between return and market value of common stocks"
+      },
+      "url": "https://www.sciencedirect.com/science/article/pii/0304405X81900180",
+      "revision": null,
+      "sha256": null,
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "publisher_abstract_and_metadata_located; direct_page_open_403; not_fulltext_reviewed",
+        "zh": "仅核对元数据、摘要或作者机构介绍；尚未全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-002",
+      "title": {
+        "en": "Size Matters, If You Control Your Junk",
+        "zh": "Size Matters, If You Control Your Junk"
+      },
+      "url": "https://www.aqr.com/insights/research/working-paper/size-matters-if-you-control-your-junk",
+      "revision": null,
+      "sha256": null,
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "author_institution_summary_read; metadata_checked; not_fulltext_reviewed",
+        "zh": "仅核对元数据、摘要或作者机构介绍；尚未全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-003",
+      "title": {
+        "en": "Size and value in China",
+        "zh": "Size and value in China"
+      },
+      "url": "https://doi.org/10.1016/j.jfineco.2019.03.008",
+      "revision": null,
+      "sha256": null,
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "publisher_indexed_extract_and_metadata_located; direct_open_403; not_fulltext_reviewed",
+        "zh": "仅核对元数据、摘要或作者机构介绍；尚未全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-004",
+      "title": {
+        "en": "Illiquidity and stock returns: cross-section and time-series effects",
+        "zh": "Illiquidity and stock returns: cross-section and time-series effects"
+      },
+      "url": "https://www.sciencedirect.com/science/article/pii/S1386418101000246",
+      "revision": null,
+      "sha256": null,
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "publisher_abstract_and_metadata_located; direct_open_403; not_fulltext_reviewed",
+        "zh": "仅核对元数据、摘要或作者机构介绍；尚未全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-005",
+      "title": {
+        "en": "A Taxonomy of Anomalies and their Trading Costs",
+        "zh": "A Taxonomy of Anomalies and their Trading Costs"
+      },
+      "url": "https://www.nber.org/papers/w20721",
+      "revision": null,
+      "sha256": null,
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-27",
+      "scope": {
+        "en": "NBER_abstract_and_metadata_located; direct_open_403; not_fulltext_reviewed",
+        "zh": "仅核对元数据、摘要或作者机构介绍；尚未全文审阅。"
+      },
+      "kind": "paper"
+    }
+  ],
+  "history": [
+    {
+      "id": "H-001",
+      "date": "2026-09-09",
+      "title": {
+        "en": "Historical eligibility correction",
+        "zh": "历史资格修正"
+      },
+      "description": {
+        "en": "Future-quote and current-membership filters were removed in the original audit; rebuilt targets alone did not supply a complete account NAV.",
+        "zh": "原审计移除未来报价和当前成分筛选；目标重建本身未补出完整账户净值。"
+      },
+      "type": "correction",
+      "relatedIds": [
+        "MC-C01",
+        "MC-C03"
+      ],
+      "sourceIds": [
+        "SRC-HISTORY"
+      ]
+    },
+    {
+      "id": "H-002",
+      "date": "2026-10-17",
+      "title": {
+        "en": "Requests completed; entitlement checks remain",
+        "zh": "请求完成，权益检查仍未完成"
+      },
+      "description": {
+        "en": "Query coverage was backfilled for frozen plans. Original event blockers and original-runtime gaps were retained as separate problems.",
+        "zh": "冻结方案查询覆盖完成补采；原事件阻塞与原始运行缺口仍作为独立问题保留。"
+      },
+      "type": "research",
+      "relatedIds": [
+        "MC-C05",
+        "MC-C06"
+      ],
+      "sourceIds": [
+        "SRC-HISTORY"
+      ]
+    },
+    {
+      "id": "H-003",
+      "date": "2026-10-19",
+      "title": {
+        "en": "Bounded sell-policy replay reconciles",
+        "zh": "有限区间卖出规则重放已可对账"
+      },
+      "description": {
+        "en": "A 21-session replay reconciled 79 independently checked fills under an explicit sell policy; full-history accounting was not certified.",
+        "zh": "21个交易日区间在显式卖出规则下对齐79笔独立核查成交；未认证完整历史核算。"
+      },
+      "type": "research",
+      "relatedIds": [
+        "MC-C03"
+      ],
+      "sourceIds": [
+        "SRC-HISTORY"
+      ]
+    },
+    {
+      "id": "H-004",
+      "date": "2026-11-01",
+      "title": {
+        "en": "Fixed report v1.0.10",
+        "zh": "固定报告v1.0.10"
+      },
+      "description": {
+        "en": "Wording edition, with no new observations or runs. The original archive remains the fixed narrative record.",
+        "zh": "文字修订版，没有新增观察或运行。原归档继续作为固定叙述记录。"
+      },
+      "type": "edition",
+      "relatedIds": [
+        "MC-C01",
+        "MC-C02",
+        "MC-C03",
+        "MC-C04",
+        "MC-C05",
+        "MC-C06"
+      ],
+      "sourceIds": [
+        "SRC-ARCHIVE"
+      ]
+    },
+    {
+      "id": "H-005",
+      "date": "2026-11-27",
+      "title": {
+        "en": "Independent study opens",
+        "zh": "独立专题研究建立"
+      },
+      "description": {
+        "en": "Three bilingual chapters reorganize reviewed public evidence and five metadata-level literature leads. This is an editorial foundation, not a new experiment.",
+        "zh": "三个双语章节重组已审核公开证据，并登记五条元数据层面的文献线索。本次是编辑基础建设，不是新实验。"
+      },
+      "type": "project",
+      "relatedIds": [
+        "INV-001",
+        "INV-002",
+        "INV-003"
+      ],
+      "sourceIds": [
+        "SRC-ARCHIVE",
+        "SRC-LIQ",
+        "SRC-NAV"
+      ]
+    }
+  ],
+  "crosschecks": [
+    {
+      "id": "X-001-1",
+      "literatureId": "LIT-001",
+      "investigationId": "INV-001",
+      "claimIds": [
+        "MC-C01"
+      ],
+      "status": "untested",
+      "reason": {
+        "en": "Do we study the same universe, weighting, dates and risk adjustment? An A-share smallest-N portfolio is not a direct replication.",
+        "zh": "股票池、日期、权重与风险调整是否一致？A股最小N只组合并非直接复现。"
+      }
+    },
+    {
+      "id": "X-001-2",
+      "literatureId": "LIT-001",
+      "investigationId": "INV-002",
+      "claimIds": [
+        "MC-C01"
+      ],
+      "status": "untested",
+      "reason": {
+        "en": "Do we study the same universe, weighting, dates and risk adjustment? An A-share smallest-N portfolio is not a direct replication.",
+        "zh": "股票池、日期、权重与风险调整是否一致？A股最小N只组合并非直接复现。"
+      }
+    },
+    {
+      "id": "X-002-1",
+      "literatureId": "LIT-002",
+      "investigationId": "INV-001",
+      "claimIds": [
+        "MC-C02"
+      ],
+      "status": "untested",
+      "reason": {
+        "en": "Does a size association survive historical quality controls on a common sample? Do not imply our current low-turnover tests replicate this paper.",
+        "zh": "在共同历史样本加入质量控制后，规模关联是否仍存在？现有低换手检验并非本文复现。"
+      }
+    },
+    {
+      "id": "X-003-1",
+      "literatureId": "LIT-003",
+      "investigationId": "INV-001",
+      "claimIds": [
+        "MC-C01"
+      ],
+      "status": "untested",
+      "reason": {
+        "en": "What changes when we exclude the smallest tail under matched accounting? Historical shell-value results do not establish current post-reform mechanisms or explain all microcap returns.",
+        "zh": "在相同核算下排除最小一端，结果如何改变？不能据历史壳价值推断当前制度。"
+      }
+    },
+    {
+      "id": "X-003-2",
+      "literatureId": "LIT-003",
+      "investigationId": "INV-002",
+      "claimIds": [
+        "MC-C01"
+      ],
+      "status": "untested",
+      "reason": {
+        "en": "What changes when we exclude the smallest tail under matched accounting? Historical shell-value results do not establish current post-reform mechanisms or explain all microcap returns.",
+        "zh": "在相同核算下排除最小一端，结果如何改变？不能据历史壳价值推断当前制度。"
+      }
+    },
+    {
+      "id": "X-004-1",
+      "literatureId": "LIT-004",
+      "investigationId": "INV-003",
+      "claimIds": [
+        "MC-C03"
+      ],
+      "status": "untested",
+      "reason": {
+        "en": "How do low-frequency price-impact proxies relate to observed NBBO spread and quote age? They are distinct quantities and not causal impact estimates.",
+        "zh": "低频价格冲击代理与NBBO价差、报价年龄如何关联？它们不能当作因果冲击估计。"
+      }
+    },
+    {
+      "id": "X-005-1",
+      "literatureId": "LIT-005",
+      "investigationId": "INV-003",
+      "claimIds": [
+        "MC-C03"
+      ],
+      "status": "untested",
+      "reason": {
+        "en": "Separate holding buffers, signal turnover and actual trade turnover; US costs are not current A-share cost constants.",
+        "zh": "怎样区分持有缓冲、信号换手和真实交易换手？美股成本不能当作当下A股常数。"
+      }
+    }
+  ]
+}

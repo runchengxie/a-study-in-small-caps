@@ -1,0 +1,7 @@
+---
+import research from '../data/research.json';
+import Text from './Text.astro';
+const {ids=[],anchors=false}=Astro.props;
+const selected=research.sources.filter(source=>ids.includes(source.id));
+---
+<details class="source-disclosure"><summary><Text k="sources"/> <span class="count">{selected.length}</span></summary><div class="source-list">{selected.map(source=><article id={anchors?source.id:undefined}><h4><a href={source.url}><Text value={source.title}/> ↗</a></h4><p><Text value={source.scope}/></p><dl><div><dt><Text k="cutoff"/></dt><dd>{source.dataCutoff??'—'}</dd></div><div><dt><Text k="reviewed"/></dt><dd>{source.reviewedOn??'—'}</dd></div>{source.revision&&<div><dt><Text k="revision"/></dt><dd><code>{source.revision}</code></dd></div>}</dl>{source.sha256&&<p class="hash"><code>SHA-256 {source.sha256}</code></p>}</article>)}</div></details>

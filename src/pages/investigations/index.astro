@@ -1,0 +1,4 @@
+---
+import Site from '../../layouts/Site.astro';import Text from '../../components/Text.astro';import ChapterCard from '../../components/ChapterCard.astro';import SearchPanel from '../../components/SearchPanel.astro';import research from '../../data/research.json';
+---
+<Site title="Investigations" active="investigations"><header class="page-intro"><p class="eyebrow"><Text k="investigationEyebrow"/></p><h1><Text k="investigations"/></h1><p><Text k="chaptersIntro"/></p></header><div class="chapter-grid">{research.investigations.map(chapter=><ChapterCard chapter={chapter}/>)}</div><SearchPanel initialType="investigation"/></Site>

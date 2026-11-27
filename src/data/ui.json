@@ -1,0 +1,550 @@
+{
+  "home": {
+    "en": "Overview",
+    "zh": "总览"
+  },
+  "investigations": {
+    "en": "Investigations",
+    "zh": "调查"
+  },
+  "evidence": {
+    "en": "Evidence explorer",
+    "zh": "证据探索"
+  },
+  "literature": {
+    "en": "Literature",
+    "zh": "文献"
+  },
+  "history": {
+    "en": "Research history",
+    "zh": "研究历史"
+  },
+  "methods": {
+    "en": "Methods & data",
+    "zh": "方法与数据"
+  },
+  "project": {
+    "en": "An ongoing cross-market investigation",
+    "zh": "持续更新的跨市场研究"
+  },
+  "subtitle": {
+    "en": "Returns, risks, liquidity and implementation",
+    "zh": "收益、风险、流动性与可交易性"
+  },
+  "hero": {
+    "en": "Follow the evidence into small caps.",
+    "zh": "沿着证据，理解小微盘。"
+  },
+  "intro": {
+    "en": "What does buying small really mean? Investigations into historical returns, long recoveries and the distance between a paper portfolio and a trade.",
+    "zh": "买入“小”究竟意味着什么？从历史收益、漫长回本，到纸面组合与真实成交之间的距离，逐个问题调查。"
+  },
+  "begin": {
+    "en": "Start an investigation",
+    "zh": "开始阅读调查"
+  },
+  "browseEvidence": {
+    "en": "Explore the evidence",
+    "zh": "查看互动证据"
+  },
+  "current": {
+    "en": "What the evidence says now",
+    "zh": "当前证据告诉我们什么"
+  },
+  "latest": {
+    "en": "The first investigations",
+    "zh": "首批调查"
+  },
+  "readChapter": {
+    "en": "Read investigation",
+    "zh": "阅读调查"
+  },
+  "nextQuestion": {
+    "en": "The next question",
+    "zh": "下一项验证"
+  },
+  "sample": {
+    "en": "Scope and limitations",
+    "zh": "样本与限制"
+  },
+  "sources": {
+    "en": "Sources and version record",
+    "zh": "来源与版本记录"
+  },
+  "papers": {
+    "en": "Related literature",
+    "zh": "关联文献"
+  },
+  "claims": {
+    "en": "Claim record",
+    "zh": "结论记录"
+  },
+  "chaptersIntro": {
+    "en": "Each investigation follows a question, preserves the evidence and keeps uncertainty visible. These opening chapters reorganize existing research; they are not new market observations.",
+    "zh": "每次调查追踪一个问题，保留证据和不确定性。首批章节整理已有研究，不代表新增市场观测。"
+  },
+  "search": {
+    "en": "Search investigations, papers and history",
+    "zh": "搜索调查、论文和历史记录"
+  },
+  "searchPlaceholder": {
+    "en": "Try size, China, liquidity, or an author…",
+    "zh": "尝试输入：规模、壳价值、流动性或作者…"
+  },
+  "type": {
+    "en": "Record type",
+    "zh": "记录类型"
+  },
+  "all": {
+    "en": "All",
+    "zh": "全部"
+  },
+  "market": {
+    "en": "Market",
+    "zh": "市场"
+  },
+  "stage": {
+    "en": "Evidence / review stage",
+    "zh": "证据／审阅阶段"
+  },
+  "topic": {
+    "en": "Topic",
+    "zh": "主题"
+  },
+  "year": {
+    "en": "Publication year",
+    "zh": "发表年份"
+  },
+  "clear": {
+    "en": "Clear filters",
+    "zh": "清空筛选"
+  },
+  "noResults": {
+    "en": "No matching records. Try another term or clear the filters.",
+    "zh": "没有匹配记录。请更换关键词或清空筛选。"
+  },
+  "results": {
+    "en": "matching records",
+    "zh": "条匹配记录"
+  },
+  "openSource": {
+    "en": "Open original source",
+    "zh": "查看原始来源"
+  },
+  "crosscheck": {
+    "en": "Literature ↔ our investigation",
+    "zh": "文献与调查交叉对照"
+  },
+  "crosscheckIntro": {
+    "en": "A similar topic is not a replication. Each connection records what has actually been checked.",
+    "zh": "研究主题相近不代表已经复现。每项关联都注明实际核对到了哪一步。"
+  },
+  "literatureIntro": {
+    "en": "A growing reading register: source-checked entries, explicit paper versions and honest review stages. The first five leads have not been reviewed in full text.",
+    "zh": "持续积累的阅读登记：核对出处、区分论文版本、明确审阅阶段。首批五条线索尚未完成全文审阅。"
+  },
+  "historyIntro": {
+    "en": "Research changes as evidence changes. Original dates, failed checks and replaced interpretations remain part of the record.",
+    "zh": "研究判断随证据变化。原始日期、未通过的核查和被替代的解释，都保留在记录中。"
+  },
+  "related": {
+    "en": "Related records",
+    "zh": "关联记录"
+  },
+  "reviewed": {
+    "en": "Evidence review",
+    "zh": "证据复核"
+  },
+  "cutoff": {
+    "en": "Data cutoff",
+    "zh": "数据截止"
+  },
+  "revision": {
+    "en": "Source revision",
+    "zh": "来源版本"
+  },
+  "notSpecified": {
+    "en": "See source-specific scope",
+    "zh": "见各项来源范围"
+  },
+  "explorerIntro": {
+    "en": "Change the view, not the evidence. These controls explore reviewed public aggregates; no live backtest runs in your browser.",
+    "zh": "切换视角，不改变原有证据。这里探索已审核的公开汇总，不在浏览器里运行实时回测。"
+  },
+  "microcapTitle": {
+    "en": "Historical risk & recovery",
+    "zh": "历史风险与回本等待"
+  },
+  "count": {
+    "en": "Number of stocks",
+    "zh": "股票数量"
+  },
+  "granularity": {
+    "en": "NAV observation frequency",
+    "zh": "净值观察频率"
+  },
+  "monthly": {
+    "en": "Month-end observations",
+    "zh": "月末观测"
+  },
+  "annual": {
+    "en": "Year-end observations",
+    "zh": "年末观测"
+  },
+  "daily": {
+    "en": "Daily observations",
+    "zh": "日频观测"
+  },
+  "drawdown": {
+    "en": "Maximum drawdown",
+    "zh": "最大回撤"
+  },
+  "underwater": {
+    "en": "Longest completed underwater spell",
+    "zh": "最长已完成水下期"
+  },
+  "sessions": {
+    "en": "trading sessions",
+    "zh": "个交易日"
+  },
+  "nav": {
+    "en": "Published historical NAV",
+    "zh": "已发布历史净值"
+  },
+  "noNav": {
+    "en": "No published NAV series exists here for this stock count. The risk summary remains available; no curve has been reconstructed from summary statistics.",
+    "zh": "这里没有该股票数量对应的公开净值序列。风险摘要仍可查看，不会从汇总统计虚构曲线。"
+  },
+  "navNote": {
+    "en": "Displayed dates are period-end observations, not average NAV or interval returns.",
+    "zh": "图中使用各期末的实际观测，不是平均净值或区间收益。"
+  },
+  "liquidityTitle": {
+    "en": "How small is small across markets?",
+    "zh": "不同市场的“小”有多小？"
+  },
+  "period": {
+    "en": "Comparison period",
+    "zh": "比较区间"
+  },
+  "basis": {
+    "en": "Size grouping",
+    "zh": "规模分组"
+  },
+  "absolute": {
+    "en": "Absolute dollar size",
+    "zh": "绝对美元市值"
+  },
+  "relative": {
+    "en": "Within-market quintiles",
+    "zh": "市场内部市值五等分"
+  },
+  "bucket": {
+    "en": "Size bucket",
+    "zh": "市值分组"
+  },
+  "liquidityMetric": {
+    "en": "Median prior-20-session traded-value proxy (USD)",
+    "zh": "此前20个交易日成交额代理的中位数（美元）"
+  },
+  "observations": {
+    "en": "security-day observations",
+    "zh": "个证券日观测"
+  },
+  "stocks": {
+    "en": "distinct stocks in this group",
+    "zh": "组内去重证券数"
+  },
+  "emptyBucket": {
+    "en": "No eligible observations in this selection. An empty bucket is not proof that the market has no such stocks.",
+    "zh": "当前选择没有合资格观测。空桶不代表该市场从来不存在这类股票。"
+  },
+  "missingMarket": {
+    "en": "No value in this selected group",
+    "zh": "该分组没有可用数值"
+  },
+  "exactData": {
+    "en": "Inspect the selected values",
+    "zh": "查看当前完整数值"
+  },
+  "chartBoundary": {
+    "en": "Market coverage, dates and eligibility differ. A liquidity proxy is not executable capacity.",
+    "zh": "各市场覆盖、日期和资格口径不同。流动性代理不等于可执行容量。"
+  },
+  "methodsIntro": {
+    "en": "How this project handles evidence",
+    "zh": "这个项目怎样对待证据"
+  },
+  "method1Title": {
+    "en": "Separate an observation from a strategy",
+    "zh": "观察结果与策略分别记录"
+  },
+  "method1": {
+    "en": "A historical rule, factor association, accounting replay and executable portfolio answer different questions. We preserve their separate identities.",
+    "zh": "历史规则、因子关联、账户重放与可执行组合回答不同问题，分别保留身份。"
+  },
+  "method2Title": {
+    "en": "Keep the clock visible",
+    "zh": "明确每项数据的时点"
+  },
+  "method2": {
+    "en": "Signal formation, execution, valuation, data cutoff and review date are distinct. Historical snapshots do not by themselves establish point-in-time availability.",
+    "zh": "信号形成、执行、估值、数据截止与复核日期分别记录。历史快照本身不能证明当时可得。"
+  },
+  "method3Title": {
+    "en": "Preserve failures and corrections",
+    "zh": "保留失败与修正"
+  },
+  "method3": {
+    "en": "Old fixed editions and MC-Cxx claims keep their source identity. A newer interpretation does not silently rewrite an old experiment.",
+    "zh": "旧固定版本和 MC-Cxx 结论保留来源身份。新的解释不会静默改写旧实验。"
+  },
+  "method4Title": {
+    "en": "Publish reviewed aggregates",
+    "zh": "只发布经审核的汇总"
+  },
+  "method4": {
+    "en": "Research computation stays with its data and execution owners. This static site contains no credentials, raw vendor records or private strategy signals. The BMLL pilot remains an exploratory input, not public security-level data.",
+    "zh": "研究计算留在数据和执行能力所属项目中。本站不包含凭据、供应商原始记录或私有策略信号。BMLL 试验仍是探索输入，不公开其证券级数据。"
+  },
+  "sourceRegister": {
+    "en": "Source register",
+    "zh": "来源登记"
+  },
+  "footer": {
+    "en": "Evidence first. Conclusions remain revisable.",
+    "zh": "证据在先，结论允许修正。"
+  },
+  "footerNote": {
+    "en": "A public research project. Historical observations and simulations are not executable return forecasts.",
+    "zh": "公开研究项目。历史观察和模拟不代表可实现的收益预测。"
+  },
+  "repository": {
+    "en": "Source repository",
+    "zh": "项目源码"
+  },
+  "archive": {
+    "en": "Original fixed report",
+    "zh": "原固定汇总报告"
+  },
+  "methodsStage": {
+    "en": "Methods & definitions",
+    "zh": "方法与定义"
+  },
+  "historical": {
+    "en": "Historical description",
+    "zh": "历史描述"
+  },
+  "exploratory": {
+    "en": "Exploratory evidence",
+    "zh": "探索证据"
+  },
+  "unestablished": {
+    "en": "Not established",
+    "zh": "尚未确立"
+  },
+  "diagnostic": {
+    "en": "Controlled diagnostic",
+    "zh": "受控诊断"
+  },
+  "abstract": {
+    "en": "Abstract / metadata checked",
+    "zh": "摘要／元数据已核对"
+  },
+  "author_summary": {
+    "en": "Author summary read",
+    "zh": "作者概要已读"
+  },
+  "fulltext": {
+    "en": "Full text reviewed",
+    "zh": "全文已审阅"
+  },
+  "replicated": {
+    "en": "Replication reviewed",
+    "zh": "复现已核对"
+  },
+  "untested": {
+    "en": "Not yet tested here",
+    "zh": "本项目尚未检验"
+  },
+  "not_comparable": {
+    "en": "Not directly comparable",
+    "zh": "不能直接比较"
+  },
+  "supports": {
+    "en": "Supports within stated scope",
+    "zh": "在注明范围内支持"
+  },
+  "conflicts": {
+    "en": "Conflicting evidence",
+    "zh": "存在冲突证据"
+  },
+  "size": {
+    "en": "Size",
+    "zh": "规模"
+  },
+  "quality": {
+    "en": "Quality",
+    "zh": "质量"
+  },
+  "liquidity": {
+    "en": "Liquidity",
+    "zh": "流动性"
+  },
+  "cross_market": {
+    "en": "Cross-market",
+    "zh": "跨市场"
+  },
+  "shell_value": {
+    "en": "Shell value",
+    "zh": "壳价值"
+  },
+  "institution": {
+    "en": "Institutions & market rules",
+    "zh": "制度与市场规则"
+  },
+  "measurement": {
+    "en": "Measurement",
+    "zh": "度量"
+  },
+  "trading_costs": {
+    "en": "Trading costs",
+    "zh": "交易成本"
+  },
+  "turnover": {
+    "en": "Turnover",
+    "zh": "换手"
+  },
+  "implementation": {
+    "en": "Implementation",
+    "zh": "可交易性"
+  },
+  "risk": {
+    "en": "Risk & recovery",
+    "zh": "风险与恢复"
+  },
+  "definition": {
+    "en": "Definitions",
+    "zh": "定义"
+  },
+  "China": {
+    "en": "China A-shares",
+    "zh": "中国 A 股"
+  },
+  "US": {
+    "en": "United States",
+    "zh": "美国"
+  },
+  "A-share": {
+    "en": "China A-shares",
+    "zh": "中国 A 股"
+  },
+  "HK": {
+    "en": "Hong Kong historical sample",
+    "zh": "港股历史样本"
+  },
+  "JP": {
+    "en": "Japan",
+    "zh": "日本"
+  },
+  "global": {
+    "en": "Cross-market",
+    "zh": "跨市场"
+  },
+  "research": {
+    "en": "Research record",
+    "zh": "研究记录"
+  },
+  "correction": {
+    "en": "Correction",
+    "zh": "修正"
+  },
+  "edition": {
+    "en": "Fixed edition",
+    "zh": "固定版本"
+  },
+  "projectEvent": {
+    "en": "Project",
+    "zh": "项目"
+  },
+  "searchNoScript": {
+    "en": "Search requires JavaScript. The chapters and original source links remain readable.",
+    "zh": "搜索需要 JavaScript，正文和原始来源链接仍可阅读。"
+  },
+  "accounting": {
+    "en": "Accounting",
+    "zh": "Accounting"
+  },
+  "comparability": {
+    "en": "Comparability",
+    "zh": "Comparability"
+  },
+  "cross-market": {
+    "en": "Cross-Market",
+    "zh": "Cross-Market"
+  },
+  "recovery": {
+    "en": "Recovery",
+    "zh": "回本等待"
+  },
+  "investigation": {
+    "en": "Investigation",
+    "zh": "调查"
+  },
+  "date": {
+    "en": "Date",
+    "zh": "日期"
+  },
+  "readingRecord": {
+    "en": "The research record",
+    "zh": "研究记录"
+  },
+  "investigationEyebrow": {
+    "en": "The investigations",
+    "zh": "逐个问题调查"
+  },
+  "literatureEyebrow": {
+    "en": "Reading & cross-checks",
+    "zh": "阅读与交叉对照"
+  },
+  "historyEyebrow": {
+    "en": "The record remains",
+    "zh": "保留调查的来龙去脉"
+  },
+  "closer": {
+    "en": "Look closer",
+    "zh": "进一步查看证据"
+  },
+  "riskEyebrow": {
+    "en": "Historical risk",
+    "zh": "历史风险"
+  },
+  "liquidityEyebrow": {
+    "en": "Cross-market liquidity",
+    "zh": "跨市场流动性"
+  },
+  "methodsEyebrow": {
+    "en": "Methods & provenance",
+    "zh": "方法与来源"
+  },
+  "primaryNavigation": {
+    "en": "Primary navigation",
+    "zh": "主要导航"
+  },
+  "chapterSections": {
+    "en": "Chapter sections",
+    "zh": "章节目录"
+  },
+  "marketNotIncluded": {
+    "en": "Market not included in this comparison period.",
+    "zh": "该市场未纳入本比较区间。"
+  },
+  "missingGroupValue": {
+    "en": "No published value for this group.",
+    "zh": "该分组没有已发布数值。"
+  },
+  "emptyBucketShort": {
+    "en": "No eligible observations in this group.",
+    "zh": "该分组没有合资格观测。"
+  }
+}

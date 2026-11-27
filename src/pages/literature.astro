@@ -1,0 +1,5 @@
+---
+import Site from '../layouts/Site.astro';import Text from '../components/Text.astro';import SearchPanel from '../components/SearchPanel.astro';import research from '../data/research.json';
+const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
+---
+<Site title="Literature" active="literature"><header class="page-intro"><p class="eyebrow"><Text k="literatureEyebrow"/></p><h1><Text k="literature"/></h1><p><Text k="literatureIntro"/></p></header><SearchPanel initialType="literature" includeYear={true}/><section class="section"><h2><Text k="crosscheck"/></h2><p class="muted"><Text k="crosscheckIntro"/></p><div class="crosscheck-list">{research.crosschecks.map(check=>{const paper=research.literature.find(p=>p.id===check.literatureId)!;const chapter=research.investigations.find(c=>c.id===check.investigationId)!;return <article><p class="eyebrow">{check.id} · <Text k={check.status}/></p><h3><a href={paper.url}>{paper.title}</a></h3><p>↳ <a href={`${base}investigations/${chapter.slug}/`}><Text value={chapter.title}/></a></p><p><Text value={check.reason}/></p></article>;})}</div></section></Site>

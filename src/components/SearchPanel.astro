@@ -1,0 +1,31 @@
+---
+import Text from './Text.astro';
+import Option from './Option.astro';
+import {searchRecords,recordLink} from '../lib/research.mjs';
+import research from '../data/research.json';
+const {initialType='all',includeYear=false}=Astro.props;
+const records=[...research.investigations,...research.literature];
+const markets=[...new Set(records.flatMap(r=>r.markets))].sort();
+const topics=[...new Set(records.flatMap(r=>r.topics))].sort();
+const years=[...new Set(research.literature.map(r=>r.year))].sort((a,b)=>b-a);
+const initialRecords=searchRecords(research,{type:initialType});const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
+---
+<section class="search-panel" data-search data-initial-type={initialType}><form role="search" onsubmit="return false"><label class="search-label" for="research-query"><Text k="search"/></label><input id="research-query" type="search" autocomplete="off" data-placeholder="searchPlaceholder" placeholder="Try size, China, liquidity, or an author…"/><div class="filter-row"><label><Text k="type"/><select id="record-type"><Option value="all" selected={initialType==='all'} k="all"/>{['investigation','literature','history'].map(type=><Option value={type} selected={type===initialType} k={type==='investigation'?'investigations':type}/>)}</select></label><label><Text k="market"/><select id="record-market"><Option value="all" k="all"/>{markets.map(m=><Option value={m} k={m}/>)}</select></label><label><Text k="stage"/><select id="record-stage"><Option value="all" k="all"/>{['methods','historical','exploratory','abstract','author_summary','fulltext','replicated'].map(stage=><Option value={stage} k={stage==='methods'?'methodsStage':stage}/>)}</select></label><label><Text k="topic"/><select id="record-topic"><Option value="all" k="all"/>{topics.map(topic=><Option value={topic} k={topic}/>)}</select></label>{includeYear&&<label><Text k="year"/><select id="record-year"><Option value="all" k="all"/>{years.map(y=><option value={y}>{y}</option>)}</select></label>}<button type="button" class="subtle-button" id="clear-filters"><Text k="clear"/></button></div></form><p id="search-count" class="muted" role="status" aria-live="polite"></p><div id="search-results" class="search-results">{initialRecords.map(record=><article class="result-card" id={record.id}><p class="eyebrow">{record.id} · {record.year??record.updated??record.date??''}</p><h3><a href={`${base}${record.href}`}><Text value={typeof record.title==='string'?{en:record.title,zh:record.title}:record.title}/></a></h3><p><Text value={record.summary??record.description}/></p>{record.authors&&<p>{record.authors.join(' · ')}</p>}{record.relatedIds?.length>0&&<p>{record.relatedIds.map(id=>{const link=recordLink(research,id);return link&&<a class="record-ref" href={`${base}${link.href}`}>{id}</a>;})}</p>}{record.sourceIds?.length>0&&<p>{record.sourceIds.map(id=><a class="record-ref" href={`${base}methods/#${id}`}>{id}</a>)}</p>}</article>)}</div><noscript><p><Text k="searchNoScript"/></p></noscript></section>
+<script>
+import research from '../data/research.json';import {searchRecords,recordLink} from '../lib/research.mjs';import {local,text} from '../lib/i18n.mjs';
+const panel=document.querySelector('[data-search]');
+if(panel){
+ const query=document.querySelector('#research-query') as HTMLInputElement;
+ const controls=['type','market','stage','topic','year'];
+ const selected=(name:string)=>(document.querySelector(`#record-${name}`) as HTMLSelectElement)?.value??'all';
+ const render=()=>{
+  query.placeholder=text('searchPlaceholder');const results=searchRecords(research,{query:query.value,type:selected('type'),market:selected('market'),stage:selected('stage'),topic:selected('topic'),year:selected('year')});
+  document.querySelector('#search-count')!.textContent=`${results.length} ${text('results')}`;const container=document.querySelector('#search-results')!;container.replaceChildren();
+  if(!results.length){const p=document.createElement('p');p.className='empty-state';p.textContent=text('noResults');container.append(p);}
+  for(const record of results){const article=document.createElement('article');article.className='result-card';article.id=record.id;const meta=document.createElement('p');meta.className='eyebrow';meta.textContent=`${record.id} · ${record.year??record.updated??record.date??''} · ${text(record.stage==='methods'?'methodsStage':record.stage??record.type)}`;const h=document.createElement('h3');const a=document.createElement('a');a.href=(document.body.dataset.base??'/')+record.href;a.textContent=local(record.title);h.append(a);const desc=document.createElement('p');desc.textContent=local(record.summary??record.description);article.append(meta,h,desc);for(const ids of [record.relatedIds??record.claimIds??[],record.sourceIds??[]]){if(!ids.length)continue;const links=document.createElement('p');links.className='record-links';for(const id of ids){const link=recordLink(research,id);if(!link)continue;const ref=document.createElement('a');ref.className='record-ref';ref.href=(document.body.dataset.base??'/')+link.href;ref.textContent=id+' · '+local(link.title);links.append(ref);}article.append(links);}
+  if(record.authors){const authors=document.createElement('p');authors.className='muted';authors.textContent=record.authors.join(' · ');article.append(authors);const original=document.createElement('a');original.href=record.url;original.textContent=text('openSource')+' ↗';original.className='text-link';article.append(original);const version=document.createElement('p');version.className='small muted';version.textContent=record.version;article.append(version);}container.append(article);}
+ };
+ query.addEventListener('input',render);for(const name of controls)document.querySelector(`#record-${name}`)?.addEventListener('change',render);
+ document.querySelector('#clear-filters')?.addEventListener('click',()=>{query.value='';for(const name of controls){const field=document.querySelector(`#record-${name}`) as HTMLSelectElement;if(field)field.value=name==='type'?(panel as HTMLElement).dataset.initialType??'all':'all';}render();});document.addEventListener('research:locale',render);render();if(location.hash){requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView());}
+}
+</script>

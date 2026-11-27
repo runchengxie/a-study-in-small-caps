@@ -1,0 +1,5 @@
+---
+import Text from './Text.astro';
+const {chapter}=Astro.props;const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
+---
+<article class="chapter-card"><div class="eyebrow"><span>{chapter.id}</span><span class="status"><Text k={chapter.stage==='methods'?'methodsStage':chapter.stage}/></span></div><h3><a href={`${base}investigations/${chapter.slug}/`}><Text value={chapter.title}/></a></h3><p><Text value={chapter.summary}/></p><div class="card-meta"><span>{chapter.updated}</span><a href={`${base}investigations/${chapter.slug}/`}><Text k="readChapter"/> →</a></div></article>
