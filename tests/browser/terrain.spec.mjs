@@ -98,13 +98,13 @@ test('wave follows explicit and system themes without replacing its paused WebGL
    return {background:Array.from(gl.getParameter(gl.COLOR_CLEAR_VALUE)),blend:gl.getParameter(gl.BLEND_DST_RGB),same:!window.savedWaveGL||window.savedWaveGL===gl};
   });
   await expect.poll(async()=> (await state()).blend).toBe(771); // ONE_MINUS_SRC_ALPHA
-  await expect(page.locator('.ef-pwave__t1')).toHaveCSS('color','rgb(35, 55, 46)');
+  await expect(page.locator('.ef-pwave__t1')).toHaveCSS('color','rgb(57, 45, 38)');
   await page.locator('#motion-toggle').click();
   await canvas.evaluate(c=>{window.savedWaveGL=c.getContext('webgl');window.waveDraws=0;const draw=WebGLRenderingContext.prototype.drawArrays;WebGLRenderingContext.prototype.drawArrays=function(...args){window.waveDraws++;return draw.apply(this,args);};});
   await page.locator('#theme-select').selectOption('dark');
   await expect.poll(async()=> (await state()).blend).toBe(1); // ONE
   expect((await state()).same).toBe(true);
-  await expect(page.locator('.ef-pwave__t1')).toHaveCSS('color','rgb(251, 248, 241)');
+  await expect(page.locator('.ef-pwave__t1')).toHaveCSS('color','rgb(243, 234, 222)');
   const draws=await page.evaluate(()=>window.waveDraws);
   expect(draws).toBeGreaterThan(0);await page.waitForTimeout(150);
   expect(await page.evaluate(()=>window.waveDraws)).toBe(draws);
