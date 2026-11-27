@@ -1,0 +1,7 @@
+---
+import Text from './Text.astro';
+import ui from '../data/evidence-status-ui.json';
+const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
+---
+<section id="evidence-status" class="section" aria-labelledby="evidence-status-heading"><h2 id="evidence-status-heading"><Text value={ui.title}/></h2><p class="status-intro"><Text value={ui.intro}/></p><div class="table-scroll"><table><thead><tr>{['topic','finding','stage','scope','open'].map(key=><th scope="col"><Text value={ui[key as 'topic']}/></th>)}</tr></thead><tbody>{ui.rows.map(row=><tr><th scope="row"><a href={`${base}${row.href}`}><Text value={row.topic}/></a></th><td><Text value={row.finding}/></td><td><span class="status"><Text value={row.stage}/></span></td><td><Text value={row.scope}/></td><td><Text value={row.open}/></td></tr>)}</tbody></table></div></section>
+<style>table{min-width:950px;width:100%;font-size:14px;line-height:1.75}th,td{vertical-align:top;text-align:left}tbody th{min-width:150px;font-weight:500}.status-intro{max-width:70ch;line-height:1.8}.status{white-space:normal}.table-scroll{margin-top:1.5rem}</style>
