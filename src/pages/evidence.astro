@@ -1,5 +1,6 @@
 ---
+import EvidenceStatus from '../components/EvidenceStatus.astro';
 import PathExplorer from '../components/PathExplorer.astro';
 import NavDiagnostics from '../components/NavDiagnostics.astro';import Site from '../layouts/Site.astro';import Text from '../components/Text.astro';import EvidenceExplorer from '../components/EvidenceExplorer.astro';
 ---
-<Site title="Evidence explorer" active="evidence"><header class="page-intro"><p class="eyebrow"><Text k="closer"/></p><h1><Text k="evidence"/></h1><p><Text k="explorerIntro"/></p></header><PathExplorer/><EvidenceExplorer/><NavDiagnostics/></Site>
+<Site title="Evidence explorer" active="evidence"><header class="page-intro"><p class="eyebrow"><Text k="closer"/></p><h1><Text k="evidence"/></h1><p><Text k="explorerIntro"/></p></header><EvidenceStatus/><PathExplorer/><EvidenceExplorer/><NavDiagnostics/></Site>

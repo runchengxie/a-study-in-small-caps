@@ -1,0 +1,174 @@
+{
+  "title": {
+    "en": "What the evidence currently supports",
+    "zh": "目前的证据能支持什么"
+  },
+  "intro": {
+    "en": "Reviewed on November 28, 2026. Read each result with its sample and open question. An implemented method is not a verified execution outcome.",
+    "zh": "核查日期为2026年11月28日。每项结果都列出样本范围与未解决问题，方法已经实现也不代表实际成交已经验证。"
+  },
+  "topic": {
+    "en": "Research question",
+    "zh": "研究问题"
+  },
+  "finding": {
+    "en": "Current finding",
+    "zh": "当前判断"
+  },
+  "stage": {
+    "en": "Evidence stage",
+    "zh": "证据阶段"
+  },
+  "scope": {
+    "en": "Sample scope",
+    "zh": "样本范围"
+  },
+  "open": {
+    "en": "Main open question",
+    "zh": "关键缺口"
+  },
+  "link": {
+    "en": "Check the evidence status",
+    "zh": "查看证据状态"
+  },
+  "rows": [
+    {
+      "href": "investigations/2024-microcap-drawdown/",
+      "topic": {
+        "en": "2024 drawdown and recovery",
+        "zh": "2024年下跌与修复"
+      },
+      "finding": {
+        "en": "The frozen NAV supports a dated return path and drawdown calculations.",
+        "zh": "冻结净值可以复现收益路径及回撤日期。"
+      },
+      "stage": {
+        "en": "Reproduced aggregate diagnostics",
+        "zh": "聚合诊断已复现"
+      },
+      "scope": {
+        "en": "Published 400-stock rule reconstruction; not an official index.",
+        "zh": "已发布的400只规则重建，不是官方指数。"
+      },
+      "open": {
+        "en": "A holdings and cash ledger tied to this exact NAV.",
+        "zh": "与这条净值同源的持仓和现金账户。"
+      }
+    },
+    {
+      "href": "investigations/2024-microcap-drawdown/",
+      "topic": {
+        "en": "A new 2024 reconstruction",
+        "zh": "新版本2024年重建"
+      },
+      "finding": {
+        "en": "A separately pinned reconstruction retains security-level marks, linked contributions and a fixed-cohort cash exit scenario.",
+        "zh": "独立固定的重建已保留逐证券估值、连接式贡献和固定持仓现金退出情景。"
+      },
+      "stage": {
+        "en": "Private audit; execution unverified",
+        "zh": "私有审计，执行待验证"
+      },
+      "scope": {
+        "en": "Daily selection and marking; historical labels may contain revisions.",
+        "zh": "日频选股与估值，历史标签可能包含修订。"
+      },
+      "open": {
+        "en": "Historical eligibility, corporate-action cash flows and actual execution.",
+        "zh": "历史资格、公司行动现金流和实际执行。"
+      }
+    },
+    {
+      "href": "investigations/exit-liquidity-and-turnover/#event-replay",
+      "topic": {
+        "en": "US event-level execution",
+        "zh": "美股事件级执行"
+      },
+      "finding": {
+        "en": "Quote replay reports modeled quantity, remainder and price shortfall together.",
+        "zh": "报价回放已同时记录模拟数量、余量与价格损失。"
+      },
+      "stage": {
+        "en": "Scenario implementation",
+        "zh": "情景模拟"
+      },
+      "scope": {
+        "en": "Selected short windows and additional dates; not a certified equity universe.",
+        "zh": "选定的短窗口和新增日期，尚非认证股票池。"
+      },
+      "open": {
+        "en": "Accessible liquidity, routing, queue priority and own impact.",
+        "zh": "可访问流动性、路由、排队与自身冲击。"
+      }
+    },
+    {
+      "href": "investigations/exit-liquidity-and-turnover/#event-replay",
+      "topic": {
+        "en": "Trade coverage",
+        "zh": "成交数据覆盖"
+      },
+      "finding": {
+        "en": "Full-day and wider-window checks help distinguish sparse short windows from missing days.",
+        "zh": "全天与较宽窗口检查，有助于区分短时无记录和整天缺失。"
+      },
+      "stage": {
+        "en": "Bounded coverage audit",
+        "zh": "有限范围覆盖审计"
+      },
+      "scope": {
+        "en": "Reference-matched pilot dates, with UTC/local time comparison.",
+        "zh": "参考映射后的试验日期，已比较 UTC 与本地时间。"
+      },
+      "open": {
+        "en": "Independent feed completeness and historical common-stock eligibility.",
+        "zh": "独立数据源完整性与历史普通股资格。"
+      }
+    },
+    {
+      "href": "investigations/exit-liquidity-and-turnover/#execution-fees",
+      "topic": {
+        "en": "Fees and turnover",
+        "zh": "费用与换手"
+      },
+      "finding": {
+        "en": "Explicit fee assumptions can be added to modeled fills; membership replacement is a separate diagnostic.",
+        "zh": "可以对模拟数量计算显性费用，目标成员替换另作诊断。"
+      },
+      "stage": {
+        "en": "Hypothetical sensitivity",
+        "zh": "假设敏感性"
+      },
+      "scope": {
+        "en": "Per-share, parent minimum and notional fee scenarios.",
+        "zh": "每股、母订单最低费用与按金额计费情景。"
+      },
+      "open": {
+        "en": "Actual fee schedules, portfolio drift and unfilled orders.",
+        "zh": "实际费率、持仓漂移与未成交订单。"
+      }
+    },
+    {
+      "href": "investigations/next-research-tests/",
+      "topic": {
+        "en": "Cross-market comparison",
+        "zh": "跨市场比较"
+      },
+      "finding": {
+        "en": "Compare definitions and constraints before ranking returns.",
+        "zh": "先对齐定义与约束，再比较收益。"
+      },
+      "stage": {
+        "en": "Research design",
+        "zh": "研究设计"
+      },
+      "scope": {
+        "en": "China A-share daily data and US NBBO/trades answer different questions.",
+        "zh": "中国 A 股日线与美股报价、成交数据各有适用范围。"
+      },
+      "open": {
+        "en": "Comparable historical universes, calendars, currency and execution rules.",
+        "zh": "可比的历史股票池、日历、币种和执行规则。"
+      }
+    }
+  ]
+}
