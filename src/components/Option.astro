@@ -1,0 +1,5 @@
+---
+import ui from '../data/ui.json';
+const {k,text,value,selected=false}=Astro.props;const label=text??ui[k]??{en:k??String(value),zh:k??String(value)};
+---
+<option value={value} selected={selected} data-en={label.en} data-zh={label.zh??label.en}>{label.en}</option>

@@ -1,0 +1,3 @@
+import {defineConfig} from '@playwright/test';
+import os from 'node:os';import path from 'node:path';
+export default defineConfig({testDir:'tests/browser',outputDir:process.env.RESEARCH_ARTIFACT_ROOT??path.join(os.tmpdir(),`smallcaps-browser-${process.pid}`),workers:1,reporter:'list',use:{baseURL:'http://127.0.0.1:4381/a-study-in-small-caps/',headless:true,launchOptions:{executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH,args:['--disable-gpu','--disable-dev-shm-usage']}},webServer:{command:'npm run preview -- --host 127.0.0.1 --port 4381 --ignore-lock',url:'http://127.0.0.1:4381/a-study-in-small-caps/',reuseExistingServer:false,timeout:30000}});

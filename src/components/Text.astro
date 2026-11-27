@@ -1,0 +1,6 @@
+---
+import ui from '../data/ui.json';
+const { k, value } = Astro.props;
+const text=value ?? ui[k] ?? {en:k??'',zh:k??''};
+---
+<span class="translated"><span class="lang-en">{text.en}</span><span class="lang-zh" lang="zh-CN">{text.zh??text.en}</span></span>

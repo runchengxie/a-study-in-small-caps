@@ -1,0 +1,4 @@
+---
+import Site from '../layouts/Site.astro';import Text from '../components/Text.astro';import SourceInfo from '../components/SourceInfo.astro';import research from '../data/research.json';
+---
+<Site title="Methods & data" active="methods"><header class="page-intro"><p class="eyebrow"><Text k="methodsEyebrow"/></p><h1><Text k="methodsIntro"/></h1></header><div class="method-grid">{[1,2,3,4].map(i=><article><span class="chapter-number">0{i}</span><h2><Text k={`method${i}Title`}/></h2><p><Text k={`method${i}`}/></p></article>)}</div><section class="section"><h2><Text k="sourceRegister"/></h2><SourceInfo ids={research.sources.map(s=>s.id)}/></section></Site>
