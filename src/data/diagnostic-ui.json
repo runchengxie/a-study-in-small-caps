@@ -1,0 +1,46 @@
+{
+  "title": {
+    "en": "Holding periods and hidden losses",
+    "zh": "持有期限与被年收益掩盖的损失"
+  },
+  "scope": {
+    "en": "Recomputed from 2,838 frozen NAV observations, 2015–2026. Overlapping windows are dependent; these are descriptive historical paths, not executable returns or independent trials.",
+    "zh": "重算2015—2026年的2838个冻结净值观测。滚动窗口彼此重叠；这里描述历史路径，不代表可实现收益，也不是相互独立的试验。"
+  },
+  "metric": {
+    "en": "Compare holding-period outcomes",
+    "zh": "比较持有期限结果"
+  },
+  "minimum": {
+    "en": "Worst window return",
+    "zh": "最差窗口收益"
+  },
+  "maximum": {
+    "en": "Best window return",
+    "zh": "最佳窗口收益"
+  },
+  "negativeFraction": {
+    "en": "Fraction of windows with a loss",
+    "zh": "亏损窗口占比"
+  },
+  "sessions": {
+    "en": "Observation steps",
+    "zh": "观测步数"
+  },
+  "observations": {
+    "en": "Overlapping windows",
+    "zh": "重叠窗口数"
+  },
+  "worstStart": {
+    "en": "Selected window starts",
+    "zh": "所选窗口起点"
+  },
+  "worstEnd": {
+    "en": "Selected window ends",
+    "zh": "所选窗口终点"
+  },
+  "value": {
+    "en": "Selected outcome",
+    "zh": "所选结果"
+  }
+}

@@ -1,4 +1,4 @@
-import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {validateResearch} from '../src/lib/research.mjs';
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {validateResearch} from '../src/lib/research.ts';
 const research=JSON.parse(fs.readFileSync('src/data/research.json','utf8'));const evidence=JSON.parse(fs.readFileSync('src/data/evidence.json','utf8'));validateResearch(research);
 const ids=new Set(research.sources.map(s=>s.id));for(const id of [evidence.microcap.sourceId,evidence.microcap.summarySourceId,evidence.liquidity.sourceId,evidence.liquidity.relativeSourceId])if(!ids.has(id))throw new Error(`Missing evidence source: ${id}`);
 for(const series of evidence.microcap.series){let last='';for(const row of series.rows){if(!/^\d{4}-\d{2}-\d{2}$/.test(row.date)||row.date<=last||!Number.isFinite(row.nav)||row.nav<=0)throw new Error('Invalid NAV observation');last=row.date;}}

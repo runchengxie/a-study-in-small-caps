@@ -5,7 +5,7 @@ The site is static Astro with small client-side modules. No backend, external se
 - `src/data/research.json`: investigations, papers, claims, cross-checks, sources and history.
 - `src/data/evidence.json`: deterministic chart projections of reviewed public snapshots.
 - `public/evidence/`: exact upstream public source bytes, bound to SHA-256 records.
-- `src/lib/research.mjs`: reference validation, bilingual search and evidence selectors.
+- `src/lib/research.ts`: reference validation, bilingual search and evidence selectors.
 - `src/components/`: reader navigation, search, source disclosures and chart interaction.
 - `src/pages/`: overview, investigation routes, evidence, literature, history and methods.
 
@@ -13,7 +13,7 @@ The site is static Astro with small client-side modules. No backend, external se
 
 Assign a stable ID and slug, bilingual question/summary/conclusion, evidence stage and dated source IDs. Write sections as a connected investigation, then add limitations and next tests. Link related papers and claims. Append a history event when the evidence or interpretation changes. Preserve failed findings and explain superseded scope.
 
-Run `npm test` and `npm run build`; dangling references or duplicate IDs fail validation. Do not silently edit frozen upstream editions or upgrade review stages. A paper metadata entry can be useful without full text; keep that limitation visible.
+Run `npm run check`, `npm test` and `npm run build`; dangling references or duplicate IDs fail validation. Do not silently edit frozen upstream editions or upgrade review stages. A paper metadata entry can be useful without full text; keep that limitation visible.
 
 ## Update evidence
 
@@ -26,3 +26,7 @@ The website's evidence refresh is deliberate, not a production scheduled data jo
 ## Runtime and verification
 
 GitHub Pages uses `/a-study-in-small-caps/`. Browser checks use a dedicated local port and foreground preview; Astro's agent-inferred background mode is disabled by `--ignore-lock`. Tests launch Chromium with GPU disabled. This is a test setting, not a user browser configuration change.
+
+## Presentation
+
+Application modules use TypeScript. Content remains in bilingual JSON catalogs and stable language-neutral records. Theme selection is initialized before paint and retained independently of locale. The homepage constellation is an illustration, not quantitative evidence; reduced-motion preferences and unavailable graphics contexts select the static presentation.

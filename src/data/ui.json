@@ -440,8 +440,8 @@
     "zh": "中国 A 股"
   },
   "HK": {
-    "en": "Hong Kong historical sample",
-    "zh": "港股历史样本"
+    "en": "Hong Kong, China equities",
+    "zh": "中国香港港股"
   },
   "JP": {
     "en": "Japan",
@@ -473,15 +473,15 @@
   },
   "accounting": {
     "en": "Accounting",
-    "zh": "Accounting"
+    "zh": "账户核算"
   },
   "comparability": {
     "en": "Comparability",
-    "zh": "Comparability"
+    "zh": "可比性"
   },
   "cross-market": {
-    "en": "Cross-Market",
-    "zh": "Cross-Market"
+    "en": "Cross-market",
+    "zh": "跨市场"
   },
   "recovery": {
     "en": "Recovery",
@@ -546,5 +546,385 @@
   "emptyBucketShort": {
     "en": "No eligible observations in this group.",
     "zh": "该分组没有合资格观测。"
+  },
+  "themeLabel": {
+    "en": "Color theme",
+    "zh": "配色主题"
+  },
+  "themeSystem": {
+    "en": "System",
+    "zh": "跟随系统"
+  },
+  "themeLight": {
+    "en": "Light",
+    "zh": "浅色"
+  },
+  "themeDark": {
+    "en": "Dark",
+    "zh": "深色"
+  },
+  "atlas": {
+    "en": "Research atlas",
+    "zh": "研究全景"
+  },
+  "atlasIntro": {
+    "en": "Explore the retained research behind the two earlier sites. Migrated charts use aggregate observations; the source register also preserves diagnostics that cannot establish an executable result.",
+    "zh": "查阅两个旧站积累的研究。迁移的图表使用汇总观测；来源登记同时保留尚不能确立可交易结果的诊断。"
+  },
+  "atlasSearch": {
+    "en": "Search source records",
+    "zh": "搜索来源记录"
+  },
+  "atlasPanels": {
+    "en": "Explore migrated charts",
+    "zh": "探索迁移图表"
+  },
+  "atlasSources": {
+    "en": "Research inventory and provenance",
+    "zh": "研究清单与来源"
+  },
+  "atlasMetric": {
+    "en": "Chart metric",
+    "zh": "图表指标"
+  },
+  "atlasUnits": {
+    "en": "Source units (follow the selected metric)",
+    "zh": "来源单位（按所选指标对应）"
+  },
+  "atlasReset": {
+    "en": "Reset filters",
+    "zh": "重置筛选"
+  },
+  "atlasAll": {
+    "en": "All values",
+    "zh": "全部取值"
+  },
+  "atlasSource": {
+    "en": "Inspect immutable source",
+    "zh": "查看固定版本来源"
+  },
+  "atlasEmpty": {
+    "en": "No aggregate rows match these filters.",
+    "zh": "没有符合筛选条件的汇总行。"
+  },
+  "atlasRows": {
+    "en": "Matching aggregate rows",
+    "zh": "符合条件的汇总行"
+  },
+  "atlasRegisterNote": {
+    "en": "Source hashes identify the original published files, not a new empirical replication. Execution-cost sources stay in their original repository; no BMLL security-level data is republished. Technical field names below preserve original contracts.",
+    "zh": "来源哈希标识原公开文件，不代表新的实证复现。执行成本来源保留在原仓库，本站不重新发布 BMLL 证券级数据。下方技术字段名沿用原数据契约。"
+  },
+  "readingNotes": {
+    "en": "Full-text reading notes",
+    "zh": "全文精读笔记"
+  },
+  "reviewedEdition": {
+    "en": "Edition reviewed",
+    "zh": "精读版本"
+  },
+  "reviewedOn": {
+    "en": "Reviewed",
+    "zh": "精读日期"
+  },
+  "readingLimits": {
+    "en": "Scope and limitations",
+    "zh": "适用范围与限制"
+  },
+  "openReviewedText": {
+    "en": "Read the reviewed source",
+    "zh": "查看所读原文"
+  },
+  "pauseMotion": {
+    "en": "Pause motion",
+    "zh": "暂停动画"
+  },
+  "resumeMotion": {
+    "en": "Resume motion",
+    "zh": "继续动画"
+  },
+  "sourceDetails": {
+    "en": "Source and fingerprint",
+    "zh": "原文与文件指纹"
+  },
+  "atlasField_rank_count": {
+    "en": "Smallest N stocks",
+    "zh": "最小 N 只股票"
+  },
+  "atlasField_year": {
+    "en": "Year",
+    "zh": "年份"
+  },
+  "atlasField_candidate": {
+    "en": "Candidate portfolio",
+    "zh": "候选组合"
+  },
+  "atlasField_exclusion_percentile": {
+    "en": "Exclusion fraction",
+    "zh": "剔除比例"
+  },
+  "atlasField_weighting": {
+    "en": "Weighting",
+    "zh": "权重方式"
+  },
+  "atlasField_buffer_setting": {
+    "en": "Rebalancing buffer",
+    "zh": "调仓缓冲"
+  },
+  "atlasField_universe": {
+    "en": "Universe",
+    "zh": "样本范围"
+  },
+  "atlasField_coefficient": {
+    "en": "Conditioning specification",
+    "zh": "条件检验规格"
+  },
+  "atlasField_market": {
+    "en": "Market",
+    "zh": "市场"
+  },
+  "atlasField_bucket": {
+    "en": "Size bucket",
+    "zh": "规模分组"
+  },
+  "atlasField_position_usd": {
+    "en": "Position size (USD)",
+    "zh": "持仓规模（美元）"
+  },
+  "atlasField_participation": {
+    "en": "Assumed participation fraction",
+    "zh": "假设参与率"
+  },
+  "atlasField_horizon": {
+    "en": "Observed-session horizon",
+    "zh": "观测交易日期限"
+  },
+  "atlasField_mode": {
+    "en": "Path treatment",
+    "zh": "路径处理"
+  },
+  "atlasField_metric": {
+    "en": "Factor metric",
+    "zh": "因子指标"
+  },
+  "atlasField_date": {
+    "en": "Date",
+    "zh": "日期"
+  },
+  "atlasField_turnover_median": {
+    "en": "Median traded value (CNY)",
+    "zh": "成交额中位数（人民币）"
+  },
+  "atlasField_net_annual_return": {
+    "en": "Modeled net annual return (%)",
+    "zh": "模拟净年收益（%）"
+  },
+  "atlasField_annualized_turnover": {
+    "en": "Portfolio turnover (annual multiple)",
+    "zh": "组合换手（年倍数）"
+  },
+  "atlasField_cost_drag": {
+    "en": "Cost drag (percentage points)",
+    "zh": "成本损耗（百分点）"
+  },
+  "atlasField_net_max_drawdown": {
+    "en": "Modeled net maximum drawdown (%)",
+    "zh": "模拟净最大回撤（%）"
+  },
+  "atlasField_net_sharpe": {
+    "en": "Modeled net Sharpe ratio",
+    "zh": "模拟净夏普比率"
+  },
+  "atlasField_coefficient_mean": {
+    "en": "Mean return coefficient (fraction)",
+    "zh": "平均收益系数（比例）"
+  },
+  "atlasField_ci95_low": {
+    "en": "95% lower bound (fraction)",
+    "zh": "95%下界（比例）"
+  },
+  "atlasField_ci95_high": {
+    "en": "95% upper bound (fraction)",
+    "zh": "95%上界（比例）"
+  },
+  "atlasField_t_stat": {
+    "en": "HAC t statistic",
+    "zh": "HAC t 统计量"
+  },
+  "atlasField_formation_count": {
+    "en": "Formation count",
+    "zh": "形成期数"
+  },
+  "atlasField_positive_share": {
+    "en": "Positive share",
+    "zh": "正值占比"
+  },
+  "atlasField_blocked_entry_days": {
+    "en": "Blocked entry days",
+    "zh": "买入受阻日数"
+  },
+  "atlasField_blocked_exit_days": {
+    "en": "Blocked exit days",
+    "zh": "卖出受阻日数"
+  },
+  "atlasField_adv20_median_of_months_usd": {
+    "en": "Median monthly ADV20 (USD)",
+    "zh": "月度 ADV20 中位数（美元）"
+  },
+  "atlasField_adv20_monthly_p25_usd": {
+    "en": "Monthly ADV20 P25 (USD)",
+    "zh": "月度 ADV20 第25百分位（美元）"
+  },
+  "atlasField_adv20_monthly_p75_usd": {
+    "en": "Monthly ADV20 P75 (USD)",
+    "zh": "月度 ADV20 第75百分位（美元）"
+  },
+  "atlasField_turnover_rate_median_of_months": {
+    "en": "Median monthly turnover rate (fraction)",
+    "zh": "月度换手率中位数（比例）"
+  },
+  "atlasField_months": {
+    "en": "Observed months",
+    "zh": "观测月份数"
+  },
+  "atlasField_security_days": {
+    "en": "Security-day observations",
+    "zh": "证券日观测数"
+  },
+  "atlasField_stocks": {
+    "en": "Securities",
+    "zh": "证券数"
+  },
+  "atlasField_covered": {
+    "en": "Covered securities",
+    "zh": "预算覆盖证券数"
+  },
+  "atlasField_not_covered": {
+    "en": "Uncovered securities",
+    "zh": "预算未覆盖证券数"
+  },
+  "atlasField_unresolved": {
+    "en": "Unresolved securities",
+    "zh": "未解决证券数"
+  },
+  "atlasField_covered_day_p50": {
+    "en": "Median coverage sessions",
+    "zh": "覆盖所需交易日中位数"
+  },
+  "atlasField_covered_day_p95": {
+    "en": "P95 coverage sessions",
+    "zh": "覆盖所需交易日第95百分位"
+  },
+  "atlasField_uncredited_fraction": {
+    "en": "Uncredited budget / notional fraction",
+    "zh": "预算／持仓名义金额未计入比例"
+  },
+  "atlasField_count": {
+    "en": "Synthetic count",
+    "zh": "合成样本数"
+  },
+  "atlasField_trading_days": {
+    "en": "Trading days",
+    "zh": "交易日数"
+  },
+  "atlasField_median_coverage_ratio": {
+    "en": "Median coverage fraction",
+    "zh": "覆盖比例中位数"
+  },
+  "atlasChartLimit": {
+    "en": "Chart shows the first 24 matching rows in source order; the table contains every matching row. Narrow the filters to inspect another slice.",
+    "zh": "图表按来源顺序显示前24行；下表保留全部符合条件的行。请收窄筛选查看其他切片。"
+  },
+  "atlasSearchPlaceholder": {
+    "en": "size / turnover / liquidity / execution",
+    "zh": "规模／换手／流动性／执行"
+  },
+  "atlasOriginalSource": {
+    "en": "Original source",
+    "zh": "原始来源"
+  },
+  "atlasRevision": {
+    "en": "Source revision",
+    "zh": "来源版本"
+  },
+  "atlasFingerprint": {
+    "en": "SHA-256 fingerprint",
+    "zh": "SHA-256 文件指纹"
+  },
+  "atlasField_p01": {
+    "en": "P01 synthetic factor value",
+    "zh": "P01 合成因子值"
+  },
+  "atlasField_p25": {
+    "en": "P25 synthetic factor value",
+    "zh": "P25 合成因子值"
+  },
+  "atlasField_p50": {
+    "en": "P50 synthetic factor value",
+    "zh": "P50 合成因子值"
+  },
+  "atlasField_p75": {
+    "en": "P75 synthetic factor value",
+    "zh": "P75 合成因子值"
+  },
+  "atlasField_p99": {
+    "en": "P99 synthetic factor value",
+    "zh": "P99 合成因子值"
+  },
+  "atlasExitStocks": {
+    "en": "Stock–formation observations",
+    "zh": "股票与形成期组合观测数"
+  },
+  "atlasExitCovered": {
+    "en": "Covered stock–formation observations",
+    "zh": "预算覆盖的股票与形成期观测数"
+  },
+  "atlasExitNotCovered": {
+    "en": "Uncovered stock–formation observations",
+    "zh": "预算未覆盖的股票与形成期观测数"
+  },
+  "atlasExitUnresolved": {
+    "en": "Unresolved stock–formation observations",
+    "zh": "尚未解决的股票与形成期观测数"
+  },
+  "atlasField_period": {
+    "en": "Year (2026 is partial)",
+    "zh": "年份（2026年为不完整区间）"
+  },
+  "atlasField_pooled_jump_share": {
+    "en": "Pooled jump-related variance share",
+    "zh": "汇总跳跃相关方差占比"
+  },
+  "atlasField_pooled_large_jump_share": {
+    "en": "Pooled large-jump variance share",
+    "zh": "汇总大跳跃方差占比"
+  },
+  "atlasField_pooled_small_jump_share": {
+    "en": "Pooled small-jump variance share",
+    "zh": "汇总小跳跃方差占比"
+  },
+  "atlasField_median_observation_jump_share": {
+    "en": "Median observation jump variance share",
+    "zh": "观测跳跃方差占比中位数"
+  },
+  "atlasField_positive_residual_prevalence": {
+    "en": "Positive RJV share (not event frequency)",
+    "zh": "RJV 正值比例（不是事件频率）"
+  },
+  "atlasField_eligible_stock_days": {
+    "en": "Eligible stock-days",
+    "zh": "合资格证券日数"
+  },
+  "atlasField_excluded_stock_days": {
+    "en": "Excluded stock-days",
+    "zh": "被排除证券日数"
+  },
+  "atlasField_observed_dates": {
+    "en": "Observed dates",
+    "zh": "观测日期数"
+  },
+  "atlasField_sampled_securities": {
+    "en": "Distinct sampled securities",
+    "zh": "样本内去重证券数"
   }
 }

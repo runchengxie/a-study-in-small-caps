@@ -4,7 +4,9 @@
 
 An ongoing cross-market investigation of small-cap returns, risks, liquidity and implementation. Each investigation connects a question to evidence, literature, limitations and the next test. Failed checks and revised conclusions remain part of the record.
 
-The first edition contains three investigations, interactive historical risk and cross-market liquidity views, five source-checked literature leads, and a research/claim history. It reorganizes existing reviewed public research; it does not add market observations or certify executable returns. Literature leads are not full-text reviews or replications.
+The publication brings together investigations, a searchable atlas of earlier research, interactive historical and cross-market evidence, full-text reading notes, and a dated claim history. Reading stages distinguish source leads from texts actually reviewed; diagnostic recomputation remains distinct from independent replication. Historical illustrations do not certify executable returns.
+
+The TypeScript application supports English and Chinese, persistent light/dark/system themes, and an illustrative WebGL homepage with pause controls, reduced-motion support and a static fallback.
 
 ## Develop
 
@@ -16,6 +18,7 @@ npm run dev
 ```
 
 ```sh
+npm run check
 npm test
 npm run build
 npx playwright install chromium

@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "9d8a7366a0d5fe6ea98d1f082ece15d95f586d49505b7ba117dc98779ba9bf3e",
+  "reviewedOn": "2026-11-27",
+  "start": "2015-01-05",
+  "end": "2026-09-04",
+  "navObservations": 2838,
+  "returnObservations": 2837,
+  "totalReturn": 115.67066042252044,
+  "calendarCAGR": 0.503904046655586,
+  "annualizedVolatility": 0.330258000493608,
+  "maximumDrawdown": -0.5127186139467239,
+  "underwaterFraction": 0.8470754052149401,
+  "worstDailyReturn": -0.14817053403893943,
+  "bestDailyReturn": 0.15683629612223515,
+  "withoutBest10": 42.851416574118716,
+  "withoutWorst10": 332.4156058576574,
+  "rolling": [
+    {
+      "sessions": 21,
+      "observations": 2817,
+      "minimum": -0.4539686452855912,
+      "maximum": 0.8682196838266816,
+      "negativeFraction": 0.3617323393681221,
+      "worstStart": "2015-06-05",
+      "worstEnd": "2015-07-07",
+      "bestStart": "2015-05-06",
+      "bestEnd": "2015-06-04"
+    },
+    {
+      "sessions": 63,
+      "observations": 2775,
+      "minimum": -0.4466539723133691,
+      "maximum": 2.12433166045379,
+      "negativeFraction": 0.29009009009009007,
+      "worstStart": "2015-06-12",
+      "worstEnd": "2015-09-14",
+      "bestStart": "2015-03-12",
+      "bestEnd": "2015-06-11"
+    },
+    {
+      "sessions": 126,
+      "observations": 2712,
+      "minimum": -0.3161422923209035,
+      "maximum": 2.412329334911075,
+      "negativeFraction": 0.2142330383480826,
+      "worstStart": "2024-01-02",
+      "worstEnd": "2024-07-12",
+      "bestStart": "2015-02-09",
+      "bestEnd": "2015-08-14"
+    },
+    {
+      "sessions": 252,
+      "observations": 2586,
+      "minimum": -0.2995987879463604,
+      "maximum": 3.048050938292528,
+      "negativeFraction": 0.07540603248259861,
+      "worstStart": "2017-09-28",
+      "worstEnd": "2018-10-17",
+      "bestStart": "2015-01-08",
+      "bestEnd": "2016-01-19"
+    }
+  ],
+  "annual": [
+    {
+      "year": 2015,
+      "start": "2015-01-05",
+      "end": "2015-12-31",
+      "returnFraction": 3.584858761935452,
+      "partial": true
+    },
+    {
+      "year": 2016,
+      "start": "2015-12-31",
+      "end": "2016-12-30",
+      "returnFraction": 1.061849149486318,
+      "partial": false
+    },
+    {
+      "year": 2017,
+      "start": "2016-12-30",
+      "end": "2017-12-29",
+      "returnFraction": 0.4360506786721099,
+      "partial": false
+    },
+    {
+      "year": 2018,
+      "start": "2017-12-29",
+      "end": "2018-12-28",
+      "returnFraction": -0.12779956223654376,
+      "partial": false
+    },
+    {
+      "year": 2019,
+      "start": "2018-12-28",
+      "end": "2019-12-31",
+      "returnFraction": 0.40509085618281815,
+      "partial": false
+    },
+    {
+      "year": 2020,
+      "start": "2019-12-31",
+      "end": "2020-12-31",
+      "returnFraction": 0.13552934227612923,
+      "partial": false
+    },
+    {
+      "year": 2021,
+      "start": "2020-12-31",
+      "end": "2021-12-31",
+      "returnFraction": 0.44345741910875613,
+      "partial": false
+    },
+    {
+      "year": 2022,
+      "start": "2021-12-31",
+      "end": "2022-12-30",
+      "returnFraction": -0.016725016002275384,
+      "partial": false
+    },
+    {
+      "year": 2023,
+      "start": "2022-12-30",
+      "end": "2023-12-29",
+      "returnFraction": 0.7614847871142283,
+      "partial": false
+    },
+    {
+      "year": 2024,
+      "start": "2023-12-29",
+      "end": "2024-12-31",
+      "returnFraction": 0.3171409574644246,
+      "partial": false
+    },
+    {
+      "year": 2025,
+      "start": "2024-12-31",
+      "end": "2025-12-31",
+      "returnFraction": 0.9483452200486302,
+      "partial": false
+    },
+    {
+      "year": 2026,
+      "start": "2025-12-31",
+      "end": "2026-09-04",
+      "returnFraction": -0.03742640920297702,
+      "partial": true
+    }
+  ],
+  "episodes": [
+    {
+      "peak": "2015-06-11",
+      "trough": "2015-07-07",
+      "drawdown": -0.5127186139467239,
+      "recovery": "2015-11-19",
+      "sessions": 107,
+      "censored": false
+    },
+    {
+      "peak": "2024-01-03",
+      "trough": "2024-02-06",
+      "drawdown": -0.3794159052754287,
+      "recovery": "2024-09-30",
+      "sessions": 179,
+      "censored": false
+    },
+    {
+      "peak": "2017-11-10",
+      "trough": "2018-10-17",
+      "drawdown": -0.33920435398374527,
+      "recovery": "2019-03-05",
+      "sessions": 318,
+      "censored": false
+    },
+    {
+      "peak": "2015-12-29",
+      "trough": "2016-01-27",
+      "drawdown": -0.33113936953545864,
+      "recovery": "2016-05-03",
+      "sessions": 82,
+      "censored": false
+    },
+    {
+      "peak": "2026-02-24",
+      "trough": "2026-07-23",
+      "drawdown": -0.2932644570550731,
+      "recovery": null,
+      "sessions": 133,
+      "censored": true
+    },
+    {
+      "peak": "2022-01-14",
+      "trough": "2022-04-27",
+      "drawdown": -0.2751279470575113,
+      "recovery": "2022-11-14",
+      "sessions": 199,
+      "censored": false
+    },
+    {
+      "peak": "2020-09-07",
+      "trough": "2021-02-05",
+      "drawdown": -0.23516637075936464,
+      "recovery": "2021-06-02",
+      "sessions": 176,
+      "censored": false
+    },
+    {
+      "peak": "2025-03-17",
+      "trough": "2025-04-03",
+      "drawdown": -0.20938187536799446,
+      "recovery": "2025-04-30",
+      "sessions": 31,
+      "censored": false
+    }
+  ]
+}

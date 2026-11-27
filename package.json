@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/validate-content.mjs && astro build && node scripts/check-site.mjs",
+    "build": "node scripts/validate-content.mjs && node scripts/validate-atlas.mjs && astro build && node scripts/check-site.mjs",
     "preview": "astro preview",
     "test": "node --test --test-isolation=none tests/*.test.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "check": "astro check"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.2",
@@ -17,6 +18,10 @@
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.64.1"
+    "@astrojs/check": "^0.9.12",
+    "@playwright/test": "^1.64.1",
+    "@types/react": "^19.3.3",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^6.0.3"
   }
 }

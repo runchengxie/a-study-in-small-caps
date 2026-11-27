@@ -1,6 +1,9 @@
 ---
 import ui from '../data/ui.json';
+const catalog: Record<string, {en: string; zh?: string}> = ui;
+interface Props { k?: string; value?: string | {en: string; zh?: string}; }
 const { k, value } = Astro.props;
-const text=value ?? ui[k] ?? {en:k??'',zh:k??''};
+const resolved=value ?? catalog[k??''] ?? {en:k??'',zh:k??''};
+const text=typeof resolved==='string'?{en:resolved,zh:resolved}:resolved;
 ---
 <span class="translated"><span class="lang-en">{text.en}</span><span class="lang-zh" lang="zh-CN">{text.zh??text.en}</span></span>
