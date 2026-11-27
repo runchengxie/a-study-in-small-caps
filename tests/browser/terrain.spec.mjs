@@ -20,6 +20,17 @@ test('author wave responds to pointer and scroll, pauses, and recovers context',
   await expect.poll(hover).toBeLessThan(.01);
   await page.locator('.ef-pwave').dispatchEvent('pointermove',{pointerType:'touch',clientX:950,clientY:600});
   await page.waitForTimeout(150); expect(await hover()).toBeLessThan(.01);
+  const englishUp=await uniform('uUp'), englishDown=await uniform('uDown');
+  await page.locator('#locale-toggle').click();
+  await expect.poll(()=>uniform('uUp')).toEqual(englishDown);
+  await expect.poll(()=>uniform('uDown')).toEqual(englishUp);
+  await page.locator('.chart-key details summary').first().click();
+  await page.locator('[data-chart-colours-select]').first().selectOption('green-up');
+  await expect.poll(()=>uniform('uUp')).toEqual(englishUp);
+  await page.locator('#locale-toggle').click();
+  expect(await uniform('uUp')).toEqual(englishUp);
+  await page.locator('[data-chart-colours-select]').first().selectOption('language');
+  await page.evaluate(()=>scrollTo(0,0));
   await page.mouse.move(200,500); const before=await uniform('uMouse');
   await page.mouse.move(950,600);
   await expect.poll(()=>uniform('uMouse')).not.toEqual(before);

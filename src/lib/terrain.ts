@@ -12,7 +12,14 @@ export function initializeTerrain(): void {
  const palette = () => document.documentElement.dataset.theme === 'dark'
   ? {background:'#211b18',deep:'#492b22',mid:'#995c38',crest:'#edc88a',accent:'#edc88a',blend:'additive' as const}
   : {background:'#f5f2ea',deep:'#c9bba6',mid:'#a77a59',crest:'#805135',accent:'#955c39',blend:'alpha' as const};
- const options = (): WaveOptions => ({...palette(),preserveTitleMarkup:true,title1:text('coverLine1'),title2:text('coverLine2'),caption:text('coverNote'),next:text('exploreResearch'),labels:[text('waveDive'),text('waveGoing'),text('waveAlmost'),text('waveWelcome')]});
+ const candlePalette = () => {
+  const html = document.documentElement;
+  const redUp = html.dataset.chartColours === 'red-up' || (html.dataset.chartColours !== 'green-up' && html.dataset.lang === 'zh');
+  const dark = html.dataset.theme === 'dark';
+  const red = dark ? '#c78c79' : '#a76c5c', green = dark ? '#a2b596' : '#758c70';
+  return {up:redUp ? red : green,down:redUp ? green : red};
+ };
+ const options = (): WaveOptions => ({...palette(),...candlePalette(),preserveTitleMarkup:true,title1:text('coverLine1'),title2:text('coverLine2'),caption:text('coverNote'),next:text('exploreResearch'),labels:[text('waveDive'),text('waveGoing'),text('waveAlmost'),text('waveWelcome')]});
  const effect = mount(root, options());
  const controls = (): void => {
   button.hidden = media.matches || canvas.style.display === 'none';
@@ -25,7 +32,7 @@ export function initializeTerrain(): void {
  const language = (): void => {effect.update(options()); controls();};
  const lost = (): void => {controls();};
  const themeObserver = new MutationObserver(() => effect.update(options()));
- themeObserver.observe(document.documentElement, {attributes:true,attributeFilter:['data-theme']});
+ themeObserver.observe(document.documentElement, {attributes:true,attributeFilter:['data-theme','data-chart-colours']});
  button.addEventListener('click',toggle);
  media.addEventListener('change',motion);
  document.addEventListener('research:locale',language);
