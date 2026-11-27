@@ -978,5 +978,13 @@
   "waveScroll": {
     "en": "scroll",
     "zh": "向下滚动"
-  }
+  },
+  "chartPositive": {"en": "+ Positive return", "zh": "＋正收益"},
+  "chartNegative": {"en": "− Negative return / drawdown", "zh": "－负收益／回撤"},
+  "chartColourSettings": {"en": "Chart colours", "zh": "涨跌配色"},
+  "chartColourLanguage": {"en": "Follow language", "zh": "跟随语言"},
+  "chartColourRed": {"en": "Red positive · green negative", "zh": "红涨绿跌"},
+  "chartColourGreen": {"en": "Green positive · red negative", "zh": "绿涨红跌"},
+  "chartColourHelp": {"en": "Language defaults: Chinese uses red for positive returns; English uses green. A manual choice persists across languages and pages. Other metrics use neutral colours; read labels and signs.", "zh": "默认中文红涨绿跌，英文绿涨红跌。手动选择会跨语言和页面保留。其他指标使用中性色，请结合指标名称和正负号阅读。"},
+  "chartNeutral": {"en":"Other metrics", "zh":"其他指标"}
 }

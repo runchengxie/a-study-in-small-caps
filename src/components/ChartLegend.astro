@@ -1,0 +1,10 @@
+---
+import Text from './Text.astro';
+import Option from './Option.astro';
+---
+<div class="chart-key">
+ <span class="chart-key-item"><i class="chart-key-positive" aria-hidden="true"></i><Text k="chartPositive"/></span>
+ <span class="chart-key-item"><i class="chart-key-negative" aria-hidden="true"></i><Text k="chartNegative"/></span>
+ <span class="chart-key-item"><i class="chart-key-neutral" aria-hidden="true"></i><Text k="chartNeutral"/></span>
+ <details><summary><Text k="chartColourSettings"/></summary><label><span><Text k="chartColourSettings"/></span><select data-chart-colours-select data-aria="chartColourSettings"><Option value="language" k="chartColourLanguage"/><Option value="red-up" k="chartColourRed"/><Option value="green-up" k="chartColourGreen"/></select></label><p><Text k="chartColourHelp"/></p></details>
+</div>

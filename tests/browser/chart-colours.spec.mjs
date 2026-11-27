@@ -1,0 +1,43 @@
+import {test,expect} from '@playwright/test';
+const swatch=(page,kind)=>page.locator('.chart-key-'+kind).first().evaluate(n=>getComputedStyle(n).backgroundColor);
+test('language defaults and persisted manual colours update every chart without changing values',async({page})=>{
+ await page.goto('evidence/');
+ const positive=await swatch(page,'positive'),negative=await swatch(page,'negative');
+ const nav=await page.locator('#nav-chart path').evaluate(n=>getComputedStyle(n).stroke);
+ const liquidity=await page.locator('#liquidity-chart rect').first().evaluate(n=>getComputedStyle(n).fill);
+ const original=await page.locator('#drawdown-value').textContent();
+ await page.locator('#locale-toggle').click();
+ expect(await swatch(page,'positive')).toBe(negative);expect(await swatch(page,'negative')).toBe(positive);
+ expect(await page.locator('#nav-chart path').evaluate(n=>getComputedStyle(n).stroke)).toBe(nav);
+ expect(await page.locator('#liquidity-chart rect').first().evaluate(n=>getComputedStyle(n).fill)).toBe(liquidity);
+ await page.locator('.chart-key details summary').first().click();
+ await page.locator('[data-chart-colours-select]').first().selectOption('green-up');
+ expect(await swatch(page,'positive')).toBe(positive);
+ for(const selector of await page.locator('[data-chart-colours-select]').all())await expect(selector).toHaveValue('green-up');
+ await page.locator('#locale-toggle').click();expect(await page.locator('#drawdown-value').textContent()).toBe(original);
+ await page.reload();expect(await swatch(page,'positive')).toBe(positive);
+ await page.goto('atlas/');await expect(page.locator('[data-chart-colours-select]')).toHaveValue('green-up');
+ await page.locator('#locale-toggle').click();expect(await swatch(page,'positive')).toBe(positive);
+ await page.locator('.chart-key summary').click();await page.locator('[data-chart-colours-select]').selectOption('language');
+ expect(await swatch(page,'positive')).toBe(negative);
+ await page.locator('#theme-select').selectOption('dark');expect(await swatch(page,'positive')).toBe('rgb(238, 160, 139)');
+ await page.setViewportSize({width:390,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+test('neutral metrics and loss magnitudes retain their meanings across colour presets',async({page})=>{
+ await page.goto('atlas/');await expect(page.locator('#atlas-chart rect').first()).toHaveAttribute('fill','var(--plot-series)');
+ await page.locator('#atlas-panel').selectOption('exclusion');await page.locator('#atlas-metric').selectOption('net_max_drawdown');
+ await expect(page.locator('#atlas-chart rect').first()).toHaveAttribute('fill','var(--plot-negative)');
+ await page.locator('#atlas-metric').selectOption('annualized_turnover');await expect(page.locator('#atlas-chart rect').first()).toHaveAttribute('fill','var(--plot-series)');
+ await page.goto('evidence/');await page.locator('#diagnostic-metric').selectOption('negativeFraction');
+ await expect(page.locator('#diagnostic-chart rect').first()).toHaveAttribute('fill','var(--plot-series)');
+ await expect(page.locator('#nav-chart path')).toHaveAttribute('stroke','var(--plot-series)');
+ await expect(page.locator('#path-calendar button').filter({hasText:/^\+/}).first()).toBeAttached();
+});
+test('invalid or unavailable storage preserves language defaults',async({page})=>{
+ await page.addInitScript(()=>{localStorage.setItem('smallcaps-chart-colours','invalid');localStorage.setItem('smallcaps-locale','zh');});
+ await page.goto('./');await expect(page.locator('[data-chart-colours-select]')).toHaveValue('language');
+ expect(await swatch(page,'positive')).toBe('rgb(166, 80, 60)');
+ const fresh=await page.context().newPage();await fresh.addInitScript(()=>{Storage.prototype.getItem=()=>{throw new Error('disabled');};Storage.prototype.setItem=()=>{throw new Error('disabled');};});
+ await fresh.goto('/a-study-in-small-caps/');await expect(fresh.locator('[data-chart-colours-select]')).toHaveValue('language');
+ await fresh.locator('#locale-toggle').click();expect(await swatch(fresh,'positive')).toBe('rgb(166, 80, 60)');await fresh.close();
+});

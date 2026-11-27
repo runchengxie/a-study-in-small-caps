@@ -5,7 +5,8 @@
 :root[data-theme=dark]{--paper:#211b18;--ink:#f3eade;--muted:#beac9a;--line:#514338;--accent:#dfaa83;--panel:#2c241e;--body-copy:#d0c0ad;--note:#34291f;--finding:#382c21;--boundary:#30271f;color-scheme:dark}
 .hero-intro,.claim-card p,.chapter-card p,.page-intro>p:not(.eyebrow),.lead{color:var(--body-copy)}.reading-note{background:var(--note)}.finding{background:var(--finding)}.boundary-note{background:var(--boundary);color:var(--muted)}.svg-label{fill:var(--muted)}.svg-value{fill:var(--ink)}
 .header-controls{display:flex;align-items:center;gap:10px}.theme-control select{font-size:12px;padding:8px 24px 8px 9px;background:transparent;border-radius:3px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-:root{--plot-positive:#315f50;--plot-negative:#a6503c}:root[data-theme=dark]{--plot-positive:#88b59b;--plot-negative:#eea08b}
+:root{--plot-red:#a6503c;--plot-green:#315f50;--plot-positive:var(--plot-green);--plot-negative:var(--plot-red);--plot-series:#796247}:root[data-theme=dark]{--plot-red:#eea08b;--plot-green:#88b59b;--plot-series:#c4aa83}
+:root[data-chart-colours=red-up],:root[data-lang=zh]:not([data-chart-colours=red-up]):not([data-chart-colours=green-up]){--plot-positive:var(--plot-red);--plot-negative:var(--plot-green)}
 
 /* Publication shell around the author's unchanged element styles. */
 .cover-page{--cover-gutter:clamp(22px,4.4vw,84px)}
@@ -36,3 +37,7 @@
 
 /* Keep the smaller Chinese glyph on the shared title baseline. */
 .ef-pwave .cover-micro{font-size:.82em;vertical-align:baseline}
+
+.chart-key{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px;margin:18px 0;font-size:12px;color:var(--muted)}.chart-key-item{display:inline-flex;align-items:center;gap:7px}.chart-key i{display:inline-block;width:18px;height:3px}.chart-key-positive{background:var(--plot-positive)}.chart-key-negative{background:var(--plot-negative)}.chart-key summary{cursor:pointer;text-decoration:underline;text-underline-offset:4px}.chart-key details[open]{flex-basis:100%;padding:14px;border:1px solid var(--line);background:var(--panel)}.chart-key label{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}.chart-key p{max-width:720px;line-height:1.8;margin-bottom:0}.chart-key select{max-width:100%}
+
+.chart-key-neutral{background:var(--plot-series)}
