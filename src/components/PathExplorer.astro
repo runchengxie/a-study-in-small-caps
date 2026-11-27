@@ -1,5 +1,6 @@
 ---
 import Text from './Text.astro';
+import ChartLegend from './ChartLegend.astro';
 import SourceInfo from './SourceInfo.astro';
 import ui from '../data/visual-ui.json';
 import evidence from '../data/evidence.json';
@@ -9,7 +10,7 @@ const monthRows=monthlyReturns(nav);
 const {preset=''}=Astro.props;
 ---
 <section class="path-lab evidence-section" id="research-lab" data-preset={preset}>
- <p class="eyebrow">NAV / 2015–2026</p><h2><Text value={ui.title}/></h2><p><Text value={ui.intro}/></p><p class="boundary-note"><Text value={ui.scope}/></p>
+ <p class="eyebrow">NAV / 2015–2026</p><h2><Text value={ui.title}/></h2><p><Text value={ui.intro}/></p><p class="boundary-note"><Text value={ui.scope}/></p><ChartLegend/>
  <div class="path-controls"><label><Text value={ui.start}/><input type="date" id="path-start"/></label><label><Text value={ui.end}/><input type="date" id="path-end"/></label><button id="path-2024"><Text value={ui.crash2024}/></button><button id="path-reset"><Text value={ui.reset}/></button><button id="path-play"></button></div>
  <h3><Text value={ui.timeline}/></h3><div id="path-timeline" class="path-chart"></div><label class="cursor-label"><Text value={ui.cursor}/><input id="path-cursor" type="range" min="0" value="0"/></label><output id="path-readout" aria-live="polite"></output><p class="small muted"><Text value={ui.help}/></p><p id="path-reduced" hidden class="small muted"><Text value={ui.reduced}/></p>
  <h3><Text value={ui.calendar}/></h3><p class="small muted"><Text value={ui.calendarHelp}/></p><div class="calendar-scroll"><div id="path-calendar"></div></div>
