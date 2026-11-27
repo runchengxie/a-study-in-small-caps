@@ -763,7 +763,7 @@
         "size"
       ],
       "stage": "methods",
-      "updated": "2026-11-27",
+      "updated": "2026-11-28",
       "claimIds": [
         "MC-C03"
       ],
@@ -807,6 +807,48 @@
             {
               "en": "Company announcements between the two periods are possible confounders. A few half-hour windows and a selected security do not identify a market-wide pressure effect.",
               "zh": "两个时期之间的公司公告可能影响比较。几段半小时窗口和一只挑选出的证券，无法识别全市场压力的影响。"
+            }
+          ]
+        },
+        {
+          "id": "event-replay",
+          "title": {
+            "en": "Replay an order against historical events",
+            "zh": "把订单放回历史事件中"
+          },
+          "paragraphs": [
+            {
+              "en": "An event-level experiment fixes a decision time, order size and arrival delay, then uses only the quote available by arrival. Buy orders cross to the offer and sell orders to the bid. Report the modeled quantity, remaining quantity and cost relative to the decision midpoint together. Displayed quantity is a model input, not a fill guarantee.",
+              "zh": "事件级实验先固定决策时间、订单数量和到达延迟，再使用到达时刻之前的报价。买入按卖一价、卖出按买一价模拟，同时报告模拟数量、剩余数量和相对决策中间价的成本。显示数量是模型输入，实际能否成交仍需验证。"
+            },
+            {
+              "en": "The private prototype compares one immediate order with six equal target slices over five seconds. An unchanged quote does not reset available size. At the same price, only positive displayed-size increments replenish the modeled budget. A price change resets that budget as an explicit sensitivity assumption; aggregated NBBO cannot identify individual resting orders.",
+              "zh": "私有原型比较一次下单与五秒内六次目标切片。相同报价不会重置可用数量，同价时只有显示数量的正增加才补充模型预算。价格变化后重置预算属于明确的敏感性假设，汇总 NBBO 无法识别逐笔挂单身份。"
+            },
+            {
+              "en": "A low cost on the modeled shares can coexist with a large remainder. Compare completion fraction before comparing costs. Independent scenarios do not share liquidity budgets. No simulated remainder is silently filled at the last quote, and trade prints do not prove that a hypothetical order could have accessed that liquidity.",
+              "zh": "已模拟部分成本很低时，仍可能剩下大部分订单。比较成本前先看完成比例。独立情景分别计算流动性预算，剩余订单不会自动按最后报价成交。观察到真实成交，也不能证明假想订单当时能够取得那部分流动性。"
+            },
+            {
+              "en": "Validate on dates selected before inspecting their results. Preserve the expected security-date grid, missing quotes, stale quotes and corrected trades. Report the number of complete windows alongside each comparison; a missing event window is not a zero-cost observation.",
+              "zh": "验证日期应在查看结果前固定。保留预定证券日期网格，以及缺失报价、陈旧报价和更正成交。每项比较都列出完整窗口数量，缺失事件窗口不能填为零成本。"
+            }
+          ]
+        },
+        {
+          "id": "execution-fees",
+          "title": {
+            "en": "Keep explicit fees next to price shortfall",
+            "zh": "把费用和价格损失放在一起"
+          },
+          "paragraphs": [
+            {
+              "en": "Fee sensitivity can combine a per-share charge, a parent-order minimum and a charge proportional to modeled notional. Apply the minimum once per parent scenario only when quantity is modeled. Publish the assumed schedule with the result. A hypothetical schedule is not a broker quote or a regulatory tariff.",
+              "zh": "费用敏感性可以同时设置每股费用、母订单最低费用和按模拟成交金额计费。只有模拟数量大于零时才计最低费用，每个母订单情景计一次。结果旁列明假设费率，假设费率不能称作券商报价或监管费率。"
+            },
+            {
+              "en": "Add explicit fees to price shortfall on the modeled quantity, and retain the unexecuted remainder. Routing, queue priority, deep liquidity and own market impact still require further data or explicit assumptions. These US experiments do not calibrate the China A-share NAV or the arithmetic annual hurdle above.",
+              "zh": "在已模拟数量上合并显性费用与价格损失，未完成部分继续保留。路由、排队、多档流动性和自身冲击仍需更多数据或明确假设。这些美股实验尚未校准中国 A 股净值，也没有校准上方年度算术门槛。"
             }
           ]
         },
