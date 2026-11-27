@@ -31,3 +31,6 @@
 
 /* Light publication palette; the author's source stylesheet stays intact. */
 :root:not([data-theme=dark]) .ef-pwave{--ef-pw-ink:#23372e;--ef-pw-dim:#53685b;--ef-pw-bg:#f5f2ea;--ef-pw-acc:#346742;background:radial-gradient(120% 70% at 50% 72%,rgba(83,125,104,.10),transparent 60%),var(--ef-pw-bg)}
+
+/* Keep the smaller Chinese glyph on the shared title baseline. */
+.ef-pwave .cover-micro{font-size:.82em;vertical-align:baseline}

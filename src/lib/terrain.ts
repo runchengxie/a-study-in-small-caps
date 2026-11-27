@@ -12,7 +12,7 @@ export function initializeTerrain(): void {
  const palette = () => document.documentElement.dataset.theme === 'dark'
   ? {background:'#0c1e18',deep:'#003d28',mid:'#1a7a4c',crest:'#e6ff55',accent:'#e6ff55',blend:'additive' as const}
   : {background:'#f5f2ea',deep:'#aab7a6',mid:'#537d68',crest:'#24523b',accent:'#346742',blend:'alpha' as const};
- const options = (): WaveOptions => ({...palette(),title1:text('coverLine1'),title2:text('coverLine2'),caption:text('coverNote'),next:text('exploreResearch'),labels:[text('waveDive'),text('waveGoing'),text('waveAlmost'),text('waveWelcome')]});
+ const options = (): WaveOptions => ({...palette(),preserveTitleMarkup:true,title1:text('coverLine1'),title2:text('coverLine2'),caption:text('coverNote'),next:text('exploreResearch'),labels:[text('waveDive'),text('waveGoing'),text('waveAlmost'),text('waveWelcome')]});
  const effect = mount(root, options());
  const controls = (): void => {
   button.hidden = media.matches || canvas.style.display === 'none';
