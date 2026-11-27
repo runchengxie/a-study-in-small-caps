@@ -13,5 +13,7 @@ export function setLocale(value: string): void {
  try { localStorage.setItem('smallcaps-locale', next); } catch {}
  for (const option of document.querySelectorAll<HTMLOptionElement>('option[data-en]')) option.textContent = option.dataset[next] ?? option.dataset.en ?? '';
  for (const element of document.querySelectorAll<HTMLElement>('[data-aria]')) element.setAttribute('aria-label', text(element.dataset.aria ?? ''));
+ const title = document.querySelector<HTMLTitleElement>('title[data-page-title]');
+ if (title) document.title = [title.dataset.pageTitle, text('brand')].filter(Boolean).join(' · ');
  document.dispatchEvent(new CustomEvent('research:locale'));
 }

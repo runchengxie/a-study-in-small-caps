@@ -1,4 +1,4 @@
-# A Study in Small Caps
+# Study in the Small
 
 [简体中文](README.zh-CN.md) · [Read the research](https://runchengxie.github.io/a-study-in-small-caps/)
 
