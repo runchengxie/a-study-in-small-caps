@@ -23,3 +23,9 @@ Each chart group exposes a compact legend and an expandable colour setting. `lan
 NAV levels, liquidity, turnover, coverage and diagnostic loss-frequency bars use a separate neutral series colour. In the atlas, annual returns use signed colours and maximum drawdown uses the loss colour regardless of how its magnitude is stored. Other atlas metrics remain neutral. Monthly returns include explicit positive signs; zero is neutral. Chart labels, keyboard readouts and exact tables remain available.
 
 Browser checks cover locale defaults, manual override, restoration after navigation, synchronized selectors, dark-mode colours, invalid/blocked storage and neutral metric semantics.
+
+## Reading layout shared with the personal site
+
+Investigation articles use a centred 45rem reading column, approximately 17px serif body text and sans-serif section headings. The title aligns with that column. The section navigation sits outside the column on wide screens and becomes an inline index on smaller screens. Interactive evidence remains full width.
+
+The homepage investigation directory and the investigations index use rule-separated article rows. Each row preserves the stable investigation ID, evidence stage, current conclusion, date and chapter link. These replace boxed chapter cards while keeping key findings and evidence limitations visually distinct. This borrows reading conventions from the personal publication without introducing a runtime dependency.
