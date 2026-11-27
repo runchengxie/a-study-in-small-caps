@@ -1,9 +1,11 @@
 ---
 import Text from './Text.astro';
 import ui from '../data/cost-ui.json';
+interface Props { showHeading?: boolean; }
+const {showHeading=true}=Astro.props;
 ---
 <section class="evidence-section" id="cost-scenario">
- <h2><Text value={ui.title}/></h2>
+ {showHeading && <h2><Text value={ui.title}/></h2>}
  <p class="boundary-note"><Text value={ui.scope}/></p>
  <div class="scenario-controls">
  <label><Text value={ui.spread}/><input id="cost-spread" type="range" min="0" max="300" step="5" value="50"/><output id="spread-value" for="cost-spread">50</output></label>

@@ -1,0 +1,82 @@
+{
+  "returnTitle": {
+    "en": "What draws investors to microcaps?",
+    "zh": "小微盘的历史收益有多高？"
+  },
+  "returnIntro": {
+    "en": "This reconstructed 400-stock China A-share series compounds rapidly over the published period. Explore its path, then inspect the losses along the way.",
+    "zh": "这份中国 A 股400只股票的规则重建序列，在样本期内增长很快。沿着曲线查看历史净值，再看看期间经历的损失。"
+  },
+  "cagr": {
+    "en": "Annualized return in this reconstruction",
+    "zh": "这份重建序列的年化收益率"
+  },
+  "period": {
+    "en": "2015-01-05 to 2026-09-04 · 2,838 observations",
+    "zh": "2015年1月5日至2026年9月4日，共2,838个观测"
+  },
+  "scope": {
+    "en": "A historical rule reconstruction before trading costs. Not a verified account or executable return. Price limits and capacity are not modeled; the final year is partial.",
+    "zh": "历史规则重建，未计交易成本。组合账目与实际成交收益待核验，未处理涨跌停及容量，末年样本尚未完整。"
+  },
+  "nav": {
+    "en": "Growth of 1 from the first observation",
+    "zh": "首个观测值归一为1的净值"
+  },
+  "scale": {
+    "en": "Logarithmic scale · equal vertical distances represent equal proportional changes. Hover or use the arrow keys to inspect a date.",
+    "zh": "纵轴采用对数刻度，相同高度表示相同涨跌比例。移动指针或按左右方向键查看日期。"
+  },
+  "method": {
+    "en": "How this figure is calculated",
+    "zh": "数字怎么算"
+  },
+  "calculation": {
+    "en": "CAGR uses the last NAV divided by the first published NAV, annualized by elapsed calendar days (365.2425 days per year). The curve is rebased only for display. It does not establish a persistent size premium.",
+    "zh": "年化收益率按末值与首个已发布净值的比值计算，以实际日历天数折年，每年取365.2425天。曲线仅为展示归一化。单独这段序列还不能证明规模溢价持续存在。"
+  },
+  "drawdownTitle": {
+    "en": "How deep were the losses?",
+    "zh": "途中跌得有多深？"
+  },
+  "drawdownIntro": {
+    "en": "The same series lost more than half its value from a previous peak at its deepest point. Select 2024 to inspect that episode, with earlier peaks retained in the calculation.",
+    "zh": "同一份序列在最深回撤时，较此前高点跌去了超过一半。选择2024年可以查看那段下跌，计算仍保留此前的历史高点。"
+  },
+  "drawdownMetric": {
+    "en": "Maximum drawdown over the full sample",
+    "zh": "完整样本的最大回撤"
+  },
+  "costTitle": {
+    "en": "What would trading cost?",
+    "zh": "交易要花掉多少？"
+  },
+  "costIntro": {
+    "en": "Adjust the spread and replacement fraction below. Shorter holding intervals repeat trading costs more often. This separate scenario illustrates a cost hurdle; it is not a net-return estimate for the curve above.",
+    "zh": "拖动下面的价差和替换比例。持有周期越短，同样的成本就会发生得越频繁。这里单独演示成本门槛，不能据此算出上方曲线的净收益。"
+  },
+  "continue": {
+    "en": "Continue exploring",
+    "zh": "继续探索"
+  },
+  "continueIntro": {
+    "en": "Follow the investigations, compare sources and see which questions remain open.",
+    "zh": "接着读具体调查，对照文献，看看哪些问题还没有答案。"
+  },
+  "jump": {
+    "en": "Skip to investigations",
+    "zh": "直接查看研究目录"
+  },
+  "returnStep": {
+    "en": "Returns",
+    "zh": "收益"
+  },
+  "drawdownStep": {
+    "en": "Drawdowns",
+    "zh": "回撤"
+  },
+  "costStep": {
+    "en": "Costs",
+    "zh": "成本"
+  }
+}
