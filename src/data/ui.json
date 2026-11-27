@@ -926,5 +926,25 @@
   "atlasField_sampled_securities": {
     "en": "Distinct sampled securities",
     "zh": "样本内去重证券数"
+  },
+  "brand": {
+    "en": "Study in the Small",
+    "zh": "小微盘研究"
+  },
+  "coverLine1": {
+    "en": "Study in",
+    "zh": "小微盘"
+  },
+  "coverLine2": {
+    "en": "the Small",
+    "zh": "研究"
+  },
+  "coverNote": {
+    "en": "Small companies. Larger questions.",
+    "zh": "从小公司，探寻大问题。"
+  },
+  "enterResearch": {
+    "en": "Follow the evidence",
+    "zh": "沿着证据，开始阅读"
   }
 }

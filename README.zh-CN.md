@@ -1,4 +1,4 @@
-# A Study in Small Caps
+# 小微盘研究
 
 [English](README.md) · [阅读研究专题](https://runchengxie.github.io/a-study-in-small-caps/)
 

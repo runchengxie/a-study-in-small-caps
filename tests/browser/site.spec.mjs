@@ -18,11 +18,11 @@ test('theme preference persists across routes and system follows device preferen
 });
 test('homepage keeps static artwork when WebGL is unavailable',async({page})=>{
  await page.addInitScript(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){return type==='webgl'?null:original.call(this,type,...args);};});
- await page.goto('./');await expect(page.locator('.hero-orbit')).toBeVisible();
+ await page.goto('./');await expect(page.locator('.terrain-fallback')).toBeVisible();
  await expect(page.locator('#motion-toggle')).toBeHidden();
  await expect(page.locator('h1')).toBeVisible();
 });
-test('reduced motion starts the constellation paused',async({page})=>{
+test('reduced motion starts the terrain static',async({page})=>{
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('./');
  if(await page.locator('#motion-toggle').isVisible()) await expect(page.locator('#motion-toggle')).toHaveAttribute('aria-pressed','true');
  await page.setViewportSize({width:390,height:844});
