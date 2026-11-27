@@ -26,6 +26,7 @@ export function mount(root, o) {
   var opts = {}, raf = 0, visible = true, io = null, ro = null, destroyed = false, last = 0;
   var gl = null, prog = null, vb = null, u = {}, ok = false, count = 0, pr = 1;
   var time = 0, progress = 0, current = 0, vel = 0, lastLabel = "";
+  var hover = 0, hoverTarget = 0;
   var mouse = { x: 0, y: 0, sx: 0, sy: 0 }, hit = [9999, 0, 9999];
   var SEC_Z = [0, 60], SPAN_X = 260, DIVE_MAX = 200, SPAN_Z = 80 + 400 + DIVE_MAX;
   var FOV = 62 * Math.PI / 180, NEAR = 0.1, FAR = 400, TANH = Math.tan(FOV / 2);
@@ -41,8 +42,8 @@ export function mount(root, o) {
   // the original pen's terrain shaders; reversed smoothsteps are written out so every GPU gives the same result
   var VS = [
     "attribute vec2 aXZ;attribute float aRnd;attribute float aSeed;",
-    "uniform float uTime;uniform vec3 uMouse;uniform float uPx;uniform mat4 uView;uniform mat4 uProj;",
-    "varying float vH;varying float vR;varying float vFade;",
+    "uniform float uHover;uniform vec2 uPointer;uniform float uAspect;uniform float uTime;uniform vec3 uMouse;uniform float uPx;uniform mat4 uView;uniform mat4 uProj;",
+    "varying float vH;varying float vR;varying float vFade;varying float vColumn;varying float vDotRatio;varying float vBarRatio;",
     "float ss(float a,float b,float x){float t=clamp((x-a)/(b-a),0.0,1.0);return t*t*(3.0-2.0*t);}",
     // A slow rightward phase shift reuses the existing four wave terms.
     "float terra(vec2 p){p.x-=uTime*1.2;float h=0.0;",
@@ -60,15 +61,19 @@ export function mount(root, o) {
     "vH=p.y;vR=aRnd;vec4 mv=uView*vec4(p,1.0);",
     "vFade=ss(-6.0,-30.0,mv.z);",
     "gl_Position=uProj*mv;",
-    "float size=(1.1+aRnd*2.2+push*2.0)*uPx;gl_PointSize=size*(140.0/-mv.z);",
+    "float size=(1.1+aRnd*2.2+push*2.0)*uPx*(140.0/-mv.z);",
+    // A sparse screen-space patch morphs existing point sprites, with no extra draw call.
+    "vec2 delta=(gl_Position.xy/gl_Position.w-uPointer)*vec2(uAspect,1.0);",
+    "vColumn=uHover*ss(0.35,0.0,length(delta))*step(0.86,aRnd);",
+    "float lift=vColumn*min(18.0*uPx,size*6.0);gl_PointSize=size+lift;vDotRatio=size/gl_PointSize;vBarRatio=min(size,2.5*uPx)/gl_PointSize;",
     // fully faded points add nothing; move them off screen so they cost no fill
     "if(vFade<=0.0)gl_Position=vec4(2.0,2.0,2.0,1.0);}"
   ].join("\n");
   var FS = [
     "precision mediump float;uniform vec3 uDeep;uniform vec3 uMid;uniform vec3 uCrest;",
-    "varying float vH;varying float vR;varying float vFade;",
+    "varying float vH;varying float vR;varying float vFade;varying float vColumn;varying float vDotRatio;varying float vBarRatio;",
     "float ss(float a,float b,float x){float t=clamp((x-a)/(b-a),0.0,1.0);return t*t*(3.0-2.0*t);}",
-    "void main(){vec2 uv=gl_PointCoord-0.5;float a=ss(0.5,0.05,length(uv));",
+    "void main(){vec2 uv=gl_PointCoord-0.5;float dotAlpha=ss(0.5,0.05,length(uv)/vDotRatio);float barAlpha=(1.0-smoothstep(0.35*vBarRatio,0.5*vBarRatio,abs(uv.x)))*(1.0-smoothstep(0.44,0.5,abs(uv.y)));float a=mix(dotAlpha,barAlpha,vColumn);",
     "float t=clamp((vH+14.0)/30.0,0.0,1.0);",
     "vec3 col=mix(uDeep,uMid,smoothstep(0.0,0.6,t));",
     "col=mix(col,uCrest,smoothstep(0.55,1.0,t)*step(0.55,vR));",
@@ -103,7 +108,7 @@ export function mount(root, o) {
     gl.enableVertexAttribArray(a1); gl.vertexAttribPointer(a1, 2, gl.FLOAT, false, 16, 0);
     gl.enableVertexAttribArray(a2); gl.vertexAttribPointer(a2, 1, gl.FLOAT, false, 16, 8);
     gl.enableVertexAttribArray(a3); gl.vertexAttribPointer(a3, 1, gl.FLOAT, false, 16, 12);
-    ["uTime", "uMouse", "uPx", "uView", "uProj", "uDeep", "uMid", "uCrest"].forEach(function (k) { u[k] = gl.getUniformLocation(prog, k); });
+    ["uHover", "uPointer", "uAspect", "uTime", "uMouse", "uPx", "uView", "uProj", "uDeep", "uMid", "uCrest"].forEach(function (k) { u[k] = gl.getUniformLocation(prog, k); });
     gl.disable(gl.DEPTH_TEST);
     gl.enable(gl.BLEND); gl.blendEquation(gl.FUNC_ADD); gl.blendFunc(gl.SRC_ALPHA, gl.ONE); // three.js AdditiveBlending
     return true;
@@ -143,6 +148,9 @@ export function mount(root, o) {
     camera(time, canvas.width / canvas.height);
     var bg = rgb(opts.background, "0c1e18");
     gl.clearColor(bg[0], bg[1], bg[2], 1); gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.uniform1f(u.uHover, hover);
+    gl.uniform2f(u.uPointer, mouse.x, -mouse.y);
+    gl.uniform1f(u.uAspect, canvas.width / canvas.height);
     gl.uniform1f(u.uTime, time);
     gl.uniform3f(u.uMouse, hit[0], hit[1], hit[2]);
     gl.uniform1f(u.uPx, pr);
@@ -189,21 +197,25 @@ export function mount(root, o) {
     vel = k > 0 ? (current - prev) / k : 0;
     var e = 1 - Math.pow(0.95, k);
     mouse.sx += (mouse.x - mouse.sx) * e; mouse.sy += (mouse.y - mouse.sy) * e;
+    hover += (hoverTarget - hover) * (1 - Math.pow(0.88, k));
     sections();
     draw();
   }
-  function still() { time = 4; current = 0; vel = 0; mouse.sx = mouse.sy = mouse.x = mouse.y = 0; sections(); draw(); }
+  function still() { hover = hoverTarget = 0; time = 4; current = 0; vel = 0; mouse.sx = mouse.sy = mouse.x = mouse.y = 0; sections(); draw(); }
 
   function onScroll() {
     var r = wrap.getBoundingClientRect();
     progress = r.height > 0 ? Math.max(0, Math.min(1, -r.top / r.height)) : 0;
   }
   function onMove(e) {
+    if (paused || reduce || e.pointerType === "touch") return;
+    hoverTarget = 1;
     var r = wrap.getBoundingClientRect();
     if (!r.width || !r.height) return;
     mouse.x = (e.clientX - r.left) / r.width * 2 - 1;
     mouse.y = (e.clientY - r.top) / r.height * 2 - 1;
   }
+  function onLeave() { hoverTarget = 0; }
   function syncLoop() {
     cancelAnimationFrame(raf); raf = 0;
     if (!destroyed && !paused && !reduce && !lost && visible && !document.hidden && ok) { last = performance.now(); raf = requestAnimationFrame(loop); }
@@ -236,6 +248,7 @@ export function mount(root, o) {
   {
     window.addEventListener("scroll", onScroll, { passive: true });
     wrap.addEventListener("pointermove", onMove);
+    wrap.addEventListener("pointerleave", onLeave);
     onScroll();
     if ("IntersectionObserver" in window) { io = new IntersectionObserver(function (e) { visible = e[0].isIntersecting; syncLoop(); }); io.observe(wrap); }
     syncLoop();
@@ -249,6 +262,7 @@ export function mount(root, o) {
       destroyed = true; cancelAnimationFrame(raf);
       window.removeEventListener("scroll", onScroll);
       wrap.removeEventListener("pointermove", onMove);
+      wrap.removeEventListener("pointerleave", onLeave);
       canvas.removeEventListener("webglcontextlost", onLost);
       canvas.removeEventListener("webglcontextrestored", onRestored);
       document.removeEventListener("visibilitychange", syncLoop);
