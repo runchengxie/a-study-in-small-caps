@@ -1,4 +1,7 @@
 ---
+import HomeReturnsChart from '../components/HomeReturnsChart.astro';
+import CostScenario from '../components/CostScenario.astro';
+import story from '../data/home-story-ui.json';
 import HomeResearchChart from '../components/HomeResearchChart.astro';import Site from '../layouts/Site.astro';import Text from '../components/Text.astro';import ChapterCard from '../components/ChapterCard.astro';import research from '../data/research.json';
 import '../vendor/enrichr/particle-wave.css';
 import ui from '../data/ui.json';
@@ -15,9 +18,25 @@ const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
   <div class="ef-pwave__hud"><span class="ef-pwave__tl" aria-hidden="true"><Text k="waveDive"/></span><span class="ef-pwave__tr" aria-hidden="true">A · US · HK · JP</span><a class="ef-pwave__bl cover-enter" href="#research"><Text k="enterResearch"/> ↓</a><button id="motion-toggle" hidden class="ef-pwave__br motion-toggle" type="button" aria-pressed="false"><Text k="pauseMotion"/></button><span class="ef-pwave__bar" aria-hidden="true"><i class="ef-pwave__fill"></i></span><span class="ef-pwave__hint" aria-hidden="true">▼ <Text k="waveScroll"/> ▼</span></div>
 </section>
 </div>
-<section id="research" class="section"><div class="section-heading"><span class="eyebrow">01 / <Text k="current"/></span><h2><Text k="current"/></h2></div><div class="claim-grid">{research.claims.slice(0,3).map(claim=><article class="claim-card"><div class="eyebrow"><a href={`${base}history/#${claim.id}`}>{claim.id}</a><span class="status"><Text k={claim.stage}/></span></div><h3><Text value={claim.title}/></h3><p><Text value={claim.statement}/></p></article>)}</div></section>
-<section class="section"><div class="section-heading"><span class="eyebrow">02 / <Text k="investigations"/></span><h2><Text k="latest"/></h2></div><div class="chapter-list">{research.investigations.map(chapter=><ChapterCard chapter={chapter} listing/>)}</div></section>
+<HomeReturnsChart/>
 <HomeResearchChart/>
+<section id="home-cost" class="section story-panel" aria-labelledby="cost-heading"><span class="eyebrow">03 / <Text value={story.costStep}/></span><h2 id="cost-heading"><Text value={story.costTitle}/></h2><p class="story-intro"><Text value={story.costIntro}/></p><CostScenario showHeading={false}/><a class="story-continue" href="#explore"><Text value={story.continue}/> ↓</a></section>
+<section id="explore" class="section"><div class="explore-intro"><h2><Text value={story.continue}/></h2><p><Text value={story.continueIntro}/></p></div><div class="section-heading"><span class="eyebrow"><Text k="current"/></span><h2><Text k="current"/></h2></div><div class="claim-grid">{research.claims.slice(0,3).map(claim=><article class="claim-card"><div class="eyebrow"><a href={`${base}history/#${claim.id}`}>{claim.id}</a><span class="status"><Text k={claim.stage}/></span></div><h3><Text value={claim.title}/></h3><p><Text value={claim.statement}/></p></article>)}</div></section>
+<section class="section"><div class="section-heading"><span class="eyebrow"><Text k="investigations"/></span><h2><Text k="latest"/></h2></div><div class="chapter-list">{research.investigations.map(chapter=><ChapterCard chapter={chapter} listing/>)}</div></section>
 <section class="reading-note"><span class="eyebrow"><Text k="readingRecord"/></span><h2><Text k="crosscheck"/></h2><p><Text k="crosscheckIntro"/></p><a class="text-link" href={`${base}literature/`}><Text k="literature"/> →</a></section></Site>
 
 <script>import {initializeTerrain} from "../lib/terrain.ts";initializeTerrain();</script>
+
+<style is:global>
+.story-panel{padding-top:4rem;padding-bottom:4rem;border-top:1px solid var(--line)}
+.story-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:3rem;align-items:center}
+.story-layout p,.story-intro{max-width:65ch;line-height:1.85}
+.story-number{font-family:var(--serif);font-size:clamp(3.5rem,7vw,6rem);line-height:1.1!important;margin:2rem 0}
+.story-number>span{display:block;font:14px/1.6 system-ui;color:var(--muted);letter-spacing:0}
+.story-nav{display:flex;flex-wrap:wrap;gap:1rem 2rem;margin-bottom:4rem;font-size:13px}
+.story-nav a:last-child{margin-left:auto}
+.story-continue{display:block;width:fit-content;padding:1rem 0;margin:3rem auto 0;font-size:1.3rem}
+.explore-intro{padding-bottom:3rem}.story-panel details{margin-top:1rem;max-width:75ch}.story-panel summary{cursor:pointer}
+#home-cost .evidence-section{padding-top:1rem;border-top:0}
+@media(max-width:800px){.story-layout{grid-template-columns:1fr;gap:1rem}.story-panel{padding-top:2.5rem;padding-bottom:2.5rem}.story-nav{margin-bottom:2.5rem}.story-nav a:last-child{margin-left:0}.story-number{margin:1rem 0}}
+</style>

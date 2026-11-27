@@ -1,12 +1,15 @@
 ---
+import story from '../data/home-story-ui.json';
+import {navSummary} from '../lib/nav-summary';
 import Text from './Text.astro';
 import ChartLegend from './ChartLegend.astro';
 import ui from '../data/home-chart-ui.json';
 import evidence from '../data/evidence.json';
+const summary=navSummary(evidence.microcap.series[0].rows);
 const years=[...new Set(evidence.microcap.series[0].rows.map(row=>row.date.slice(0,4)))];
 const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
 ---
-<section class="section home-research-chart"><div class="section-heading"><h2><Text value={ui.title}/></h2></div><p><Text value={ui.intro}/></p><label><Text value={ui.year}/><select id="home-chart-year"><option value="all" data-en={ui.all.en} data-zh={ui.all.zh}>{ui.all.en}</option>{years.map(year=><option value={year}>{year}</option>)}</select></label><ChartLegend/><div id="home-drawdown-chart"></div><p id="home-chart-readout" aria-live="polite"></p><p class="small muted"><Text value={ui.scope}/></p><a class="text-link" href={`${base}evidence/#research-lab`}><Text value={ui.open}/> ↗</a><a class="record-ref" href={`${base}methods/#SRC-NAV`}>SRC-NAV</a></section>
+<section id="home-risk" class="section home-research-chart story-panel"><span class="eyebrow">02 / <Text value={story.drawdownStep}/></span><div class="story-layout"><div><h2><Text value={story.drawdownTitle}/></h2><p><Text value={story.drawdownIntro}/></p></div><p class="story-number">{(summary.maxDrawdown*100).toFixed(1)}%<span><Text value={story.drawdownMetric}/></span></p></div><p><Text value={ui.intro}/></p><label><Text value={ui.year}/><select id="home-chart-year"><option value="all" data-en={ui.all.en} data-zh={ui.all.zh}>{ui.all.en}</option>{years.map(year=><option value={year}>{year}</option>)}</select></label><ChartLegend/><div id="home-drawdown-chart"></div><p id="home-chart-readout" aria-live="polite"></p><p class="small muted"><Text value={ui.scope}/></p><a class="text-link" href={`${base}evidence/#research-lab`}><Text value={ui.open}/> ↗</a><a class="record-ref" href={`${base}methods/#SRC-NAV`}>SRC-NAV</a></section>
 <script>
 import evidence from '../data/evidence.json';import ui from '../data/home-chart-ui.json';import {local,format} from '../lib/i18n.ts';
 let peak=0;const rows=evidence.microcap.series[0].rows.map(row=>{peak=Math.max(peak,row.nav);return {...row,drawdown:row.nav/peak-1};});

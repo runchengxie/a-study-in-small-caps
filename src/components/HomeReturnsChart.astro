@@ -1,0 +1,39 @@
+---
+import Text from './Text.astro';
+import ui from '../data/home-story-ui.json';
+import evidence from '../data/evidence.json';
+import {navSummary} from '../lib/nav-summary';
+const rows=evidence.microcap.series[0].rows;
+const summary=navSummary(rows);
+const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
+const x=(date:string)=>70+(Date.parse(date)-Date.parse(rows[0].date))/(Date.parse(rows.at(-1)!.date)-Date.parse(rows[0].date))*880;
+const logs=rows.map(r=>Math.log10(r.nav/rows[0].nav));
+const low=Math.min(-.05,Math.min(...logs)-.08),high=Math.max(...logs)+.12;
+const y=(log:number)=>270-(log-low)/(high-low)*240;
+const path=rows.map((r,i)=>`${i?'L':'M'}${x(r.date).toFixed(2)} ${y(logs[i]).toFixed(2)}`).join(' ');
+---
+<section id="research" class="section story-panel" aria-labelledby="returns-heading">
+ <nav class="story-nav" aria-labelledby="returns-heading"><a href="#research">01 <Text value={ui.returnStep}/></a><a href="#home-risk">02 <Text value={ui.drawdownStep}/></a><a href="#home-cost">03 <Text value={ui.costStep}/></a><a href="#explore"><Text value={ui.jump}/> ↓</a></nav>
+ <div class="story-layout"><div><span class="eyebrow">01 / <Text value={ui.returnStep}/></span><h2 id="returns-heading"><Text value={ui.returnTitle}/></h2><p><Text value={ui.returnIntro}/></p><p class="story-number">{(summary.cagr*100).toFixed(1)}%<span><Text value={ui.cagr}/></span></p></div>
+ <div><p class="small muted"><Text value={ui.period}/></p>
+ <svg id="home-return-chart" viewBox="0 0 1000 320" role="img" tabindex="0" aria-labelledby="return-chart-title" aria-describedby="return-chart-desc"><title id="return-chart-title">{ui.nav.en}</title><desc id="return-chart-desc">{ui.scale.en}</desc>
+ {Array.from({length:Math.floor(high)-Math.ceil(low)+1},(_,i)=>Math.ceil(low)+i).map(log=><g><line x1="70" x2="950" y1={y(log)} y2={y(log)} stroke="var(--line)"/><text x="8" y={y(log)+5}>{10**log}×</text></g>)}
+ <path d={path} fill="none" stroke="var(--plot-series)" stroke-width="2.5"/><line id="return-cursor" x1="950" x2="950" y1="30" y2="270" stroke="var(--accent)" stroke-dasharray="4 4"/>
+ <text x="70" y="310">{rows[0].date}</text><text x="950" y="310" text-anchor="end">{rows.at(-1)!.date}</text></svg>
+ <p id="home-return-readout" aria-live="polite">{rows.at(-1)!.date} · {summary.multiple.toFixed(2)}×</p><p class="small muted"><Text value={ui.scale}/></p></div></div>
+ <p class="boundary-note"><Text value={ui.scope}/></p><details><summary><Text value={ui.method}/></summary><p><Text value={ui.calculation}/></p><a href={`${base}methods/#SRC-NAV`}>SRC-NAV</a></details>
+</section>
+<script>
+import evidence from '../data/evidence.json';
+import ui from '../data/home-story-ui.json';
+import {local,format} from '../lib/i18n';
+const rows=evidence.microcap.series[0].rows;
+const svg=document.querySelector<SVGSVGElement>('#home-return-chart')!;
+const first=Date.parse(rows[0].date),last=Date.parse(rows.at(-1)!.date);
+let index=rows.length-1;
+function show(){const row=rows[index];document.querySelector('#home-return-readout')!.textContent=`${row.date} · ${local(ui.nav)} ${format(row.nav/rows[0].nav,{maximumFractionDigits:2})}×`;const x=70+(Date.parse(row.date)-first)/(last-first)*880;const cursor=document.querySelector('#return-cursor')!;cursor.setAttribute('x1',String(x));cursor.setAttribute('x2',String(x));document.querySelector('#return-chart-title')!.textContent=local(ui.nav);document.querySelector('#return-chart-desc')!.textContent=local(ui.scale);}
+svg.addEventListener('pointermove',event=>{const rect=svg.getBoundingClientRect();const time=first+Math.max(0,Math.min(1,((event.clientX-rect.left)/rect.width*1000-70)/880))*(last-first);index=rows.reduce((best,row,i)=>Math.abs(Date.parse(row.date)-time)<Math.abs(Date.parse(rows[best].date)-time)?i:best,0);show();});
+svg.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();index=Math.max(0,Math.min(rows.length-1,index+(event.key==='ArrowRight'?1:-1)));show();}});
+document.addEventListener('research:locale',show);show();
+</script>
+<style>svg{display:block;width:100%;color:var(--muted)}svg text{fill:currentColor;font:14px system-ui}#home-return-readout{min-height:1.6em;font-variant-numeric:tabular-nums}</style>
