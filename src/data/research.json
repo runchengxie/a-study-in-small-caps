@@ -137,7 +137,7 @@
         "accounting"
       ],
       "stage": "historical",
-      "updated": "2026-11-27",
+      "updated": "2026-11-28",
       "claimIds": [
         "MC-C01",
         "MC-C03",
@@ -205,6 +205,19 @@
             {
               "en": "The next useful step is to reconcile raw shares and cash under fixed rules, then revisit the same historical episodes. A new calm month would add an observation; it would not erase a past loss or repair an unresolved ledger.",
               "zh": "下一步要在固定规则下核对真实股份与现金，再检查同一批历史案例。即使未来新增月份的表现平稳，过去的损失和待核对的账本问题仍需单独处理。"
+            }
+          ]
+        },
+        {
+          "id": "source-and-account",
+          "title": {
+            "en": "Follow the curve back to its account",
+            "zh": "沿着净值追到账户"
+          },
+          "paragraphs": [
+            {
+              "en": "The report preserves more than one reconstruction and more than one audit interval. Missing-price counts need their sample denominator, and the later bounded share-account review does not certify the full 400-stock series. Read the account chapter before turning this curve into an execution claim.",
+              "zh": "旧报告保留多套重建和多个审计区间。缺价次数需要连同样本分母阅读，后来有限区间股份账户通过核验，也没有认证完整400只序列。把曲线用于执行判断前，可以先读账户章节。"
             }
           ]
         }
@@ -344,8 +357,8 @@
         "zh": "全文究竟检验了什么？"
       },
       "summary": {
-        "en": "Three full readings sharpen the comparison and expose missing inputs.",
-        "zh": "阅读全文后，我们进一步明确了三篇论文的方法和复现所需的数据。"
+        "en": "Three reviewed papers connect universe exclusions, illiquidity measurement and buffers to specific local tests.",
+        "zh": "把三篇已读论文的股票池剔除、非流动性指标和缓冲规则，接到具体的本地检验。"
       },
       "question": {
         "en": "Which literature mechanisms can our retained evidence test?",
@@ -366,7 +379,7 @@
         "implementation"
       ],
       "stage": "methods",
-      "updated": "2026-11-27",
+      "updated": "2026-11-28",
       "claimIds": [
         "MC-C01",
         "MC-C02",
@@ -380,7 +393,8 @@
       "sourceIds": [
         "SRC-PAPER-003",
         "SRC-PAPER-004",
-        "SRC-PAPER-005"
+        "SRC-PAPER-005",
+        "SRC-ARCHIVE"
       ],
       "sections": [
         {
@@ -395,6 +409,57 @@
             }
           ],
           "id": "section-1"
+        },
+        {
+          "id": "china-tail",
+          "title": {
+            "en": "China size evidence begins with a universe choice",
+            "zh": "中国规模证据先从股票池选择开始"
+          },
+          "paragraphs": [
+            {
+              "en": "The reviewed China manuscript excludes the smallest 30% by lagged size before constructing its factors. Its 2000–2016 setting therefore differs from a portfolio devoted to that tail. The exclusion can motivate a matched sensitivity test, but the paper’s shell-value interpretation cannot simply be assigned to every later microcap return. The literature record retains the construction references on pages 4–5, 12 and 25–28.",
+              "zh": "所读中国研究先按滞后市值排除最小30%，再构造因子。它的2000至2016年设定，与专门投资最小一端的组合不同。排除规则可以启发同口径敏感性检验，但论文的壳价值解释不能直接赋予之后所有微盘收益。文献记录保留了第4至5、12、25至28页的构造依据。"
+            },
+            {
+              "en": "Our exclusion panel removes fractions of eligible stock counts and rebuilds signals. A positive result after exclusion would describe that reconstructed candidate. Establishing the underlying mechanism would additionally require dated corporate events and a design that distinguishes shell exposure from correlated characteristics.",
+              "zh": "本站剔除面板移除一定比例的合格股票只数，再重算信号。剔除后收益为正，只能描述相应重建候选。要进一步识别机制，还需要带日期的公司事件，以及能区分壳敞口和相关特征的研究设计。"
+            }
+          ]
+        },
+        {
+          "id": "illiquidity-measure",
+          "title": {
+            "en": "Trading activity and price sensitivity measure different things",
+            "zh": "成交活跃度与价格敏感性各测什么"
+          },
+          "paragraphs": [
+            {
+              "en": "Amihud’s ILLIQ combines absolute daily returns with dollar trading value. A stock can trade a small amount without moving much, or move sharply on similar turnover. Its construction therefore contains information absent from a simple average traded-value ranking. The reviewed measurement and sample rules are recorded on pages 34–41.",
+              "zh": "Amihud 的 ILLIQ 把每日绝对收益与美元成交额放在一起。股票可能成交很少但价格变化不大，也可能在相近成交额下大幅变动。这个构造包含平均成交额排名没有直接表达的信息。所读版本第34至41页记录了指标和样本规则。"
+            },
+            {
+              "en": "A test on our stocks needs security-level daily returns, currency-consistent traded values and enough past observations. Zero volume, suspensions and missing prices require explicit handling. The archived conditional-spread panel is useful for comparison, while reproducing the paper still requires its full sample and regression contract.",
+              "zh": "在我们的股票上检验，需要逐证券日收益、币种一致的成交额和足够的过去观测。零成交、停牌与缺失价格都要明确处理。归档条件收益差面板可用于对照，复现论文仍须匹配完整样本和回归口径。"
+            }
+          ]
+        },
+        {
+          "id": "buffers-and-costs",
+          "title": {
+            "en": "A holding buffer changes the portfolio as well as its trades",
+            "zh": "持有缓冲同时改变组合与交易"
+          },
+          "paragraphs": [
+            {
+              "en": "The reviewed cost paper separates entry and exit ranks to reduce trading near a boundary. Its pages 29–36 and 42–44 report the buffer experiments. A stock kept by a buffer remains exposed to its subsequent return, so cost savings and portfolio composition move together.",
+              "zh": "所读成本论文把买入与退出排名分开，减少边界附近的交易，第29至36、42至44页记录了缓冲实验。被缓冲保留的股票仍会贡献后续收益，因此费用节省和组合构成会同时变化。"
+            },
+            {
+              "en": "Our archived paired configurations show lower turnover in every buffered pair, with higher annual returns in only some pairs. This is a concrete reason to inspect holdings, fees and net returns together. A target-membership comparison is an early diagnostic; a raw-share cash account is needed before attaching an execution claim.",
+              "zh": "我们的归档配对配置中，缓冲全部降低换手，只有部分配置提高年化收益。这支持把持仓、费用和净收益放在一起检查。目标成员比较属于前期诊断，执行判断还需要原始股份现金账户。"
+            }
+          ]
         },
         {
           "title": {
@@ -915,6 +980,19 @@
               "zh": "盈利、经营现金流、负债与股本摊薄可以作为候选分类。贴上标签前，需要核对原报表、会计字段和历史股本。"
             }
           ]
+        },
+        {
+          "id": "bounded-account-link",
+          "title": {
+            "en": "Read the earlier account audit alongside execution scenarios",
+            "zh": "把早期账户审计与执行情景一起读"
+          },
+          "paragraphs": [
+            {
+              "en": "The earlier archive records a bounded account that passes explicit sell-size and cash checks. The newer US NBBO scenarios address a different market and a different question. Their costs cannot be subtracted from that account or the China A-share NAV without a shared holdings and execution contract.",
+              "zh": "早期归档记录了一段通过显式卖出数量与现金检查的有限账户。新的美股 NBBO 情景研究另一个市场和问题。没有共同持仓与执行约定时，不能把美股成本直接扣到该账户或中国 A 股净值上。"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -1076,6 +1154,331 @@
         {
           "en": "Finish historical identity reconciliation and register a fresh-quote stress comparison on a separate episode.",
           "zh": "完成历史身份核对，在另一段事件上预先确定新鲜报价压力对照。"
+        }
+      ]
+    },
+    {
+      "id": "INV-009",
+      "slug": "size-turnover-and-robustness",
+      "title": {
+        "en": "What remains after controlling for size and trading activity?",
+        "zh": "控制规模与交易活跃度后，还剩下什么？"
+      },
+      "summary": {
+        "en": "Comparable samples, microcap exclusions and window reruns change the interpretation of low-turnover results.",
+        "zh": "可比样本、微盘剔除与窗口复算，会改变低换手结果的解释。"
+      },
+      "question": {
+        "en": "How much of the observed return difference survives a change in controls or portfolio rules?",
+        "zh": "改变控制变量和组合规则后，观察到的收益差还能保留多少？"
+      },
+      "conclusion": {
+        "en": "The archived evidence supports a retrospective association that depends on the sample and construction. It does not establish an independently investable low-turnover premium.",
+        "zh": "归档证据支持依赖样本和构造方式的历史关联，低换手独立可投资的溢价仍未确立。"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "size",
+        "liquidity",
+        "trading_costs"
+      ],
+      "stage": "exploratory",
+      "updated": "2026-11-28",
+      "claimIds": [
+        "MC-C02"
+      ],
+      "literatureIds": [
+        "LIT-005"
+      ],
+      "sourceIds": [
+        "SRC-ARCHIVE",
+        "SRC-FOLLOWUP-REVIEW"
+      ],
+      "sections": [
+        {
+          "id": "different-objects",
+          "title": {
+            "en": "Compare the same object",
+            "zh": "先分清比较的对象"
+          },
+          "paragraphs": [
+            {
+              "en": "The original report contains a long-short cross-sectional spread, a long-only low-turnover candidate and a combined size/turnover portfolio. Their return numbers use different denominators and holding rules. A positive low-minus-high turnover spread can come from the weak high-turnover leg without producing the same gain in a long-only account.",
+              "zh": "旧报告同时讨论截面低减高换手收益差、纯多头低换手候选和小盘加低换手复合组合。收益数字对应不同的分母与持仓规则。低减高为正，可能来自高换手端较弱，不能直接换算成低换手多头账户的收益。"
+            },
+            {
+              "en": "The 40-name monthly candidate with a 60-name retention buffer must also be distinguished from the 400-name smallest-cap NAV on the homepage. Their position counts, ranking rules and accounting assumptions are different.",
+              "zh": "月频40只目标、60只保留缓冲的候选，也需要与首页400只最小市值净值分开。两者持仓数量、排名规则和核算假设都不同。"
+            }
+          ]
+        },
+        {
+          "id": "matched-controls",
+          "title": {
+            "en": "What a matched control changes",
+            "zh": "共同样本怎样改变判断"
+          },
+          "paragraphs": [
+            {
+              "en": "In the retained eligible universe, the common-sample small-minus-large monthly gross return spread is about 1.47 percentage points. It falls to 0.43 within illiquidity groups and 0.35 within trading-activity groups. Both conditional intervals include zero. These comparisons show how the description changes under controls; they do not identify a causal liquidity effect.",
+              "zh": "在保留的合格股票池中，共同样本小减大月度毛收益差约为1.47个百分点。在非流动性组内为0.43，成交活跃度组内为0.35，两项条件区间均包含零。它们说明控制后描述发生了什么变化，不能据此识别流动性的因果作用。"
+            },
+            {
+              "en": "Within size groups, the low-minus-high turnover spread is about 1.25 percentage points, with a reported 95% interval from 0.62 to 1.88. The comparison covers 136 formation dates from March 2015 through June 2026, with a final return endpoint in July 2026. The 24 exploratory estimates do not carry a simultaneous multiple-testing guarantee.",
+              "zh": "规模组内的低减高换手收益差约为1.25个百分点，报告的95%区间为0.62至1.88。对照覆盖2015年3月至2026年6月的136个形成日，最后收益终点为2026年7月。24项探索估计没有同时控制全部检验误差。"
+            },
+            {
+              "en": "A separate corrected control study uses 86 common months from May 2019 through June 2026. Its sample is not interchangeable with this 136-date exercise or the older 133-formation decomposition. Read each comparison with its own universe and missing-return count.",
+              "zh": "另一项修正后的控制研究使用2019年5月至2026年6月的86个共同月份。它不能与这里的136期对照或更早的133次形成分解混用。每项比较都要保留自己的股票池和未来收益缺失数量。"
+            }
+          ]
+        },
+        {
+          "id": "tail-exclusions",
+          "title": {
+            "en": "Remove the smallest-cap tail",
+            "zh": "剔除最小市值尾部"
+          },
+          "paragraphs": [
+            {
+              "en": "The exclusion experiment removes 0%, 10%, 20% or 30% of eligible stocks by formation-date size rank, then rebuilds signals. These are fractions of the number of eligible names, not fractions of aggregate market capitalization. Re-ranking after exclusion changes the portfolio as well as its coverage.",
+              "zh": "剔除实验按形成日市值排名，移除合格股票数量的0%、10%、20%或30%，再重新计算信号。比例按股票只数计算，并非总市值占比。重新排名会同时改变组合与覆盖范围。"
+            },
+            {
+              "en": "With equal weighting and the buffer, the archived small-cap candidate falls from 5.24% to −2.17% annual return after removing the bottom 30%. The low-turnover candidate rises from 5.33% to 7.76%, while the combined candidate moves from 11.28% to 9.71%. The candidates respond differently; one exclusion rule cannot stand in for every strategy.",
+              "zh": "等权并保留缓冲时，归档小盘候选在剔除最小30%后，年化收益从5.24%降至−2.17%。低换手候选从5.33%升至7.76%，复合候选从11.28%变为9.71%。不同候选反应不同，不能用一条剔除规则概括所有策略。"
+            }
+          ]
+        },
+        {
+          "id": "buffer-and-weight",
+          "title": {
+            "en": "Buffer and weighting matter together",
+            "zh": "缓冲与权重也会改变结果"
+          },
+          "paragraphs": [
+            {
+              "en": "Across the 24 archived paired configurations, the buffer lowers turnover in every pair, but annual return rises in only eight. Trading less changes costs and exposure at the same time. A lower turnover statistic alone does not establish a better net account.",
+              "zh": "归档的24组配对配置中，缓冲全部降低换手，但只有8组年化收益提高。少交易同时改变成本和敞口，单看换手下降还不能判断净账户更好。"
+            },
+            {
+              "en": "The market-cap-weighted low-turnover candidate is negative at every tested exclusion fraction. The combined candidate remains positive under both tested weighting schemes. These are descriptive grid results already inspected by the researchers; the best cell is not an independently validated parameter choice.",
+              "zh": "市值加权低换手候选在全部已测试剔除比例下均为负，复合候选在两种权重下仍为正。这些是研究者已经查看过的网格结果，最好的单元格尚未成为独立验证后的参数选择。"
+            }
+          ]
+        },
+        {
+          "id": "window-rerun",
+          "title": {
+            "en": "A longer window did not reproduce the published ranking",
+            "zh": "更长窗口的排序没有完整复现"
+          },
+          "paragraphs": [
+            {
+              "en": "The published snapshot shows higher annual return as the turnover window grows from 20 to 120 sessions. Later runs reproduce the rounded 20- and 60-session metrics. The 120-session run with a 90-observation minimum produces 4.22%, below the archived 7.60%; reducing the minimum to 45 produces 6.26%.",
+              "zh": "原公开快照中，换手窗口从20日延长到120日，年化收益随之升高。后来运行复现了20日与60日的舍入指标。120日要求至少90个观测时，年化为4.22%，低于归档的7.60%，把门槛降至45个观测后为6.26%。"
+            },
+            {
+              "en": "The observation threshold changes which stocks receive scores and can continue to change holdings after warm-up. The 45- and 90-observation versions still produce different holdings in later years. Original historical input bytes and the complete run receipt remain missing, so the discrepancy cannot be declared resolved.",
+              "zh": "观测门槛会改变哪些股票取得评分，预热结束后也可能继续改变持仓。45与90观测版本在后续年份仍出现持仓差异。历史原始输入字节和完整运行收据仍缺，差距尚不能宣布解决。"
+            }
+          ]
+        },
+        {
+          "id": "next-evidence",
+          "title": {
+            "en": "What would strengthen the inference?",
+            "zh": "什么证据能让判断更强"
+          },
+          "paragraphs": [
+            {
+              "en": "Freeze the universe, timestamp rules and minimum-observation policy before evaluating new dates. Keep low- and high-turnover legs alongside a long-only account, use matched formation dates for controls, and retain missing future returns instead of silently removing their stocks.",
+              "zh": "在检查新日期前冻结股票池、时间规则和最低观测门槛。保留低换手端与高换手端，并列纯多头账户，控制比较使用相同形成日，未来收益缺失的股票也留在分母中。"
+            },
+            {
+              "en": "Only after shares, cash, corporate actions and execution assumptions reconcile can a lower trading frequency be translated into portfolio cost. A difference in target membership is an intermediate diagnostic.",
+              "zh": "股份、现金、公司行动和执行假设对账后，才能把较低调仓频率转译为组合成本。目标成员变化目前只是中间诊断。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "en": "The chapter reorganizes archived public evidence; it does not rerun or certify the historical strategies.",
+          "zh": "本章整理已公开归档证据，没有重跑或认证历史策略。"
+        },
+        {
+          "en": "Samples and accounting differ across panels. Gross monthly spreads, annual simulated returns and executable returns are different quantities.",
+          "zh": "各面板样本和核算不同。月度毛收益差、年度模拟收益与可成交收益不能混用。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Recover the original 120-session run identity and test frozen rules on new observations.",
+          "zh": "恢复120日历史运行身份，并用新观测检验冻结规则。"
+        }
+      ]
+    },
+    {
+      "id": "INV-010",
+      "slug": "targets-shares-and-cash",
+      "title": {
+        "en": "How a target list becomes a reconciled account",
+        "zh": "目标名单怎样变成可对账的账户？"
+      },
+      "summary": {
+        "en": "The report records both rejected replays and a later bounded account that passes explicit share and cash checks.",
+        "zh": "旧报告保留重放被拒绝的记录，也记录了后来通过显式股份与现金检查的有限区间账户。"
+      },
+      "question": {
+        "en": "Which checks close an accounting failure, and what remains before historical performance is credible?",
+        "zh": "哪些检查能解决核算失败，历史业绩可信还需要哪些证据？"
+      },
+      "conclusion": {
+        "en": "A 21-session constructed replay passes its independent accounting checks. Full-history strategy readiness and real execution remain unestablished.",
+        "zh": "一段21个交易日的构造重放通过了独立核算检查，完整历史策略就绪和真实执行仍未确立。"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "trading_costs",
+        "liquidity"
+      ],
+      "stage": "methods",
+      "updated": "2026-11-28",
+      "claimIds": [
+        "MC-C03",
+        "MC-C05"
+      ],
+      "literatureIds": [
+        "LIT-005"
+      ],
+      "sourceIds": [
+        "SRC-ARCHIVE",
+        "SRC-ACCOUNT-REVIEW",
+        "SRC-FOLLOWUP-REVIEW"
+      ],
+      "sections": [
+        {
+          "id": "target-versus-inventory",
+          "title": {
+            "en": "A target is not the inventory",
+            "zh": "目标与实际库存分别保存"
+          },
+          "paragraphs": [
+            {
+              "en": "The historical work first reconstructed frozen targets, then attempted to replay them from cash. A target weight specifies what the strategy wants to own. Suspensions, missing quotes and trade-size rules determine what the constructed account can actually acquire. Replacing holdings with target weights at each rebalance skips those constraints.",
+              "zh": "历史工作先重建冻结目标，再尝试从现金重放。目标权重描述策略想持有什么，停牌、缺失报价和交易单位规则会影响构造账户实际取得什么。每次调仓直接用目标权重替换持仓，会跳过这些约束。"
+            },
+            {
+              "en": "The same distinction matters at corporate-action record dates. A stock appearing in a target file does not establish that the account held it on the entitlement date. The report retains unknown inventory and prior failed checks instead of assigning the entitlement automatically.",
+              "zh": "公司行动登记日也有同样区别。股票出现在目标文件中，不能证明账户在权益登记日实际持有。报告保留未知库存和先前未通过的检查，没有自动分配权益。"
+            }
+          ]
+        },
+        {
+          "id": "bounded-replay",
+          "title": {
+            "en": "What the bounded replay actually covers",
+            "zh": "有限区间核对了什么"
+          },
+          "paragraphs": [
+            {
+              "en": "The later review covers 21 sessions and two frozen formations with 40 targets each, spanning 46 distinct target stocks. It scans 2,230 source rows, includes one in-window action and excludes one pre-entry action. The constructed record contains 79 fills, comprising 73 buys and six sells.",
+              "zh": "后续复查覆盖21个交易日、两次冻结形成，每次40只目标，共46只不同目标股票。检查扫描2,230行来源记录，纳入一项区间内事件，排除一项入场前事件。构造成交记录共有79笔，其中73笔买入、6笔卖出。"
+            },
+            {
+              "en": "The review matches 57 non-code inputs and four captured artifacts to the earlier attempt. Calendar, target definitions and source identities match, so the improvement can be assessed within the same bounded setup. These fills are constructed account records rather than observed broker executions.",
+              "zh": "复查把57项非代码输入和4份捕获制品与先前尝试核对一致。日历、目标定义和来源身份匹配，因此可以在同一有限设定下判断检查发生了什么变化。这些成交属于构造账户记录，未观察到券商真实执行。"
+            }
+          ]
+        },
+        {
+          "id": "share-rules",
+          "title": {
+            "en": "Make the sell rule explicit",
+            "zh": "明确卖出数量规则"
+          },
+          "paragraphs": [
+            {
+              "en": "The passing replay explicitly enables a 100-share sell unit independently of the buy-side lot setting. Partial sales use that unit, while a complete exit can liquidate integer odd-lot shares. The retained default continues to allow continuous shares; the bounded result cannot be generalized to that default.",
+              "zh": "通过核验的重放显式启用100股卖出单位，与买入端交易单位独立设置。部分卖出按该单位处理，完整清仓允许卖出整数零股。保留的默认模式仍可使用连续份额，有限区间结果不能推广到默认行为。"
+            },
+            {
+              "en": "The rule rejects inputs explicitly declared as adjusted prices and rejects the capacity/weight-ledger path. Raw-share execution and adjusted-price return ratios answer different questions. A simulator rule is not a certification of every exchange and board’s order-entry rules.",
+              "zh": "这项规则拒绝明确声明为复权价格的输入，也拒绝容量或权重账本路径。原始股份执行与复权价格收益比回答的问题不同，模拟器规则还没有认证所有交易所和板块的申报要求。"
+            }
+          ]
+        },
+        {
+          "id": "cash-reconciliation",
+          "title": {
+            "en": "Keep small accounting errors visible",
+            "zh": "保留微小核算残差"
+          },
+          "paragraphs": [
+            {
+              "en": "Independent checks retain maximum absolute errors of approximately 1.455×10⁻¹⁰ yuan for cash, 1.164×10⁻¹⁰ for marked holdings and 5.684×10⁻¹⁴ for fees, below the original 10⁻⁷-yuan tolerance. The errors remain in the record rather than being rounded away to pass a check.",
+              "zh": "独立检查保留现金约1.455×10⁻¹⁰元、持仓计价约1.164×10⁻¹⁰元和费用约5.684×10⁻¹⁴元的最大绝对误差，均低于原有10⁻⁷元容差。记录没有通过抹去残差来通过检查。"
+            },
+            {
+              "en": "A reconciled identity only shows that this account is internally consistent under its stated inputs. It does not prove that historical information arrived on time, that all events were captured or that a large order could execute at the assumed price.",
+              "zh": "核算恒等式对上，只能说明这份账户在注明输入下内部一致。历史信息能否及时取得、事件是否完整，以及大订单能否按假定价格执行，还需要各自验证。"
+            }
+          ]
+        },
+        {
+          "id": "delisting-and-missing",
+          "title": {
+            "en": "Keep missing endpoints unresolved",
+            "zh": "保留缺失端点的未知状态"
+          },
+          "paragraphs": [
+            {
+              "en": "The retained ST comparisons include entries that precede delisting and entries that are already suspended. Last traded price, a later transfer arrangement and cash settlement are separate evidence. An untradeable original entry cannot be repaired merely by finding a later terminal value.",
+              "zh": "保留的 ST 对照中，有些入场发生在摘牌前，有些入场日已经停牌。最后交易价、后续转让安排与现金结算分别需要证据。原入场无法成交时，单独补一个后续终值也不能恢复原比较。"
+            },
+            {
+              "en": "A missing entry price also differs from a loss on inventory already owned. The extreme total-loss marking scenario in a separate historical reconstruction can penalize both cases. It must not be relabeled as an observed delisting cash loss.",
+              "zh": "缺失入场价格也不同于已经持有的库存发生损失。另一套历史重建的极端全损计价可能同时扣减两种情况，不能改称为观察到的退市现金损失。"
+            }
+          ]
+        },
+        {
+          "id": "historical-readiness",
+          "title": {
+            "en": "What a full historical account still needs",
+            "zh": "完整历史账户还缺什么"
+          },
+          "paragraphs": [
+            {
+              "en": "Retain a daily inventory and cash record with entry availability, action entitlements, successor securities and settlement cash. Validate order quantities and fees on raw prices, then reconcile the complete interval. Preserve the earlier rejection record alongside any repaired version.",
+              "zh": "需要逐日保存库存与现金，记录入场可用性、公司行动权益、继承证券和结算现金。在原始价格上核对订单数量与费用，再完成整段区间对账。修复版本也应保留先前的拒绝记录。"
+            },
+            {
+              "en": "Capacity requires a separate execution study with calibrated impact and market access. The 21-session account review added no prospective market observations and did not establish full-history strategy readiness.",
+              "zh": "容量仍需独立执行研究，校准冲击和市场访问条件。21日账户复查没有新增前瞻市场观测，也没有确立完整历史策略就绪。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "en": "The accounting review is a bounded constructed replay, not observed broker performance.",
+          "zh": "核算复查属于有限区间构造重放，不是券商业绩。"
+        },
+        {
+          "en": "Historical information availability, full event coverage, entitlements and tax treatment remain incomplete.",
+          "zh": "历史信息可得性、完整事件覆盖、权益分配与税费处理仍不完整。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Reconcile the full history with explicit inventory, event and settlement records before accepting strategy NAV.",
+          "zh": "接受策略净值前，先用明确库存、事件和结算记录核对完整历史。"
         }
       ]
     }
@@ -2190,6 +2593,57 @@
         "en": "Public method and code only. Complete-cohort private observations remain outside this publication.",
         "zh": "公开方法与代码。完整候选名单的私有观测不在本网站发布。"
       }
+    },
+    {
+      "id": "SRC-ARCHIVE-EN",
+      "title": {
+        "en": "Fixed report v1.0.10, English",
+        "zh": "固定报告v1.0.10英文版"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/6c4a09f26041cb7d47cf176e15cfc7a1181e2734/web/public/downloads/archive/microcap-research.v1.0.10.en-US.md",
+      "revision": "6c4a09f26041cb7d47cf176e15cfc7a1181e2734",
+      "sha256": "d50366cdb2201e17fb8240e76d0865d494be2044eb62cded0520c79b16f7bd14",
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Immutable wording edition dated 2026-11-01; evidence dates vary. Linked online assets are not a frozen site.",
+        "zh": "2026-11-01固定文字版。各项证据日期不同。链接的在线资产不构成冻结网站。"
+      },
+      "kind": "archive"
+    },
+    {
+      "id": "SRC-ACCOUNT-REVIEW",
+      "title": {
+        "en": "Selling raw shares: a remaining accounting gap",
+        "zh": "原始股数卖出的核算缺口"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/c389eadd0c4312032e0f32ec1b63c96a10e74426/web/public/data/microcap_raw_sell_review.json",
+      "revision": "c389eadd0c4312032e0f32ec1b63c96a10e74426",
+      "sha256": "c68a62c1226be40fd17a393c479b425f3c5838117b50722ce5673f73177e95f6",
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
+      },
+      "kind": "review"
+    },
+    {
+      "id": "SRC-FOLLOWUP-REVIEW",
+      "title": {
+        "en": "A follow-up on signals, execution and actions",
+        "zh": "信号、执行与公司行动的后续核查"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/c389eadd0c4312032e0f32ec1b63c96a10e74426/web/public/data/microcap_followup_review.json",
+      "revision": "c389eadd0c4312032e0f32ec1b63c96a10e74426",
+      "sha256": "b03cf25151b80b694ae7cc27a608921bf60a57cafdb1b8abecaaf12187d196a4",
+      "dataCutoff": null,
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Retained historical diagnostic; reviewed output does not establish a rerun, complete raw-share accounting, point-in-time availability or executable return.",
+        "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
+      },
+      "kind": "review"
     }
   ],
   "history": [

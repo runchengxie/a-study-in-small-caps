@@ -1,0 +1,22 @@
+---
+import Text from './Text.astro';
+import ui from '../data/research-focus-ui.json';
+interface Props { kind:'conditioning'|'exclusion'|'windows'; }
+const {kind}=Astro.props;
+const title=kind==='conditioning'?ui.controlTitle:kind==='exclusion'?ui.exclusionTitle:ui.windowTitle;
+const scope=kind==='conditioning'?ui.conditioningScope:kind==='exclusion'?ui.exclusionScope:ui.windowScope;
+const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
+---
+<section class="research-focus evidence-section" data-focus={kind} aria-labelledby={`focus-${kind}-heading`}>
+<h2 id={`focus-${kind}-heading`}><Text value={title}/></h2><p class="boundary-note"><Text value={scope}/></p>
+<div class="focus-controls">
+{kind==='conditioning'&&<label><Text value={ui.universe}/><select data-control="universe"><option value="retained_eligible" data-en={ui.retained_eligible.en} data-zh={ui.retained_eligible.zh}>{ui.retained_eligible.en}</option><option value="retained_deconfounding" data-en={ui.retained_deconfounding.en} data-zh={ui.retained_deconfounding.zh}>{ui.retained_deconfounding.en}</option></select></label>}
+{kind==='exclusion'&&<><label><Text value={ui.weight}/><select data-control="weighting">{['equal','value'].map(k=><option value={k} data-en={ui[k as 'equal'].en} data-zh={ui[k as 'equal'].zh}>{ui[k as 'equal'].en}</option>)}</select></label><label><Text value={ui.buffer}/><select data-control="buffer">{['buffered','no_buffer'].map(k=><option value={k} data-en={ui[k as 'buffered'].en} data-zh={ui[k as 'buffered'].zh}>{ui[k as 'buffered'].en}</option>)}</select></label></>}
+{kind==='windows'&&<label><Text value={ui.window}/><select data-control="days"><option value="all" data-en={ui.all.en} data-zh={ui.all.zh}>{ui.all.en}</option>{[20,60,120].map(d=><option value={d}>{d}</option>)}</select></label>}
+{kind!=='conditioning'&&<label><Text value={ui.metric}/><select data-control="metric">{(kind==='exclusion'?['net_annual_return','net_max_drawdown','annualized_turnover']:['annualReturn','drawdown','sharpe','turnover']).map(k=><option value={k} data-en={ui[k as 'annualReturn'].en} data-zh={ui[k as 'annualReturn'].zh}>{ui[k as 'annualReturn'].en}</option>)}</select></label>}
+</div>
+<div class="focus-chart"></div><p class="small muted"><Text value={ui.chartCaption}/></p><div class="table-scroll"><table><thead></thead><tbody></tbody></table></div><p class="focus-source"></p><a class="text-link" href={`${base}atlas/#migrated-charts`}><Text value={ui.openAtlas}/> ↗</a>
+<noscript><p><a href={`${base}reading-guide/`}><Text value={ui.readingGuide}/></a></p></noscript>
+</section>
+<style>.research-focus{margin:3rem 0}.focus-controls{display:flex;gap:1rem 2rem;flex-wrap:wrap;margin:1.5rem 0}.focus-controls label{display:grid;gap:.5rem;min-width:min(100%,12rem)}.focus-chart{margin:1.5rem 0;overflow-x:auto}.focus-chart :global(svg){width:100%;min-width:760px;display:block}.research-focus table{min-width:560px;width:100%;font-size:14px}.research-focus .boundary-note{line-height:1.8}.focus-source{font-size:12px;overflow-wrap:anywhere}</style>
+<script>import {initializeResearchFocus} from '../lib/research-focus';initializeResearchFocus();</script>

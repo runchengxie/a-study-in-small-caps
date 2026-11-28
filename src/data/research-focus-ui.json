@@ -1,0 +1,218 @@
+{
+  "title": {
+    "en": "Compare the archived tests",
+    "zh": "对照归档检验"
+  },
+  "intro": {
+    "en": "These are retained historical results, not newly executed strategies. Change one control at a time and read the sample below each figure.",
+    "zh": "这些是保留的历史结果，本轮没有重跑策略。每次改变一项条件，并结合图下样本范围阅读。"
+  },
+  "controlTitle": {
+    "en": "How conditional comparisons change the spread",
+    "zh": "条件对照怎样改变收益差"
+  },
+  "exclusionTitle": {
+    "en": "Dependence on the smallest-cap tail",
+    "zh": "对最小市值尾部的依赖"
+  },
+  "windowTitle": {
+    "en": "Published windows and later reruns",
+    "zh": "原窗口快照与后续复算"
+  },
+  "universe": {
+    "en": "Universe",
+    "zh": "股票池"
+  },
+  "weight": {
+    "en": "Weighting",
+    "zh": "权重"
+  },
+  "buffer": {
+    "en": "Retention rule",
+    "zh": "保留规则"
+  },
+  "metric": {
+    "en": "Metric",
+    "zh": "指标"
+  },
+  "all": {
+    "en": "All windows",
+    "zh": "全部窗口"
+  },
+  "window": {
+    "en": "Turnover window",
+    "zh": "换手窗口"
+  },
+  "original": {
+    "en": "Published snapshot",
+    "zh": "原公开快照"
+  },
+  "rerun": {
+    "en": "Rerun",
+    "zh": "新运行"
+  },
+  "minimum45": {
+    "en": "Sensitivity; 45-observation minimum",
+    "zh": "敏感性，至少45个观测"
+  },
+  "annualReturn": {
+    "en": "Annual return (%)",
+    "zh": "年化收益（%）"
+  },
+  "drawdown": {
+    "en": "Maximum drawdown (%)",
+    "zh": "最大回撤（%）"
+  },
+  "sharpe": {
+    "en": "Sharpe ratio",
+    "zh": "夏普比率"
+  },
+  "turnover": {
+    "en": "Annual turnover (times)",
+    "zh": "年化换手（倍）"
+  },
+  "days": {
+    "en": "Window (sessions)",
+    "zh": "窗口（交易日）"
+  },
+  "variant": {
+    "en": "Version",
+    "zh": "版本"
+  },
+  "value": {
+    "en": "Market-cap weight",
+    "zh": "市值加权"
+  },
+  "candidate": {
+    "en": "Candidate",
+    "zh": "候选"
+  },
+  "interval": {
+    "en": "Reported 95% interval",
+    "zh": "报告的95%区间"
+  },
+  "scope": {
+    "en": "Sample and limits",
+    "zh": "样本与限制"
+  },
+  "source": {
+    "en": "Inspect the source",
+    "zh": "核对来源"
+  },
+  "openAtlas": {
+    "en": "Open all retained projections",
+    "zh": "查看完整保留投影"
+  },
+  "conditioningScope": {
+    "en": "Monthly gross spreads, March 2015–June 2026 formations and July 2026 final return endpoint. Values are percentage points. HAC lag-3 intervals are exploratory, not simultaneous multiple-testing guarantees. Only matched/common or conditional rows are shown.",
+    "zh": "月度毛收益差，形成日覆盖2015年3月至2026年6月，最后收益终点为2026年7月。数值为百分点。区间采用 HAC 滞后3阶，属于探索估计，没有同时控制多重检验误差。只展示共同样本或条件对照。"
+  },
+  "exclusionScope": {
+    "en": "2015–July 2026 archived candidate comparisons. Exclusion fractions count eligible names, not market capitalization. Signals are rebuilt after exclusions. Net returns include the original simulation assumptions and are not certified executable performance.",
+    "zh": "2015年至2026年7月归档候选对照。剔除比例按合格股票只数计算，剔除后重算信号。净收益保留原模拟假设，尚未认证可成交表现。"
+  },
+  "windowScope": {
+    "en": "2015–July 2026, monthly formation, 40 targets and 60-name buffer. Reruns use current-version inputs and a hypothetical 10bp charge. The original run identity and minimum-observation policy are unresolved. Values come from the exact seven-row table in the fixed report.",
+    "zh": "2015年至2026年7月，月频、40只目标和60只缓冲。复算采用当前版本输入及假设10基点费用，历史原始运行身份和最低观测规则仍待核对。数值保留自固定报告七行原表。"
+  },
+  "eligible": {
+    "en": "Retained eligible universe",
+    "zh": "保留的合格股票池"
+  },
+  "retained_deconfounding": {
+    "en": "Retained deconfounding universe",
+    "zh": "保留的去混杂股票池"
+  },
+  "equal": {
+    "en": "Equal weight",
+    "zh": "等权"
+  },
+  "cap_weighted": {
+    "en": "Market-cap weight",
+    "zh": "市值加权"
+  },
+  "with_buffer": {
+    "en": "With buffer",
+    "zh": "保留缓冲"
+  },
+  "no_buffer": {
+    "en": "No buffer",
+    "zh": "不保留缓冲"
+  },
+  "net_annual_return": {
+    "en": "Net annual return (%)",
+    "zh": "净年化收益（%）"
+  },
+  "net_max_drawdown": {
+    "en": "Maximum drawdown (%)",
+    "zh": "最大回撤（%）"
+  },
+  "annualized_turnover": {
+    "en": "Annual turnover (times)",
+    "zh": "年化换手（倍）"
+  },
+  "small_cap": {
+    "en": "Small cap",
+    "zh": "小盘"
+  },
+  "low_turnover": {
+    "en": "Low turnover",
+    "zh": "低换手"
+  },
+  "composite": {
+    "en": "Combined",
+    "zh": "复合"
+  },
+  "chartCaption": {
+    "en": "The table retains every chart value. On narrow screens, scroll the chart or table horizontally.",
+    "zh": "表格保留图中全部数值，窄屏可横向滚动图表或表格。"
+  },
+  "readingGuide": {
+    "en": "Read the complete research guide",
+    "zh": "阅读完整研究指南"
+  },
+  "related": {
+    "en": "Continue with the related investigation",
+    "zh": "继续阅读相关调查"
+  },
+  "retained_eligible": {
+    "en": "Retained eligible universe",
+    "zh": "保留的合格股票池"
+  },
+  "buffered": {
+    "en": "With buffer",
+    "zh": "保留缓冲"
+  },
+  "numericValue": {
+    "en": "Value",
+    "zh": "数值"
+  },
+  "controlCommon": {
+    "en": "Common-sample unconditional",
+    "zh": "共同样本无条件"
+  },
+  "controlConditional": {
+    "en": "Conditional",
+    "zh": "条件对照"
+  },
+  "size_given_activity": {
+    "en": "Size within trading activity",
+    "zh": "成交活跃度组内的规模"
+  },
+  "size_given_illiquidity": {
+    "en": "Size within illiquidity",
+    "zh": "非流动性组内的规模"
+  },
+  "turnover_given_size": {
+    "en": "Turnover within size",
+    "zh": "规模组内的换手"
+  },
+  "exclusion": {
+    "en": "Excluded names (%)",
+    "zh": "剔除股票数量（%）"
+  },
+  "rerun120": {
+    "en": "Rerun (90-observation minimum)",
+    "zh": "新运行（最低90个观测）"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "sourceId": "SRC-ARCHIVE",
+  "sourceSha256": "24b33028a5dbcd8b3f2d191204c755277e17df802463dd7c875fa75a355a71f1",
+  "rows": [
+    {
+      "days": 20,
+      "variant": "original",
+      "annualReturn": 3.519612,
+      "sharpe": 0.263731,
+      "drawdown": -65.009288,
+      "turnover": 11.592836
+    },
+    {
+      "days": 20,
+      "variant": "rerun",
+      "annualReturn": 3.519612,
+      "sharpe": 0.263731,
+      "drawdown": -65.009288,
+      "turnover": 11.592836
+    },
+    {
+      "days": 60,
+      "variant": "original",
+      "annualReturn": 5.334535,
+      "sharpe": 0.330517,
+      "drawdown": -52.389378,
+      "turnover": 6.785942
+    },
+    {
+      "days": 60,
+      "variant": "rerun",
+      "annualReturn": 5.334535,
+      "sharpe": 0.330517,
+      "drawdown": -52.389378,
+      "turnover": 6.785942
+    },
+    {
+      "days": 120,
+      "variant": "original",
+      "annualReturn": 7.601898,
+      "sharpe": 0.411345,
+      "drawdown": -45.607451,
+      "turnover": 4.474725
+    },
+    {
+      "days": 120,
+      "variant": "rerun",
+      "annualReturn": 4.224513,
+      "sharpe": 0.289023,
+      "drawdown": -58.259876,
+      "turnover": 4.440654
+    },
+    {
+      "days": 120,
+      "variant": "minimum45",
+      "annualReturn": 6.255876,
+      "sharpe": 0.361123,
+      "drawdown": -58.63161,
+      "turnover": 4.633872
+    }
+  ]
+}
