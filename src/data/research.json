@@ -3987,6 +3987,36 @@
         "en": "Publisher abstract and sample/method snippets; Pacific-Basin Finance Journal 67 (2021), 101551. No full-text review or replication.",
         "zh": "出版方摘要及样本／方法片段；Pacific-Basin Finance Journal 67（2021），101551。未完成全文审阅或复现。"
       }
+    },
+    {
+      "id": "SRC-SMALLCAP-ROADMAP",
+      "title": {
+        "en": "Small-cap research task registry",
+        "zh": "小微盘研究任务登记"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/8700d713df32f249f7f9624d50ae5687af642c98/studies/smallcap_investability/task-registry.json",
+      "reviewedOn": "2026-11-29",
+      "sha256": "a64798a86f8b287346da1fe7aff78e20c79e7329716e47f5ad76c1a24765aafd",
+      "kind": "review",
+      "scope": {
+        "en": "Thirty tasks, deliverable states, evidence gates and a dependency graph; the public file is an exact source copy. Status does not certify investment validity.",
+        "zh": "30项任务、交付状态、证据门槛及依赖图；公开文件为来源的逐字节副本。状态不认证投资有效性。"
+      }
+    },
+    {
+      "id": "SRC-TARGET-SUPPORT-ROADMAP",
+      "title": {
+        "en": "Reviewed three-arm target-support diagnostic",
+        "zh": "经复核的三组目标支持诊断"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/8700d713df32f249f7f9624d50ae5687af642c98/studies/smallcap_investability/target-support-reviewed.json",
+      "reviewedOn": "2026-11-29",
+      "sha256": "b785cf17d4a26298653862c1b885861b1abaeb9241c109969c5f279950119fea",
+      "kind": "review",
+      "scope": {
+        "en": "137 supported dates, March 2015–July 2026; 822 normalized target groups and 816 target transitions independently reconciled. No PIT certification, prices, returns, orders, fills or risk forecasts.",
+        "zh": "2015年3月至2026年7月137个支持日期；独立核对822组目标及816次目标变化。没有认证时点资格，也未计算价格、收益、订单、成交或风险预测。"
+      }
     }
   ],
   "history": [
