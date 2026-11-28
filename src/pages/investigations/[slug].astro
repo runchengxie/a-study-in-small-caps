@@ -1,15 +1,52 @@
 ---
-import ResearchFocus from '../../components/ResearchFocus.astro';
+import InvestigationInstrument from '../../components/InvestigationInstrument.astro';
+import Site from '../../layouts/Site.astro';
+import Text from '../../components/Text.astro';
+import SourceInfo from '../../components/SourceInfo.astro';
+import research from '../../data/research.json';
+import essayUI from '../../data/essay-ui.json';
 import focusUI from '../../data/research-focus-ui.json';
-import ExitDelay from '../../components/ExitDelay.astro';
-import CostScenario from '../../components/CostScenario.astro';
-import PathExplorer from '../../components/PathExplorer.astro';import Site from '../../layouts/Site.astro';import Text from '../../components/Text.astro';import SourceInfo from '../../components/SourceInfo.astro';import research from '../../data/research.json';
 export function getStaticPaths(){return research.investigations.map(chapter=>({params:{slug:chapter.slug},props:{chapter}}));}
-const {chapter}=Astro.props;const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';const papers=research.literature.filter(p=>chapter.literatureIds.includes(p.id));
+const {chapter}=Astro.props;
+const base=import.meta.env.BASE_URL.replace(/\/$/,'')+'/';
+const papers=research.literature.filter(p=>chapter.literatureIds.includes(p.id));
+const opening=('opening' in chapter?chapter.opening:[])??[];
+const prose=[...opening,...chapter.sections.flatMap(s=>s.paragraphs)];
+const minutes={en:Math.max(1,Math.ceil(prose.map(p=>p.en).join(' ').split(/\s+/).length/200)),zh:Math.max(1,Math.ceil(prose.map(p=>p.zh).join('').length/400))};
+const readingTime={en:essayUI.readingTime.en.replace('{minutes}',String(minutes.en)),zh:essayUI.readingTime.zh.replace('{minutes}',String(minutes.zh))};
 ---
-<Site title={chapter.title.en} active="investigations" description={chapter.summary.en}><header class="chapter-intro"><p class="eyebrow">{chapter.id} · {chapter.updated} · <Text k={chapter.stage==='methods'?'methodsStage':chapter.stage}/></p><h1><Text value={chapter.title}/></h1><p class="lead"><Text value={chapter.question}/></p><div class="finding"><span class="eyebrow"><Text k="current"/></span><p><Text value={chapter.conclusion}/></p></div></header>
-{chapter.id==='INV-006'&&<><PathExplorer preset="2024"/><ExitDelay/><p><a href={`${base}investigations/exit-liquidity-and-turnover/`}><Text value={research.investigations.find(c=>c.id==='INV-007')!.title}/> →</a></p></>}
-{chapter.id==='INV-007'&&<CostScenario/>}
-<p class="chapter-guide"><a href={`${base}reading-guide/`}><Text value={focusUI.readingGuide}/> →</a></p>
-{chapter.id==='INV-009'&&<p><a href={`${base}investigations/targets-shares-and-cash/`}><Text value={focusUI.related}/> →</a></p>}
-<div class="article-layout"><aside class="article-nav" aria-label="Chapter sections" data-aria="chapterSections">{chapter.sections.map(section=><a href={`#${section.id}`}><Text value={section.title}/></a>)}<a href="#limitations"><Text k="sample"/></a><a href="#next"><Text k="nextQuestion"/></a></aside><article class="prose">{chapter.sections.map(section=><section id={section.id}><h2><Text value={section.title}/></h2>{section.paragraphs.map(paragraph=><p><Text value={paragraph}/></p>)}{chapter.id==='INV-009'&&section.id==='matched-controls'&&<ResearchFocus kind="conditioning"/>}{chapter.id==='INV-009'&&section.id==='tail-exclusions'&&<ResearchFocus kind="exclusion"/>}{chapter.id==='INV-009'&&section.id==='window-rerun'&&<ResearchFocus kind="windows"/>}{'figure' in section&&section.figure&&<a class="evidence-link" href={`${base}evidence/#${section.figure}`}><Text k="browseEvidence"/> →</a>}</section>)}<section id="limitations"><h2><Text k="sample"/></h2><ul>{chapter.limitations.map(item=><li><Text value={item}/></li>)}</ul></section><section id="next"><h2><Text k="nextQuestion"/></h2><ul>{chapter.nextSteps.map(item=><li><Text value={item}/></li>)}</ul></section><section id="claims"><h2><Text k="claims"/></h2>{chapter.claimIds.map(id=><p><a href={`${base}history/#${id}`}>{id} · <Text value={research.claims.find(claim=>claim.id===id)!.title}/></a></p>)}</section><section><h2><Text k="papers"/></h2>{papers.map(paper=><p><a href={`${base}literature/#${paper.id}`}>{paper.title}</a> · {paper.year} · <Text k={paper.stage}/></p>)}</section><SourceInfo ids={chapter.sourceIds}/></article></div></Site>
+<Site title={chapter.title.en} active="investigations" description={chapter.summary.en}>
+ <header class="chapter-intro">
+  <p class="eyebrow">{chapter.id} · {chapter.updated} · <Text k={chapter.stage==='methods'?'methodsStage':chapter.stage}/></p>
+  <h1><Text value={chapter.title}/></h1>
+  <p class="lead"><Text value={chapter.question}/></p>
+  <p class="essay-reading-time"><Text value={readingTime}/></p>
+  <div class="finding"><span class="eyebrow"><Text k="current"/></span><p><Text value={chapter.conclusion}/></p></div>
+ </header>
+ <p class="chapter-guide"><a href={`${base}reading-guide/`}><Text value={focusUI.readingGuide}/> →</a></p>
+ {chapter.id==='INV-009'&&<p><a href={`${base}investigations/targets-shares-and-cash/`}><Text value={focusUI.related}/> →</a></p>}
+ <div class="article-layout">
+  <aside class="article-nav" aria-label="Chapter sections" data-aria="chapterSections">
+   {chapter.sections.map(section=><a href={`#${section.id}`}><Text value={section.title}/></a>)}
+   <a href="#limitations"><Text k="sample"/></a><a href="#next"><Text k="nextQuestion"/></a>
+  </aside>
+  <article class="prose investigation-essay">
+   <div class="essay-opening">{opening.map(p=><p><Text value={p}/></p>)}</div>
+   {chapter.sections.map(section=>{
+    const instrument='instrument' in section?section.instrument:chapter.id==='INV-009'?({'matched-controls':'conditioning','tail-exclusions':'exclusion','window-rerun':'windows'} as Record<string,string>)[section.id]:'';
+    return <section id={section.id}>
+     <h2><Text value={section.title}/></h2>
+     {section.paragraphs.map(paragraph=><p><Text value={paragraph}/></p>)}
+     {instrument&&<InvestigationInstrument kind={instrument}/>}
+     {'figure' in section&&section.figure&&<a class="evidence-link" href={`${base}evidence/#${section.figure}`}><Text k="browseEvidence"/> →</a>}
+    </section>;
+   })}
+   <section id="limitations"><h2><Text k="sample"/></h2><ul>{chapter.limitations.map(item=><li><Text value={item}/></li>)}</ul></section>
+   <section id="next"><h2><Text k="nextQuestion"/></h2><ul>{chapter.nextSteps.map(item=><li><Text value={item}/></li>)}</ul></section>
+   <section id="claims"><h2><Text k="claims"/></h2>{chapter.claimIds.map(id=><p><a href={`${base}history/#${id}`}>{id} · <Text value={research.claims.find(claim=>claim.id===id)!.title}/></a></p>)}</section>
+   <section><h2><Text k="papers"/></h2>{papers.map(paper=><p><a href={`${base}literature/#${paper.id}`}>{paper.title}</a> · {paper.year} · <Text k={paper.stage}/></p>)}</section>
+   <SourceInfo ids={chapter.sourceIds}/>
+  </article>
+ </div>
+</Site>
+<style>.chapter-guide{max-width:720px;margin:2rem auto;font-size:13px}.essay-reading-time{font-size:13px;color:var(--muted);margin:1rem 0 2rem}.essay-opening{margin-bottom:3rem}.essay-opening:empty{display:none}.essay-opening p:first-child{font-size:1.15em;line-height:1.85}.investigation-essay :global(.essay-instrument),.investigation-essay :global(.essay-risk),.investigation-essay :global(.path-lab),.investigation-essay :global(.research-focus){font-family:Inter,'Noto Sans SC',system-ui,sans-serif}.investigation-essay :global(select),.investigation-essay :global(input){font-family:inherit}.investigation-essay :global(.boundary-note){font-size:.85rem;line-height:1.8}@media(max-width:600px){.essay-opening p:first-child{font-size:1.05em}}</style>

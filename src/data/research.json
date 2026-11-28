@@ -31,7 +31,7 @@
         "comparability"
       ],
       "stage": "methods",
-      "updated": "2026-11-27",
+      "updated": "2026-11-28",
       "claimIds": [
         "MC-C02"
       ],
@@ -60,6 +60,14 @@
             {
               "en": "A smallest-400 rule fixes the number of holdings but lets its share of the market change as listings expand. A bottom-quintile rule fixes a fraction but lets the number and dollar size change. The share definition, exchange universe and historical eligibility belong in the definition too.",
               "zh": "最小400只固定了持股数量，却会随上市公司增加而改变覆盖比例。最小五分之一固定比例，数量和美元规模则随之变化。股数口径、交易所范围与历史资格也都是定义的一部分。"
+            },
+            {
+              "en": "Dollar thresholds are useful when the question concerns a given economic scale. Within-market ranks are useful when the question concerns a company’s position among its local peers. Neither rule automatically gives comparable trading conditions. Currency conversion aligns a unit of account, while eligibility and share definitions still need their own checks.",
+              "zh": "研究某个经济规模时，美元门槛比较直接。研究公司在当地股票中的位置时，市场内排名更合适。两种规则都不会自动产生可比交易条件。换汇只对齐计价单位，入选资格和股本定义仍需另查。"
+            },
+            {
+              "en": "A fixed-N portfolio also changes its coverage as the listed universe expands. The bottom 400 in a smaller historical universe need not resemble the bottom 400 years later. A historical test should preserve the number of eligible names on each formation date, rather than applying today’s universe backwards.",
+              "zh": "固定数量组合的覆盖比例会随上市公司数量变化。较小历史股票池中的末400只，未必像多年后的末400只。历史检验应保存每个形成日的合格股票数量，不能把今天的股票池倒推回去。"
             }
           ]
         },
@@ -77,9 +85,18 @@
             {
               "en": "The chart keeps one lagged traded-value measure while changing the grouping rule. That isolates a useful descriptive choice, but it does not harmonize listing rules, share classes or source histories. Common dates remove one obvious mismatch; they do not make the underlying samples identical.",
               "zh": "图表保持滞后成交额指标不变，只切换分组方式。这有助于理解口径差别，但不能统一上市制度、股份类别与来源历史。共同日期消除了一项明显差异，不能让底层样本变成同一个股票池。"
+            },
+            {
+              "en": "The absolute and relative panels are separate source projections. Changing the selector does not match the same companies one by one. In particular, a market can have no retained value in a selected group even when other groups are populated. An empty cell must stay missing rather than becoming a zero-dollar observation.",
+              "zh": "绝对规模与相对排名来自分别保留的来源投影。切换控件并没有逐只匹配同一批公司。某个市场在选定分组中可能没有保留值，即使其他组有数据。空格应继续显示缺失，不能填成零美元。"
+            },
+            {
+              "en": "The latest retained 2026 period does not include the US. Selecting it should make that absence visible. An apparently complete market comparison can otherwise be produced simply by hiding a market whose source stopped earlier.",
+              "zh": "保留的2026年区间没有美股数据。选到这段时期时，页面应明确显示这项缺口。若把提前停止覆盖的市场藏起来，一份看似齐全的跨市场比较就可能被错误制造出来。"
             }
           ],
-          "figure": "liquidity"
+          "figure": "liquidity",
+          "instrument": "liquidity"
         },
         {
           "id": "section-3",
@@ -91,6 +108,27 @@
             {
               "en": "The literature raises quality and shell-value questions because market capitalization can travel with other characteristics. Our retained low-turnover association is a separate exploratory question. Without matched formation dates, weights and quality controls, a resemblance in direction is not a replication or an explanation.",
               "zh": "文献提出质量和壳价值问题，因为市值常与其他特征同时变化。保留的低换手关联是另一项探索问题。若未对齐形成日、权重与质量控制，方向相似不能算复现，也不能算解释。"
+            }
+          ]
+        },
+        {
+          "id": "definition-contract",
+          "title": {
+            "en": "Write down the definition before measuring returns",
+            "zh": "计算收益前先写清定义"
+          },
+          "paragraphs": [
+            {
+              "en": "Record the size variable and formation clock with the selection rule. Total market capitalization and freely tradable capitalization answer different questions. A classification based on later share counts can move a stock into a different historical group even if the observed price has not changed.",
+              "zh": "选股规则要连同规模变量和形成时点保存。总市值与可自由交易部分的市值回答不同问题。若使用后来取得的股数，一只股票可能在价格不变时被重新分到另一个历史组。"
+            },
+            {
+              "en": "Keep suspensions, changed identifiers and later exits in the research record. A company that disappears from a modern database is still part of the question if the historical rule would have selected it. Eligibility, a quoted price and an executable order are separate checks.",
+              "zh": "停牌、标识变化和后来退出样本的公司都应留在研究记录中。只要历史规则当时会选中，公司后来从现代数据库中消失，也仍属于研究对象。入选资格、能否取得报价和订单能否执行，各需检查。"
+            },
+            {
+              "en": "The next useful comparison is therefore a pair of explicitly defined universes on the same dates. Only after those universes are recorded should the study ask whether their returns or trading conditions differ. The chart helps inspect the definition; it does not decide which definition is universally correct.",
+              "zh": "接下来有用的比较，是同一日期上两份定义清楚的股票池。保存股票池之后，再问收益或交易条件是否不同。图表可以帮助检查定义，不能替研究决定一种普遍正确的口径。"
             }
           ]
         }
@@ -105,6 +143,16 @@
         {
           "en": "Freeze size, share and eligibility rules before comparing returns on common support.",
           "zh": "先冻结规模、股数与资格规则，再在共同样本比较收益。"
+        }
+      ],
+      "opening": [
+        {
+          "en": "A fixed count makes a portfolio easy to describe: take the smallest 400 eligible stocks. The count alone says little about what those companies look like. Their dollar values change over time, and the same count can cover very different fractions of two markets. The definition determines which economic question the portfolio can answer.",
+          "zh": "选出合格股票中市值最小的400只，这个组合很容易描述。400这个数量本身，却没有说明这些企业有多小。它们的美元规模会随时间变化，在两个市场中也可能覆盖很不一样的比例。定义会决定这份组合能回答什么问题。"
+        },
+        {
+          "en": "The retained liquidity aggregates let us examine this difference directly. The instrument below keeps the trading-activity measure fixed while changing the size grouping. Begin with a common period and inspect the sample counts as well as the bars. A change in the grouping rule can change both the companies selected and the conclusion drawn from them.",
+          "zh": "保留的流动性汇总可以直接检查这个区别。下方互动保持成交活跃度指标不变，只改变规模分组。可以先选同一时期，再一起查看柱形与样本数量。换一种分组规则，入选企业和由此得出的判断都可能改变。"
         }
       ]
     },
@@ -153,7 +201,8 @@
         "SRC-EARLY",
         "SRC-RISK",
         "SRC-ARCHIVE",
-        "SRC-CLAIMS"
+        "SRC-CLAIMS",
+        "SRC-NAV-DIAG"
       ],
       "sections": [
         {
@@ -170,8 +219,17 @@
             {
               "en": "The early 2008–2014 summaries report maximum drawdowns from roughly 60% to 69% across the retained 50 to 800-name rules. These are properties of the stated incomplete reconstruction, not estimates of a future loss limit. Wider portfolios did not mechanically eliminate the historical downside in this sample.",
               "zh": "2008至2014年早期汇总中，保留的50至800只股票规则的最大回撤约为60%至69%。这是注明存在缺项的重建结果，不能当作未来损失上限。在这个样本里，扩大持股数量并未机械消除历史下行风险。"
+            },
+            {
+              "en": "Drawdown uses the highest earlier NAV as its denominator. A loss from the start of a calendar year uses a different starting value. They can both describe the same day correctly while producing different percentages, so a date and denominator should accompany every quoted loss.",
+              "zh": "回撤的分母是此前最高净值，年初以来收益使用另一个起始值。同一天的两个百分比可能都算得正确，却回答不同问题。引用损失时，应一起保留日期和分母。"
+            },
+            {
+              "en": "Recovery is asymmetric. A value that falls from 100 to 50 needs a 100% gain to return to 100. This arithmetic does not forecast a rebound; it explains why a positive subsequent return can coexist with an account that remains below its earlier high.",
+              "zh": "恢复并不对称。一个数值从100跌到50，需要上涨100%才能回到100。这只是算术关系，没有预测反弹。它解释了为什么后续收益为正，账户仍可能低于以前的高点。"
             }
-          ]
+          ],
+          "instrument": "risk-summary"
         },
         {
           "id": "section-2",
@@ -187,9 +245,18 @@
             {
               "en": "In the early source, the longest underwater duration counts completed episodes only. Every count also has one episode still underwater at the sample end. That is right censoring: the eventual recovery is unknown, so the completed maximum cannot be read as a guaranteed waiting-time bound.",
               "zh": "早期来源的最长水下期只统计已恢复区间。每组数量另有一个截至样本末仍未恢复的区间。这类情况称为右删失，最终恢复时间仍未知。因此，已恢复区间中的最长时间只能描述已完成的恢复过程，未来等待可能更久。"
+            },
+            {
+              "en": "The early chart shows retained summary values rather than reconstructed daily paths. The 400-name early summary includes a 506-observation recovery interval; this is not 506 calendar days. A larger count does not automatically remove the common market exposure that can affect many holdings together.",
+              "zh": "早期图展示保留的汇总值，没有补造逐日路径。早期400只汇总中有506个观测间隔的恢复期，这不等于506个日历日。扩大持仓数量，也不会自动消除许多股票共同承受的市场敞口。"
+            },
+            {
+              "en": "For the later series, the timeline can be narrowed to a chosen start and end. The return histogram changes the holding interval, while the monthly calendar records actual retained observations. A monthly closing gain can hide a deeper decline earlier in that same month.",
+              "zh": "后段序列可以在时间线上选起点和终点。收益分布允许改变持有间隔，月度日历使用实际保留的观测。一个月收盘上涨，仍可能遮住该月早些时候更深的下跌。"
             }
           ],
-          "figure": "microcap"
+          "figure": "microcap",
+          "instrument": "path"
         },
         {
           "id": "section-3",
@@ -220,6 +287,27 @@
               "zh": "旧报告保留多套重建和多个审计区间。缺价次数需要连同样本分母阅读，后来有限区间股份账户通过核验，也没有认证完整400只序列。把曲线用于执行判断前，可以先读账户章节。"
             }
           ]
+        },
+        {
+          "id": "from-path-to-investment",
+          "title": {
+            "en": "Which additional claim needs another test?",
+            "zh": "再往前下判断，需要补什么检验"
+          },
+          "paragraphs": [
+            {
+              "en": "The curve describes a rule reconstruction. An excess-return claim additionally needs a benchmark with matched dates, costs and risk treatment. Comparing it with a convenient large-cap index after inspecting the result would leave the benchmark choice entangled with the finding.",
+              "zh": "这条曲线描述一项规则重建。要进一步判断超额收益，还需要日期、成本和风险处理匹配的基准。看过结果后再挑一个方便的大盘指数，基准选择就可能与结论缠在一起。"
+            },
+            {
+              "en": "An investability claim adds a different requirement. Every selected stock must connect to an inventory, cash and event record, including days when an order cannot be completed. A missing quote should not quietly remove the position or redistribute its weight among the survivors.",
+              "zh": "可投资性又增加了一项要求。每只入选股票都要接到库存、现金与事件记录，包括订单无法完成的日期。缺失报价不应悄悄删掉持仓，也不应把权重分配给剩下的股票。"
+            },
+            {
+              "en": "These checks can change the accepted return without changing the historical price observations. The account chapter follows a bounded example of that process. The present path remains useful as a risk description while those stronger claims are tested.",
+              "zh": "这些核查可能改变最终接受的收益，却不需要改变历史价格观测。账户章节记录了一段有限区间的核验过程。在更强判断接受检验时，这条路径仍可以用于描述历史风险。"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -232,6 +320,16 @@
         {
           "en": "Reconcile raw-share and cash accounting before using reconstructed performance for an implementation decision.",
           "zh": "在用重建表现作实施决策前，先核对真实股份与现金账本。"
+        }
+      ],
+      "opening": [
+        {
+          "en": "A high ending NAV compresses years of very different experiences into one number. The retained microcap reconstruction makes those experiences visible. It contains sharp falls and long periods below a previous peak, so the first task is to describe the path before attributing its return to a premium.",
+          "zh": "很高的期末净值，会把多年中很不一样的经历压成一个数字。保留的微盘重建让这些过程重新可见。曲线里有急跌，也有长时间低于此前高点的阶段，因此先要描述路径，再讨论收益能否归于某种溢价。"
+        },
+        {
+          "en": "This investigation keeps two source periods separate. Early risk summaries compare several portfolio sizes, while the later interactive path contains only the published 400-name series. The difference is visible in the figures and remains part of every conclusion drawn below.",
+          "zh": "本篇把两段来源分开。早期风险汇总可以比较多种持仓数量，后面的互动路径则只有已发布的400只序列。图中会显示这个区别，下面的判断也都保留这项范围限制。"
         }
       ]
     },
@@ -266,7 +364,7 @@
         "trading_costs"
       ],
       "stage": "exploratory",
-      "updated": "2026-11-27",
+      "updated": "2026-11-28",
       "claimIds": [
         "MC-C03",
         "MC-C04",
@@ -297,6 +395,14 @@
             {
               "en": "For a historical period, the sample pools security-days. A company observed many days can appear many times; a unique-stock count answers a different question. Empty groups remain empty, and an observed zero is not interchangeable with a missing session.",
               "zh": "历史区间汇集证券日。同一家公司在多个日期会出现多次，独立股票数回答另一问题。空分组仍为空，实际观测到的零成交也不能与缺失交易日混为一谈。"
+            },
+            {
+              "en": "The displayed value is an activity statistic for a retained group. It is not the dollars available at the best bid when our sell order arrives. Daily volume can be spread unevenly across the session, and the price at which it traded need not remain available.",
+              "zh": "展示值是保留分组的成交活跃度统计，不是卖单到达时买一档可以取得的金额。全天成交可能在时段之间分布不均，已经成交的价格也未必继续可用。"
+            },
+            {
+              "en": "Order size must be stated in the same unit as its constraint. A share-volume limit and a notional participation limit differ when prices move. The retained research previously corrected traded-value units; reproducing a capacity estimate requires carrying those units through the entire calculation.",
+              "zh": "订单规模与约束要使用一致单位。价格变化时，按股数限制成交量与按金额限制参与率并不相同。已有研究曾修正成交额单位，复现容量估计时，需要把单位检查贯穿整个计算。"
             }
           ],
           "figure": "liquidity"
@@ -315,8 +421,17 @@
             {
               "en": "Mainland coverage is Shanghai and Shenzhen, not every Chinese exchange. Japanese historical shares are incomplete and have not been certified against historical revisions. Even on common dates, listing coverage and valuation definitions differ. Use the chart to frame questions, not rank whole national markets as permanently liquid or illiquid.",
               "zh": "内地样本仅覆盖沪深交易所。日股历史股数不完整，数据在历史修订前是否可得也尚未核实。即使日期相同，上市范围和估值定义仍有差别。图表适合帮助提出问题，不宜据此给整个国家市场贴上永久流动或不流动的标签。"
+            },
+            {
+              "en": "Two markets can share calendar endpoints while using different trading days or security definitions. The instrument reports retained source dates and sample sizes; it does not certify a common historical universe. A comparison should keep the source-specific missing groups visible.",
+              "zh": "两个市场即使共享日历端点，也可能使用不同交易日和证券定义。互动图报告保留的来源日期及样本数量，没有认证共同历史股票池。比较时应保留各来源缺失的组。"
+            },
+            {
+              "en": "A mean or median over surviving observations can also conceal the difficult stocks that disappeared from coverage. The next audit must ask whether those absences reflect eligibility, inactive listings or incomplete data, rather than assuming they were cheap or easy to trade.",
+              "zh": "仅对保留下来的观测取均值或中位数，也可能遮住已退出覆盖的困难股票。下一步审计需要区分资格、失效上市与数据不完整，不能假定这些缺失股票交易便宜或容易。"
             }
-          ]
+          ],
+          "instrument": "liquidity"
         },
         {
           "id": "section-3",
@@ -334,6 +449,27 @@
               "zh": "本次全文阅读区分了Amihud的收益成交额代理、Novy-Marx与Velikov的有效价差估计及持有缓冲。美股结果不能提供本地成本常数。质量控制论文仍停留在作者摘要层面。本站不发布BMLL逐证券观测。"
             }
           ]
+        },
+        {
+          "id": "time-and-quantity",
+          "title": {
+            "en": "Keep the order clock and remainder",
+            "zh": "保留下单时钟与剩余数量"
+          },
+          "paragraphs": [
+            {
+              "en": "A quote-based model first fixes a decision time and then an arrival time. Cost relative to the decision midpoint combines the spread paid at arrival with intervening price movement. A stale quote can make both the apparent price and quantity misleading, so quote age belongs beside the estimate.",
+              "zh": "报价模型先固定决策时刻，再固定到达时刻。相对决策中间价的成本，同时包含到达时跨过的价差和等待期间价格变化。陈旧报价可能同时误导价格与数量判断，报价年龄应放在估计旁边。"
+            },
+            {
+              "en": "For an order larger than the displayed top level, retain the remainder. A low cost on the small modeled part does not price the rest of the order. Assuming that a later copy of the same quote is fresh liquidity can repeatedly spend a quantity that was only displayed once.",
+              "zh": "订单超过最优档显示数量时，应保留余量。已模拟的小部分成本很低，并没有给剩下的订单定价。若把后来重复出现的相同报价都当作新流动性，就可能反复使用只展示过一次的数量。"
+            },
+            {
+              "en": "The event-level chapter makes these assumptions explicit. Its short-window scenarios and the cross-market activity chart are complementary descriptions with different resolutions. Neither alone establishes a fund size that can reliably enter and exit the strategy.",
+              "zh": "事件级章节会明确这些假设。短窗口情景与跨市场活跃度图属于不同分辨率的互补描述，单独任何一项，都没有确定策略可以可靠进出的资金规模。"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -346,6 +482,16 @@
         {
           "en": "Specify capital, order rules and account treatment, then compare calibrated fills on matched dates.",
           "zh": "固定资金、订单规则与账户处理，再在对齐日期比较经过校准的成交。"
+        }
+      ],
+      "opening": [
+        {
+          "en": "Buying a small stock and selling a large position in it are different demands on the market. Average daily traded value gives a useful first view, but the order arrives at a particular time and meets the quotes then available. This investigation moves from that coarse activity measure to the quantities an execution study must retain.",
+          "zh": "买入一只小股票，与卖出它的一笔大持仓，对市场提出的要求不同。日均成交额可以提供第一层观察，订单却会在具体时刻到达，面对当时的报价。本篇从较粗的成交活跃度，走到执行研究需要保留的数量。"
+        },
+        {
+          "en": "Start with the cross-market instrument below. The same dollar-size group can contain very different traded-value distributions across markets. The dates and group counts matter as much as the level of the bars, especially where coverage is absent.",
+          "zh": "可以先看下方跨市场互动。同一个美元规模组，在不同市场中可能对应很不一样的成交额分布。日期和分组数量与柱形高低同样重要，尤其要看哪些地方缺少覆盖。"
         }
       ]
     },
@@ -470,9 +616,18 @@
             {
               "en": "Our next tests must freeze input contracts first: historical eligibility and total shares for a tail exclusion; daily security returns and traded values for ILLIQ; holdings transitions and an order-cost policy for buffers. These are independent research plans, not completed replications. The literature cards give concise method and result notes.",
               "zh": "后续检验要先固定输入口径。排除最小市值股票需要历史资格和总股数，计算ILLIQ则需要逐证券日收益与成交额。持有缓冲的检验还须记录持仓变动，并确定订单成本规则。这些独立研究计划尚未完成复现。文献卡片提供简要方法与结果笔记。"
+            },
+            {
+              "en": "A useful replication starts with a mapping from the paper’s quantities to our fields. If the paper uses a long-short factor, the comparison should retain both legs. If it requires a lagged characteristic, the field’s availability date must be checked rather than inferred from the period it describes.",
+              "zh": "有用的复现应先把论文中的量映射到我们的字段。论文使用多空因子时，对照要保留两条腿。要求滞后特征时，应核对字段何时可获取，不能根据它描述的报告期推定可用时间。"
+            },
+            {
+              "en": "A result that does not reproduce is part of the record. The window study’s archived and rerun values illustrate why source identity and the minimum-observation rule matter. Changing a threshold after seeing the discrepancy creates a sensitivity result; it does not recover the original run by itself.",
+              "zh": "没有复现的结果也属于研究记录。窗口研究中的原值和复算值，说明来源身份与最低观测规则为什么重要。看到差距后改变门槛，得到的是一项敏感性结果，单靠这一步还没有恢复原始运行。"
             }
           ],
-          "id": "section-2"
+          "id": "section-2",
+          "instrument": "conditioning"
         }
       ],
       "limitations": [
@@ -485,6 +640,16 @@
         {
           "en": "Run matched protocols only after their required historical inputs are available.",
           "zh": "取得所需历史输入后，再运行匹配方案。"
+        }
+      ],
+      "opening": [
+        {
+          "en": "A paper can change the research question before it changes a trading rule. The three editions read here point to different problems: the historical universe used to construct size factors, the measurement of illiquidity, and the effect of holding buffers on costs. Keeping those questions separate makes the comparison with our own evidence more useful.",
+          "zh": "论文可以先改变研究问题，再影响交易规则。这里读过的三个版本分别指向不同问题，涉及规模因子的历史股票池、非流动性的度量，以及持有缓冲怎样影响成本。把问题分清，才更容易与我们的证据对照。"
+        },
+        {
+          "en": "The notes below retain the actual editions and page references. Their conclusions guide specific tests rather than becoming labels attached to any attractive small-cap curve. The inline comparison shows how a control changes an archived spread while preserving its uncertainty.",
+          "zh": "下文保留实际版本和页码。论文结论用于指导具体检验，不能直接贴到一条表现吸引人的小盘曲线上。文中互动展示控制后归档收益差怎样改变，并保留相应不确定性。"
         }
       ]
     },
@@ -517,7 +682,7 @@
         "robustness"
       ],
       "stage": "diagnostic",
-      "updated": "2026-11-27",
+      "updated": "2026-11-28",
       "claimIds": [
         "MC-C01",
         "MC-C03"
@@ -540,6 +705,14 @@
             {
               "en": "We independently derive 2,837 consecutive ratios from 2,838 NAV levels dated January 5, 2015 to September 4, 2026. No first-day return is invented. The script checks positive finite levels and strictly increasing dates. Observation steps are not calendar days; a dated NAV does not certify a filled trade.",
               "zh": "我们从2015年1月5日至2026年9月4日的2838个净值，独立计算2837个相邻比值，不补造首日收益。脚本检查净值为有限正数、日期严格递增。观测间隔不等于自然日，带日期的净值也不能证明真实成交。"
+            },
+            {
+              "en": "A running high-water mark carries information across calendar years. Resetting it every January would erase unfinished losses from the previous year. The diagnostics instead preserve earlier peaks and keep incomplete recoveries separate from completed episodes.",
+              "zh": "历史高点会跨过年份边界。如果每年1月重置，就会抹掉上一年尚未恢复的损失。这里的诊断保留此前高点，也把未完成恢复与已经结束的事件分开。"
+            },
+            {
+              "en": "An underwater share counts observations, not the number of independent crises. Several hundred days from one long episode can dominate that fraction. The episode duration and the maximum loss therefore need to be read alongside the aggregate share.",
+              "zh": "水下比例统计观测次数，没有统计相互独立的危机数量。一段很长的事件，可能给这个比例贡献数百个日期。因此，事件持续时间和最深损失需要与汇总比例一起阅读。"
             }
           ],
           "id": "section-1"
@@ -553,6 +726,14 @@
             {
               "en": "The 2024 last-observation return is +31.71%, but the January 3 peak fell 37.94% by February 6 and recovered only on September 30, 179 observation steps later. In 2015 the largest peak-to-trough loss was 51.27%, from June 11 to July 7; recovery occurred on November 19, 107 steps after the peak.",
               "zh": "2024年末相对上年末增长31.71%，但1月3日高点至2月6日下跌37.94%，直到9月30日才恢复，距高点179个观测间隔。2015年最大峰谷损失为51.27%，发生在6月11日至7月7日，11月19日恢复，距高点107个间隔。"
+            },
+            {
+              "en": "The 2024 example makes the reporting boundary concrete. The series ends that year above its starting level, while the path contains a deep early decline and a much later recovery. A year-end comparison and a peak-to-trough comparison use different denominators and can both be accurate.",
+              "zh": "2024年的例子让报告边界变得具体。序列在年末高于年初，期间却有年初深跌和更晚的恢复。年末比较与高点到谷底的比较使用不同分母，可以同时算得准确。"
+            },
+            {
+              "en": "A monthly closing gain has the same limitation. The return from one month-end to the next does not describe the largest intramonth decline. The separate 2024 investigation follows the actual retained dates rather than treating the month’s sign as its whole experience.",
+              "zh": "月末收益也有相同限制。从一个月末到下一个月末的变化，没有描述月内最大下跌。2024年调查沿着实际保留日期展开，不会只用整月的正负号概括经历。"
             }
           ],
           "id": "section-2"
@@ -566,9 +747,18 @@
             {
               "en": "Among 2,817 overlapping 21-step windows, 36.17% lost money and the worst lost 45.40%. Among 2,586 overlapping 252-step windows, 7.54% lost money and the worst lost 29.96%. These are empirical frequencies along one reconstructed path, not independent trials or probabilities for a new investor.",
               "zh": "2817个重叠的21间隔窗口中，36.17%亏损，最差亏45.40%。2586个252间隔窗口中，7.54%亏损，最差亏29.96%。这些频率仅描述一条重建净值路径。窗口彼此重叠，观测相互依赖，无法据此估计新投资者未来的亏损概率。"
+            },
+            {
+              "en": "Adjacent starting points share most of their price observations. Their outcomes are therefore highly dependent. A negative fraction over these overlapping windows is an empirical frequency within this path, not a confidence level or an out-of-sample forecast.",
+              "zh": "相邻起点会共享大部分价格观测，结果之间存在很强的关联。重叠窗口的负收益比例，是这条路径内的经验频率，不是置信水平，也不是样本外预测。"
+            },
+            {
+              "en": "Changing the holding length changes the set of usable starts. Longer windows leave fewer completed outcomes near the end of the sample. Compare both the loss measure and its observation count before deciding that one horizon looks safer.",
+              "zh": "改变持有长度，也会改变可用起点集合。窗口越长，样本末尾能够完成的结果越少。判断某个期限看起来更安全前，需要一起比较损失指标和观测数量。"
             }
           ],
-          "id": "section-3"
+          "id": "section-3",
+          "instrument": "diagnostics"
         },
         {
           "title": {
@@ -582,6 +772,23 @@
             }
           ],
           "id": "section-4"
+        },
+        {
+          "id": "capital-and-waiting",
+          "title": {
+            "en": "A recovery date does not finish the investment account",
+            "zh": "恢复日期还没有结清投资账户"
+          },
+          "paragraphs": [
+            {
+              "en": "Returning to a previous NAV high does not repay financing charges or compensate for the time capital was unavailable elsewhere. Those quantities require their own cash and benchmark assumptions. The present calculations deliberately retain the observed NAV denominator.",
+              "zh": "净值回到前高，不会自动偿还融资费用，也没有补偿这段资金无法用于其他机会的时间。计算这些量，还需要单独的现金和基准假设。当前计算继续使用观测到的净值分母。"
+            },
+            {
+              "en": "A buyer also needs an exit rule that could have been specified before the trough was known. Choosing the best historical exit after viewing the curve would answer a different question. The next step is to join dated decisions to positions and unfinished orders, then measure the resulting account.",
+              "zh": "买入者还需要一条在知道谷底之前就能规定的退出规则。看过曲线后挑最好的历史退出点，回答的是另一个问题。下一步应把带日期的决策接到持仓和未完成订单，再测量对应账户。"
+            }
+          ]
         }
       ],
       "limitations": [
@@ -594,6 +801,16 @@
         {
           "en": "Reconcile the dated extremes to raw-share and cash ledgers, then rerun the same diagnostics on a certified account path.",
           "zh": "把极端日期与真实股份和现金账本对齐，再在通过核查的账户路径上重算。"
+        }
+      ],
+      "opening": [
+        {
+          "en": "A calendar year supplies a convenient reporting boundary. Investors can enter in any month, and the capital committed on that date has its own path. The frozen NAV lets us examine that mismatch without inventing a new strategy or a second price history.",
+          "zh": "自然年是方便的报告边界，投资者却可能在任何月份进入。那一天投入的资金，会经历自己的路径。冻结净值可以用来检查这个错位，无须另造策略或补一段价格历史。"
+        },
+        {
+          "en": "In the retained series, 84.7% of observations lie below a previous peak. This is a description of the whole path, not the probability that a future buyer loses money. The rolling-window instrument below asks a narrower question: what happened after each retained historical starting point over a specified number of observations?",
+          "zh": "保留序列中，84.7%的观测低于此前峰值。这个比例描述整段路径，不是未来买入者亏损的概率。下方滚动窗口互动问的是更具体的问题，从每个保留的历史起点出发，经过指定数量观测后发生了什么。"
         }
       ]
     },
@@ -627,7 +844,7 @@
         "2024"
       ],
       "stage": "historical",
-      "updated": "2026-11-27",
+      "updated": "2026-11-28",
       "claimIds": [
         "MC-C01",
         "MC-C03"
@@ -686,7 +903,8 @@
               "zh": "随后两个观测日出现反弹，2月7日上涨6.07%，2月8日上涨5.31%，净值仍低于此前高点。互动图可以逐日查看这一过程，也可以改变观察区间。2月谷底是在看完整段历史后确定的日期，事前能否识别仍待检验。"
             }
           ],
-          "figure": "research-lab"
+          "figure": "research-lab",
+          "instrument": "path-2024"
         },
         {
           "id": "section-3",
@@ -757,8 +975,13 @@
             {
               "en": "In a retrospective diagnostic with a running peak starting on 29 December 2023, the first 20% drawdown crossing occurred on 29 January 2024. Five retained observation steps later, on 5 February, the NAV was another 16.53% lower. This is a labelled change in the reconstructed path; it supplies no executable exit price.",
               "zh": "在从2023年12月29日起累计高点的回顾诊断中，净值于2024年1月29日首次触及20%回撤门槛。五个保留观测间隔后，即2月5日，净值又下降16.53%。这项结果描述重建路径的后续变化，实际可成交的退出价格仍需另行取得。"
+            },
+            {
+              "en": "An exit trigger and its execution date should be recorded separately. A threshold calculated after the close cannot silently receive that same close as a guaranteed fill. Delays, trading restrictions and incomplete orders can all move the realized account away from the NAV-based sensitivity shown here.",
+              "zh": "退出触发与执行日期应分别记录。收盘后算出的门槛，不能悄悄取得同一收盘价的保证成交。延迟、交易限制和未完成订单，都可能让实际账户偏离这里按净值计算的敏感性。"
             }
-          ]
+          ],
+          "instrument": "exit-delay"
         },
         {
           "id": "evidence-comparison",
@@ -796,6 +1019,16 @@
         {
           "en": "Acquire matched historical holdings, financing and flow evidence before testing competing mechanisms; reconcile the source account first.",
           "zh": "先核对来源账户，再取得同日期的历史持仓、融资和资金流证据，检验不同机制。"
+        }
+      ],
+      "opening": [
+        {
+          "en": "The retained reconstruction earns a positive return for 2024, but the route to that ending value includes a 37.94% drawdown and a recovery spanning 179 observation intervals. This investigation follows that route at its actual retained dates, then places verified policy announcements beside it.",
+          "zh": "保留重建在2024年取得正收益，走向这个年末值的过程，却包含37.94%的回撤和跨179个观测间隔的恢复。本篇沿着实际保留日期追踪路径，再把已核实的政策公告放在旁边。"
+        },
+        {
+          "en": "The timeline can establish sequence at daily resolution. It cannot determine which investor sold a stock or how a different policy path would have changed prices. That distinction matters most near the trough, where a memorable narrative is easy to form after the outcome is visible.",
+          "zh": "时间线可以在日频分辨率下明确先后，却不能确定哪类投资者卖出了股票，也不能给出另一条政策路径下的价格。谷底附近尤其需要保留这个区别，结果已知后，很容易形成一套令人印象深刻的解释。"
         }
       ]
     },
@@ -912,8 +1145,8 @@
               "zh": "费用敏感性可以同时设置每股费用、母订单最低费用和按模拟成交金额计费。只有模拟数量大于零时才计最低费用，每个母订单情景计一次。结果旁列明假设费率，假设费率不能称作券商报价或监管费率。"
             },
             {
-              "en": "Add explicit fees to price shortfall on the modeled quantity, and retain the unexecuted remainder. Routing, queue priority, deep liquidity and own market impact still require further data or explicit assumptions. These US experiments do not calibrate the China A-share NAV or the arithmetic annual hurdle above.",
-              "zh": "在已模拟数量上合并显性费用与价格损失，未完成部分继续保留。路由、排队、多档流动性和自身冲击仍需更多数据或明确假设。这些美股实验尚未校准中国 A 股净值，也没有校准上方年度算术门槛。"
+              "en": "Add explicit fees to price shortfall on the modeled quantity, and retain the unexecuted remainder. Routing, queue priority, deep liquidity and own market impact still require further data or explicit assumptions. These US experiments do not calibrate the China A-share NAV or the arithmetic annual hurdle in this article.",
+              "zh": "在已模拟数量上合并显性费用与价格损失，未完成部分继续保留。路由、排队、多档流动性和自身冲击仍需更多数据或明确假设。这些美股实验尚未校准中国 A 股净值，也没有校准文中的年度算术门槛。"
             }
           ]
         },
@@ -942,10 +1175,15 @@
               "zh": "缓冲规则允许旧持仓在更宽的退出排名内继续保留。私有原型已经比较有无缓冲时的目标名单变化，并排除首次建仓。价格漂移、无法卖出的持仓及收益差异，需要另接组合账户。"
             },
             {
-              "en": "The calculator above changes spread and replacement assumptions independently. Its fixed chart scale makes a lower arithmetic hurdle visible. It does not calibrate those assumptions to a particular stock or strategy.",
-              "zh": "上方计算器可以分别调整价差和替换比例。图表采用固定刻度，便于观察算术成本门槛的变化。这些假设尚未按某只股票或策略校准。"
+              "en": "The calculator in this article changes spread and replacement assumptions independently. Its fixed chart scale makes a lower arithmetic hurdle visible. It does not calibrate those assumptions to a particular stock or strategy.",
+              "zh": "文中计算器可以分别调整价差和替换比例。图表采用固定刻度，便于观察算术成本门槛的变化。这些假设尚未按某只股票或策略校准。"
+            },
+            {
+              "en": "The arithmetic calculator below assumes a full spread per round trip and annualizes how often that cost repeats. Its inputs are hypothetical. Moving a slider shows the consequences of an assumption, while measuring a real portfolio cost requires observed orders, quantities and fees.",
+              "zh": "下方算术计算器假设每轮完整买卖承担一个完整价差，再按成本重复频率折算年度门槛。输入是假设值。拖动滑块展示假设会带来什么结果，测量真实组合成本仍需要订单、数量和费用记录。"
             }
-          ]
+          ],
+          "instrument": "cost"
         },
         {
           "id": "section-5",
@@ -1014,6 +1252,16 @@
           "en": "Connect adjusted prices, corporate actions and filing-time fundamentals before estimating strategy returns.",
           "zh": "接入复权价格、公司行动和按披露时间匹配的基本面，再估计策略收益。"
         }
+      ],
+      "opening": [
+        {
+          "en": "A sell decision is complete only when the position has actually left the account. A narrow quoted spread can make the visible part look cheap while most of the order remains unfinished. This investigation keeps price, quantity and time in the same discussion.",
+          "zh": "卖出决策要到持仓实际离开账户时才算完成。很窄的报价价差，可能让可见的一小部分显得便宜，同时大部分订单仍未处理。本篇把价格、数量与时间放在一起讨论。"
+        },
+        {
+          "en": "The evidence comes in different resolutions. Cross-market traded-value aggregates describe activity, short US event windows support quote scenarios, and the retained A-share account reviews test specific bookkeeping rules. Reading their scopes together prevents a number from one layer being presented as the answer to another.",
+          "zh": "现有证据的分辨率不同。跨市场成交额汇总描述活跃度，美股短事件窗口支持报价情景，保留的中国 A 股账户复查则检验具体核算规则。把范围放在一起读，可以避免用一层的数字代答另一层的问题。"
+        }
       ]
     },
     {
@@ -1046,7 +1294,7 @@
         "trading_costs"
       ],
       "stage": "methods",
-      "updated": "2026-11-27",
+      "updated": "2026-11-28",
       "claimIds": [
         "MC-C03",
         "MC-C05"
@@ -1067,7 +1315,8 @@
         "SRC-PAPER-008",
         "SRC-PAPER-009",
         "SRC-PAPER-010",
-        "SRC-BMLL-COVERAGE"
+        "SRC-BMLL-COVERAGE",
+        "SRC-ARCHIVE"
       ],
       "sections": [
         {
@@ -1084,6 +1333,14 @@
             {
               "en": "Next, reconcile listing identifiers, corporate actions and delisting treatment. Publish exclusions and the denominator before interpreting spread differences. The cohort is retrospective and is not certified as a historical common-stock universe.",
               "zh": "接下来核对上市标识、公司行动和退市处理。在解释价差差异前，公开排除规则与分母。现有名单属于回顾性候选，尚未认证为历史普通股股票池。"
+            },
+            {
+              "en": "Freeze the expected security-date grid before downloading quotes. An inactive listing, a missing identifier and an empty quote window should remain distinguishable outcomes. If only successful matches survive into the analysis, the sample can become easier to trade by construction.",
+              "zh": "下载报价前先冻结预定证券日期网格。失效上市、缺少标识和报价窗口为空，应保留为不同结果。若分析只留下成功匹配的观测，样本可能在构造过程中就变得更容易交易。"
+            },
+            {
+              "en": "Preserve the identifier valid on each date and the source that links it to the issuer. Later ticker reuse or a reverse split can create an apparently continuous symbol with a different underlying identity. A reference date also does not prove when that field was first available to a researcher.",
+              "zh": "保存每个日期有效的标识，以及把它连到发行人的来源。代码重用或反向拆股，可能让连续的代码背后出现不同身份。参考日期也不能证明研究者最早何时能够取得该字段。"
             }
           ]
         },
@@ -1101,6 +1358,14 @@
             {
               "en": "A rise in spread accompanied by falling bid dollars is a diagnostic of worse displayed conditions. Forced-selling attribution also needs independent financing or redemption observations. NBBO supports the diagnostic but cannot reconstruct a full order book or guaranteed fills.",
               "zh": "价差上升且买盘金额下降，可以诊断可见交易条件变差。归因于被动卖出还需要独立的融资或赎回观测。NBBO 支持这项诊断，无法还原完整订单簿或保证成交。"
+            },
+            {
+              "en": "Coverage should be checked on wider windows before interpreting an empty short interval. The bounded audit can compare full-day activity, a half-hour interval and the selected seconds, then compare UTC conversion with the provided local clock. These checks narrow possible data errors without certifying an entire feed.",
+              "zh": "解释短窗口为空之前，应先检查较宽窗口的覆盖。有限审计可以并列全天活动、半小时区间和选定秒段，再比较 UTC 转换与来源提供的本地时钟。这些检查可以缩小数据错误范围，但没有认证整条行情源。"
+            },
+            {
+              "en": "An order experiment should retain completed quantity and remainder before reporting a cost average. A later validation set must be declared before its outcomes are inspected, with the same order policy and missing-data treatment. Reusing nearby historical dates is a useful check, but it is not automatically an independent final test.",
+              "zh": "订单实验应先保留完成数量与余量，再报告成本均值。后续验证日期要在查看结果前确定，并沿用相同订单规则和缺失处理。使用附近历史日期可以做核查，但不会自动成为独立最终检验。"
             }
           ]
         },
@@ -1114,6 +1379,10 @@
             {
               "en": "Within matched size/activity groups, compare cash-generating firms with loss-making or heavily diluting firms. Preserve filing publication times and historical shares. A current financial snapshot cannot supply point-in-time classifications.",
               "zh": "在匹配市值与活跃程度后，比较有经营现金流的公司与亏损或频繁摊薄股本的公司。保存财报公布时间和历史股数，当前财务快照无法直接提供当时可见的分类。"
+            },
+            {
+              "en": "Accounting classifications need filing identities and release times. A report describing an earlier quarter can still have been published after portfolio formation. Preserve original filings and revisions rather than using today’s restated fields to label yesterday’s companies.",
+              "zh": "财务分类需要申报身份与公布时间。报表描述较早季度，也可能在组合形成后才发布。应保留原申报和修订，不能直接用今天的重述字段标记过去的公司。"
             }
           ]
         },
@@ -1127,8 +1396,17 @@
             {
               "en": "Connect the rank-buffer prototype to a cash/share ledger. Compare realised turnover, delayed sales and net returns under the same cost assumptions. The existing membership-replacement result alone cannot establish a better strategy.",
               "zh": "把排名缓冲原型接入现金与股数账户，在相同成本假设下比较实际换手、延迟卖出和净收益。已有名单替换结果尚不足以判断策略更好。"
+            },
+            {
+              "en": "Minimum observation counts belong in the frozen rule. The archived 120-session example changes when the required count changes from 90 to 45, and the holdings can differ beyond the warm-up period. A later sensitivity run is valuable evidence about that dependence, while the original run identity remains a separate recovery task.",
+              "zh": "最低观测数量属于需要冻结的规则。归档120日例子会随90或45个最低观测而变化，持仓差异还会延续到预热期之后。后来的敏感性运行可以说明这项依赖，恢复原始运行身份仍是另一项任务。"
+            },
+            {
+              "en": "Keep the original and repaired results next to each other, then explain what changed. Accepting a result should depend on its source and checks rather than whether its annual return is attractive. The same rule applies when a repair reduces an earlier estimate.",
+              "zh": "把原结果与修复结果并列，再说明改变了什么。接受一个结果，应依据来源和检查，而非年化收益是否吸引人。修复降低了原估计时，也应遵循同一标准。"
             }
-          ]
+          ],
+          "instrument": "windows"
         },
         {
           "id": "comparison",
@@ -1140,6 +1418,23 @@
             {
               "en": "Use within-market ranks, common trading-activity definitions and explicitly dated samples. Report China A-share price-limit and settlement constraints separately from US quote diagnostics. Prioritise reproducible episode comparisons before pooling returns across markets.",
               "zh": "使用市场内排名和相同交易活跃度定义，明确样本日期。中国 A 股涨跌停及交收约束与美股报价诊断分别记录。先完成可复现的事件比较，再考虑跨市场汇总收益。"
+            }
+          ]
+        },
+        {
+          "id": "acceptance",
+          "title": {
+            "en": "Give each result an acceptance condition",
+            "zh": "为每项结果写清接受条件"
+          },
+          "paragraphs": [
+            {
+              "en": "For a return-path diagnostic, complete source identity and consistent arithmetic may be enough. A cash-account result additionally needs share conservation and event treatment. An executable strategy claim needs a further comparison with actual market access and calibrated costs. Each stronger conclusion asks for additional evidence.",
+              "zh": "描述收益路径时，完整来源身份与一致计算可能已经足够。现金账户还需要股份守恒和事件处理。可执行策略则进一步需要市场访问与校准成本的对照。判断越强，所需证据也越多。"
+            },
+            {
+              "en": "The evidence-status page keeps these stages visible across the project. A failed check should preserve its inputs and reason, so a later repair can be compared with the same setup. Research depth comes from closing a specific gap, not merely adding another attractive output.",
+              "zh": "证据状态页会把这些阶段在项目中持续显示。检查失败时，应保存输入和原因，让后来的修复能够与同一设定对照。研究要继续推进，需要解决具体缺口，单独增加一个表现好看的输出还不够。"
             }
           ]
         }
@@ -1154,6 +1449,16 @@
         {
           "en": "Finish historical identity reconciliation and register a fresh-quote stress comparison on a separate episode.",
           "zh": "完成历史身份核对，在另一段事件上预先确定新鲜报价压力对照。"
+        }
+      ],
+      "opening": [
+        {
+          "en": "The next study should be chosen by the uncertainty it can resolve. More securities or a longer price history can add observations without fixing the missing link between a trading rule and an account. The retained work now makes several of those links explicit enough to test in order.",
+          "zh": "下一项研究，应根据它能解决哪项不确定性来选择。增加股票或延长价格历史，可能增加观测，却没有补上交易规则到账户之间的缺口。已有工作已经把其中一些连接写得足够明确，可以按顺序检验。"
+        },
+        {
+          "en": "This chapter sets out that order and the evidence each step must leave behind. It is a research protocol, not a new performance result. The window-rerun comparison later in the article provides a concrete example of how a seemingly minor input rule can change the accepted conclusion.",
+          "zh": "本篇说明这个顺序，以及每一步需要留下什么证据。它是一份研究方案，没有新增业绩结果。后面的窗口复算对照提供了具体例子，一项看起来很小的输入规则，也可能改变能够接受的结论。"
         }
       ]
     },

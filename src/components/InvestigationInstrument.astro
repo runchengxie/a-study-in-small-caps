@@ -1,0 +1,21 @@
+---
+import LiquidityComparison from './LiquidityComparison.astro';
+import RiskSummary from './RiskSummary.astro';
+import NavDiagnostics from './NavDiagnostics.astro';
+import PathExplorer from './PathExplorer.astro';
+import ExitDelay from './ExitDelay.astro';
+import CostScenario from './CostScenario.astro';
+import ResearchFocus from './ResearchFocus.astro';
+interface Props {kind:string;}
+const {kind}=Astro.props;
+---
+{kind==='liquidity'&&<LiquidityComparison/>}
+{kind==='risk-summary'&&<RiskSummary/>}
+{kind==='path'&&<PathExplorer/>}
+{kind==='path-2024'&&<PathExplorer preset="2024"/>}
+{kind==='diagnostics'&&<NavDiagnostics/>}
+{kind==='exit-delay'&&<ExitDelay/>}
+{kind==='cost'&&<CostScenario/>}
+{kind==='conditioning'&&<ResearchFocus kind="conditioning"/>}
+{kind==='exclusion'&&<ResearchFocus kind="exclusion"/>}
+{kind==='windows'&&<ResearchFocus kind="windows"/>}
