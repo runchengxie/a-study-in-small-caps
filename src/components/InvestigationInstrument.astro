@@ -1,4 +1,5 @@
 ---
+import ArchiveComparison from './ArchiveComparison.astro';
 import LiquidityComparison from './LiquidityComparison.astro';
 import RiskSummary from './RiskSummary.astro';
 import NavDiagnostics from './NavDiagnostics.astro';
@@ -19,3 +20,6 @@ const {kind}=Astro.props;
 {kind==='conditioning'&&<ResearchFocus kind="conditioning"/>}
 {kind==='exclusion'&&<ResearchFocus kind="exclusion"/>}
 {kind==='windows'&&<ResearchFocus kind="windows"/>}
+
+{kind==='capital-ladder'&&<ArchiveComparison kind="capital"/>}
+{kind==='frequency-matrix'&&<ArchiveComparison kind="matrix"/>}

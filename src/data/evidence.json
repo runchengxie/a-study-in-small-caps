@@ -11400,7 +11400,7 @@
     },
     "summaryCaveat": {
       "en": "2008–2014 only. Longest underwater is completed episodes in trading sessions; each count has one right-censored episode. Unknown classified prices are held flat. Historical ST and suspension fields are incomplete. No NAV curves for these five counts are supplied.",
-      "zh": "仅限2008—2014年。最长水下期按已恢复区间的交易日统计，各股票数均有一个右删失区间。已分类的未知价格按前值持平。历史ST与停牌字段不完整。未提供这五组数量的净值曲线。"
+      "zh": "仅限2008至2014年。最长水下期按已恢复区间的交易日统计，各股票数均有一个右删失区间。已分类的未知价格按前值持平。历史ST与停牌字段不完整。未提供这五组数量的净值曲线。"
     },
     "summaryUnit": "fraction"
   },
