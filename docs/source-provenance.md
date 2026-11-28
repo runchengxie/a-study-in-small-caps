@@ -60,3 +60,11 @@ Exit scenarios pool stock–formation observations, with repeated monthly stock 
 ## Crash literature expansion
 
 The November 27 coverage/literature expansion adds five records (LIT-006 through LIT-010), a privately retained Haitong PDF identity and a research-agenda chapter. The BMLL audit checks fixed-cohort availability; no new vendor observations are republished. The historical initial-edition counts above describe that earlier release.
+
+## Signal strength and portfolio breadth, 2026-11-28
+
+INV-011 adds a bilingual methods investigation and LIT-011 through LIT-020. Publisher abstracts, an indexed abstract and public manager or broker research summaries were checked on November 28, 2026. The specific versions and URLs are registered with the sources. No new full-text or replicated stage is claimed. The Hua An summary and its underlying holdings-count study are related references, not independent empirical evidence. The Shenwan summary is an external historical result, not a replication. All ten new cross-checks remain untested. No market observations, model scores, portfolio runs or execution records are added; frozen assets and prior claim stages remain unchanged.
+
+## 信号强度与组合广度，2026-11-28
+
+INV-011新增中英文研究方法专题，LIT-011至LIT-020登记已核对的摘要和机构研究概要，注明版本、链接及核对日期。华安研报与原持股数量研究属于关联来源。申万宏源报告的历史结果尚未复现。十项新增文献对照均为待检验。本次没有新增市场观测、模型评分、组合运行或执行记录，也未改动冻结资产和既有结论阶段。
