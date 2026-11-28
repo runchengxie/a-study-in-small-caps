@@ -2042,6 +2042,10 @@
               "zh": "拟议初始网格为K取10、20、30、50、80、100、150、200、300、400，受可投资股票数量限制。比较等权、排名指数0.25、0.5及1，并加入单独校准且设有上限的信号加权基线。每组配对比较固定股票池、标签、调仓安排和成本。"
             },
             {
+              "en": "Define rank weights explicitly: for descending signal rank r = 1, …, K, set q_r = (K + 1 - r)/K and w_r = q_r^gamma / sum(q_j^gamma). Gamma = 0 gives equal weights; larger gamma rewards higher ranks. This is a rank-based control, not a power transform of raw scores. For calibrated score weights, specify the training-only transformation, treatment of negative or zero scores, cap and renormalization rule before evaluation. When fewer than K names are eligible, record the shortfall and apply a predeclared cash or resizing policy.",
+              "zh": "明确排名权重的定义：按信号从高到低排序，名次r取1至K，令q_r = (K + 1 - r)/K，w_r = q_r^gamma / sum(q_j^gamma)。gamma为0时等权，越大越偏重高排名。这是排名加权对照，与直接对原始分数取幂不同。校准信号加权须在评价前规定仅用训练数据确定的变换、负分或零分处理、权重上限及重新归一化规则。可投资股票不足K只时，记录缺额，并执行预先规定的留现金或调整仓位规则。"
+            },
+            {
               "en": "For each K and weighting rule, retain gross and net active return, tracking error, information ratio, maximum drawdown, turnover, effective holdings, factor exposure, residual risk and order/cash diagnostics. Repeat at predefined capital sizes. Plot marginal rank-band alpha, risk, net IR, costs and capacity against K rather than selecting a historical maximum in a single table.",
               "zh": "每组K与权重规则保留毛及净主动收益、跟踪误差、信息比率、最大回撤、换手、有效持股数量、因子暴露、残差风险以及订单和现金诊断。按预先规定的资金规模重复。分别绘制新增排名区间超额、风险、净信息比率、成本及容量随K变化的曲线。"
             },
