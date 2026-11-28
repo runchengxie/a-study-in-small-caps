@@ -1843,6 +1843,239 @@
           "zh": "接受策略净值前，先用明确库存、事件和结算记录核对完整历史。"
         }
       ]
+    },
+    {
+      "id": "INV-011",
+      "slug": "signal-strength-and-portfolio-breadth",
+      "title": {
+        "en": "How many small stocks should a signal select?",
+        "zh": "小微盘选股需要持有多少只股票？"
+      },
+      "summary": {
+        "en": "Tail calibration, noisy ranks and portfolio breadth define a joint research problem for small-cap strategies.",
+        "zh": "极端分数的校准、带噪声的排序和组合广度，需要在小微盘策略中共同检验。"
+      },
+      "question": {
+        "en": "How much predictive information is lost or gained as a small-cap portfolio expands its selection and changes its weights?",
+        "zh": "增加小微盘持股数量或调整信号权重后，可利用的预测信息和成本后收益怎样变化？"
+      },
+      "conclusion": {
+        "en": "The appropriate count depends on conditional alpha, residual covariance, benchmark and execution capacity. Equal-weight Top K is a useful control. No optimal K or superior weighting rule has been established for this study.",
+        "zh": "合适的持股数量取决于条件超额收益、残差协方差、基准与执行容量。等权Top K适合作为对照，本项目尚未确立最优持股数量或更好的权重规则。"
+      },
+      "markets": [
+        "A-share",
+        "US",
+        "HK",
+        "JP"
+      ],
+      "topics": [
+        "size",
+        "robustness",
+        "measurement",
+        "risk",
+        "liquidity",
+        "trading_costs",
+        "implementation"
+      ],
+      "stage": "methods",
+      "updated": "2026-11-28",
+      "claimIds": [],
+      "literatureIds": [
+        "LIT-011",
+        "LIT-012",
+        "LIT-013",
+        "LIT-014",
+        "LIT-015",
+        "LIT-016",
+        "LIT-017",
+        "LIT-018",
+        "LIT-019",
+        "LIT-020",
+        "LIT-005"
+      ],
+      "sourceIds": [
+        "SRC-ARCHIVE",
+        "SRC-EARLY",
+        "SRC-PAPER-005",
+        "SRC-PAPER-011",
+        "SRC-PAPER-012",
+        "SRC-PAPER-013",
+        "SRC-PAPER-014",
+        "SRC-PAPER-015",
+        "SRC-PAPER-016",
+        "SRC-PAPER-017",
+        "SRC-PAPER-018",
+        "SRC-PAPER-019",
+        "SRC-PAPER-020"
+      ],
+      "opening": [
+        {
+          "en": "A model may distinguish a group of attractive stocks reliably while having little power to order the very best names within that group. That distinction matters when a strategy selects ten names from thousands and concentrates capital according to score magnitude.",
+          "zh": "模型可能稳定识别一组值得买入的股票，却难以精确区分这组股票内部的前几名。从数千只股票中选十只，再按分数大小集中配置资金，会放大这个问题。"
+        },
+        {
+          "en": "This investigation proposes a way to test the trade-off. Earlier chapters document historical count-dependent downside, turnover associations and account-construction constraints. They provide context but do not answer the optimal count question for a predictive model.",
+          "zh": "本章提出检验方法。前文记录了不同持股数量的历史下行风险、换手关联及账户构造约束。这些结果提供背景，机器学习选股的最优持股数量仍需单独检验。"
+        }
+      ],
+      "sections": [
+        {
+          "id": "define-the-universe",
+          "title": {
+            "en": "Define size and the benchmark",
+            "zh": "先明确规模与基准"
+          },
+          "paragraphs": [
+            {
+              "en": "Define the eligible universe before scoring, using both absolute free-float or total market capitalization where relevant and within-market percentiles. Retain board, trading eligibility, listing age and liquidity information as available at formation. Report results relative to both the eligible-universe equal-weight benchmark and a specified cap-weighted benchmark.",
+              "zh": "在评分前确定可投资股票池，按需要保留总市值或流通市值的绝对值，同时记录市场内市值分位。使用形成日已知的板块、交易资格、上市时间和流动性信息。分别报告相对股票池等权基准及指定市值加权基准的结果。"
+            },
+            {
+              "en": "Increasing K need not mechanically increase or decrease size exposure: the effect depends on the ranks added and their weights. Record weighted log market cap, size percentiles, ADV and industry exposures, with the same standardization convention in every comparison. Equal weighting can tilt toward smaller names relative to cap weighting.",
+              "zh": "提高K对市值暴露的影响取决于新增股票的排名及权重。每组比较采用相同标准化口径，记录加权对数市值、市值分位、日均成交额和行业暴露。与市值加权相比，等权可能增加较小市值股票的相对权重。"
+            }
+          ]
+        },
+        {
+          "id": "extreme-scores",
+          "title": {
+            "en": "Extreme scores and selection bias",
+            "zh": "极端评分与选择偏差"
+          },
+          "paragraphs": [
+            {
+              "en": "Write the predicted alpha as the latent conditional alpha plus estimation error. With noisy estimates, selecting maxima may make errors among selected names systematically positive (the optimizer’s curse). This does not imply that true conditional alpha must reverse at the top. The realized score–return curve may remain increasing, flatten, or turn down. Distinguish calibration error from rank error.",
+              "zh": "将预测超额收益写成潜在条件超额收益与估计误差之和。估计带有噪声时，按最大值筛选可能使入选股票的误差系统性偏正，即优化器诅咒。真实条件超额收益仍可能随排名升高而增加，也可能趋平或反转。预测校准误差与排序误差应分别检验。"
+            },
+            {
+              "en": "Estimate a calibration curve on untouched evaluation dates. Plot mutually exclusive rank bands 1–10, 11–30, 31–50, 51–100, 101–200 and 201–400 where the eligible count permits. Report both the full-universe Rank IC and the within-tail rank correlation, together with band-level forward gross and factor-adjusted returns. Do not infer local monotonicity from a top-minus-bottom spread.",
+              "zh": "在未参与拟合的评价日期估计校准曲线。股票池足够大时，使用互斥排名区间1至10、11至30、31至50、51至100、101至200及201至400。同时报告全股票池Rank IC、头部分组内部的排序相关性，以及分组未来毛收益和因子调整收益。检验头部单调性需要分组内部的证据。"
+            },
+            {
+              "en": "Within-tail tests have few observations per formation and returns overlap across dates. Use paired date-level differences, time-block resampling or a suitable HAC estimator. Specify the tail and horizon before evaluation and report uncertainty. A high full-universe IC alone cannot establish a reliable Top 10 ranking.",
+              "zh": "头部区间每次形成的股票数较少，不同日期的未来收益还可能重叠。采用按日期配对的收益差、时间分块重采样或适当的HAC估计。在评价前明确头部定义和预测周期，并报告不确定性。全股票池IC较高仍不足以确立前10名的排序可靠性。"
+            }
+          ]
+        },
+        {
+          "id": "effective-factors",
+          "title": {
+            "en": "Which factors retain usable information?",
+            "zh": "哪些因子保有可利用的信息？"
+          },
+          "paragraphs": [
+            {
+              "en": "Test candidate characteristics such as size, trading activity, value, profitability, momentum and short-horizon reversal in the same point-in-time universe. Report coverage, missingness, directional stability, rank and band results. Use matched size and liquidity groups and cross-sectional controls for industry and other known exposures. The low-turnover evidence in the existing archive has its own unresolved support-policy and runtime limits.",
+              "zh": "在同一个时点正确的股票池内检验市值、交易活跃度、估值、盈利能力、动量和短期反转等候选特征。报告覆盖率、缺失、方向稳定性、排序和分组结果。用市值及流动性匹配分组，并控制行业和其他已知暴露。现有归档的低换手证据仍受观测门槛与原始运行身份未解决的限制。"
+            },
+            {
+              "en": "Measure incremental predictive value against a baseline using only training information to choose models and transformations. Test each added factor or factor family with ablation or nested comparisons and monitor correlation among factor scores and residual returns. A factor that improves an in-sample IC may fail to improve the cost-adjusted long-only portfolio.",
+              "zh": "以基线模型衡量因子的增量预测价值，模型及变换方法只使用训练信息选择。通过剔除实验或嵌套比较检验新增因子及因子组，并监控评分与残差收益的相关性。样本内IC改善的因子，仍可能无法改善扣除成本后的多头组合。"
+            }
+          ]
+        },
+        {
+          "id": "breadth-and-concentration",
+          "title": {
+            "en": "Breadth, weights and residual risk",
+            "zh": "广度、权重与残差风险"
+          },
+          "paragraphs": [
+            {
+              "en": "For equally volatile independent residuals, equal-weight residual volatility is proportional to 1/sqrt(K). With a common pairwise correlation rho, the ratio to single-name residual volatility becomes sqrt(rho + (1-rho)/K). These are teaching assumptions, not estimated market parameters; positive common correlation leaves a risk floor.",
+              "zh": "在残差波动相同且相互独立的教学设定下，等权残差波动与1/sqrt(K)成比例。若各股票残差两两相关系数均为rho，相对单股残差波动的比率变为sqrt(rho + (1-rho)/K)。这些公式没有代入市场估计值，正的共同相关性会留下风险下限。"
+            },
+            {
+              "en": "For a fully invested long-only portfolio, effective holdings equal 1/sum(w_i^2), with weights summing to one. This weight-based count is maximized by equal weighting at fixed K. It does not measure independent risk sources. Report residual covariance, factor exposures, risk contributions and realized return contributions separately. Effective breadth in the active-management law also includes independent opportunities across time and cannot be read directly from stock count.",
+              "zh": "对于权重之和为1的全仓多头组合，有效持股数量等于1/sum(w_i^2)。固定K时，等权使该权重指标达到最大。它尚未衡量独立风险来源。残差协方差、因子暴露、风险贡献及实现收益贡献分别记录。主动投资基本定律中的有效广度还涉及时间维度上的独立机会，不能直接用股票只数代入。"
+            },
+            {
+              "en": "Use the equal-weight list as a control, then vary weight concentration. One rank-based teaching rule is w_i proportional to (K+1-rank_i)^gamma for ranks 1 through K, with gamma equal to 0 for equal weight and larger gamma for greater emphasis. Rank weighting ignores raw score magnitude; compare it separately with clipped and calibrated score weighting, and capped risk-aware weights.",
+              "zh": "以等权名单作为对照，再改变权重集中程度。一种排名加权示例是令权重与(K+1-rank_i)^gamma成比例，排名取1至K。gamma为0时等权，gamma增大时更偏重前排。排名加权舍弃原分数的幅度信息，需要与缩尾及校准后的分数加权、带上限的风险加权分别比较。"
+            }
+          ]
+        },
+        {
+          "id": "blend-comparison",
+          "title": {
+            "en": "Separate model diversity from holdings breadth",
+            "zh": "区分模型分散与持仓广度"
+          },
+          "paragraphs": [
+            {
+              "en": "Compare single-model Top K, signal blending followed by Top K, and portfolio blending of separately formed subportfolios. Use the same eligible names, prediction horizon, formation dates, execution assumptions and total capital. Record the realized union size and weight overlap after merging duplicates; subportfolio count times K is only an upper bound.",
+              "zh": "比较单模型Top K、信号聚合后Top K，以及多个子组合持仓聚合。固定可投资股票、预测周期、形成日、执行假设和总资金。合并重叠股票后记录实际并集规模和权重重合程度，子组合数乘K只给出数量上限。"
+            },
+            {
+              "en": "Match realized breadth and risk exposure as closely as feasible when estimating the incremental value of model diversification. Compare factor-residual return correlation, holdings overlap and turnover netting. Capital-weighted blending need not allocate equal risk. If constraints make matching impossible, report the difference instead of claiming a clean attribution.",
+              "zh": "估计模型分散的增量价值时，尽量匹配实际广度和风险暴露。比较因子调整后的残差收益相关性、持仓重合和交易净额抵消。资金等权聚合仍可能产生不同风险贡献。约束使匹配无法实现时，保留差异并限制归因结论。"
+            }
+          ]
+        },
+        {
+          "id": "cost-and-capacity",
+          "title": {
+            "en": "Costs can change the preferred count",
+            "zh": "成本可能改变合适的持股数量"
+          },
+          "paragraphs": [
+            {
+              "en": "For a fixed account size, a larger list typically reduces the average target position when fully invested. More names can also mean more minimum lots, small orders and operational overhead. Measure participation relative to lagged ADV, fill availability, cash and delay, price limits, suspensions, spreads, explicit fees and a range of impact assumptions. Do not equate ADV with executable capacity.",
+              "zh": "固定账户规模且充分投资时，扩大名单通常降低平均目标仓位，也可能产生更多最小交易单位限制、小额订单和操作成本。测量相对滞后日均成交额的参与率、成交可用性、现金与延迟、涨跌停、停牌、价差、显式费用和不同冲击假设。日均成交额仍不能直接代表可执行容量。"
+            },
+            {
+              "en": "Use the reconciled account protocol of INV-010 for realized inventory. A target list can contain stocks that are untradeable at entry or exit. Preserve those failures and cash instead of replacing them with hypothetical fills. The existing capacity and exit studies remain diagnostic and provide no calibrated impact curve for this proposed signal experiment.",
+              "zh": "实际库存沿用INV-010的账户核对方法。目标名单可能包含入场或退出时无法成交的股票，应保留交易失败和现金，避免补造假设成交。已有容量与退出研究仍属诊断性证据，未为本次信号实验提供校准后的冲击曲线。"
+            }
+          ]
+        },
+        {
+          "id": "experiment-grid",
+          "title": {
+            "en": "A prospective experiment grid",
+            "zh": "前瞻实验参数与评价"
+          },
+          "paragraphs": [
+            {
+              "en": "A predeclared starting grid is K = 10, 20, 30, 50, 80, 100, 150, 200, 300 and 400, subject to the eligible universe. Compare equal weights with rank exponents 0.25, 0.5 and 1, and a separately calibrated, capped score-weighting baseline. Keep the universe, label, rebalance schedule and costs fixed within each paired comparison.",
+              "zh": "拟议初始网格为K取10、20、30、50、80、100、150、200、300、400，受可投资股票数量限制。比较等权、排名指数0.25、0.5及1，并加入单独校准且设有上限的信号加权基线。每组配对比较固定股票池、标签、调仓安排和成本。"
+            },
+            {
+              "en": "For each K and weighting rule, retain gross and net active return, tracking error, information ratio, maximum drawdown, turnover, effective holdings, factor exposure, residual risk and order/cash diagnostics. Repeat at predefined capital sizes. Plot marginal rank-band alpha, risk, net IR, costs and capacity against K rather than selecting a historical maximum in a single table.",
+              "zh": "每组K与权重规则保留毛及净主动收益、跟踪误差、信息比率、最大回撤、换手、有效持股数量、因子暴露、残差风险以及订单和现金诊断。按预先规定的资金规模重复。分别绘制新增排名区间超额、风险、净信息比率、成本及容量随K变化的曲线。"
+            },
+            {
+              "en": "Use walk-forward development to choose a robust parameter region and freeze the model, score calibration, K, weighting and cost policy before an untouched evaluation. Track all tried specifications; preserve later months even when performance disappoints. Overlapping horizons, multiple comparisons, market regime changes and small sample sizes limit statistical conclusions.",
+              "zh": "通过滚动开发寻找稳定参数区间，在未参与选择的评价前冻结模型、分数校准、K、权重及成本规则。记录尝试过的全部设定，后续月份表现不及预期时也继续保留。收益周期重叠、多重比较、市场状态变化和较小样本都会限制统计推断。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "en": "This is a methods chapter. It adds no market observations, fitted models, backtests, order records or capacity estimates. No reported optimum is inferred from the literature.",
+          "zh": "本章属于研究方法说明，没有新增市场观测、拟合模型、回测、订单记录或容量估计。文献中的持股数量不能直接推为本项目最优值。"
+        },
+        {
+          "en": "The newly registered sources were checked at abstract or author-summary level; none was fully reviewed or replicated in this task. The two holdings-count papers and Chinese research summaries are not independent evidence of a local optimal K.",
+          "zh": "新增来源只核对摘要或机构概要，本次没有完成全文审阅或复现。持股数量研究及中文研报整理不能作为本地最优K的独立证据。"
+        },
+        {
+          "en": "Cross-market transfer, point-in-time data availability and execution assumptions must be tested independently. The existing archive remains unchanged.",
+          "zh": "跨市场适用性、时点数据可用性及执行假设需要独立检验。既有归档保持不变。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Implement the frozen-universe rank-band and breadth grid, with matched cost and risk reporting. Add a baseline that varies K without changing the forecast model.",
+          "zh": "实现冻结股票池的排名分组及广度网格，配对报告成本和风险。加入只改变K、不改变预测模型的对照。"
+        },
+        {
+          "en": "Review the exact full-text editions of the new literature before elevating reading stages. Register any future aggregate observations with sample dates and source identity.",
+          "zh": "完成新增文献指定版本的全文阅读后再更新阅读阶段。未来公开的汇总观测须登记样本日期及来源身份。"
+        }
+      ]
     }
   ],
   "literature": [
@@ -2348,6 +2581,334 @@
       ],
       "sourceIds": [
         "SRC-PAPER-010"
+      ]
+    },
+    {
+      "id": "LIT-011",
+      "title": "The Optimizer’s Curse: Skepticism and Postdecision Surprise in Decision Analysis",
+      "authors": [
+        "James E. Smith",
+        "Robert L. Winkler"
+      ],
+      "year": 2006,
+      "doi": "10.1287/mnsc.1050.0451",
+      "url": "https://doi.org/10.1287/MNSC.1050.0451",
+      "version": "Management Science 52(3), 311–322; publisher abstract reviewed.",
+      "stage": "abstract",
+      "summary": {
+        "en": "Selection on noisy estimates can overstate the value of the selected alternative even when the underlying estimates are unbiased. The authors propose Bayesian adjustment.",
+        "zh": "依据带误差的估计值选择最优方案，可能高估入选方案的价值，即使原估计无偏。作者提出贝叶斯调整。"
+      },
+      "question": {
+        "en": "How does selection on noisy stock scores affect the calibration of the highest ranks?",
+        "zh": "从有噪声的股票评分中选股后，最高分的预测校准会怎样变化？"
+      },
+      "markets": [],
+      "topics": [
+        "robustness"
+      ],
+      "investigationIds": [
+        "INV-011"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-011"
+      ]
+    },
+    {
+      "id": "LIT-012",
+      "title": "Monotonicity in asset returns: New tests with applications to the term structure, the CAPM, and portfolio sorts",
+      "authors": [
+        "Andrew J. Patton",
+        "Allan Timmermann"
+      ],
+      "year": 2010,
+      "doi": "10.1016/j.jfineco.2010.06.006",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0304405X10001558",
+      "version": "Journal of Financial Economics 98(3), 605–625; publisher abstract reviewed.",
+      "stage": "abstract",
+      "summary": {
+        "en": "The paper develops tests of monotone return patterns and compares them with conventional tests. A spread between two extreme groups does not characterize all intermediate ranks.",
+        "zh": "论文提出检验收益单调性的方法，并与传统检验比较。两端组合的收益差无法描述中间排名的全部关系。"
+      },
+      "question": {
+        "en": "Can the forecast order discriminate returns within the highest-score subset?",
+        "zh": "模型能否在最高分的股票内部继续区分未来收益？"
+      },
+      "markets": [],
+      "topics": [
+        "measurement",
+        "robustness"
+      ],
+      "investigationIds": [
+        "INV-011"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-012"
+      ]
+    },
+    {
+      "id": "LIT-013",
+      "title": "Optimal Versus Naive Diversification: How Inefficient is the 1/N Portfolio Strategy?",
+      "authors": [
+        "Victor DeMiguel",
+        "Lorenzo Garlappi",
+        "Raman Uppal"
+      ],
+      "year": 2009,
+      "doi": "10.1093/rfs/hhm075",
+      "url": "https://doi.org/10.1093/rfs/hhm075",
+      "version": "Review of Financial Studies 22(5), 1915–1953; publisher abstract reviewed.",
+      "stage": "abstract",
+      "summary": {
+        "en": "Across seven datasets, none of fourteen estimated allocation models consistently beats the naive equal-weight rule on the reported out-of-sample measures. The result motivates an equal-weight control for allocation experiments.",
+        "zh": "七组数据中的十四种估计配置模型，未能在报告的样本外指标上持续胜过简单等权。该结果为配置实验保留等权对照提供依据。"
+      },
+      "question": {
+        "en": "Does a score-weighted stock portfolio outperform an equal-weight portfolio on unseen dates after costs?",
+        "zh": "扣除成本后，信号加权能否在未见日期胜过等权持仓？"
+      },
+      "markets": [
+        "US"
+      ],
+      "topics": [
+        "robustness",
+        "trading_costs"
+      ],
+      "investigationIds": [
+        "INV-011"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-013"
+      ]
+    },
+    {
+      "id": "LIT-014",
+      "title": "Factor investing: alpha concentration versus diversification",
+      "authors": [
+        "Lars Heinrich",
+        "Antoniya Shivarova",
+        "Martin Zurek"
+      ],
+      "year": 2021,
+      "doi": "10.1057/s41260-021-00226-0",
+      "url": "https://link.springer.com/article/10.1057/s41260-021-00226-0",
+      "version": "Journal of Asset Management 22, 464–487; publisher abstract and conclusion consulted; full-text review not completed.",
+      "stage": "abstract",
+      "summary": {
+        "en": "The reported out-of-sample tests find that adding residual covariance estimation improves long-only multifactor portfolios relative to pure characteristic-based concentration. This is a result for the authors’ multifactor design.",
+        "zh": "作者报告的样本外检验中，加入残差协方差估计改善了纯特征集中配置的多因子多头组合。结论对应作者的多因子设定。"
+      },
+      "question": {
+        "en": "Does broader selection reduce residual risk enough to compensate for any lower conditional alpha?",
+        "zh": "扩大选股范围降低的残差风险，能否补偿可能下降的条件超额收益？"
+      },
+      "markets": [
+        "US"
+      ],
+      "topics": [
+        "robustness",
+        "risk"
+      ],
+      "investigationIds": [
+        "INV-011"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-014"
+      ]
+    },
+    {
+      "id": "LIT-015",
+      "title": "Portfolio Constraints and the Fundamental Law of Active Management",
+      "authors": [
+        "Roger G. Clarke",
+        "Harindra de Silva",
+        "Steven R. Thorley"
+      ],
+      "year": 2002,
+      "doi": "10.2469/faj.v58.n5.2468",
+      "url": "https://rpc.cfainstitute.org/research/financial-analysts-journal/2002/portfolio-constraints-and-the-fundamental-law-of-active-management",
+      "version": "Financial Analysts Journal 58(5), 48–66; CFA Institute abstract reviewed.",
+      "stage": "abstract",
+      "summary": {
+        "en": "The authors extend the fundamental law to account for constraints on translating forecasts into positions. Breadth concerns independent opportunities rather than a simple count of holdings.",
+        "zh": "作者扩展主动投资基本定律，考虑预测转化为持仓时受到的限制。广度描述独立投资机会，需要与持股只数分别衡量。"
+      },
+      "question": {
+        "en": "How much independent predictive information survives position, turnover and liquidity constraints?",
+        "zh": "经过仓位、换手和流动性约束后，还能利用多少独立预测信息？"
+      },
+      "markets": [
+        "US"
+      ],
+      "topics": [
+        "risk",
+        "implementation"
+      ],
+      "investigationIds": [
+        "INV-011"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-015"
+      ]
+    },
+    {
+      "id": "LIT-016",
+      "title": "Constructing Long-Only Multifactor Strategies: Portfolio Blending vs. Signal Blending",
+      "authors": [
+        "Khalid Ghayur",
+        "Ronan Heaney",
+        "Stephen Platt"
+      ],
+      "year": 2018,
+      "doi": "10.2469/faj.v74.n3.5",
+      "url": "https://rpc.cfainstitute.org/research/financial-analysts-journal/2018/faj-v74-n3-5",
+      "version": "Financial Analysts Journal 74(3), 70–85; CFA Institute abstract reviewed.",
+      "stage": "abstract",
+      "summary": {
+        "en": "In exposure-matched global equity tests, the authors report better information ratios for portfolio blending at low-to-moderate tracking error and for signal blending at high tracking error. These are conditional findings for multifactor smart beta.",
+        "zh": "作者在全球股票因子暴露匹配的测试中发现，低至中等跟踪误差下持仓聚合的信息比率通常较高，高跟踪误差下信号聚合较好。该结论有多因子策略与风险目标的适用条件。"
+      },
+      "question": {
+        "en": "Compare score fusion and position fusion at matched count, exposure and cost assumptions.",
+        "zh": "在持股数量、暴露和成本假设相近时比较信号聚合与持仓聚合。"
+      },
+      "markets": [],
+      "topics": [
+        "risk",
+        "implementation"
+      ],
+      "investigationIds": [
+        "INV-011"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-016"
+      ]
+    },
+    {
+      "id": "LIT-017",
+      "title": "Conviction, Concentration, and Quant",
+      "authors": [
+        "Acadian Asset Management"
+      ],
+      "year": 2015,
+      "url": "https://www.acadian-asset.com/au/investment-insights/systematic-methods/conviction-concentration-and-quant",
+      "version": "Manager research, July 2015; public author summary and illustrative example consulted.",
+      "stage": "author_summary",
+      "summary": {
+        "en": "The manager distinguishes conviction in systematic signals from conviction in individual stocks, and argues that an arbitrary holdings cap can restrict alpha expression, risk management or implementation. Its illustrative Russell 1000 value portfolio is hypothetical.",
+        "zh": "机构区分对系统化信号的信任与对个股的信任，认为人为限制持股数量可能妨碍信号表达、风控或执行。文中的罗素1000价值组合属于假设示例。"
+      },
+      "question": {
+        "en": "Can a broad portfolio maintain the targeted small-cap signal while reducing unrewarded risk?",
+        "zh": "扩大持股后，能否保留小盘信号的目标暴露，并降低未获补偿的风险？"
+      },
+      "markets": [
+        "US"
+      ],
+      "topics": [
+        "risk",
+        "implementation"
+      ],
+      "investigationIds": [
+        "INV-011"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-017"
+      ]
+    },
+    {
+      "id": "LIT-018",
+      "title": "How Many Is Too Few? Revisiting the Number of Names in Equity Portfolios",
+      "authors": [
+        "Jennifer Bender",
+        "Xiaole Sun"
+      ],
+      "year": 2024,
+      "doi": "10.3905/jpm.2023.1.562",
+      "url": "https://doi.org/10.3905/jpm.2023.1.562",
+      "version": "Journal of Portfolio Management 50(4), 7–21; indexed abstract consulted, online DOI year 2023; final issue 2024.",
+      "stage": "abstract",
+      "summary": {
+        "en": "The abstract links holdings count to the tracking-error target, benchmark weights, cross-sectional alpha distribution and covariance. Benchmark-relative portfolios may require substantially more names.",
+        "zh": "摘要将持股数量与跟踪误差目标、基准权重、截面超额收益分布和协方差联系起来。相对基准的组合可能需要显著更多股票。"
+      },
+      "question": {
+        "en": "How does the breadth frontier change when the benchmark is an eligible-universe equal-weight portfolio rather than a cap-weighted index?",
+        "zh": "把基准由市值加权指数改为可投资股票池等权组合后，广度与风险的关系怎样变化？"
+      },
+      "markets": [],
+      "topics": [
+        "risk",
+        "robustness"
+      ],
+      "investigationIds": [
+        "INV-011"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-018"
+      ]
+    },
+    {
+      "id": "LIT-019",
+      "title": "主动投资行为下的小盘优选组合",
+      "authors": [
+        "申万宏源证券研究"
+      ],
+      "year": 2022,
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/710879053972/index.phtml",
+      "version": "Broker research summary, July 2022; published summary only, 2016-12-30 to 2022-06-30 backtest.",
+      "stage": "author_summary",
+      "summary": {
+        "en": "The published summary describes a monthly equal-weight Top 50 small-cap selection rule. Increasing the list to 100 names reportedly produces similar annual return and maximum drawdown; the authors discuss capacity. The design and costs are not independently reproduced.",
+        "zh": "公开摘要介绍月末选取50只股票的等权小盘优选规则。作者报告将持仓增至100只后，年化收益和最大回撤相近，并讨论容量。研究尚未独立复现其构造及成本。"
+      },
+      "question": {
+        "en": "Under the same eligible small-cap universe and formation dates, can increasing K preserve net excess return at a larger simulated capital size?",
+        "zh": "固定小盘股票池及形成日后，提高K能否在较大模拟资金规模下保留净超额？"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "size",
+        "liquidity",
+        "implementation"
+      ],
+      "investigationIds": [
+        "INV-011"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-019"
+      ]
+    },
+    {
+      "id": "LIT-020",
+      "title": "重审股票投资组合中的持股数量",
+      "authors": [
+        "华安证券金融工程团队"
+      ],
+      "year": 2025,
+      "url": "https://finance.sina.com.cn/roll/2025-11-21/doc-infycinm9093957.shtml",
+      "version": "Broker research series 学海拾珠256; public author/institution summary dated 2025-11-21; related to Bender and Sun, not counted as independent evidence.",
+      "stage": "author_summary",
+      "summary": {
+        "en": "The Chinese research summary discusses the benchmark-relative count problem and the very large counts associated with tight tracking-error targets. Its numerical examples cannot be transported to unconstrained small-cap selection.",
+        "zh": "中文研报概要讨论相对基准组合所需的持股数量，以及严格跟踪误差目标下较大的持股数量。其数字示例不能直接用于不受该目标约束的小盘选股。"
+      },
+      "question": {
+        "en": "Define the benchmark and risk objective before interpreting any proposed holdings count.",
+        "zh": "解读建议持股数量前，先明确基准和风险目标。"
+      },
+      "markets": [],
+      "topics": [
+        "risk",
+        "robustness"
+      ],
+      "investigationIds": [
+        "INV-011"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-020"
       ]
     }
   ],
@@ -3006,6 +3567,146 @@
         "zh": "这里复核保留的历史诊断输出，尚未重新运行研究。原始股数账户的完整性和数据在历史时点的可得性仍待核实，收益能否实际实现也尚未验证。"
       },
       "kind": "review"
+    },
+    {
+      "id": "SRC-PAPER-011",
+      "title": {
+        "en": "The Optimizer’s Curse: Skepticism and Postdecision Surprise in Decision Analysis",
+        "zh": "The Optimizer’s Curse: Skepticism and Postdecision Surprise in Decision Analysis"
+      },
+      "url": "https://doi.org/10.1287/MNSC.1050.0451",
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Management Science 52(3), 311–322; publisher abstract reviewed.",
+        "zh": "核对摘要及所列版本信息，尚未完成全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-012",
+      "title": {
+        "en": "Monotonicity in asset returns: New tests with applications to the term structure, the CAPM, and portfolio sorts",
+        "zh": "Monotonicity in asset returns: New tests with applications to the term structure, the CAPM, and portfolio sorts"
+      },
+      "url": "https://www.sciencedirect.com/science/article/pii/S0304405X10001558",
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Journal of Financial Economics 98(3), 605–625; publisher abstract reviewed.",
+        "zh": "核对摘要及所列版本信息，尚未完成全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-013",
+      "title": {
+        "en": "Optimal Versus Naive Diversification: How Inefficient is the 1/N Portfolio Strategy?",
+        "zh": "Optimal Versus Naive Diversification: How Inefficient is the 1/N Portfolio Strategy?"
+      },
+      "url": "https://doi.org/10.1093/rfs/hhm075",
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Review of Financial Studies 22(5), 1915–1953; publisher abstract reviewed.",
+        "zh": "核对摘要及所列版本信息，尚未完成全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-014",
+      "title": {
+        "en": "Factor investing: alpha concentration versus diversification",
+        "zh": "Factor investing: alpha concentration versus diversification"
+      },
+      "url": "https://link.springer.com/article/10.1057/s41260-021-00226-0",
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Journal of Asset Management 22, 464–487; publisher abstract and conclusion consulted; full-text review not completed.",
+        "zh": "核对摘要及所列版本信息，尚未完成全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-015",
+      "title": {
+        "en": "Portfolio Constraints and the Fundamental Law of Active Management",
+        "zh": "Portfolio Constraints and the Fundamental Law of Active Management"
+      },
+      "url": "https://rpc.cfainstitute.org/research/financial-analysts-journal/2002/portfolio-constraints-and-the-fundamental-law-of-active-management",
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Financial Analysts Journal 58(5), 48–66; CFA Institute abstract reviewed.",
+        "zh": "核对摘要及所列版本信息，尚未完成全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-016",
+      "title": {
+        "en": "Constructing Long-Only Multifactor Strategies: Portfolio Blending vs. Signal Blending",
+        "zh": "Constructing Long-Only Multifactor Strategies: Portfolio Blending vs. Signal Blending"
+      },
+      "url": "https://rpc.cfainstitute.org/research/financial-analysts-journal/2018/faj-v74-n3-5",
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Financial Analysts Journal 74(3), 70–85; CFA Institute abstract reviewed.",
+        "zh": "核对摘要及所列版本信息，尚未完成全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-017",
+      "title": {
+        "en": "Conviction, Concentration, and Quant",
+        "zh": "Conviction, Concentration, and Quant"
+      },
+      "url": "https://www.acadian-asset.com/au/investment-insights/systematic-methods/conviction-concentration-and-quant",
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Manager research, July 2015; public author summary and illustrative example consulted.",
+        "zh": "核对公开机构介绍或研报概要，未完成原始全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-018",
+      "title": {
+        "en": "How Many Is Too Few? Revisiting the Number of Names in Equity Portfolios",
+        "zh": "How Many Is Too Few? Revisiting the Number of Names in Equity Portfolios"
+      },
+      "url": "https://doi.org/10.3905/jpm.2023.1.562",
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Journal of Portfolio Management 50(4), 7–21; indexed abstract consulted, online DOI year 2023; final issue 2024.",
+        "zh": "核对摘要及所列版本信息，尚未完成全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-019",
+      "title": {
+        "en": "主动投资行为下的小盘优选组合",
+        "zh": "主动投资行为下的小盘优选组合"
+      },
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/710879053972/index.phtml",
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Broker research summary, July 2022; published summary only, 2016-12-30 to 2022-06-30 backtest.",
+        "zh": "核对公开机构介绍或研报概要，未完成原始全文审阅。"
+      },
+      "kind": "paper"
+    },
+    {
+      "id": "SRC-PAPER-020",
+      "title": {
+        "en": "重审股票投资组合中的持股数量",
+        "zh": "重审股票投资组合中的持股数量"
+      },
+      "url": "https://finance.sina.com.cn/roll/2025-11-21/doc-infycinm9093957.shtml",
+      "reviewedOn": "2026-11-28",
+      "scope": {
+        "en": "Broker research series 学海拾珠256; public author/institution summary dated 2025-11-21; related to Bender and Sun, not counted as independent evidence.",
+        "zh": "核对公开机构介绍或研报概要，未完成原始全文审阅。"
+      },
+      "kind": "paper"
     }
   ],
   "history": [
@@ -3415,6 +4116,116 @@
       "reason": {
         "en": "The current NAV and quote diagnostics do not reproduce this study’s investor exposures or identification.",
         "zh": "现有净值与报价诊断尚未复现该研究的投资者暴露或识别设计。"
+      }
+    },
+    {
+      "id": "X-011-011",
+      "literatureId": "LIT-011",
+      "investigationId": "INV-011",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
+        "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
+      }
+    },
+    {
+      "id": "X-012-011",
+      "literatureId": "LIT-012",
+      "investigationId": "INV-011",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
+        "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
+      }
+    },
+    {
+      "id": "X-013-011",
+      "literatureId": "LIT-013",
+      "investigationId": "INV-011",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
+        "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
+      }
+    },
+    {
+      "id": "X-014-011",
+      "literatureId": "LIT-014",
+      "investigationId": "INV-011",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
+        "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
+      }
+    },
+    {
+      "id": "X-015-011",
+      "literatureId": "LIT-015",
+      "investigationId": "INV-011",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
+        "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
+      }
+    },
+    {
+      "id": "X-016-011",
+      "literatureId": "LIT-016",
+      "investigationId": "INV-011",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
+        "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
+      }
+    },
+    {
+      "id": "X-017-011",
+      "literatureId": "LIT-017",
+      "investigationId": "INV-011",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
+        "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
+      }
+    },
+    {
+      "id": "X-018-011",
+      "literatureId": "LIT-018",
+      "investigationId": "INV-011",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
+        "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
+      }
+    },
+    {
+      "id": "X-019-011",
+      "literatureId": "LIT-019",
+      "investigationId": "INV-011",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
+        "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
+      }
+    },
+    {
+      "id": "X-020-011",
+      "literatureId": "LIT-020",
+      "investigationId": "INV-011",
+      "claimIds": [],
+      "status": "untested",
+      "reason": {
+        "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
+        "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
       }
     }
   ]
