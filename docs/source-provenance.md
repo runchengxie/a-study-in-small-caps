@@ -68,3 +68,7 @@ INV-011 adds a bilingual methods investigation and LIT-011 through LIT-020. Publ
 ## 信号强度与组合广度，2026-11-28
 
 INV-011新增中英文研究方法专题，LIT-011至LIT-020登记已核对的摘要和机构研究概要，注明版本、链接及核对日期。华安研报与原持股数量研究属于关联来源。申万宏源报告的历史结果尚未复现。十项新增文献对照均为待检验。本次没有新增市场观测、模型评分、组合运行或执行记录，也未改动冻结资产和既有结论阶段。
+
+## Small-cap style attribution, 2026-11-28
+
+INV-012 registers a new archived-panel exposure diagnostic from quant-market-research and reviews existing turnover, cost and stress results. The input retains 566,283 security/formation rows on 138 dates; matching both signals and scopes leaves 134 dates from June 2015 through July 2026. Input/output identities and missing-data rules are recorded in SRC-STYLE-BREADTH-20261128. No security-level rows are copied. The 86-period historical return comparison and the separate 136-period size-group comparison remain distinct. LIT-021 is publisher-abstract-level and its cross-check is not comparable; no full-text/replication stage is asserted. No new risk forecast, historical PIT certification, broker-calibrated cost or production strategy is added. Existing source records and frozen assets are unchanged.
