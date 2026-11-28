@@ -1,0 +1,51 @@
+---
+import Text from './Text.astro';
+import SourceInfo from './SourceInfo.astro';
+import ui from '../data/archive-comparison-ui.json';
+import data from '../data/archive-comparisons.json';
+interface Props {kind:'capital'|'matrix';}
+const {kind}=Astro.props;
+const title=kind==='capital'?ui.capitalTitle:ui.matrixTitle;
+const columns=kind==='capital'?['capital','annualReturn','drawdown','sharpe','fillRate','cash','delayed'] as const:['definition','formations','annualReturn','drawdown','sharpe','turnover','development','later'] as const;
+const rows=kind==='capital'?data.capital:data.matrix.filter(r=>r.frequency==='weekly');
+const label=(k:string)=>ui[k as keyof typeof ui];
+---
+<section class="archive-comparison" data-archive-comparison={kind} aria-labelledby={`archive-${kind}-title`}>
+<h3 id={`archive-${kind}-title`}><Text value={title}/></h3>
+<p class="boundary-note"><Text value={kind==='capital'?ui.capitalScope:ui.matrixScope}/></p>
+<div class="comparison-controls">
+{kind==='matrix'&&<label><Text value={ui.frequency}/><select data-compare="frequency">{['weekly','biweekly','monthly','quarterly'].map(k=><option value={k} data-en={label(k).en} data-zh={label(k).zh}>{label(k).en}</option>)}</select></label>}
+<label><Text value={ui.metric}/><select data-compare="metric">{(kind==='capital'?['annualReturn','drawdown','fillRate','cash','delayed']:['annualReturn','drawdown','turnover','development','later']).map(k=><option value={k} data-en={label(k).en} data-zh={label(k).zh}>{label(k).en}</option>)}</select></label>
+</div>
+<div class="comparison-chart"></div><p class="small muted"><Text value={ui.caption}/></p>
+<div class="table-scroll"><table><thead><tr>{columns.map(k=><th scope="col"><Text value={label(k)}/></th>)}</tr></thead><tbody>{rows.map(row=><tr>{columns.map(k=><td>{k==='definition'?<Text value={label(String((row as Record<string,unknown>)[k]))}/>:String((row as Record<string,unknown>)[k])}</td>)}</tr>)}</tbody></table></div>
+<SourceInfo ids={[data.sourceId]}/>
+</section>
+<script>
+import data from '../data/archive-comparisons.json';
+import ui from '../data/archive-comparison-ui.json';
+import {local,format} from '../lib/i18n';
+const label=(key:string)=>local(ui[key as keyof typeof ui]);
+for(const root of document.querySelectorAll<HTMLElement>('[data-archive-comparison]')){
+ const kind=root.dataset.archiveComparison;
+ const metric=root.querySelector<HTMLSelectElement>('[data-compare="metric"]')!;
+ const frequency=root.querySelector<HTMLSelectElement>('[data-compare="frequency"]');
+ const render=()=>{
+  const rows:Record<string,string|number>[]=kind==='capital'?data.capital:data.matrix.filter(r=>r.frequency===frequency?.value);
+  const columns=kind==='capital'?['capital','annualReturn','drawdown','sharpe','fillRate','cash','delayed']:['definition','formations','annualReturn','drawdown','sharpe','turnover','development','later'];
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  const height=rows.length*48+50;svg.setAttribute('viewBox',`0 0 800 ${height}`);svg.setAttribute('role','img');svg.setAttribute('aria-label',label(metric.value));
+  const values=rows.map(r=>Number(r[metric.value]));
+  const lo=Math.min(0,...values),hi=Math.max(0,...values);const scale=(n:number)=>180+(n-lo)/(hi-lo||1)*460;const zero=scale(0);
+  const el=(tag:string,attrs:Record<string,string>,text?:string)=>{const n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);if(text!==undefined)n.textContent=text;svg.append(n);return n;};
+  el('line',{x1:String(zero),x2:String(zero),y1:'10',y2:String(height-30),stroke:'currentColor','stroke-opacity':'.4'});
+  rows.forEach((row,i)=>{const value=values[i],y=15+i*48;const name=kind==='capital'?format(Number(row.capital)):label(String(row.definition));el('text',{x:'5',y:String(y+20),fill:'currentColor','font-size':'13'},name);el('rect',{x:String(Math.min(zero,scale(value))),y:String(y+3),width:String(Math.abs(scale(value)-zero)),height:'26',fill:value<0?'var(--plot-negative)':'var(--plot-series)'});el('text',{x:'670',y:String(y+20),fill:'currentColor','font-size':'13'},format(value,{maximumFractionDigits:2}));});
+  root.querySelector('.comparison-chart')!.replaceChildren(svg);
+  const tbody=root.querySelector('tbody')!;tbody.replaceChildren(...rows.map(row=>{const tr=document.createElement('tr');for(const col of columns){const td=document.createElement('td');td.textContent=col==='definition'?label(String(row[col])):format(Number(row[col]),{maximumFractionDigits:col==='sharpe'?3:2});tr.append(td);}return tr;}));
+ };
+ metric.addEventListener('change',render);frequency?.addEventListener('change',render);document.addEventListener('research:locale',render);render();
+}
+</script>
+<style>
+.archive-comparison{margin:2rem 0;padding:1.25rem;border:1px solid var(--line);background:var(--panel);min-width:0}.comparison-controls{display:flex;flex-wrap:wrap;gap:1rem;margin:1.5rem 0}.comparison-controls label{display:grid;gap:.5rem;max-width:100%}.comparison-chart{overflow-x:auto;margin:1rem 0}.comparison-chart :global(svg){width:100%;min-width:680px;display:block}.archive-comparison table{min-width:850px;font-size:13px;width:100%}@media(max-width:600px){.archive-comparison{padding:.75rem}}
+</style>

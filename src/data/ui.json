@@ -89,7 +89,7 @@
   },
   "searchPlaceholder": {
     "en": "Try size, China, liquidity, or an author…",
-    "zh": "尝试输入：规模、壳价值、流动性或作者…"
+    "zh": "可以搜索规模、壳价值、流动性或作者"
   },
   "type": {
     "en": "Record type",
@@ -141,7 +141,7 @@
   },
   "literatureIntro": {
     "en": "A growing reading register: source-checked entries, explicit paper versions and honest review stages. The first five leads have not been reviewed in full text.",
-    "zh": "持续积累的阅读登记：核对出处、区分论文版本、明确审阅阶段。首批五条线索尚未完成全文审阅。"
+    "zh": "文献登记保留各版本的出处与阅读进度。已读全文的条目附有笔记，其余条目注明当前核对范围。"
   },
   "historyIntro": {
     "en": "Research changes as evidence changes. Original dates, failed checks and replaced interpretations remain part of the record.",
@@ -969,7 +969,7 @@
   },
   "waveAlmost": {
     "en": "Almost there",
-    "zh": "即将抵达"
+    "zh": "即将到达"
   },
   "waveWelcome": {
     "en": "Welcome",

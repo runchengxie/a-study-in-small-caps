@@ -17,3 +17,5 @@ Figures sit inside the section that discusses them. The article renderer reads s
 | INV-008 | Published and later rerun observation-window comparisons |
 
 The new liquidity instrument uses the existing evidence selectors and identifies its selected source. Its default table remains readable without JavaScript. The risk summary preserves all five original rows and fixed metric scales; completed recovery intervals and right-censoring stay explicit. Browser checks visit all eight essays, verify visible research controls within the article and test absent-market and historical-count behaviour. The existing full suite covers chart colours, locale, themes, reduced motion and source integrity.
+
+[Archived comparison figures and prose review](research-depth.md) describes the later expansion of investigations 009 and 010.

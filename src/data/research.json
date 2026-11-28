@@ -398,7 +398,7 @@
             },
             {
               "en": "The displayed value is an activity statistic for a retained group. It is not the dollars available at the best bid when our sell order arrives. Daily volume can be spread unevenly across the session, and the price at which it traded need not remain available.",
-              "zh": "展示值是保留分组的成交活跃度统计，不是卖单到达时买一档可以取得的金额。全天成交可能在时段之间分布不均，已经成交的价格也未必继续可用。"
+              "zh": "展示值统计各分组的成交活跃度。卖单到达时能在买一档取得多少金额，需要当时的报价与挂单量。全天成交可能在时段之间分布不均，已经成交的价格也未必继续可用。"
             },
             {
               "en": "Order size must be stated in the same unit as its constraint. A share-volume limit and a notional participation limit differ when prices move. The retained research previously corrected traded-value units; reproducing a capacity estimate requires carrying those units through the entire calculation.",
@@ -750,7 +750,7 @@
             },
             {
               "en": "Adjacent starting points share most of their price observations. Their outcomes are therefore highly dependent. A negative fraction over these overlapping windows is an empirical frequency within this path, not a confidence level or an out-of-sample forecast.",
-              "zh": "相邻起点会共享大部分价格观测，结果之间存在很强的关联。重叠窗口的负收益比例，是这条路径内的经验频率，不是置信水平，也不是样本外预测。"
+              "zh": "相邻起点会共享大部分价格观测，结果之间存在很强的关联。重叠窗口的负收益比例只统计这条历史路径。估计置信区间或预测样本外亏损，需要另外设计检验。"
             },
             {
               "en": "Changing the holding length changes the set of usable starts. Longer windows leave fewer completed outcomes near the end of the sample. Compare both the loss measure and its observation count before deciding that one horizon looks safer.",
@@ -810,7 +810,7 @@
         },
         {
           "en": "In the retained series, 84.7% of observations lie below a previous peak. This is a description of the whole path, not the probability that a future buyer loses money. The rolling-window instrument below asks a narrower question: what happened after each retained historical starting point over a specified number of observations?",
-          "zh": "保留序列中，84.7%的观测低于此前峰值。这个比例描述整段路径，不是未来买入者亏损的概率。下方滚动窗口互动问的是更具体的问题，从每个保留的历史起点出发，经过指定数量观测后发生了什么。"
+          "zh": "保留序列中，84.7%的观测低于此前峰值。这个比例统计整段历史路径，未来买入者的亏损概率仍待估计。下方滚动窗口互动问的是更具体的问题，从每个保留的历史起点出发，经过指定数量观测后发生了什么。"
         }
       ]
     },
@@ -1549,7 +1549,7 @@
           "paragraphs": [
             {
               "en": "The exclusion experiment removes 0%, 10%, 20% or 30% of eligible stocks by formation-date size rank, then rebuilds signals. These are fractions of the number of eligible names, not fractions of aggregate market capitalization. Re-ranking after exclusion changes the portfolio as well as its coverage.",
-              "zh": "剔除实验按形成日市值排名，移除合格股票数量的0%、10%、20%或30%，再重新计算信号。比例按股票只数计算，并非总市值占比。重新排名会同时改变组合与覆盖范围。"
+              "zh": "剔除实验按形成日市值排名，移除合格股票数量的0%、10%、20%或30%，再重新计算信号。分母采用合格股票只数。重新排名会同时改变组合与覆盖范围。"
             },
             {
               "en": "With equal weighting and the buffer, the archived small-cap candidate falls from 5.24% to −2.17% annual return after removing the bottom 30%. The low-turnover candidate rises from 5.33% to 7.76%, while the combined candidate moves from 11.28% to 9.71%. The candidates respond differently; one exclusion rule cannot stand in for every strategy.",
@@ -1570,7 +1570,7 @@
             },
             {
               "en": "The market-cap-weighted low-turnover candidate is negative at every tested exclusion fraction. The combined candidate remains positive under both tested weighting schemes. These are descriptive grid results already inspected by the researchers; the best cell is not an independently validated parameter choice.",
-              "zh": "市值加权低换手候选在全部已测试剔除比例下均为负，复合候选在两种权重下仍为正。这些是研究者已经查看过的网格结果，最好的单元格尚未成为独立验证后的参数选择。"
+              "zh": "市值加权低换手候选在全部已测试剔除比例下均为负，复合候选在两种权重下仍为正。这些是研究者已经查看过的参数对照结果，最好的单元格尚未成为独立验证后的参数选择。"
             }
           ]
         },
@@ -1587,9 +1587,31 @@
             },
             {
               "en": "The observation threshold changes which stocks receive scores and can continue to change holdings after warm-up. The 45- and 90-observation versions still produce different holdings in later years. Original historical input bytes and the complete run receipt remain missing, so the discrepancy cannot be declared resolved.",
-              "zh": "观测门槛会改变哪些股票取得评分，预热结束后也可能继续改变持仓。45与90观测版本在后续年份仍出现持仓差异。历史原始输入字节和完整运行收据仍缺，差距尚不能宣布解决。"
+              "zh": "观测门槛会改变哪些股票取得评分，预热结束后也可能继续改变持仓。45与90观测版本在后续年份仍出现持仓差异。历史原始输入文件和完整运行记录仍缺，差距尚不能宣布解决。"
             }
           ]
+        },
+        {
+          "id": "frequency-grid",
+          "title": {
+            "en": "Frequency changes the portfolio",
+            "zh": "调仓频率怎样改变组合"
+          },
+          "paragraphs": [
+            {
+              "en": "The fixed report retains all sixteen combinations of four turnover definitions and four rebalance frequencies. At the 60-session mean, the biweekly candidate reports 19.00% annual return and 3.25 times annual turnover. The monthly candidate reports 7.73% and 6.77 times. Scheduling fewer rebalance dates can still produce more turnover because the dates select different targets and weights.",
+              "zh": "固定版旧稿保留了四种换手定义与四种调仓频率的16组组合。采用60日均值时，双周候选年化收益19.00%，年换手3.25倍。月频候选对应7.73%与6.77倍。调仓日期更少，累计换手仍可能更高，因为不同日期会选出不同的目标和权重。"
+            },
+            {
+              "en": "Changing the definition also changes the result. Under biweekly rebalancing, the 20-session mean reports 17.07% annual return and the 120-session mean 21.18%, with drawdowns of −60.16% and −60.48%. Both have deep historical losses. The table lets readers compare return and drawdown without selecting only the highest-return cell.",
+              "zh": "定义也会改变结果。双周调仓下，20日均值年化收益17.07%，120日均值21.18%，最大回撤分别为−60.16%与−60.48%。两种候选都经历了深度亏损。切换下方指标，可以同时检查收益与回撤，查看高收益配置付出了多大代价。"
+            },
+            {
+              "en": "The development and later periods must remain visible. The monthly 20-session candidate moves from 3.11% in development to 25.75% later. These dates have already been inspected, so selecting a definition from this grid creates another parameter choice to test prospectively. The separate window rerun above uses another construction and cannot be spliced into this table.",
+              "zh": "开发段和后段也应并列。月频20日候选在开发段年化3.11%，后段25.75%。研究者已经看过这些日期，按表格挑出的参数需要另找未参与选择的样本检验。上方窗口复算采用另一套构造，数字应分别保留。"
+            }
+          ],
+          "instrument": "frequency-matrix"
         },
         {
           "id": "next-evidence",
@@ -1643,7 +1665,7 @@
       },
       "conclusion": {
         "en": "A 21-session constructed replay passes its independent accounting checks. Full-history strategy readiness and real execution remain unestablished.",
-        "zh": "一段21个交易日的构造重放通过了独立核算检查，完整历史策略就绪和真实执行仍未确立。"
+        "zh": "一段21个交易日的构造重放通过了独立核算检查，完整历史策略可用性和真实执行仍未确立。"
       },
       "markets": [
         "A-share"
@@ -1681,6 +1703,41 @@
             {
               "en": "The same distinction matters at corporate-action record dates. A stock appearing in a target file does not establish that the account held it on the entitlement date. The report retains unknown inventory and prior failed checks instead of assigning the entitlement automatically.",
               "zh": "公司行动登记日也有同样区别。股票出现在目标文件中，不能证明账户在权益登记日实际持有。报告保留未知库存和先前未通过的检查，没有自动分配权益。"
+            }
+          ]
+        },
+        {
+          "id": "capital-and-cash",
+          "title": {
+            "en": "Capital changes cash and fills",
+            "zh": "资金如何改变现金与成交"
+          },
+          "paragraphs": [
+            {
+              "en": "The archived capital ladder runs the combined candidate at seven account sizes under a 5% participation assumption. At CNY100,000, annual return is 5.28%, reported fill rate 13.82% and mean cash 38.25%. At CNY1 million, the figures are 11.85%, 43.89% and 2.54%. A comparison of returns alone hides this large difference in how much capital the simulated accounts put to work.",
+              "zh": "归档资金梯度在5%参与率假设下，模拟复合候选的七档账户。10万元账户年化收益5.28%，报告成交率13.82%，平均现金38.25%。100万元账户对应11.85%、43.89%与2.54%。只比较收益，会漏掉两档模拟账户实际投入股票的资金比例差异。"
+            },
+            {
+              "en": "At CNY50 million the recorded annual return reaches 15.07%, with a −51.70% drawdown and 6.18% mean cash. The simulator has not calibrated market impact. Higher return at a larger capital setting therefore remains a feature of this recorded simulation. Estimating capacity requires matched target dates and a decomposition of unfilled orders, cash exposure and impact.",
+              "zh": "5,000万元档记录年化收益15.07%，最大回撤−51.70%，平均现金6.18%。模拟器尚未校准市场冲击。资金设定更大时收益更高，目前只能作为这次模拟的结果保存。估算容量还要固定目标日期，把未成交订单和现金敞口分别核对，再测量冲击。"
+            }
+          ],
+          "instrument": "capital-ladder"
+        },
+        {
+          "id": "ledger-comparison",
+          "title": {
+            "en": "Read the two share ledgers separately",
+            "zh": "两个份额账本怎样比较"
+          },
+          "paragraphs": [
+            {
+              "en": "The retained monthly continuous-share ledger reports 15.06% annual return, 12.63% mean cash and 50.56% fills. The biweekly ledger reports 14.13%, 21.12% and 75.37%. Higher reported fills accompany more cash and a lower annual return in this pair, so fills alone cannot rank the accounts.",
+              "zh": "保留的月频连续份额账本记录年化收益15.06%，平均现金12.63%，成交率50.56%。双周账本对应14.13%、21.12%与75.37%。这组记录里，成交率更高的账户也留有更多现金，年化收益更低。评价账户需要一起核对这些数字。"
+            },
+            {
+              "en": "The source lists 139 versus 296 formations, 138 versus 295 weight targets and 137 versus 37 engine replay periods. These counts do not establish matched intervals. Simulated impact is zero and the currency basis of the reported delay cost remains unresolved. The two ledgers retain separate identities until their dates and accounting can be reconciled.",
+              "zh": "来源分别列出139与296次形成、138与295次权重目标，所属引擎重放期数却为137与37。现有计数还不能证明区间匹配。模拟冲击为零，报告延迟成本的币种口径仍待确认。核对日期和核算方式前，这两个账本应分别保存。"
             }
           ]
         },
@@ -1727,7 +1784,7 @@
           "paragraphs": [
             {
               "en": "Independent checks retain maximum absolute errors of approximately 1.455×10⁻¹⁰ yuan for cash, 1.164×10⁻¹⁰ for marked holdings and 5.684×10⁻¹⁴ for fees, below the original 10⁻⁷-yuan tolerance. The errors remain in the record rather than being rounded away to pass a check.",
-              "zh": "独立检查保留现金约1.455×10⁻¹⁰元、持仓计价约1.164×10⁻¹⁰元和费用约5.684×10⁻¹⁴元的最大绝对误差，均低于原有10⁻⁷元容差。记录没有通过抹去残差来通过检查。"
+              "zh": "独立检查保留现金的最大绝对误差约1.455×10⁻¹⁰元，持仓计价约1.164×10⁻¹⁰元，费用约5.684×10⁻¹⁴元，均低于原有10⁻⁷元容差。核验记录保留了这些残差。"
             },
             {
               "en": "A reconciled identity only shows that this account is internally consistent under its stated inputs. It does not prove that historical information arrived on time, that all events were captured or that a large order could execute at the assumed price.",
@@ -1765,7 +1822,7 @@
             },
             {
               "en": "Capacity requires a separate execution study with calibrated impact and market access. The 21-session account review added no prospective market observations and did not establish full-history strategy readiness.",
-              "zh": "容量仍需独立执行研究，校准冲击和市场访问条件。21日账户复查没有新增前瞻市场观测，也没有确立完整历史策略就绪。"
+              "zh": "容量仍需独立执行研究，校准冲击和市场访问条件。21日账户复查没有新增前瞻市场观测，也没有确立完整历史策略可用性。"
             }
           ]
         }
@@ -1773,7 +1830,7 @@
       "limitations": [
         {
           "en": "The accounting review is a bounded constructed replay, not observed broker performance.",
-          "zh": "核算复查属于有限区间构造重放，不是券商业绩。"
+          "zh": "核算复查只覆盖有限区间的构造重放，券商执行业绩尚待取得。"
         },
         {
           "en": "Historical information availability, full event coverage, entitlements and tax treatment remain incomplete.",
@@ -3001,7 +3058,7 @@
       },
       "description": {
         "en": "A 21-session replay reconciled 79 independently checked fills under an explicit sell policy; full-history accounting was not certified.",
-        "zh": "21个交易日区间在显式卖出规则下对齐79笔独立核查成交。未认证完整历史核算。"
+        "zh": "21个交易日的构造重放按明确卖出规则核对79笔模拟成交。完整历史核算仍需验证。"
       },
       "type": "research",
       "relatedIds": [
