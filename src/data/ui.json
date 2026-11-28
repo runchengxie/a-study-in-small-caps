@@ -1010,5 +1010,189 @@
   "chartNeutral": {
     "en": "Other metrics",
     "zh": "其他指标"
+  },
+  "roadmap": {
+    "en": "Research checklist",
+    "zh": "研究清单"
+  },
+  "roadmapTitle": {
+    "en": "Research checklist & evidence map",
+    "zh": "研究清单与证据地图"
+  },
+  "roadmapIntro": {
+    "en": "Thirty linked tasks connect source reproducibility, shared accounts, style attribution, execution and validation. Open a task for its acceptance, evidence and next action.",
+    "zh": "30项相互关联的任务，把来源复现、共同账户、风格归因、执行和验证连接起来。展开任务可查看验收、证据与下一步。"
+  },
+  "roadmapStatusNote": {
+    "en": "Status describes a bounded deliverable, not investment validity. A completed diagnostic does not certify historical eligibility, net alpha or a successful hypothesis.",
+    "zh": "状态表示限定交付的进展，不表示投资有效性。诊断完成不认证历史资格、净Alpha或假设成立。"
+  },
+  "roadmapDone": {
+    "en": "Done within scope",
+    "zh": "已完成限定交付"
+  },
+  "roadmapPartial": {
+    "en": "Partial",
+    "zh": "部分完成"
+  },
+  "roadmapReady": {
+    "en": "Ready to start",
+    "zh": "可启动"
+  },
+  "roadmapWaiting": {
+    "en": "Waiting for evidence",
+    "zh": "等待证据"
+  },
+  "roadmapPriority": {
+    "en": "Priority",
+    "zh": "优先级"
+  },
+  "roadmapStatus": {
+    "en": "Deliverable status",
+    "zh": "交付状态"
+  },
+  "roadmapSearch": {
+    "en": "Find a task",
+    "zh": "查找任务"
+  },
+  "roadmapReset": {
+    "en": "Show all tasks",
+    "zh": "显示全部任务"
+  },
+  "roadmapEmpty": {
+    "en": "No tasks match these filters.",
+    "zh": "没有匹配的任务。"
+  },
+  "roadmapNext": {
+    "en": "Work that can advance now",
+    "zh": "现在可以继续推进的工作"
+  },
+  "roadmapTasks": {
+    "en": "The complete checklist",
+    "zh": "完整待办清单"
+  },
+  "roadmapAcceptance": {
+    "en": "Acceptance",
+    "zh": "验收条件"
+  },
+  "roadmapNextAction": {
+    "en": "Next action",
+    "zh": "下一步"
+  },
+  "roadmapDependency": {
+    "en": "Prerequisites",
+    "zh": "前置依赖"
+  },
+  "roadmapGap": {
+    "en": "Unmet evidence gate",
+    "zh": "未满足的证据门槛"
+  },
+  "roadmapOwner": {
+    "en": "Owning repository",
+    "zh": "归属仓库"
+  },
+  "roadmapEvidence": {
+    "en": "Retained evidence",
+    "zh": "已有证据"
+  },
+  "roadmapSource": {
+    "en": "Canonical task registry",
+    "zh": "权威任务登记"
+  },
+  "roadmapProgress": {
+    "en": "New progress: three matched target arms",
+    "zh": "本轮推进：三组共同支持的目标组合"
+  },
+  "roadmapProgressIntro": {
+    "en": "The archived panel has 138 formation dates; 137 support all three target arms. The first date has no usable raw scores and stays explicitly unsupported. On supported dates, mean score coverage in the smallest fifth is 96.28%.",
+    "zh": "归档面板有138个形成日，其中137期支持三组目标。首期原始分数全部缺失，明确保留为不支持。在支持日期内，最小市值20%的平均评分覆盖率为96.28%。"
+  },
+  "roadmapProgressNote": {
+    "en": "Target-weight change is half the absolute difference between consecutive source-date targets, averaged over 136 transitions per arm. It excludes price drift, orders and fills, and is not realized turnover or cost. These three arms have different breadth by design.",
+    "zh": "目标权重变化是相邻来源日期权重差绝对值之和的一半，每组均值使用136次变化。不含价格漂移、订单或成交，不是实际换手或成本。三组持仓广度按设计不同。"
+  },
+  "roadmapProgressFinding": {
+    "en": "Selecting stocks with low stock-level turnover did not produce the most stable target list here. The shared ledger and net-return comparison remain waiting for their input gates.",
+    "zh": "本例选择个股换手低的股票，并未得到最稳定的目标名单。共同账本与净收益比较仍需满足各自输入门槛。"
+  },
+  "roadmapArm": {
+    "en": "Target arm",
+    "zh": "目标对照组"
+  },
+  "roadmapNames": {
+    "en": "Mean target names",
+    "zh": "平均目标股数"
+  },
+  "roadmapChange": {
+    "en": "Mean target-weight change",
+    "zh": "平均目标权重变化"
+  },
+  "roadmapLowvol": {
+    "en": "Low-volatility exposure vs benchmark",
+    "zh": "相对基准的低波动暴露"
+  },
+  "roadmapBenchmark": {
+    "en": "Common-support benchmark",
+    "zh": "共同支持集基准"
+  },
+  "roadmapExclude": {
+    "en": "Exclude highest-turnover fifth",
+    "zh": "剔除最高换手五分之一"
+  },
+  "roadmapLowturn": {
+    "en": "Select lowest-turnover fifth",
+    "zh": "选择最低换手五分之一"
+  },
+  "roadmapData": {
+    "en": "Data and reproduction",
+    "zh": "数据与复现"
+  },
+  "roadmapAccount": {
+    "en": "Accounts",
+    "zh": "账户"
+  },
+  "roadmapFactors": {
+    "en": "Factors and attribution",
+    "zh": "因子与归因"
+  },
+  "roadmapPortfolio": {
+    "en": "Portfolio construction",
+    "zh": "组合构建"
+  },
+  "roadmapExecution": {
+    "en": "Costs, stress and capacity",
+    "zh": "成本、压力与容量"
+  },
+  "roadmapValidation": {
+    "en": "Validation",
+    "zh": "验证"
+  },
+  "roadmapPublication": {
+    "en": "Publication",
+    "zh": "发布"
+  },
+  "roadmapNoDeps": {
+    "en": "No unfinished prerequisite; see acceptance and evidence gates.",
+    "zh": "没有未完成前置项，仍需按验收与证据门槛推进。"
+  },
+  "roadmapDownload": {
+    "en": "Download the task registry (JSON)",
+    "zh": "下载任务登记（JSON）"
+  },
+  "roadmapReport": {
+    "en": "Read the target-support research record",
+    "zh": "阅读目标支持集研究记录"
+  },
+  "roadmapUpdated": {
+    "en": "Reviewed",
+    "zh": "复核日期"
+  },
+  "roadmapExposureUnit": {
+    "en": "Exposure units are full archived cross-section descriptor standard deviations. No returns, execution or risk forecasts were computed.",
+    "zh": "暴露单位为全归档截面描述符标准差。本轮没有计算收益、执行或风险预测。"
+  },
+  "roadmapNextNote": {
+    "en": "These tasks have completed recorded prerequisites. Continue their stated next actions while preserving the acceptance and evidence gates.",
+    "zh": "这些任务记录的前置交付已完成，可按下一步继续推进，仍须遵守各自验收与证据门槛。"
   }
 }
