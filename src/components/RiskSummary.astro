@@ -1,0 +1,15 @@
+---
+import Text from './Text.astro';
+import SourceInfo from './SourceInfo.astro';
+import ui from '../data/essay-ui.json';
+import evidence from '../data/evidence.json';
+---
+<section class="essay-risk" aria-labelledby="essay-risk-title"><h3 id="essay-risk-title"><Text value={ui.riskTitle}/></h3><p class="boundary-note"><Text value={ui.riskScope}/></p><label><Text value={ui.count}/><select id="essay-risk-count">{evidence.microcap.summary.map(r=><option value={r.count} selected={r.count===400}>{r.count}</option>)}</select></label><div id="essay-risk-chart"></div><p class="small muted"><Text value={ui.figureHelp}/></p><div class="table-scroll"><table><thead><tr><th><Text value={ui.count}/></th><th><Text value={ui.drawdown}/></th><th><Text value={ui.underwater}/></th></tr></thead><tbody>{evidence.microcap.summary.map(r=><tr><td>{r.count}</td><td>{(r.maxDrawdown*100).toFixed(2)}%</td><td>{r.longestUnderwater}</td></tr>)}</tbody></table></div><SourceInfo ids={[evidence.microcap.summarySourceId]}/></section>
+<script>
+import data from '../data/evidence.json';import ui from '../data/essay-ui.json';import {local,format} from '../lib/i18n';
+const field=document.querySelector<HTMLSelectElement>('#essay-risk-count')!;
+if(field){
+const render=()=>{const row=data.microcap.summary.find(r=>r.count===Number(field.value))!;const ns='http://www.w3.org/2000/svg';const svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 800 210');svg.setAttribute('role','img');svg.setAttribute('aria-label',local(ui.riskTitle));for(const [i,name,value,width,color] of [[0,local(ui.drawdown),format(row.maxDrawdown,{style:'percent',maximumFractionDigits:2}),Math.abs(row.maxDrawdown)*560,'var(--plot-negative)'],[1,local(ui.underwater),format(row.longestUnderwater),row.longestUnderwater/700*560,'var(--plot-series)']] as const){const y=20+i*95;const t=document.createElementNS(ns,'text');t.setAttribute('x','10');t.setAttribute('y',String(y));t.setAttribute('fill','currentColor');t.setAttribute('font-size','13');t.textContent=name;svg.append(t);const bar=document.createElementNS(ns,'rect');bar.setAttribute('x','10');bar.setAttribute('y',String(y+12));bar.setAttribute('width',String(width));bar.setAttribute('height','28');bar.setAttribute('fill',color);svg.append(bar);const v=document.createElementNS(ns,'text');v.setAttribute('x','620');v.setAttribute('y',String(y+33));v.setAttribute('fill','currentColor');v.setAttribute('font-size','14');v.textContent=value;svg.append(v);}document.querySelector('#essay-risk-chart')!.replaceChildren(svg);};field.addEventListener('change',render);document.addEventListener('research:locale',render);render();
+}
+</script>
+<style>.essay-risk{border:1px solid var(--line);padding:1.5rem;margin:2rem 0;background:var(--panel)}.essay-risk label{display:grid;gap:.5rem;max-width:14rem;font:14px/1.5 system-ui}#essay-risk-chart{overflow-x:auto;margin:1.5rem 0}#essay-risk-chart :global(svg){width:100%;min-width:620px;display:block}.essay-risk table{min-width:550px;width:100%;font-size:13px}@media(max-width:600px){.essay-risk{padding:1rem}}</style>

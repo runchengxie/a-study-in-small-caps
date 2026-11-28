@@ -1,0 +1,102 @@
+{
+  "readingTime": {
+    "en": "About {minutes} min of text; explore the figures at your own pace",
+    "zh": "正文约{minutes}分钟，图表可自行探索"
+  },
+  "liquidityTitle": {
+    "en": "Compare the same activity measure under two size definitions",
+    "zh": "用两种规模定义比较同一成交指标"
+  },
+  "liquidityIntro": {
+    "en": "Change the period, size basis and group. Missing markets remain in the table; an absent value is not a zero.",
+    "zh": "可以切换时期、规模口径和分组。缺失市场仍保留在表格中，没有数值不等于零。"
+  },
+  "basis": {
+    "en": "Size basis",
+    "zh": "规模口径"
+  },
+  "bucket": {
+    "en": "Size group",
+    "zh": "规模组"
+  },
+  "metric": {
+    "en": "Median prior-20-session traded value (USD)",
+    "zh": "此前20个交易日平均成交额的中位数（美元）"
+  },
+  "absolute": {
+    "en": "Dollar capitalization",
+    "zh": "美元市值"
+  },
+  "relative": {
+    "en": "Within-market ranking",
+    "zh": "市场内排名"
+  },
+  "period": {
+    "en": "Period",
+    "zh": "时期"
+  },
+  "market": {
+    "en": "Market",
+    "zh": "市场"
+  },
+  "observations": {
+    "en": "Security-day observations",
+    "zh": "证券日观测"
+  },
+  "stocks": {
+    "en": "Distinct securities",
+    "zh": "去重证券数"
+  },
+  "missingMarket": {
+    "en": "Market not included in this period",
+    "zh": "该时期没有纳入该市场"
+  },
+  "missingValue": {
+    "en": "No retained value in this group",
+    "zh": "该分组没有保留值"
+  },
+  "source": {
+    "en": "Inspect the source",
+    "zh": "核对来源"
+  },
+  "riskTitle": {
+    "en": "Early summaries across portfolio sizes",
+    "zh": "早期不同持仓数量的风险汇总"
+  },
+  "riskScope": {
+    "en": "2008–2014 retained summaries only. The longest underwater duration counts trading sessions in completed episodes; each size has an unresolved right-censored episode. Unknown classified prices are held flat, and ST/suspension history is incomplete. These values cannot generate five daily NAV curves.",
+    "zh": "仅展示2008至2014年保留汇总。最长水下期统计已恢复事件中的交易日，各数量仍有未完成恢复的右删失事件。已分类未知价格按前值持平，ST与停牌历史不完整。这些汇总不能生成五条逐日净值。"
+  },
+  "count": {
+    "en": "Target stock count",
+    "zh": "目标股票数"
+  },
+  "drawdown": {
+    "en": "Maximum drawdown",
+    "zh": "最大回撤"
+  },
+  "underwater": {
+    "en": "Longest completed underwater episode (sessions)",
+    "zh": "已恢复事件中的最长水下期（交易日）"
+  },
+  "inlineNote": {
+    "en": "These figures use their stated sources and samples. They are not a second portfolio account.",
+    "zh": "图表沿用注明的来源与样本，没有另造一份组合账户。"
+  },
+  "scope": {
+    "en": "Source scope",
+    "zh": "来源范围"
+  },
+  "chapterIntro": {
+    "en": "Read each investigation as a research essay, with interactive evidence beside the argument. Methods and historical results keep their stated scope and uncertainty.",
+    "zh": "每篇调查围绕一个问题展开，互动证据放在相关论述旁边。方法和历史结果都保留各自的适用范围与不确定性。"
+  },
+  "figureHelp": {
+    "en": "The two risk measures use separate scales. On narrow screens, scroll the figure or table horizontally to inspect exact values.",
+    "zh": "两项风险指标各有刻度，柱形长度不能直接比较。窄屏可横向滚动图表或表格，查看精确数值。"
+  },
+  "tableHelp": {
+    "en": "On narrow screens, scroll the chart or table horizontally. Exact values and sample counts remain in the table.",
+    "zh": "窄屏可横向滚动图表或表格，表中保留精确数值与样本数量。"
+  }
+}
