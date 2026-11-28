@@ -1499,7 +1499,8 @@
       ],
       "sourceIds": [
         "SRC-ARCHIVE",
-        "SRC-FOLLOWUP-REVIEW"
+        "SRC-FOLLOWUP-REVIEW",
+        "SRC-STYLE-BREADTH-20261128"
       ],
       "sections": [
         {
@@ -1645,6 +1646,10 @@
         {
           "en": "Recover the original 120-session run identity and test frozen rules on new observations.",
           "zh": "恢复120日历史运行身份，并用新观测检验冻结规则。"
+        },
+        {
+          "en": "See INV-012 for the common-date archived exposure diagnostic and the staged style/cost research requirements.",
+          "zh": "共同日期归档暴露诊断，以及分阶段风格／成本研究要求，见INV-012。"
         }
       ]
     },
@@ -1907,7 +1912,8 @@
         "SRC-PAPER-017",
         "SRC-PAPER-018",
         "SRC-PAPER-019",
-        "SRC-PAPER-020"
+        "SRC-PAPER-020",
+        "SRC-STYLE-BREADTH-20261128"
       ],
       "opening": [
         {
@@ -2078,6 +2084,197 @@
         {
           "en": "Review the exact full-text editions of the new literature before elevating reading stages. Register any future aggregate observations with sample dates and source identity.",
           "zh": "完成新增文献指定版本的全文阅读后再更新阅读阶段。未来公开的汇总观测须登记样本日期及来源身份。"
+        },
+        {
+          "en": "See INV-012 for the common-date archived exposure diagnostic and the staged style/cost research requirements.",
+          "zh": "共同日期归档暴露诊断，以及分阶段风格／成本研究要求，见INV-012。"
+        }
+      ]
+    },
+    {
+      "id": "INV-012",
+      "slug": "smallcap-style-attribution",
+      "title": {
+        "en": "What does a small-stock signal actually hold?",
+        "zh": "小微盘信号最终持有了什么风格？"
+      },
+      "summary": {
+        "en": "Archived-panel diagnostics connect low turnover, holdings breadth and style exposures; execution and risk forecasting need separate evidence.",
+        "zh": "归档面板诊断把低换手、持仓广度和风格暴露连接起来；执行与风险预测仍需独立证据。"
+      },
+      "question": {
+        "en": "Can public style decomposition distinguish shared exposures from candidate stock-selection information?",
+        "zh": "公开风格拆解能否区分共同风险暴露与候选选股信息？"
+      },
+      "conclusion": {
+        "en": "Style decomposition is worth building, but signal residualization does not neutralize Top K holdings. The archived residual tail reverses its low-volatility tilt; neither its net alpha nor a commercial Barra replication is established.",
+        "zh": "值得建立风格拆解，但信号残差化不保证Top K持仓中性。归档残差信号的头部低波动暴露改变了方向；其净Alpha和商业Barra复刻均未确立。"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "size",
+        "risk",
+        "liquidity",
+        "measurement",
+        "implementation",
+        "trading_costs",
+        "robustness"
+      ],
+      "stage": "diagnostic",
+      "updated": "2026-11-28",
+      "claimIds": [],
+      "literatureIds": [
+        "LIT-021",
+        "LIT-004",
+        "LIT-005",
+        "LIT-002"
+      ],
+      "sourceIds": [
+        "SRC-STYLE-BREADTH-20261128",
+        "SRC-MSCI-CNE5",
+        "SRC-PAPER-021"
+      ],
+      "opening": [
+        {
+          "en": "A stock characteristic can predict a historical return spread and still produce a concentrated, expensive or unintended portfolio. The useful next step is to connect the score, final holdings and account outcomes.",
+          "zh": "股票特征可能预测历史收益差，最终持仓却仍然集中、昂贵或带有意外风格。下一步应把评分、实际持仓和账户结果连接起来。"
+        },
+        {
+          "en": "This chapter adds a retrospective exposure diagnostic and reviews the existing cost and stress evidence. It does not turn the historical 19-factor portfolio-sort snapshot into a validated risk model.",
+          "zh": "本章新增回溯性暴露诊断，并复核现有成本和压力证据。历史19因子排序组合快照仍不能当作经验证的风险模型。"
+        }
+      ],
+      "sections": [
+        {
+          "id": "three-model-questions",
+          "title": {
+            "en": "Exposure, return attribution and risk prediction",
+            "zh": "暴露、收益归因与风险预测"
+          },
+          "paragraphs": [
+            {
+              "en": "Exposure measures a holding’s characteristics relative to a declared benchmark. Realized attribution uses prior exposures and interval-aligned factor returns. Risk prediction additionally needs past-only factor covariance and specific risk, validated against later outcomes. Sorted factor returns answer a different question.",
+              "zh": "暴露衡量持仓相对明确基准的特征；已实现归因使用事前暴露与时间对齐的因子收益；风险预测还需要仅用过去估计的协方差、特质风险，并在未来检验。排序因子组合回答的是另一类问题。"
+            },
+            {
+              "en": "The earlier market-research work has a descriptor dictionary and risk-input adapter. Numerical estimation already belongs to quant-platform. Reuse that provider; a public model should disclose its own definitions and limitations rather than claim commercial Barra equivalence.",
+              "zh": "此前市场研究已有描述符字典和风险输入适配器，数值估计由quant-platform负责。应复用提供方，公开自己的定义与限制，不把同名因子称为商业Barra复刻。"
+            }
+          ]
+        },
+        {
+          "id": "archived-exposure-result",
+          "title": {
+            "en": "Residual scores can select unintended tails",
+            "zh": "残差分数也会选出意外风格"
+          },
+          "paragraphs": [
+            {
+              "en": "The retained panel contains 566,283 security/formation records on 138 dates. Comparing both archived signals and both scopes on common dates leaves 134 formations from June 2015 to July 2026. The smallest 20% is a relative archive cohort, not an absolute microcap definition. No future-return filter is used.",
+              "zh": "保留面板有566,283条股票—形成日记录、138个日期。两种归档信号、两个股票池取共同日期后，保留2015年6月至2026年7月134期。最小20%是相对归档分组，不是绝对微盘定义；没有依据未来收益筛选。"
+            },
+            {
+              "en": "At equal-weight Top 50 in the full archived universe, raw low turnover has mean low-volatility exposure +0.908 and size exposure +0.699. The controlled residual has −1.337 and +0.025. Within the smallest fifth, the corresponding low-volatility exposures are +0.697 and −0.922; broad-universe size exposures remain −1.176 and −1.183.",
+              "zh": "全归档股票池等权Top 50中，原始低换手的平均低波动暴露为+0.908、市值暴露为+0.699；控制后残差分别为−1.337、+0.025。在最小20%内，低波动暴露分别为+0.697、−0.922，而相对全池的市值暴露仍为−1.176、−1.183。"
+            },
+            {
+              "en": "Units are each full archived cross-section’s descriptor standard deviations, averaged equally across common dates. Low-volatility and size coverage is complete for these rows. Increasing K to 150 within the smallest fifth changes low-volatility exposures to +0.590 and −0.455, while size remains about −1.18. Breadth does not eliminate shared size risk.",
+              "zh": "单位为每期全归档截面描述符的标准差，按共同日期等权平均。以上各行市值与低波动均覆盖全部134期。最小20%内把K增至150，低波动暴露变为+0.590和−0.455，市值仍约−1.18。广度不能消除共同规模风险。"
+            },
+            {
+              "en": "Linear residualization over a broad cross-section is not a constraint on selected extreme scores. Nonlinear dependence, changing variance and missingness may matter. The archive’s full-universe Top-50 industry-unknown weight is 14.2% for raw scores and 15.6% for residuals, limiting industry interpretation. Missing descriptors remain unknown; they are not filled with zero.",
+              "zh": "全截面线性残差化不是对极端高分持仓的约束。非线性、方差变化和缺失选择都可能有关。全池原始与残差Top 50的行业未知权重分别为14.2%和15.6%，限制行业解释。缺失描述符保持未知，不填成零。"
+            }
+          ]
+        },
+        {
+          "id": "turnover-and-factor-tests",
+          "title": {
+            "en": "Low turnover is a candidate, not an isolated mechanism",
+            "zh": "低换手是候选信号，尚非独立机制"
+          },
+          "paragraphs": [
+            {
+              "en": "Within the smallest fifth, the raw low-turnover score’s mean monthly rank correlations are +0.477 with low volatility, −0.655 with traded-value activity and +0.499 with illiquidity. This shows overlapping characteristics, not their causal contributions. Stock turnover, portfolio turnover and execution liquidity must remain separate.",
+              "zh": "最小20%内，原始低换手与低波动评分的月度排序相关性均值为+0.477，与成交额活跃度为−0.655，与非流动性为+0.499。这反映特征重叠，不能解释因果贡献。个股换手、策略换手与执行流动性仍须分开。"
+            },
+            {
+              "en": "The separately reviewed 86-period positive-PE/common-control sample has raw low-minus-high gross return 1.3821 percentage points per month and full-control/regrouped return 1.2001 points. It is not the 136-period size-group sample, the new 134-date exposure comparison, or a net long-only account. Stage differences change membership and cannot be added as factor contributions.",
+              "zh": "另行复核的86期正PE、控制变量共同样本中，原始低减高月均毛收益差为1.3821个百分点，完整控制并重新分组后为1.2001。它不是136期规模组内样本、新增134期暴露对照，也不是多头净账户。阶段间成员变化，不能相加为因子贡献。"
+            },
+            {
+              "en": "Compare the same benchmark, highest-turnover exclusion and low-turnover tilt under one ledger. Keep volatility, short reversal/medium momentum and size as initial controls. Admit profitability, value and leverage only with historical announcement vintages and matched coverage; existing quality data are restricted mainly to post-2020 top-800 stocks.",
+              "zh": "使用同一账本比较基准、剔除最高换手组与偏向低换手组。初始控制包括波动、短期反转／中期动量和市值。盈利、估值、杠杆须具备历史公告版本及可比覆盖后再加入；现有质量数据主要限于2020年后前800只股票。"
+            }
+          ]
+        },
+        {
+          "id": "cost-and-stress-evidence",
+          "title": {
+            "en": "Costs and stress need matched execution evidence",
+            "zh": "成本与压力需要匹配的执行证据"
+          },
+          "paragraphs": [
+            {
+              "en": "The existing 2025-Q1 account study retains unfilled orders, but quote-based impact and participation settings remain modeled scenarios. A two-date, 106-common-security fitness review is not broker calibration or an identified market-impact law. Cost attribution needs aligned decisions, arrival quotes, fills, fees and remaining inventory.",
+              "zh": "现有2025年一季度账户研究保留了未成交订单，但报价冲击和参与率仍属模拟情景。两日期、106只共同股票的适用性检查不是券商执行校准，也不是已识别的市场冲击规律。成本归因需要对齐决策、到达报价、成交、费用及剩余库存。"
+            },
+            {
+              "en": "In the reviewed 2024 $100m–$1bn bucket, low-activity months retain 57.6% of the normal-month ADV measure. Stress is defined by low ADV within the year, not by market crashes. Smaller buckets lack adequate qualifying months. This ratio is neither a fill probability nor a calibrated capacity reduction.",
+              "zh": "已复核的2024年1亿至10亿美元桶，低活跃月份ADV统计量约为正常月份的57.6%。压力按年内低ADV定义，不是股灾事件；更小市值桶的合格月份不足。这个比值不是成交概率，也不是校准后的容量降幅。"
+            },
+            {
+              "en": "Freeze holdings before predefined drawdown events and keep suspensions, missing observations and unsold stocks. Vary capital, participation and liquidation horizon with common accounting. Daily prices cannot stand in for executable bids, and unfilled inventory must not silently disappear.",
+              "zh": "在预先定义的回撤事件前冻结持仓，保留停牌、缺失和未售股票。采用一致账本改变资金、参与率及退出期限。每日价格不能替代可成交买价，未成交库存不能静默消失。"
+            }
+          ]
+        },
+        {
+          "id": "public-style-model",
+          "title": {
+            "en": "A staged public style model",
+            "zh": "分阶段建立公开风格模型"
+          },
+          "paragraphs": [
+            {
+              "en": "First fix descriptor timing, universe, benchmark, standardization and historical industry coverage. Then estimate broad-universe conditional factor returns with an identified market/industry parameterization, report missing coverage, rank and condition number, and reconcile account returns to factor contributions plus residuals.",
+              "zh": "先固定描述符时点、股票池、基准、标准化与历史行业覆盖。再在广股票池估计条件因子收益，确保市场／行业参数可识别，报告缺失、矩阵秩与条件数，并将账户收益与因子贡献、残差核对。"
+            },
+            {
+              "en": "Keep a base model without the candidate turnover descriptor and an extended model with it. Retain raw and orthogonalized controls, test order sensitivity and avoid counting composite quality plus its parts twice. A residual unexplained by this model is not automatically alpha.",
+              "zh": "同时保留不含候选换手描述符的基准模型与加入它的扩展模型。原始及正交化控制并列，检查顺序敏感性，不重复计入复合质量及其子项。模型尚未解释的残差不能自动称为Alpha。"
+            },
+            {
+              "en": "Only after coverage and attribution reconcile should past-only covariance and specific risk be evaluated as forecasts. Equal-weight estimation should be compared with capitalization weights, which may underrepresent small stocks. Broad-market and within-small-stock exposures both matter.",
+              "zh": "覆盖及归因核对后，再用仅含过去信息的协方差、特质风险检验预测。市值加权可能弱化小股票影响，须与等权估计比较。广市场与小股票内部的暴露都应保留。"
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        {
+          "en": "This is a retrospective archived-panel exposure diagnostic, not new return estimation, verified historical eligibility or a tradable model. Original signal definitions and industry vintages retain their source limitations.",
+          "zh": "这是归档面板的回溯暴露诊断，没有新增收益估计、认证历史资格或形成可交易模型。原信号定义和行业版本仍受来源限制。"
+        },
+        {
+          "en": "The 86-, 134- and 136-period samples answer different questions. No numerical differences across them measure alpha or execution costs. The long-window turnover replay discrepancy remains unresolved.",
+          "zh": "86、134和136期样本回答不同问题，其数字差不能衡量Alpha或执行成本。长窗口换手重放差异仍未解决。"
+        },
+        {
+          "en": "Risk estimation and broker-calibrated costs require additional aligned inputs. Prior protocols specify different 12/24-period requirements; a named timestamped protocol is needed, and neither count alone guarantees reliability.",
+          "zh": "风险估计和经券商校准的成本仍需额外对齐输入。历史协议存在12／24期不同要求，下一轮需具名、带时间戳的协议，期数本身不保证可靠。"
+        }
+      ],
+      "nextSteps": [
+        {
+          "en": "Recover certified lagged exposures, historical industries and reconciled account intervals before estimating factor attribution; reuse the existing platform provider.",
+          "zh": "先恢复可认证的滞后暴露、历史行业及可对账账户区间，再复用现有平台估计因子归因。"
+        },
+        {
+          "en": "Run matched long-only turnover, K/weight and capital/exit comparisons once common inputs satisfy the timing and missingness contracts. Freeze specifications before genuinely new dates.",
+          "zh": "共同输入满足时点及缺失契约后，运行配对的多头换手、K／权重与资金／退出比较；在真正新日期前冻结设定。"
         }
       ]
     }
@@ -2914,6 +3111,43 @@
       "sourceIds": [
         "SRC-PAPER-020"
       ]
+    },
+    {
+      "id": "LIT-021",
+      "title": "Does the turnover effect matter in emerging markets? Evidence from China",
+      "authors": [
+        "Tsung-Yu Chen",
+        "Ching-Hsiang Chao",
+        "Zhen-Xing Wu"
+      ],
+      "year": 2021,
+      "doi": "10.1016/j.pacfin.2021.101551",
+      "url": "https://doi.org/10.1016/j.pacfin.2021.101551",
+      "version": "Pacific-Basin Finance Journal 67, 101551; publisher abstract and sample/method snippets reviewed.",
+      "stage": "abstract",
+      "summary": {
+        "en": "The authors report higher subsequent returns for low-turnover Chinese stocks, robust to their listed liquidity controls. The sample is 1995–2017 and the signal averages the prior 12 months; these findings do not reproduce this study’s 60-session archive or certify net microcap returns.",
+        "zh": "作者报告中国低换手股票未来收益较高，控制其列示的流动性变量后仍存在。样本为1995至2017年，信号使用过去12个月平均换手，不能视为本项目60日归档的复现，也未确立微盘净收益。"
+      },
+      "question": {
+        "en": "Does low turnover add net long-only value after matched size, volatility, liquidity and execution controls?",
+        "zh": "在规模、波动、流动性与执行口径匹配后，低换手能否改善多头净收益？"
+      },
+      "markets": [
+        "A-share"
+      ],
+      "topics": [
+        "liquidity",
+        "measurement",
+        "robustness"
+      ],
+      "investigationIds": [
+        "INV-009",
+        "INV-012"
+      ],
+      "sourceIds": [
+        "SRC-PAPER-021"
+      ]
     }
   ],
   "claims": [
@@ -3711,6 +3945,48 @@
         "zh": "核对公开机构介绍或研报概要，未完成原始全文审阅。"
       },
       "kind": "paper"
+    },
+    {
+      "id": "SRC-STYLE-BREADTH-20261128",
+      "title": {
+        "en": "Small-cap style attribution and archived-panel breadth diagnostic",
+        "zh": "小微盘风格归因与归档面板广度诊断"
+      },
+      "url": "https://github.com/runchengxie/quant-market-research/blob/79a063109a8bb602f5f78e5b93116b1dd797a771/docs/research/factors/smallcap-style-attribution.md",
+      "reviewedOn": "2026-11-28",
+      "kind": "review",
+      "scope": {
+        "en": "134 common monthly formations, June 2015–July 2026; archived-panel exposure arithmetic independently checked. No new returns, PIT certification, risk forecast or execution calibration. Input SHA-256 8dc7c10c3483163703dd1c0bf5cf03b82249d2ce471f676095ca7f2101efa3e5; breadth-summary SHA-256 bf172ed6743606234af7f9e568756bed7bee8058ba2acc2fc76d6b18a3f23b43.",
+        "zh": "2015年6月至2026年7月134个共同形成日；独立复核归档面板暴露计算。没有新增收益、点时资格认证、风险预测或执行校准。输入与汇总哈希见所链接的研究记录。"
+      }
+    },
+    {
+      "id": "SRC-MSCI-CNE5",
+      "title": {
+        "en": "Barra China Equity Model (CNE5), MSCI factsheet",
+        "zh": "MSCI Barra中国权益模型CNE5说明"
+      },
+      "url": "https://www.msci.com/documents/10199/2935796a-0a80-4050-934a-12966d1e2518",
+      "reviewedOn": "2026-11-28",
+      "kind": "paper",
+      "scope": {
+        "en": "Public product factsheet, consulted for model scope; no commercial descriptors, data or implementation copied.",
+        "zh": "公开产品说明，用于核对风险模型范围；未复制商业描述符、数据或实现。"
+      }
+    },
+    {
+      "id": "SRC-PAPER-021",
+      "title": {
+        "en": "Does the turnover effect matter in emerging markets? Evidence from China",
+        "zh": "Does the turnover effect matter in emerging markets? Evidence from China"
+      },
+      "url": "https://doi.org/10.1016/j.pacfin.2021.101551",
+      "reviewedOn": "2026-11-28",
+      "kind": "paper",
+      "scope": {
+        "en": "Publisher abstract and sample/method snippets; Pacific-Basin Finance Journal 67 (2021), 101551. No full-text review or replication.",
+        "zh": "出版方摘要及样本／方法片段；Pacific-Basin Finance Journal 67（2021），101551。未完成全文审阅或复现。"
+      }
     }
   ],
   "history": [
@@ -4230,6 +4506,17 @@
       "reason": {
         "en": "The reference motivates the proposed tests. No matched point-in-time small-cap score and execution experiment has been run in this chapter.",
         "zh": "该来源为拟议检验提供依据，本章尚未运行时点正确且执行口径匹配的小微盘信号实验。"
+      }
+    },
+    {
+      "id": "X-021-012",
+      "literatureId": "LIT-021",
+      "investigationId": "INV-012",
+      "claimIds": [],
+      "status": "not_comparable",
+      "reason": {
+        "en": "Different signal window, sample and portfolio/account conventions; the new diagnostic estimates exposures, not this paper’s return effect.",
+        "zh": "信号窗口、样本与账户口径不同；新诊断测量暴露，并未复现论文收益效应。"
       }
     }
   ]
